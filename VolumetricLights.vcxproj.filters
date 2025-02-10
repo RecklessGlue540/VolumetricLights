@@ -1,39 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="source">
+      <UniqueIdentifier>{851f53f5-ca1f-4091-b634-8e206ac29cfe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="source\rage">
+      <UniqueIdentifier>{354fa60d-97f3-484c-92aa-92ca0ea9fea5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="dependencies">
+      <UniqueIdentifier>{961cec9b-0399-4724-94ec-02d9b810f47b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dependencies\Hooking.Patterns">
+      <UniqueIdentifier>{a7514aa7-7661-4cd8-bc46-2e02b82e52a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{688f2943-14af-4e2f-9594-eb6a1c61b1b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\rage\LightSource.h">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="source\Main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\Hooking.Patterns\Hooking.Patterns.cpp">
+      <Filter>dependencies\Hooking.Patterns</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\rage\CLightSource.h">
+      <Filter>source\rage</Filter>
     </ClInclude>
-    <ClInclude Include="src\rage\Vector.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="source\rage\CVector.h">
+      <Filter>source\rage</Filter>
     </ClInclude>
-    <ClInclude Include="src\rage\Weather.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="source\rage\CWeather.h">
+      <Filter>source\rage</Filter>
     </ClInclude>
-    <ClInclude Include="deps\Hooking.Patterns\Hooking.Patterns.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h">
+      <Filter>dependencies\Hooking.Patterns</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deps\Hooking.Patterns\Hooking.Patterns.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <None Include="resources\VolumetricLights.ini">
+      <Filter>resources</Filter>
+    </None>
   </ItemGroup>
 </Project>
