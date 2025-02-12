@@ -1,0 +1,116 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 NYlamp2a_arm_3\NYlamp2a_arm_3_high.mesh 3 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center -0.08947400 0.00000000 -0.10818200
+		AABBMin -1.34962100 -0.02504800 -0.44708500
+		AABBMax 1.17067300 0.02504800 0.19052100
+		radius 1.29506500
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 1.27047100
+	WorldRadius 1.43384300
+	AABBMax 1.17343100 0.08125728 0.23776110
+	AABBMin -1.37567400 -0.08125717 -0.50605070
+	Centroid -0.09336233 0.00000130 -0.13406590
+	CenterOfMass -0.11234060 -0.00005947 -0.05967948
+	Margin 0.02000000 0.02000000 0.02000000
+	Shrunk 9
+	{
+		-31059 0 -25135
+		-31108 2337 -24376
+		-31108 -2335 -24376
+		14585 0 22413
+		14563 8771 26074
+		14563 -8769 26074
+		31181 0 26536
+		31186 1733 27324
+		31186 -1732 27324
+	}
+	Polygons 8
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 4 3 0 1
+			Siblings 3 2 6 1
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 4 1 2 5
+			Siblings 0 6 2 4
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 0 3 5 2
+			Siblings 0 5 1 6
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 4 7 6 3
+			Siblings 4 7 5 0
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 4 5 8 7
+			Siblings 1 5 7 3
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 3 6 8 5
+			Siblings 3 7 4 2
+		}
+		Polygon 6
+		{
+			Material 0
+			Vertices 2 1 0 0
+			Siblings 1 0 2 -1
+		}
+		Polygon 7
+		{
+			Material 0
+			Vertices 8 6 7 0
+			Siblings 5 3 4 -1
+		}
+	}
+	VertexScale 0.00003890 0.00000248 0.00001135
+	VertexOffset -0.10112140 0.00000006 -0.13414480
+	Vertices 9
+	{
+		-31328 0 -29154
+		-31712 16234 -23183
+		-31712 -16233 -23183
+		14675 0 20678
+		14520 15738 26949
+		14520 -15737 26949
+		31670 0 22889
+		31713 15241 29155
+		31713 -15240 29155
+	}
+	Materials 1
+	{
+		52 0 16896
+	}
+}
