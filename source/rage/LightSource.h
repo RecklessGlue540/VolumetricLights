@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CVector.h"
+#include "Vector.h"
 
 #include <cstdint>
 
@@ -11,7 +11,7 @@ namespace rage
         LT_POINT   = 0x0,
         LT_DIR     = 0x1,
         LT_SPOT    = 0x2,
-        LT_AO      = 0x3,
+        LT_AMBOCC  = 0x3,
         LT_CLAMPED = 0x4,
     };
 
@@ -28,7 +28,7 @@ namespace rage
         float mIntensity;       // Range
         eLightType mType;       // Type
         uint32_t mFlags;        // Flags
-        int32_t mTxdId;         // CoronaHash?
+        int32_t mTxdId;         // CoronaHash
         int32_t mProjTexHash;   // LuminescenceHash
         float mRadius;          // Distance
         float mInnerConeAngle;  // HotSpot

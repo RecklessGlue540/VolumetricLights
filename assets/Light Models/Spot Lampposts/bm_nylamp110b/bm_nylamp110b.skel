@@ -1,0 +1,186 @@
+Version 107 11
+NumBones 9
+Flags UnknownFlag0 HaveBoneMappings AuthoredOrientation
+bone BM_NYlamp110b
+{
+	Flags LockRotX LockRotY LockRotZ LockTransX LockTransY LockTransZ Invisible
+	Index 0
+	Id 0
+	Mirror 0
+	LocalOffset 0.00000000 0.00000000 0.00000000
+	RotationEuler 0.00000000 0.00000000 0.00000000
+	RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+	Scale 0.00000000 0.00000000 0.00000000
+	WorldOffset 0.00000000 0.00000000 0.00000000
+	Orient 0.00000000 0.00000000 0.00000000
+	Sorient 0.00000000 0.00000000 0.00000000
+	TransMin 0.00000000 0.00000000 0.00000000
+	TransMax 0.00000000 0.00000000 0.00000000
+	RotMin -3.14159300 -3.14159300 -3.14159300
+	RotMax 3.14159300 3.14159300 3.14159300
+	Children 1
+	{
+		bone NYlamp110b_Base
+		{
+			Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+			Index 1
+			Id 65035
+			Mirror 1
+			LocalOffset 0.00000000 0.00000000 0.00000000
+			RotationEuler 0.00000000 0.00000000 0.00000000
+			RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+			Scale 0.00000000 0.00000000 0.00000000
+			WorldOffset 0.00000000 0.00000000 0.00000000
+			Orient 0.00000000 0.00000000 0.00000000
+			Sorient 0.00000000 0.00000000 0.00000000
+			TransMin 0.00000000 0.00000000 0.00000000
+			TransMax 0.00000000 0.00000000 0.00000000
+			RotMin -3.14159300 -3.14159300 -3.14159300
+			RotMax 3.14159300 3.14159300 3.14159300
+			Children 1
+			{
+				bone NYlamp110b_pole
+				{
+					Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+					Index 2
+					Id 14977
+					Mirror 2
+					LocalOffset -0.00697300 -0.03240700 0.66316490
+					RotationEuler 0.00000000 0.00000000 0.00000000
+					RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+					Scale 0.00000000 0.00000000 0.00000000
+					WorldOffset -0.00697300 -0.03240700 0.66316490
+					Orient 0.00000000 0.00000000 0.00000000
+					Sorient 0.00000000 0.00000000 0.00000000
+					TransMin 0.00000000 0.00000000 0.00000000
+					TransMax 0.00000000 0.00000000 0.00000000
+					RotMin -3.14159300 -3.14159300 -3.14159300
+					RotMax 3.14159300 3.14159300 3.14159300
+					Children 2
+					{
+						bone NYlamp110b_arm
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 3
+							Id 61149
+							Mirror 3
+							LocalOffset 0.03643800 -0.04283200 6.03147500
+							RotationEuler 0.00000000 0.00000000 0.00000000
+							RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset 0.02946500 -0.07523900 6.69464000
+							Orient 0.00000000 0.00000000 0.00000000
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+							Children 1
+							{
+								bone NYlamp110b_shade
+								{
+									Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+									Index 4
+									Id 13514
+									Mirror 4
+									LocalOffset 1.08303100 0.04034500 0.63814700
+									RotationEuler 0.00000000 0.00000000 0.00000000
+									RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+									Scale 0.00000000 0.00000000 0.00000000
+									WorldOffset 1.11249600 -0.03489400 7.33278700
+									Orient 0.00000000 0.00000000 0.00000000
+									Sorient 0.00000000 0.00000000 0.00000000
+									TransMin 0.00000000 0.00000000 0.00000000
+									TransMax 0.00000000 0.00000000 0.00000000
+									RotMin -3.14159300 -3.14159300 -3.14159300
+									RotMax 3.14159300 3.14159300 3.14159300
+									Children 1
+									{
+										bone NYlamp110b_cover
+										{
+											Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+											Index 5
+											Id 12951
+											Mirror 5
+											LocalOffset -0.00581400 0.01296800 -0.37308600
+											RotationEuler 0.00000000 0.00000000 0.00000000
+											RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+											Scale 0.00000000 0.00000000 0.00000000
+											WorldOffset 1.10668200 -0.02192600 6.95970100
+											Orient 0.00000000 0.00000000 0.00000000
+											Sorient 0.00000000 0.00000000 0.00000000
+											TransMin 0.00000000 0.00000000 0.00000000
+											TransMax 0.00000000 0.00000000 0.00000000
+											RotMin -3.14159300 -3.14159300 -3.14159300
+											RotMax 3.14159300 3.14159300 3.14159300
+										}
+									}
+								}
+							}
+						}
+						bone NYlamp110b_arm2
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 6
+							Id 65240
+							Mirror 6
+							LocalOffset -0.05584700 0.02707500 6.03147500
+							RotationEuler 0.00000000 0.00000000 0.00000000
+							RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset -0.06282001 -0.00533200 6.69464000
+							Orient 0.00000000 0.00000000 0.00000000
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+							Children 1
+							{
+								bone NYlamp110b_shade2
+								{
+									Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+									Index 7
+									Id 55286
+									Mirror 7
+									LocalOffset -1.08223700 -0.02956100 0.63819600
+									RotationEuler 0.00000000 0.00000000 0.00000000
+									RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+									Scale 0.00000000 0.00000000 0.00000000
+									WorldOffset -1.14505700 -0.03489300 7.33283600
+									Orient 0.00000000 0.00000000 0.00000000
+									Sorient 0.00000000 0.00000000 0.00000000
+									TransMin 0.00000000 0.00000000 0.00000000
+									TransMax 0.00000000 0.00000000 0.00000000
+									RotMin -3.14159300 -3.14159300 -3.14159300
+									RotMax 3.14159300 3.14159300 3.14159300
+									Children 1
+									{
+										bone NYlamp110b_cover2
+										{
+											Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+											Index 8
+											Id 46278
+											Mirror 8
+											LocalOffset -0.00581400 0.01296800 -0.37308600
+											RotationEuler 0.00000000 0.00000000 0.00000000
+											RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+											Scale 0.00000000 0.00000000 0.00000000
+											WorldOffset -1.15087100 -0.02192500 6.95975000
+											Orient 0.00000000 0.00000000 0.00000000
+											Sorient 0.00000000 0.00000000 0.00000000
+											TransMin 0.00000000 0.00000000 0.00000000
+											TransMax 0.00000000 0.00000000 0.00000000
+											RotMin -3.14159300 -3.14159300 -3.14159300
+											RotMax 3.14159300 3.14159300 3.14159300
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

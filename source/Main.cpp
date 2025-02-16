@@ -4,8 +4,8 @@
 #include "IniReader.h"
 #include "injector/injector.hpp"
 
-#include "rage/CLightSource.h"
-#include "rage/CWeather.h"
+#include "rage/LightSource.h"
+#include "rage/Weather.h"
 
 bool  bVolumetricSpotLights      = false;
 float fSpotLightsVolumeIntensity = 1.0f;
