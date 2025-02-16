@@ -1,0 +1,206 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 1752
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass -0.42081810 0.12344910 4.86734800
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group CJ_NYLAMP2
+	{
+		strength -1.00000000
+		forceTransmissionScaleUp 0.01000000
+		forceTransmissionScaleDown 0.01000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child cj_nylamp2\CJ_NYLAMP2_0.child null
+		{
+			pristineMass 100.00000000
+			damagedMass 19.07007000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.06021719 0.09591046 3.07675000
+			}
+		}
+		group CJ_NYLAMP2_pole
+		{
+			strength 200.00000000
+			forceTransmissionScaleUp 0.01000000
+			forceTransmissionScaleDown 0.01000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child cj_nylamp2\CJ_NYLAMP2_pole_1.child null
+			{
+				pristineMass 200.00000000
+				damagedMass 38.14015000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.06021719 0.09591046 3.07675000
+				}
+			}
+			group CJ_NYLAMP2_arm
+			{
+				strength 30.00000000
+				forceTransmissionScaleUp 0.01000000
+				forceTransmissionScaleDown 0.00000000
+				jointStiffness 0.00000000
+				minSoftAngle1 -1.00000000
+				maxSoftAngle1 1.00000000
+				maxSoftAngle2 1.00000000
+				maxSoftAngle3 1.00000000
+				rotationSpeed 0.00000000
+				rotationStrength 0.00000000
+				restoringStrength 0.00000000
+				restoringMaxTorque 0.00000000
+				latchStrength 0.00000000
+				disappearsWhenDead 0
+				minDamageForce 100.00000000
+				damageHealth 1000.00000000
+				child cj_nylamp2\CJ_NYLAMP2_arm_2.child null
+				{
+					pristineMass 50.00000000
+					damagedMass 9.53503700
+					f50 [Temporarily|Unknown]
+					{
+						1.00000000 0.00000000 0.00000000
+						0.00000000 1.00000000 0.00000000
+						0.00000000 0.00000000 1.00000000
+						0.06021719 0.09591046 3.07675000
+					}
+				}
+				group CJ_NYLAMP2_cover
+				{
+					strength 1000.00000000
+					forceTransmissionScaleUp 1.00000000
+					forceTransmissionScaleDown 0.20000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 1
+					minDamageForce 0.01000000
+					damageHealth 0.01000000
+					child cj_nylamp2\CJ_NYLAMP2_cover_3.child null
+					{
+						pristineMass 5.00000000
+						damagedMass 0.95350370
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							0.06021719 0.09591046 3.07675000
+						}
+					}
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 2
+		{
+			gta_normal_spec_reflect_emissive.sps CJ_POLE1 0.00000000 0.00000000 12.00000000 0.50000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 CJ_POLE1_n givemechecker givemechecker
+			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00040000 35.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		}
+	}
+	skel
+	{
+		skel cj_nylamp2\cj_nylamp2.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.04079819 0.02727154 -3.07524600
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.04079819 0.02727154 0.91217040
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-2.20142400 0.02848754 5.02387800
+	}
+	3
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-2.23222400 0.02741954 4.99282600
+	}
+}
+light
+{
+	light cj_nylamp2\cj_nylamp2.light
+}

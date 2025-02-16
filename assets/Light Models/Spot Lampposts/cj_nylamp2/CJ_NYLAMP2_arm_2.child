@@ -1,0 +1,220 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 CJ_NYLAMP2_arm_2\CJ_NYLAMP2_arm_2_high.mesh 2 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center 0.91051400 0.00006700 -0.14755900
+		AABBMin -0.32253300 -0.16292700 -0.31508500
+		AABBMax 2.14538200 0.16292700 0.09315100
+		radius 1.24205700
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 1.23339100
+	WorldRadius 2.15712200
+	AABBMax 2.16837800 0.20392670 0.12706630
+	AABBMin -0.36353260 -0.20392680 -0.37614640
+	Centroid 0.90152370 -0.00000001 -0.20133000
+	CenterOfMass 0.56552300 0.00186734 -0.03614204
+	Margin 0.02000000 0.02000000 0.02000000
+	Shrunk 16
+	{
+		-30657 -8955 10072
+		-30668 8939 10005
+		31177 122 -21964
+		31175 -142 -20598
+		31176 880 -21136
+		31176 -925 -21126
+		8493 509 16389
+		8663 51 14905
+		6795 4378 12473
+		8643 -1315 14986
+		-17022 7158 24877
+		-16916 -5583 25536
+		-19648 -21400 9909
+		-17550 23786 10043
+		-28876 -11867 22001
+		-28877 11867 21997
+	}
+	Polygons 23
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 15 1 0 14
+			Siblings 1 22 4 21
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 13 1 15 0
+			Siblings 22 0 2 -1
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 15 10 7 13
+			Siblings 21 14 15 1
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 11 14 12 0
+			Siblings 21 4 17 -1
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 0 12 14 0
+			Siblings 16 3 0 -1
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 4 3 5 2
+			Siblings 7 13 11 9
+		}
+		Polygon 6
+		{
+			Material 0
+			Vertices 6 3 7 0
+			Siblings 13 7 14 -1
+		}
+		Polygon 7
+		{
+			Material 0
+			Vertices 4 7 3 0
+			Siblings 8 6 5 -1
+		}
+		Polygon 8
+		{
+			Material 0
+			Vertices 7 4 8 0
+			Siblings 7 9 15 -1
+		}
+		Polygon 9
+		{
+			Material 0
+			Vertices 2 8 4 0
+			Siblings 10 8 5 -1
+		}
+		Polygon 10
+		{
+			Material 0
+			Vertices 8 2 9 0
+			Siblings 9 11 18 -1
+		}
+		Polygon 11
+		{
+			Material 0
+			Vertices 5 9 2 0
+			Siblings 12 10 5 -1
+		}
+		Polygon 12
+		{
+			Material 0
+			Vertices 9 5 6 0
+			Siblings 11 13 20 -1
+		}
+		Polygon 13
+		{
+			Material 0
+			Vertices 3 6 5 0
+			Siblings 6 12 5 -1
+		}
+		Polygon 14
+		{
+			Material 0
+			Vertices 7 10 6 0
+			Siblings 2 20 6 -1
+		}
+		Polygon 15
+		{
+			Material 0
+			Vertices 8 13 7 0
+			Siblings 16 2 8 -1
+		}
+		Polygon 16
+		{
+			Material 0
+			Vertices 0 13 8 12
+			Siblings 22 15 17 4
+		}
+		Polygon 17
+		{
+			Material 0
+			Vertices 12 8 11 0
+			Siblings 16 18 3 -1
+		}
+		Polygon 18
+		{
+			Material 0
+			Vertices 9 11 8 0
+			Siblings 19 17 10 -1
+		}
+		Polygon 19
+		{
+			Material 0
+			Vertices 11 9 10 0
+			Siblings 18 20 21 -1
+		}
+		Polygon 20
+		{
+			Material 0
+			Vertices 6 10 9 0
+			Siblings 14 19 12 -1
+		}
+		Polygon 21
+		{
+			Material 0
+			Vertices 10 15 14 11
+			Siblings 2 0 3 19
+		}
+		Polygon 22
+		{
+			Material 0
+			Vertices 1 13 0 0
+			Siblings 1 16 0 -1
+		}
+	}
+	VertexScale 0.00003864 0.00000622 0.00000768
+	VertexOffset 0.90242290 -0.00000001 -0.12454010
+	Vertices 16
+	{
+		-31705 -10843 7400
+		-31705 10843 7400
+		31706 -25 -27427
+		31687 -25 -17851
+		31694 5393 -21509
+		31694 -5445 -21509
+		8600 -25 18900
+		8633 4416 15496
+		8686 -25 9989
+		8633 -4467 15496
+		-16997 7789 27428
+		-16891 -7787 27428
+		-18153 -26178 7400
+		-18153 26179 7400
+		-29145 -15028 24543
+		-29145 15028 24543
+	}
+	Materials 1
+	{
+		52 0 16896
+	}
+}

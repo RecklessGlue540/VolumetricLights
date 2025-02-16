@@ -1,0 +1,745 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 6852
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass 0.02995922 0.00019842 2.67111100
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group BM_NYlamp6c
+	{
+		strength -1.00000000
+		forceTransmissionScaleUp 0.00100000
+		forceTransmissionScaleDown 0.00100000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child bm_nylamp6c\BM_NYlamp6c_0.child null
+		{
+			pristineMass 100.00000000
+			damagedMass 100.00000000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.00098752 -0.07778964 0.71916090
+			}
+		}
+		group NYlamp6c_base
+		{
+			strength 300.00000000
+			forceTransmissionScaleUp 1.00000000
+			forceTransmissionScaleDown 0.10000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child bm_nylamp6c\NYlamp6c_base_1.child null
+			{
+				pristineMass 50.00001000
+				damagedMass 50.00001000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.00098752 -0.07778964 0.71916090
+				}
+			}
+			child bm_nylamp6c\NYlamp6c_base_2.child null
+			{
+				pristineMass 50.00001000
+				damagedMass 50.00001000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.00098752 -0.07778964 0.71916090
+				}
+			}
+			child bm_nylamp6c\NYlamp6c_base_3.child null
+			{
+				pristineMass 50.00001000
+				damagedMass 50.00001000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.00098752 -0.07778964 0.71916090
+				}
+			}
+			child bm_nylamp6c\NYlamp6c_base_4.child null
+			{
+				pristineMass 50.00001000
+				damagedMass 50.00001000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.00098752 -0.07778964 0.71916090
+				}
+			}
+			child bm_nylamp6c\NYlamp6c_base_5.child null
+			{
+				pristineMass 50.00001000
+				damagedMass 50.00001000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.00098752 -0.07778964 0.71916090
+				}
+			}
+			group NYlamp6c_pole
+			{
+				strength 40.00000000
+				forceTransmissionScaleUp 1.00000000
+				forceTransmissionScaleDown 0.20000000
+				jointStiffness 0.00000000
+				minSoftAngle1 -1.00000000
+				maxSoftAngle1 1.00000000
+				maxSoftAngle2 1.00000000
+				maxSoftAngle3 1.00000000
+				rotationSpeed 0.00000000
+				rotationStrength 0.00000000
+				restoringStrength 0.00000000
+				restoringMaxTorque 0.00000000
+				latchStrength 0.00000000
+				disappearsWhenDead 0
+				minDamageForce 100.00000000
+				damageHealth 1000.00000000
+				child bm_nylamp6c\NYlamp6c_pole_6.child null
+				{
+					pristineMass 160.00000000
+					damagedMass 160.00000000
+					f50 [Temporarily|Unknown]
+					{
+						1.00000000 0.00000000 0.00000000
+						0.00000000 1.00000000 0.00000000
+						0.00000000 0.00000000 1.00000000
+						0.00098752 -0.07778964 0.71916090
+					}
+				}
+				group NYlamp6c_brkt
+				{
+					strength 30.00000000
+					forceTransmissionScaleUp 1.00000000
+					forceTransmissionScaleDown 0.25000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nylamp6c\NYlamp6c_brkt_7.child null
+					{
+						pristineMass 29.99999000
+						damagedMass 29.99999000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							0.00098752 -0.07778964 0.71916090
+						}
+					}
+				}
+				group NYlamp6c_brkt2
+				{
+					strength 30.00000000
+					forceTransmissionScaleUp 1.00000000
+					forceTransmissionScaleDown 0.25000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nylamp6c\NYlamp6c_brkt2_8.child null
+					{
+						pristineMass 30.00000000
+						damagedMass 30.00000000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							0.00098752 -0.07778964 0.71916090
+						}
+					}
+					group NYlamp6c_pedbx
+					{
+						strength 50.00000000
+						forceTransmissionScaleUp 0.25000000
+						forceTransmissionScaleDown 0.25000000
+						jointStiffness 0.00000000
+						minSoftAngle1 -1.00000000
+						maxSoftAngle1 1.00000000
+						maxSoftAngle2 1.00000000
+						maxSoftAngle3 1.00000000
+						rotationSpeed 0.00000000
+						rotationStrength 0.00000000
+						restoringStrength 0.00000000
+						restoringMaxTorque 0.00000000
+						latchStrength 0.00000000
+						disappearsWhenDead 0
+						minDamageForce 100.00000000
+						damageHealth 1000.00000000
+						child bm_nylamp6c\NYlamp6c_pedbx_9.child null
+						{
+							pristineMass 50.00000000
+							damagedMass 50.00000000
+							f50 [Temporarily|Unknown]
+							{
+								1.00000000 0.00000000 0.00000000
+								0.00000000 1.00000000 0.00000000
+								0.00000000 0.00000000 1.00000000
+								0.00098752 -0.07778964 0.71916090
+							}
+						}
+					}
+					group NYlamp6c_pedbx2
+					{
+						strength 30.00000000
+						forceTransmissionScaleUp 0.25000000
+						forceTransmissionScaleDown 0.25000000
+						jointStiffness 0.00000000
+						minSoftAngle1 -1.00000000
+						maxSoftAngle1 1.00000000
+						maxSoftAngle2 1.00000000
+						maxSoftAngle3 1.00000000
+						rotationSpeed 0.00000000
+						rotationStrength 0.00000000
+						restoringStrength 0.00000000
+						restoringMaxTorque 0.00000000
+						latchStrength 0.00000000
+						disappearsWhenDead 0
+						minDamageForce 100.00000000
+						damageHealth 1000.00000000
+						child bm_nylamp6c\NYlamp6c_pedbx2_10.child null
+						{
+							pristineMass 49.99999000
+							damagedMass 49.99999000
+							f50 [Temporarily|Unknown]
+							{
+								1.00000000 0.00000000 0.00000000
+								0.00000000 1.00000000 0.00000000
+								0.00000000 0.00000000 1.00000000
+								0.00098752 -0.07778964 0.71916090
+							}
+						}
+					}
+				}
+				group NYlamp6c_sign
+				{
+					strength 20.00000000
+					forceTransmissionScaleUp 0.25000000
+					forceTransmissionScaleDown 0.25000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nylamp6c\NYlamp6c_sign_11.child null
+					{
+						pristineMass 20.00000000
+						damagedMass 20.00000000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							0.00098752 -0.07778964 0.71916090
+						}
+					}
+				}
+				group NYlamp6c_sign2
+				{
+					strength 20.00000000
+					forceTransmissionScaleUp 0.25000000
+					forceTransmissionScaleDown 0.25000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nylamp6c\NYlamp6c_sign2_12.child null
+					{
+						pristineMass 20.00000000
+						damagedMass 20.00000000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							0.00098752 -0.07778964 0.71916090
+						}
+					}
+				}
+				group NYlamp6c_join
+				{
+					strength 30.00000000
+					forceTransmissionScaleUp 0.25000000
+					forceTransmissionScaleDown 0.25000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nylamp6c\NYlamp6c_join_13.child null
+					{
+						pristineMass 20.00000000
+						damagedMass 20.00000000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							0.00098752 -0.07778964 0.71916090
+						}
+					}
+					group NYlamp6c_arm2
+					{
+						strength 30.00000000
+						forceTransmissionScaleUp 1.00000000
+						forceTransmissionScaleDown 0.20000000
+						jointStiffness 0.00000000
+						minSoftAngle1 -1.00000000
+						maxSoftAngle1 1.00000000
+						maxSoftAngle2 1.00000000
+						maxSoftAngle3 1.00000000
+						rotationSpeed 0.00000000
+						rotationStrength 0.00000000
+						restoringStrength 0.00000000
+						restoringMaxTorque 0.00000000
+						latchStrength 0.00000000
+						disappearsWhenDead 0
+						minDamageForce 100.00000000
+						damageHealth 1000.00000000
+						child bm_nylamp6c\NYlamp6c_arm2_14.child null
+						{
+							pristineMass 50.00001000
+							damagedMass 50.00001000
+							f50 [Temporarily|Unknown]
+							{
+								1.00000000 0.00000000 0.00000000
+								0.00000000 1.00000000 0.00000000
+								0.00000000 0.00000000 1.00000000
+								0.00098752 -0.07778964 0.71916090
+							}
+						}
+						group NYlamp6c_shade2
+						{
+							strength 30.00000000
+							forceTransmissionScaleUp 0.25000000
+							forceTransmissionScaleDown 0.25000000
+							jointStiffness 0.00000000
+							minSoftAngle1 -1.00000000
+							maxSoftAngle1 1.00000000
+							maxSoftAngle2 1.00000000
+							maxSoftAngle3 1.00000000
+							rotationSpeed 0.00000000
+							rotationStrength 0.00000000
+							restoringStrength 0.00000000
+							restoringMaxTorque 0.00000000
+							latchStrength 0.00000000
+							disappearsWhenDead 0
+							minDamageForce 100.00000000
+							damageHealth 1000.00000000
+							child bm_nylamp6c\NYlamp6c_shade2_15.child null
+							{
+								pristineMass 30.00000000
+								damagedMass 30.00000000
+								f50 [Temporarily|Unknown]
+								{
+									1.00000000 0.00000000 0.00000000
+									0.00000000 1.00000000 0.00000000
+									0.00000000 0.00000000 1.00000000
+									0.00098752 -0.07778964 0.71916090
+								}
+							}
+							group NYlamp6c_cover2
+							{
+								strength 100.00000000
+								forceTransmissionScaleUp 0.00000000
+								forceTransmissionScaleDown 0.00000000
+								jointStiffness 0.00000000
+								minSoftAngle1 -1.00000000
+								maxSoftAngle1 1.00000000
+								maxSoftAngle2 1.00000000
+								maxSoftAngle3 1.00000000
+								rotationSpeed 0.00000000
+								rotationStrength 0.00000000
+								restoringStrength 0.00000000
+								restoringMaxTorque 0.00000000
+								latchStrength 0.00000000
+								disappearsWhenDead 1
+								minDamageForce 0.00100000
+								damageHealth 0.00100000
+								child bm_nylamp6c\NYlamp6c_cover2_16.child null
+								{
+									pristineMass 2.50000000
+									damagedMass 2.50000000
+									f50 [Temporarily|Unknown]
+									{
+										1.00000000 0.00000000 0.00000000
+										0.00000000 1.00000000 0.00000000
+										0.00000000 0.00000000 1.00000000
+										0.00098752 -0.07778964 0.71916090
+									}
+								}
+								child bm_nylamp6c\NYlamp6c_cover2_17.child null
+								{
+									pristineMass 2.50000000
+									damagedMass 2.50000000
+									f50 [Temporarily|Unknown]
+									{
+										1.00000000 0.00000000 0.00000000
+										0.00000000 1.00000000 0.00000000
+										0.00000000 0.00000000 1.00000000
+										0.00098752 -0.07778964 0.71916090
+									}
+								}
+							}
+						}
+					}
+				}
+				group NYlamp6c_arm
+				{
+					strength 30.00000000
+					forceTransmissionScaleUp 1.00000000
+					forceTransmissionScaleDown 0.20000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nylamp6c\NYlamp6c_arm_18.child null
+					{
+						pristineMass 25.00000000
+						damagedMass 25.00000000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							0.00098752 -0.07778964 0.71916090
+						}
+					}
+					child bm_nylamp6c\NYlamp6c_arm_19.child null
+					{
+						pristineMass 25.00000000
+						damagedMass 25.00000000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							0.00098752 -0.07778964 0.71916090
+						}
+					}
+					group NYlamp6c_shade
+					{
+						strength 100.00000000
+						forceTransmissionScaleUp 0.25000000
+						forceTransmissionScaleDown 0.25000000
+						jointStiffness 0.00000000
+						minSoftAngle1 -1.00000000
+						maxSoftAngle1 1.00000000
+						maxSoftAngle2 1.00000000
+						maxSoftAngle3 1.00000000
+						rotationSpeed 0.00000000
+						rotationStrength 0.00000000
+						restoringStrength 0.00000000
+						restoringMaxTorque 0.00000000
+						latchStrength 0.00000000
+						disappearsWhenDead 0
+						minDamageForce 100.00000000
+						damageHealth 1000.00000000
+						child bm_nylamp6c\NYlamp6c_shade_20.child null
+						{
+							pristineMass 21.60655000
+							damagedMass 21.60655000
+							f50 [Temporarily|Unknown]
+							{
+								1.00000000 0.00000000 0.00000000
+								0.00000000 1.00000000 0.00000000
+								0.00000000 0.00000000 1.00000000
+								0.00098752 -0.07778964 0.71916090
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 9
+		{
+			gta_normal_spec_reflect_emissive.sps BM_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_concrete1_n givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_green 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamp_green_s givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlampgreen_1 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamp_1_s givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_traff_lights 0.00000000 0.00000000 60.00000000 0.40000000 1.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_traff_lights_n BM_traff_lights_s givemechecker
+			gta_emissivestrong.sps BM_traff_walkbm_traff_walk_e 0.00040000 10.00000000
+			gta_alpha.sps cj_stickers1cj_stickers1_a
+			gta_normal_spec_reflect_emissive.sps BM_NYstreetsign_03 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00040000 35.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		}
+	}
+	skel
+	{
+		skel bm_nylamp6c\bm_nylamp6c.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00287952 0.03486264 -0.77659790
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00288752 0.03486264 -0.44724790
+	}
+	2
+	{
+		0.00000000 -1.00000000 0.00000000
+		1.00000000 0.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00288752 0.03486264 -0.44724790
+	}
+	3
+	{
+		-0.70710760 -0.70710600 0.00000000
+		0.70710600 -0.70710760 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00288752 0.03486263 -0.44724790
+	}
+	4
+	{
+		0.70710760 -0.70710600 0.00000000
+		0.70710600 0.70710760 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00288752 0.03486263 -0.44724790
+	}
+	5
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00288752 0.03486264 -0.07467491
+	}
+	6
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00239852 0.03455364 3.11078400
+	}
+	7
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.27518150 0.32563360 1.97798800
+	}
+	8
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.27517750 0.32563360 2.42218800
+	}
+	9
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.52171350 0.32106260 2.19321300
+	}
+	10
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.03388248 0.58373170 2.19321300
+	}
+	11
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.35347450 0.03688564 3.43210000
+	}
+	12
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00147152 0.38603460 3.68068700
+	}
+	13
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00116748 0.03222764 5.59851900
+	}
+	14
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00203348 0.18057160 6.14969400
+	}
+	15
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00203348 0.98405470 6.68660100
+	}
+	16
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00203348 0.98405470 6.35573500
+	}
+	17
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00203348 -0.91413330 6.35573500
+	}
+	18
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00116748 0.04239464 6.08787200
+	}
+	19
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00116748 0.03222764 6.09595800
+	}
+	20
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00602352 -0.91413240 6.68522000
+	}
+}
+light
+{
+	light bm_nylamp6c\bm_nylamp6c.light
+}
