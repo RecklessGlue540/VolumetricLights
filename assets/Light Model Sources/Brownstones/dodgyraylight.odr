@@ -1,0 +1,26 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 4
+	{
+		gta_normal_spec.sps ah_romanswall1 30.00000000 0.90000000 1.00000000;0.00000000;0.00000000 0.50000000 ah_strceilingN ah_strceilingS
+		gta_default.sps dodgyraylight\ah_oldwdstps.dds
+		gta_default.sps ah_wpaperdirt4
+		gta_glass_emissive.sps dodgyraylight\ah_semdirt.dds 0.00040000 15.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+	}
+}
+lodgroup
+{
+	high 1 dodgyraylight\dodgyraylight_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center 0.01440400 0.02906800 -0.02147700
+	AABBMin -0.05218500 -0.89836900 -0.85036800
+	AABBMax 0.05218500 0.89836900 0.80489000
+	radius 1.19445600
+}
+light
+{
+	light dodgyraylight\dodgyraylight.light
+}

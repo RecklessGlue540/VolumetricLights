@@ -1,0 +1,53 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 35
+	{
+		gta_decal.sps shitkitch\ah_romskitdirtah_circdirtba.dds
+		gta_spec.sps shitkitch\ah_bumpyrust.dds 30.00000000 0.90000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_bumpyrusts.dds
+		gta_spec.sps shitkitch\ah_metal1.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_dirtpipes.dds
+		gta_spec.sps shitkitch\ah_shitdoorskitnew.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_shitkits.dds
+		gta_normal_spec.sps shitkitch\ah_gbrackets.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 1.00000000 shitkitch\ah_gbracketsn.dds shitkitch\ah_gbracketss.dds
+		gta_default.sps shitkitch\ah_dirtwhite.dds
+		gta_spec.sps shitkitch\ah_shitdoorskit2.dds 30.00000000 0.50000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_shitdoorskits.dds
+		gta_spec.sps shitkitch\ah_romkit2.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_bluskirtnews.dds
+		gta_spec.sps shitkitch\ah_romsidewd.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_sprtsbartops.dds
+		gta_spec.sps shitkitch\ah_white.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_romtilered.dds
+		gta_spec.sps shitkitch\ah_duct.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_ducts.dds
+		gta_normal_spec_reflect.sps shitkitch\ah_romfreezer.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 1.00000000 0.20000000 shitkitch\ah_romfreezern.dds shitkitch\ah_romfreezers.dds shitkitch\ah_romfreref.dds
+		gta_default.sps null
+		gta_alpha.sps shitkitch\bm_bottle_whiskey.dds
+		gta_alpha.sps shitkitch\bm_whiskeylabel.dds
+		gta_glass.sps shitkitch\bm_bottle_vodka.dds 30.00000000 1.00000000 1.00000000 0.45000000 shitkitch\ah_singoldn.dds shitkitch\bm_enviro256_02.dds
+		gta_glass.sps shitkitch\bm_beerglass.dds 100.00000000 1.00000000 2.00000000 1.00000000 shitkitch\ah_singoldn.dds shitkitch\bm_beerglass_env.dds
+		gta_normal_spec.sps shitkitch\ah_wanmetpans.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 1.00000000 shitkitch\ah_wanmetpansn.dds shitkitch\ah_italducts.dds
+		gta_normal_spec.sps ah_romanswall1 30.00000000 0.90000000 1.00000000;0.00000000;0.00000000 0.50000000 ah_strceilingN ah_strceilingS
+		gta_default.sps ah_wpaperdirt4
+		gta_default.sps shitkitch\gb_cardboard01.dds
+		gta_default.sps shitkitch\gb_cardboard03.dds
+		gta_default.sps shitkitch\mp_bin3.dds
+		gta_default.sps shitkitch\mp_binliner.dds
+		gta_default.sps shitkitch\cj_rub_1_256.dds
+		gta_default.sps shitkitch\cj_rub_wood.dds
+		gta_default.sps shitkitch\cj_n_paper.dds
+		gta_default.sps shitkitch\cj_banana.dds
+		gta_default.sps shitkitch\cj_banana2.dds
+		gta_normal_spec.sps shitkitch\bm_binbag.dds 100.00000000 1.00000000 1.00000000;0.00000000;0.00000000 1.00000000 shitkitch\bm_binbag_s.dds shitkitch\bm_binbag_n.dds
+		gta_default.sps shitkitch\cj_cardboard2.dds
+		gta_default.sps shitkitch\cj_cardbrd_spk_3.dds
+		gta_spec.sps shitkitch\ah_cooker.dds 30.00000000 0.30000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_dirtpeba.dds
+		gta_default.sps shitkitch\ah_worncarp.dds
+		gta_spec.sps shitkitch\ah_shitdoorskitnew2.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 shitkitch\ah_shitkits.dds
+	}
+}
+lodgroup
+{
+	high 1 shitkitch\shitkitch_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center -0.33336600 -0.91740800 -0.58007200
+	AABBMin -6.47396900 -4.95641400 -1.90872200
+	AABBMax 5.84729000 2.78223500 1.99391400
+	radius 7.26619400
+}
