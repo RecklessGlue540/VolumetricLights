@@ -1,0 +1,151 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 1196
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass -0.00119794 -0.29478950 0.27533620
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group BM_wall_light_06
+	{
+		strength 100.00000000
+		forceTransmissionScaleUp 0.25000000
+		forceTransmissionScaleDown 0.25000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child bm_wall_light_06\BM_wall_light_06_0.child null
+		{
+			pristineMass 11.48903000
+			damagedMass 11.48903000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-0.00097219 -0.23603060 0.15260740
+			}
+		}
+		child bm_wall_light_06\BM_wall_light_06_1.child null
+		{
+			pristineMass 11.48903000
+			damagedMass 11.48903000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-0.00097219 -0.23603060 0.15260740
+			}
+		}
+		group glass01
+		{
+			strength -1.00000000
+			forceTransmissionScaleUp 0.25000000
+			forceTransmissionScaleDown 0.25000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 1
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child bm_wall_light_06\glass01_2.child null
+			{
+				pristineMass 2.83786200
+				damagedMass 2.83786200
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-0.00097219 -0.23603060 0.15260740
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 4
+		{
+			gta_normal_spec_reflect_emissive.sps BM_chrome_black2 0.00000000 0.00000000 100.00000000 1.00000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_chrome_black2 givemechecker
+			gta_emissivenight.sps BM_neon_white_a 0.00040000 22.00000000
+			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a -0.00040000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a
+		}
+	}
+	skel
+	{
+		skel bm_wall_light_06\bm_wall_light_06.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00022981 -0.06659241 0.30500260
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00022981 -0.04499440 -0.23285540
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00021381 -0.05350141 0.02941062
+	}
+}
+light
+{
+	light bm_wall_light_06\bm_wall_light_06.light
+}

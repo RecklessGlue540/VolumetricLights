@@ -1,0 +1,132 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 1024
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass -0.00195315 0.00162842 0.57384090
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group CJ_DM_LIGHT_1
+	{
+		strength 100.00000000
+		forceTransmissionScaleUp 0.25000000
+		forceTransmissionScaleDown 0.25000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child cj_dm_light_1\CJ_DM_LIGHT_1_0.child null
+		{
+			pristineMass 64.86313000
+			damagedMass 64.86313000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-0.00174723 0.00151394 0.37964120
+			}
+		}
+		group light_1_bulb
+		{
+			strength 10.00000000
+			forceTransmissionScaleUp 0.25000000
+			forceTransmissionScaleDown 0.25000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 1
+			minDamageForce 10.00000000
+			damageHealth 10.00000000
+			child cj_dm_light_1\light_1_bulb_1.child null
+			{
+				pristineMass 14.95487000
+				damagedMass 14.95487000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-0.00174723 0.00151394 0.37964120
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 4
+		{
+			gta_normal_spec_reflect_emissive.sps BM_chrome_black2 0.00000000 0.00000000 100.00000000 1.00000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_chrome_black2 givemechecker
+			gta_emissivenight.sps BM_neon_white_a 0.00040000 22.00000000
+			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a -0.00040000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a
+		}
+	}
+	skel
+	{
+		skel cj_dm_light_1\cj_dm_light_1.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00040377 0.00034906 0.08338979
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00065223 -0.00090294 0.67481090
+	}
+}
+light
+{
+	light cj_dm_light_1\cj_dm_light_1.light
+}

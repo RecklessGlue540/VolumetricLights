@@ -1,0 +1,191 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 1568
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass 0.19239090 0.00029572 2.69372700
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group BM_NYlamp7
+	{
+		strength -1.00000000
+		forceTransmissionScaleUp 0.00000000
+		forceTransmissionScaleDown 0.00000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 10.00000000
+		damageHealth 100.00000000
+		child bm_nylamp7\BM_NYlamp7_0.child null
+		{
+			pristineMass 100.00000000
+			damagedMass 70.92831000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.05587316 0.00035201 1.81429100
+			}
+		}
+		group NYlamp7
+		{
+			strength 200.00000000
+			forceTransmissionScaleUp 0.00000000
+			forceTransmissionScaleDown 0.00000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 10.00000000
+			damageHealth 100.00000000
+			child bm_nylamp7\NYlamp7_1.child null
+			{
+				pristineMass 75.00000000
+				damagedMass 17.54557000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.05587316 0.00035201 1.81429100
+				}
+			}
+			child bm_nylamp7\NYlamp7_2.child null
+			{
+				pristineMass 75.00000000
+				damagedMass 17.54557000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.05587316 0.00035201 1.81429100
+				}
+			}
+			group Lamp
+			{
+				strength 40.00000000
+				forceTransmissionScaleUp 0.01000000
+				forceTransmissionScaleDown 0.01000000
+				jointStiffness 0.00000000
+				minSoftAngle1 -1.00000000
+				maxSoftAngle1 1.00000000
+				maxSoftAngle2 1.00000000
+				maxSoftAngle3 1.00000000
+				rotationSpeed 0.00000000
+				rotationStrength 0.00000000
+				restoringStrength 0.00000000
+				restoringMaxTorque 0.00000000
+				latchStrength 0.00000000
+				disappearsWhenDead 0
+				minDamageForce 10.00000000
+				damageHealth 10.00000000
+				child bm_nylamp7\Lamp_3.child null
+				{
+					pristineMass 30.00000000
+					damagedMass 30.00000000
+					f50 [Temporarily|Unknown]
+					{
+						1.00000000 0.00000000 0.00000000
+						0.00000000 1.00000000 0.00000000
+						0.00000000 0.00000000 1.00000000
+						0.05587316 0.00035201 1.81429100
+					}
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 6
+		{
+			gta_normal_spec_reflect_emissive.sps BM_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_concrete1_n givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_chrome_black2 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_foresthills2 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_foresthills2_n givemechecker givemechecker
+			gta_cutout.sps bm_nylampdesign2bm_nylampdesign2_a
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_foresthills 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_foresthills_n givemechecker givemechecker
+			gta_emissivenight.sps BM_NYlamp_foresthills2bBM_NYlamp_foresthills2_e 0.00040000 7.00000000
+		}
+	}
+	skel
+	{
+		skel bm_nylamp7\bm_nylamp7.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.05592616 -0.00035201 -1.80785200
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.05330916 0.00016599 0.07637083
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.08588085 0.00016599 1.63441900
+	}
+	3
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.37311280 -0.00035201 1.70417200
+	}
+}
+light
+{
+	light bm_nylamp7\bm_nylamp7.light
+}

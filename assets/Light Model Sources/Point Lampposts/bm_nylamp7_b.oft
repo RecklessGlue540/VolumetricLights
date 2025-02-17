@@ -1,0 +1,229 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 1944
+	estimatedArticulatedCacheSize 1112
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass -0.00125529 -0.00009905 2.84909000
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group BM_NYlamp7_b
+	{
+		strength -1.00000000
+		forceTransmissionScaleUp 0.00000000
+		forceTransmissionScaleDown 0.00000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child bm_nylamp7_b\BM_NYlamp7_b_0.child null
+		{
+			pristineMass 176.15390000
+			damagedMass 128.02200000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.00649283 0.00033243 1.61808600
+			}
+		}
+		group NYlamp7_b
+		{
+			strength 200.00000000
+			forceTransmissionScaleUp 0.00000000
+			forceTransmissionScaleDown 0.00000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child bm_nylamp7_b\NYlamp7_b_1.child null
+			{
+				pristineMass 52.84618000
+				damagedMass 72.19793000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.00649283 0.00033243 1.61808600
+				}
+			}
+			child bm_nylamp7_b\NYlamp7_b_2.child null
+			{
+				pristineMass 52.84618000
+				damagedMass 72.19793000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.00649283 0.00033243 1.61808600
+				}
+			}
+			group lamp1
+			{
+				strength 40.00000000
+				forceTransmissionScaleUp 0.01000000
+				forceTransmissionScaleDown 0.01000000
+				jointStiffness 0.00000000
+				minSoftAngle1 -1.00000000
+				maxSoftAngle1 1.00000000
+				maxSoftAngle2 1.00000000
+				maxSoftAngle3 1.00000000
+				rotationSpeed 0.00000000
+				rotationStrength 0.00000000
+				restoringStrength 0.00000000
+				restoringMaxTorque 0.00000000
+				latchStrength 0.00000000
+				disappearsWhenDead 0
+				minDamageForce 100.00000000
+				damageHealth 1000.00000000
+				child bm_nylamp7_b\lamp1_3.child null
+				{
+					pristineMass 26.42309000
+					damagedMass 26.42309000
+					f50 [Temporarily|Unknown]
+					{
+						1.00000000 0.00000000 0.00000000
+						0.00000000 1.00000000 0.00000000
+						0.00000000 0.00000000 1.00000000
+						0.00649283 0.00033243 1.61808600
+					}
+				}
+			}
+			group lamp2
+			{
+				strength 40.00000000
+				forceTransmissionScaleUp 0.01000000
+				forceTransmissionScaleDown 0.01000000
+				jointStiffness 0.00000000
+				minSoftAngle1 -1.00000000
+				maxSoftAngle1 1.00000000
+				maxSoftAngle2 1.00000000
+				maxSoftAngle3 1.00000000
+				rotationSpeed 0.00000000
+				rotationStrength 0.00000000
+				restoringStrength 0.00000000
+				restoringMaxTorque 0.00000000
+				latchStrength 0.00000000
+				disappearsWhenDead 0
+				minDamageForce 100.00000000
+				damageHealth 1000.00000000
+				child bm_nylamp7_b\lamp2_4.child null
+				{
+					pristineMass 26.42309000
+					damagedMass 26.42309000
+					f50 [Temporarily|Unknown]
+					{
+						1.00000000 0.00000000 0.00000000
+						0.00000000 1.00000000 0.00000000
+						0.00000000 0.00000000 1.00000000
+						0.00649283 0.00033243 1.61808600
+					}
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 6
+		{
+			gta_normal_spec_reflect_emissive.sps BM_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_concrete1_n givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_chrome_black2 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_foresthills 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_foresthills_n givemechecker givemechecker
+			gta_cutout.sps bm_nylampdesign2bm_nylampdesign2_a
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_foresthills2 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_foresthills2_n givemechecker givemechecker
+			gta_emissivenight.sps BM_NYlamp_foresthills2bBM_NYlamp_foresthills2_e 0.00040000 7.00000000
+		}
+	}
+	skel
+	{
+		skel bm_nylamp7_b\bm_nylamp7_b.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00654583 -0.00033243 -1.61164700
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00657683 -0.00005843 0.27257590
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00524883 -0.00011943 1.83062400
+	}
+	3
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.41169720 -0.00063743 1.90037600
+	}
+	4
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.43033580 -0.00097243 1.90037600
+	}
+}
+light
+{
+	light bm_nylamp7_b\bm_nylamp7_b.light
+}

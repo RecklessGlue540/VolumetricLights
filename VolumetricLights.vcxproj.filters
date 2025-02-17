@@ -26,13 +26,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\rage\CLightSource.h">
+    <ClInclude Include="source\rage\LightSource.h">
       <Filter>source\rage</Filter>
     </ClInclude>
-    <ClInclude Include="source\rage\CVector.h">
+    <ClInclude Include="source\rage\Vector.h">
       <Filter>source\rage</Filter>
     </ClInclude>
-    <ClInclude Include="source\rage\CWeather.h">
+    <ClInclude Include="source\rage\Weather.h">
       <Filter>source\rage</Filter>
     </ClInclude>
     <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h">
