@@ -1,0 +1,30 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 4
+	{
+		gta_normal_spec_reflect_emissive.sps BM_metal_black 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps BM_chrome_small 0.00000000 0.00000000 20.00000000 0.80000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_chrome_small givemechecker
+		gta_emissive.sps bm_wall_light_sm\bm_neon_white.dds 0.00040000 25.00000000
+		gta_glass_emissive_alpha.sps bm_nylamp_bulb 0.00040000 15.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+	}
+}
+skel
+{
+	skel bm_wall_light_sm\bm_wall_light_sm.skel
+}
+lodgroup
+{
+	high 1 bm_wall_light_sm\bm_wall_light_sm_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center 0.00000000 -0.17585700 0.10644400
+	AABBMin -0.20075200 -0.32573500 -0.07534100
+	AABBMax 0.19659000 0.00037000 0.24694000
+	radius 0.26409100
+}
+light
+{
+	light bm_wall_light_sm\bm_wall_light_sm.light
+}

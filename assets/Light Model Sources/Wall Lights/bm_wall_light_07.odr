@@ -1,0 +1,29 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 3
+	{
+		gta_emissive.sps bm_wall_light_07\bm_neon_whitebm_neon_white_a.dds 0.00040000 12.00000000
+		gta_glass_emissive_alpha.sps bm_wall_light_07\bm_carpark_light.dds 0.00040000 8.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps bm_wall_light_07\bm_chrome_small.dds 0.00000000 0.00000000 100.00000000 1.00000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker bm_wall_light_07\bm_chrome_small.dds givemechecker
+	}
+}
+skel
+{
+	skel bm_wall_light_07\bm_wall_light_07.skel
+}
+lodgroup
+{
+	high 1 bm_wall_light_07\bm_wall_light_07_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center 0.00000000 0.00000000 -0.03667800
+	AABBMin -0.42528500 -0.28363000 -0.15205400
+	AABBMax 0.42528500 0.28363000 0.00000000
+	radius 0.51250300
+}
+light
+{
+	light bm_wall_light_07\bm_wall_light_07.light
+}

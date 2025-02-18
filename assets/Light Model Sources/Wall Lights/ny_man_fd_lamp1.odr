@@ -1,0 +1,28 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 2
+	{
+		gta_normal_spec_reflect_emissive.sps ny_man_fd_lamp1\mc_fd_lamp.dds 0.00000000 0.00000000 20.00000000 0.30000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker ny_man_fd_lamp1\mc_fd_lamp_s.dds givemechecker
+		gta_glass_emissivenight.sps ny_man_fd_lamp1\mc_fd_lamp.dds 0.00050000 10.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+	}
+}
+skel
+{
+	skel ny_man_fd_lamp1\ny_man_fd_lamp1.skel
+}
+lodgroup
+{
+	high 1 ny_man_fd_lamp1\ny_man_fd_lamp1_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center 0.00141700 0.00255800 1.71852700
+	AABBMin -0.72758100 -0.72644400 0.00000000
+	AABBMax 0.73041900 0.73155600 3.50173200
+	radius 1.86675700
+}
+light
+{
+	light ny_man_fd_lamp1\ny_man_fd_lamp1.light
+}
