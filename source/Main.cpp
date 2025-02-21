@@ -154,10 +154,10 @@ void OnAfterCopyLight(rage::CLightSource *light)
 
     if (!bLamppostShadows)
     {
-        if (light->mProjTexHash == 0xDEAD)
+        if (light->mProjTexHash == 0xDEAD || light->mProjTexHash == 0xF00D /* Added this as a "fallback" in case shadow flags are present on a light source other than the one flagged with 57005 */)
         {
-            light->mFlags &= ~3;
-            light->mFlags &= ~4;
+            light->mFlags &= ~3; // Subtract static shadows
+            light->mFlags &= ~4; // Subtract dynamic shadows
         }
     }
 }
@@ -216,7 +216,7 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
         uint8_t buffer[] = { 0x44, 0x06, 0xC, 0x90, 0x90 };
         injector::WriteMemoryRaw(pattern.get_first(6), buffer, 5, true);
 
-        pattern = hook::pattern("C7 06 ? ? ? ? C7 86 ? ? ? ? ? ? ? ? C6 46 1C 01 8B C6"); // Should work with CE
+        pattern = hook::pattern("C7 06 ? ? ? ? C7 86 ? ? ? ? ? ? ? ? C6 46 1C 01 8B C6");
         if (pattern.empty())
         {
             DisplayUnsupportedError();
@@ -226,7 +226,7 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
         CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListO = (void(__cdecl*)())vft[8];
         injector::WriteMemory(&vft[8], CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListH);
 
-        pattern = hook::pattern("8B CE C1 E1 07 03 0D ? ? ? ? E8 ? ? ? ?"); // Should work with CE
+        pattern = hook::pattern("8B CE C1 E1 07 03 0D ? ? ? ? E8 ? ? ? ?");
         if (pattern.empty())
         {
             DisplayUnsupportedError();
@@ -235,17 +235,29 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
         CopyLightO = (void(__cdecl*)())injector::GetBranchDestination(pattern.get_first(11)).get();
         injector::MakeCALL(pattern.get_first(11), CopyLightH);
 
-        pattern = hook::pattern("8B 54 24 08 8B C8 C1 E1 07 03 0D ? ? ? ? 52 E8 ? ? ? ?"); // "FF 74 24 08 C1 E0 07 03 05 ? ? ? ? 8B C8 E8 ? ? ? ? 5E" for CE?
-        if (pattern.empty())
+        pattern = hook::pattern("8B 54 24 08 8B C8 C1 E1 07 03 0D ? ? ? ? 52 E8 ? ? ? ?");
+        if (!pattern.empty())
         {
-            DisplayUnsupportedError();
-            return false;
+            injector::MakeCALL(pattern.get_first(16), CopyLightH);
         }
-        injector::MakeCALL(pattern.get_first(16), CopyLightH);
+        else
+        {
+            // Pretty sure these are the right things for CE, can't test if it's proper since I couldn't figure out the first pattern :welp:
+            pattern = hook::pattern("FF 74 24 08 C1 E0 07 03 05 ? ? ? ? 8B C8 E8 ? ? ? ? 5E");
+            if (!pattern.empty())
+            {
+                injector::MakeCALL(pattern.get_first(12), CopyLightH);
+            }
+            else
+            {
+                DisplayUnsupportedError();
+                return false;
+            }
+        }
 
         if (bLongShadows)
         {
-            auto pattern = hook::pattern("76 ? 0F 2F ? 76 ? 0F 28 ? 0F 28 ? F3 0F 59 ?"); // Works on all patches.
+            auto pattern = hook::pattern("76 ? 0F 2F ? 76 ? 0F 28 ? 0F 28 ? F3 0F 59 ?");
             if (!pattern.empty())
                 injector::WriteMemory<uint8_t>(pattern.get_first(0), 0xEB, true);
         }

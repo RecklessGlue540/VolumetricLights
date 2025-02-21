@@ -12,11 +12,11 @@ Version 1 10
 		Distance 8.15997100
 		Range 8.00000000
 		CoronaSize 0.00000000
-		HotSpot 72.00000000
+		HotSpot 82.00000000
 		Falloff 144.00000000
 		Flags 49216
 		CoronaHash 0
-		LuminescenceHash 0
+		LuminescenceHash 61453
 		TypeFlags
 		Type Spot
 		_f58 0.00000000

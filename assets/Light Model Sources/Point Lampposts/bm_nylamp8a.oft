@@ -155,8 +155,8 @@ drawable
 		Shaders 4
 		{
 			gta_normal_spec_reflect_emissive.sps BM_NYlamp_irn_02 0.00000000 0.00000000 20.00000000 0.10000000 1.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_irn_02_n bm_nylamp_irn_02_s givemechecker
-			gta_emissivenight.sps BM_neon_white_a 0.00040000 22.00000000
-			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a -0.00040000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_emissivenight.sps BM_neon_white_a 0.00020000 25.00000000
+			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a 0.00000000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 			gta_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a
 		}
 	}
