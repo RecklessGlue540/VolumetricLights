@@ -1,0 +1,28 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 6
+	{
+		gta_normal_spec_reflect_emissive.sps CJ_TELEGRAPH_WOOD 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps BM_telegraphpolebits 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_alpha.sps WeedLeavesa_1WeedLeavesa_1a
+		gta_normal_spec_reflect_emissive.sps CJ_SP_DOG_SIGN 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps BM_chrome_small 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_glass_emissivenight.sps BM_NYlamp_bulb 0.00040000 15.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+	}
+}
+lodgroup
+{
+	high 1 cj_telgrphpole_4\cj_telgrphpole_4_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center 0.81498700 -0.25912200 6.62308700
+	AABBMin -0.38440300 -3.48606100 -0.31804800
+	AABBMax 2.49518200 0.35644700 13.56422000
+	radius 6.99571900
+}
+light
+{
+	light cj_telgrphpole_4\cj_telgrphpole_4.light
+}
