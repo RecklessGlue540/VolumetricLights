@@ -1,0 +1,480 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 4200
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass -2.75345000 -0.07761880 4.90178300
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group BM_NYtrafflite_11
+	{
+		strength 100.00000000
+		forceTransmissionScaleUp 0.00000000
+		forceTransmissionScaleDown 0.00000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child bm_nytrafflite_11\BM_NYtrafflite_11_0.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_1.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_2.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_3.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_4.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_5.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_6.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_7.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_8.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_9.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_10.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_11.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		child bm_nytrafflite_11\BM_NYtrafflite_11_12.child null
+		{
+			pristineMass 11.81669000
+			damagedMass 11.81669000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-2.28587300 -0.06510276 4.42651300
+			}
+		}
+		group NYtrafflite_F3
+		{
+			strength 20.00000000
+			forceTransmissionScaleUp 0.00000000
+			forceTransmissionScaleDown 0.00000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child bm_nytrafflite_11\NYtrafflite_F3_13.child null
+			{
+				pristineMass 11.81668000
+				damagedMass 11.81668000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-2.28587300 -0.06510276 4.42651300
+				}
+			}
+		}
+		group NYtrafflite_11_F2
+		{
+			strength 30.00000000
+			forceTransmissionScaleUp 0.00000000
+			forceTransmissionScaleDown 0.00000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child bm_nytrafflite_11\NYtrafflite_11_F2_14.child null
+			{
+				pristineMass 11.81668000
+				damagedMass 11.81668000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-2.28587300 -0.06510276 4.42651300
+				}
+			}
+		}
+		group NYtrafflite_11_F1
+		{
+			strength 30.00000000
+			forceTransmissionScaleUp 0.00000000
+			forceTransmissionScaleDown 0.00000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child bm_nytrafflite_11\NYtrafflite_11_F1_15.child null
+			{
+				pristineMass 11.81668000
+				damagedMass 11.81668000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-2.28587300 -0.06510276 4.42651300
+				}
+			}
+		}
+		group bulb
+		{
+			strength 100.00000000
+			forceTransmissionScaleUp 0.00000000
+			forceTransmissionScaleDown 0.00000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 1
+			minDamageForce 0.01000000
+			damageHealth 0.01000000
+			child bm_nytrafflite_11\bulb_16.child null
+			{
+				pristineMass 0.93303200
+				damagedMass 0.93303200
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-2.28587300 -0.06510276 4.42651300
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 10
+		{
+			gta_normal_spec_reflect_emissive.sps BM_metal_green2 0.00000000 0.00000000 20.00000000 0.20000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_metal3_s givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_traff_walk 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_concrete1 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_alpha.sps cj_stickers1cj_stickers1_a
+			gta_normal_spec_reflect_emissive.sps BM_traff_colors 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_metal1 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.45000000 givemechecker givemechecker CJ_256_ENV2
+			gta_normal_spec_reflect_emissive.sps BM_sign_36 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps CJ_NY_SIGN20 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_emissivenight.sps BM_NYlamp_bulb 0.00040000 15.00000000
+		}
+	}
+	skel
+	{
+		skel bm_nytrafflite_11\bm_nytrafflite_11.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		2.22564700 0.02916576 -4.21674300
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		2.25634700 -0.00000723 -3.86670800
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		2.23228400 -0.00451024 -1.60737600
+	}
+	3
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		2.25650000 0.00054276 -0.28398420
+	}
+	4
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.09483266 -0.02021924 1.32418800
+	}
+	5
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-7.45141700 -0.02021924 1.33099200
+	}
+	6
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-4.62770200 0.00054276 1.99944200
+	}
+	7
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-2.41890000 0.00054276 0.61941760
+	}
+	8
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-4.68521200 0.00054276 0.66839790
+	}
+	9
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		2.61674500 0.00055076 3.76526000
+	}
+	10
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		2.10601800 0.00046577 5.37607500
+	}
+	11
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		2.61680600 -0.00626124 -1.70032900
+	}
+	12
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		1.89587400 -0.00626124 -1.70032900
+	}
+	13
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-5.06953500 -0.11278020 0.65719890
+	}
+	14
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		1.89042600 -0.12848620 -0.02326107
+	}
+	15
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		1.71348500 0.01198176 -1.61541700
+	}
+	16
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		2.01092500 -0.00032524 5.13928300
+	}
+}
+light
+{
+	light bm_nytrafflite_11\bm_nytrafflite_11.light
+}

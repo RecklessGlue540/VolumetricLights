@@ -1,0 +1,309 @@
+Version 107 11
+NumBones 16
+Flags UnknownFlag0 HaveBoneMappings HaveBoneWorldOrient AuthoredOrientation
+bone BM_NYtraflite3c
+{
+	Flags LockRotX LockRotY LockRotZ LockTransX LockTransY LockTransZ Invisible
+	Index 0
+	Id 0
+	Mirror 0
+	LocalOffset 0.00000000 0.00000000 0.00000000
+	RotationEuler 0.00000000 0.00000000 0.00000000
+	RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+	Scale 0.00000000 0.00000000 0.00000000
+	WorldOffset 0.00000000 0.00000000 0.00000000
+	Orient 0.00000000 0.00000000 0.00000000
+	Sorient 0.00000000 0.00000000 0.00000000
+	TransMin 0.00000000 0.00000000 0.00000000
+	TransMax 0.00000000 0.00000000 0.00000000
+	RotMin -3.14159300 -3.14159300 -3.14159300
+	RotMax 3.14159300 3.14159300 3.14159300
+	Children 1
+	{
+		bone NYtraflite3c_base
+		{
+			Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+			Index 1
+			Id 44151
+			Mirror 1
+			LocalOffset 0.00000000 0.00000000 0.00000000
+			RotationEuler 0.00000000 0.00000000 0.00000000
+			RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+			Scale 0.00000000 0.00000000 0.00000000
+			WorldOffset 0.00000000 0.00000000 0.00000000
+			Orient 0.00000000 0.00000000 0.00000000
+			Sorient 0.00000000 0.00000000 0.00000000
+			TransMin 0.00000000 0.00000000 0.00000000
+			TransMax 0.00000000 0.00000000 0.00000000
+			RotMin -3.14159300 -3.14159300 -3.14159300
+			RotMax 3.14159300 3.14159300 3.14159300
+			Children 1
+			{
+				bone NYtraflite3c_pole
+				{
+					Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+					Index 2
+					Id 41694
+					Mirror 2
+					LocalOffset -0.00869000 -0.03240800 0.66316490
+					RotationEuler 0.00000000 0.00000000 0.00000000
+					RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+					Scale 0.00000000 0.00000000 0.00000000
+					WorldOffset -0.00869000 -0.03240800 0.66316490
+					Orient 0.00000000 0.00000000 0.00000000
+					Sorient 0.00000000 0.00000000 0.00000000
+					TransMin 0.00000000 0.00000000 0.00000000
+					TransMax 0.00000000 0.00000000 0.00000000
+					RotMin -3.14159300 -3.14159300 -3.14159300
+					RotMax 3.14159300 3.14159300 3.14159300
+					Children 6
+					{
+						bone NYtraflite3c_arm
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 3
+							Id 30410
+							Mirror 3
+							LocalOffset 0.00000000 0.00000000 4.24020800
+							RotationEuler 0.00000000 0.00000000 0.00000000
+							RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset -0.00869000 -0.03240800 4.90337300
+							Orient 0.00000000 0.00000000 0.00000000
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+							Children 1
+							{
+								bone NYtraflite3c_brkkt3
+								{
+									Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+									Index 4
+									Id 52954
+									Mirror 4
+									LocalOffset -7.19892900 -6.09040500 2.15310800
+									RotationEuler 0.00000000 0.00000000 0.00000000
+									RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+									Scale 0.00000000 0.00000000 0.00000000
+									WorldOffset -7.20761900 -6.12281300 7.05648100
+									Orient 0.00000000 0.00000000 0.00000000
+									Sorient 0.00000000 0.00000000 0.00000000
+									TransMin 0.00000000 0.00000000 0.00000000
+									TransMax 0.00000000 0.00000000 0.00000000
+									RotMin -3.14159300 -3.14159300 -3.14159300
+									RotMax 3.14159300 3.14159300 3.14159300
+									Children 4
+									{
+										bone NYtraflite3c_lgtbox
+										{
+											Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+											Index 5
+											Id 61302
+											Mirror 5
+											LocalOffset -0.24871400 0.00041800 -0.29279600
+											RotationEuler 0.00000000 0.00000000 -1.57079600
+											RotationQuaternion 0.00000000 0.00000000 -0.70710660 0.70710690
+											Scale 0.00000000 0.00000000 0.00000000
+											WorldOffset -7.45633300 -6.12239500 6.76368500
+											Orient 0.00000000 0.00000000 -1.57079600
+											Sorient 0.00000000 0.00000000 0.00000000
+											TransMin 0.00000000 0.00000000 0.00000000
+											TransMax 0.00000000 0.00000000 0.00000000
+											RotMin -3.14159300 -3.14159300 -3.14159300
+											RotMax 3.14159300 3.14159300 3.14159300
+										}
+										bone NYtraflite3c_lgtbox3
+										{
+											Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+											Index 6
+											Id 50426
+											Mirror 6
+											LocalOffset 0.20303300 -0.00924900 -0.26652200
+											RotationEuler 0.00000000 0.00000000 1.57079600
+											RotationQuaternion 0.00000000 0.00000000 0.70710660 0.70710690
+											Scale 0.00000000 0.00000000 0.00000000
+											WorldOffset -7.00458600 -6.13206200 6.78995900
+											Orient 0.00000000 0.00000000 1.57079600
+											Sorient 0.00000000 0.00000000 0.00000000
+											TransMin 0.00000000 0.00000000 0.00000000
+											TransMax 0.00000000 0.00000000 0.00000000
+											RotMin -3.14159300 -3.14159300 -3.14159300
+											RotMax 3.14159300 3.14159300 3.14159300
+										}
+										bone NYtraflite3c_lgtbox2
+										{
+											Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+											Index 7
+											Id 50425
+											Mirror 7
+											LocalOffset 0.00107600 0.19495200 -0.28241300
+											RotationEuler 0.00000000 0.00000000 3.14159300
+											RotationQuaternion 0.00000000 0.00000000 1.00000000 -0.00000016
+											Scale 0.00000000 0.00000000 0.00000000
+											WorldOffset -7.20654300 -5.92786100 6.77406800
+											Orient 0.00000000 0.00000000 3.14159300
+											Sorient 0.00000000 0.00000000 0.00000000
+											TransMin 0.00000000 0.00000000 0.00000000
+											TransMax 0.00000000 0.00000000 0.00000000
+											RotMin -3.14159300 -3.14159300 -3.14159300
+											RotMax 3.14159300 3.14159300 3.14159300
+										}
+										bone NYtraflite3c_lgtbox1
+										{
+											Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+											Index 8
+											Id 50424
+											Mirror 8
+											LocalOffset -0.00066400 -0.25566300 -0.27895800
+											RotationEuler 0.00000000 0.00000000 0.00000000
+											RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+											Scale 0.00000000 0.00000000 0.00000000
+											WorldOffset -7.20828300 -6.37847600 6.77752300
+											Orient 0.00000000 0.00000000 0.00000000
+											Sorient 0.00000000 0.00000000 0.00000000
+											TransMin 0.00000000 0.00000000 0.00000000
+											TransMax 0.00000000 0.00000000 0.00000000
+											RotMin -3.14159300 -3.14159300 -3.14159300
+											RotMax 3.14159300 3.14159300 3.14159300
+										}
+									}
+								}
+							}
+						}
+						bone NYtraflite3c_brkt2
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 9
+							Id 42406
+							Mirror 9
+							LocalOffset 0.01299700 0.07182900 2.35856200
+							RotationEuler 0.00000000 0.00000000 0.00000000
+							RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset 0.00430700 0.03942100 3.02172700
+							Orient 0.00000000 0.00000000 0.00000000
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+							Children 2
+							{
+								bone NYtraflite3c_pedbx2
+								{
+									Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+									Index 10
+									Id 62660
+									Mirror 10
+									LocalOffset -0.03392400 0.48615300 -0.22908900
+									RotationEuler 0.00000000 0.00000000 0.00000000
+									RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+									Scale 0.00000000 0.00000000 0.00000000
+									WorldOffset -0.02961700 0.52557400 2.79263800
+									Orient 0.00000000 0.00000000 0.00000000
+									Sorient 0.00000000 0.00000000 0.00000000
+									TransMin 0.00000000 0.00000000 0.00000000
+									TransMax 0.00000000 0.00000000 0.00000000
+									RotMin -3.14159300 -3.14159300 -3.14159300
+									RotMax 3.14159300 3.14159300 3.14159300
+								}
+								bone NYtraflite3c_pedbx
+								{
+									Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+									Index 11
+									Id 15418
+									Mirror 11
+									LocalOffset 0.45370500 0.22405200 -0.22908900
+									RotationEuler 0.00000000 0.00000000 0.00000000
+									RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+									Scale 0.00000000 0.00000000 0.00000000
+									WorldOffset 0.45801200 0.26347300 2.79263800
+									Orient 0.00000000 0.00000000 0.00000000
+									Sorient 0.00000000 0.00000000 0.00000000
+									TransMin 0.00000000 0.00000000 0.00000000
+									TransMax 0.00000000 0.00000000 0.00000000
+									RotMin -3.14159300 -3.14159300 -3.14159300
+									RotMax 3.14159300 3.14159300 3.14159300
+								}
+							}
+						}
+						bone NYtraflite3c_brkt
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 12
+							Id 48582
+							Mirror 12
+							LocalOffset 0.01183300 0.05726600 1.91433700
+							RotationEuler 0.00000000 0.00000000 0.00000000
+							RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset 0.00314300 0.02485800 2.57750200
+							Orient 0.00000000 0.00000000 0.00000000
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+						}
+						bone NYtraflite3c_sign2
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 13
+							Id 32807
+							Mirror 13
+							LocalOffset -0.01122300 0.07601200 3.62296400
+							RotationEuler 0.00000000 0.00000000 0.00000000
+							RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset -0.01991300 0.04360400 4.28612900
+							Orient 0.00000000 0.00000000 0.00000000
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+						}
+						bone NYtraflite3c_sign
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 14
+							Id 52055
+							Mirror 14
+							LocalOffset 0.05654900 -0.00232700 3.36759300
+							RotationEuler 0.00000000 0.00000000 0.00000000
+							RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset 0.04785900 -0.03473500 4.03075800
+							Orient 0.00000000 0.00000000 0.00000000
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+						}
+						bone traff_wires02
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 15
+							Id 44728
+							Mirror 15
+							LocalOffset -3.50684700 -2.87276300 6.12641800
+							RotationEuler 0.00000000 0.00000000 0.00000000
+							RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset -3.51553700 -2.90517100 6.78958300
+							Orient 0.00000000 0.00000000 0.00000000
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+						}
+					}
+				}
+			}
+		}
+	}
+}

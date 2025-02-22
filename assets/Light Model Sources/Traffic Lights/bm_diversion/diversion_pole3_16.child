@@ -1,0 +1,92 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 diversion_pole3_16\diversion_pole3_16_high.mesh 11 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center -0.48246600 0.06326900 -0.21598900
+		AABBMin -1.30224600 -0.01566600 -0.90573600
+		AABBMax 0.03277600 0.30619700 0.43390800
+		radius 0.86420800
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 0.68898350
+	WorldRadius 0.96718710
+	AABBMax 0.07377587 0.34719660 0.47490810
+	AABBMin -0.05674707 -0.05275869 -0.94673630
+	Centroid 0.00851540 0.14722200 -0.23590330
+	CenterOfMass 0.00851440 0.08981008 -0.05196557
+	Margin 0.04000000 0.04000000 0.04000000
+	Shrunk 6
+	{
+		7904 -19493 29033
+		-7902 -19493 29033
+		-7902 17757 29033
+		-7380 -25874 -30460
+		7382 -25874 -30460
+		7904 17757 29033
+	}
+	Polygons 5
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 5 0 1 2
+			Siblings 4 1 3 2
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 0 4 3 1
+			Siblings 4 2 3 0
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 4 5 2 3
+			Siblings 4 0 3 1
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 2 1 3 0
+			Siblings 0 1 2 -1
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 5 4 0 0
+			Siblings 2 1 0 -1
+		}
+	}
+	VertexScale 0.00000199 0.00000610 0.00002169
+	VertexOffset 0.00851440 0.14721890 -0.23591410
+	Vertices 6
+	{
+		-12180 -26048 30877
+		12181 -26048 30877
+		12181 26049 30877
+		12181 -26048 -30876
+		-12180 -26048 -30876
+		-12180 26049 30877
+	}
+	Materials 1
+	{
+		70 0 512
+	}
+}

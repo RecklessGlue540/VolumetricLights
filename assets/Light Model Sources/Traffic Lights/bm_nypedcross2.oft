@@ -1,0 +1,208 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 1752
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass 0.04421112 -0.03500698 1.02153700
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group BM_NYpedcross2
+	{
+		strength 100.00000000
+		forceTransmissionScaleUp 0.10000000
+		forceTransmissionScaleDown 0.10000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child bm_nypedcross2\BM_NYpedcross2_0.child null
+		{
+			pristineMass 50.00000000
+			damagedMass 17.94000000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-0.00973626 -0.02186037 0.37747250
+			}
+		}
+		group NYpedcross2_Base
+		{
+			strength 30.00000000
+			forceTransmissionScaleUp 1.00000000
+			forceTransmissionScaleDown 1.00000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 30.00000000
+			damageHealth 30.00000000
+			child bm_nypedcross2\NYpedcross2_Base_1.child null
+			{
+				pristineMass 50.00000000
+				damagedMass 25.62857000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-0.00973626 -0.02186037 0.37747250
+				}
+			}
+			group NYpedcross2_pole
+			{
+				strength 20.00000000
+				forceTransmissionScaleUp 0.10000000
+				forceTransmissionScaleDown 1.00000000
+				jointStiffness 0.00000000
+				minSoftAngle1 -1.00000000
+				maxSoftAngle1 1.00000000
+				maxSoftAngle2 1.00000000
+				maxSoftAngle3 1.00000000
+				rotationSpeed 0.00000000
+				rotationStrength 0.00000000
+				restoringStrength 0.00000000
+				restoringMaxTorque 0.00000000
+				latchStrength 0.00000000
+				disappearsWhenDead 0
+				minDamageForce 10.00000000
+				damageHealth 10.00000000
+				child bm_nypedcross2\NYpedcross2_pole_2.child null
+				{
+					pristineMass 100.00000000
+					damagedMass 76.21872000
+					f50 [Temporarily|Unknown]
+					{
+						1.00000000 0.00000000 0.00000000
+						0.00000000 1.00000000 0.00000000
+						0.00000000 0.00000000 1.00000000
+						-0.00973626 -0.02186037 0.37747250
+					}
+				}
+				group NYpedcross2_pedbox
+				{
+					strength 1.00000000
+					forceTransmissionScaleUp 0.01000000
+					forceTransmissionScaleDown 0.01000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 1.00000000
+					damageHealth 1.00000000
+					child bm_nypedcross2\NYpedcross2_pedbox_3.child null
+					{
+						pristineMass 30.00000000
+						damagedMass 31.53194000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.00973626 -0.02186037 0.37747250
+						}
+					}
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 8
+		{
+			gta_normal_spec_reflect_emissive.sps BM_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_concrete1_n givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamppost_base 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamppost_base givemechecker
+			gta_decal.sps cj_stickers1cj_stickers1_a
+			gta_decal.sps BM_sticker2
+			gta_normal_spec_reflect_emissive.sps BM_traff_lights 0.00000000 0.00000000 60.00000000 0.60000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker bm_traff_lights_s givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_3 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamp_3_s givemechecker
+			gta_decal.sps CJ_POSTER_4cj_poster_4_a
+			gta_normal_spec_reflect_emissive.sps BM_traff_walk 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		}
+	}
+	skel
+	{
+		skel bm_nypedcross2\bm_nypedcross2.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00521774 -0.01495563 -0.45198850
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00671526 0.02546137 -0.37748550
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00344674 -0.00825763 1.63253300
+	}
+	3
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.33115320 -0.02518863 2.43443400
+	}
+}

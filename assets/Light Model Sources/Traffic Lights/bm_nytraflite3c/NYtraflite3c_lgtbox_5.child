@@ -1,0 +1,102 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 NYtraflite3c_lgtbox_5\NYtraflite3c_lgtbox_5_high.mesh 5 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center -0.04192500 -0.00110400 -0.43902400
+		AABBMin -0.26221500 -0.13690400 -0.92039600
+		AABBMax 0.15095500 0.13690400 0.05426700
+		radius 0.50723900
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 0.52979990
+	WorldRadius 0.97523010
+	AABBMax 0.17790380 0.19200860 0.09527169
+	AABBMin -0.17790370 -0.31283530 -0.97791780
+	Centroid 0.00000273 -0.06040949 -0.44131480
+	CenterOfMass -0.00001186 -0.06040596 -0.44132910
+	Margin 0.04000000 0.04000000 0.04000000
+	Shrunk 8
+	{
+		17846 21822 -26157
+		17839 -11819 -27605
+		-17845 -11820 -27605
+		-17843 21822 -26157
+		17846 11822 27607
+		-17843 11822 27607
+		-17845 -21819 26159
+		17836 -21820 26157
+	}
+	Polygons 6
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 2 3 0 1
+			Siblings 3 2 5 4
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 5 6 7 4
+			Siblings 3 4 5 2
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 5 4 0 3
+			Siblings 1 5 0 3
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 2 6 5 3
+			Siblings 4 1 2 0
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 1 7 6 2
+			Siblings 5 1 3 0
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 0 4 7 1
+			Siblings 2 1 4 0
+		}
+	}
+	VertexScale 0.00000543 0.00000770 0.00001638
+	VertexOffset 0.00000001 -0.06041335 -0.44132300
+	Vertices 8
+	{
+		25215 27445 -28369
+		25205 -16538 -30262
+		-25214 -16539 -30262
+		-25211 27445 -28369
+		25215 16540 30263
+		-25211 16540 30263
+		-25214 -27443 28370
+		25202 -27444 28367
+	}
+	Materials 1
+	{
+		70 0 16896
+	}
+}

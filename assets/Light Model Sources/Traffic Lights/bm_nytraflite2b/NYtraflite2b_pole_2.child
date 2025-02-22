@@ -1,0 +1,246 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 NYtraflite2b_pole_2\NYtraflite2b_pole_2_high.mesh 2 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center -0.01737200 -0.02281400 2.98831200
+		AABBMin -0.43359800 -0.44794300 -0.27044400
+		AABBMax 0.38057400 0.49826800 6.24706800
+		radius 3.25884800
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 3.17413000
+	WorldRadius 6.25140200
+	AABBMax 0.42157420 0.53926670 6.29102200
+	AABBMin -0.47459750 -0.48894370 -0.13355980
+	Centroid -0.00438601 -0.00215460 3.07726800
+	CenterOfMass -0.00623215 0.00030235 2.87224000
+	Margin 0.02000000 0.02000000 0.02000000
+	Shrunk 20
+	{
+		-447 23 32145
+		-4894 -7388 -32143
+		-428 -3474 32145
+		8143 -7367 -32143
+		3687 -3471 32145
+		8093 3939 -32143
+		3667 26 32145
+		-4943 3919 -32143
+		27241 -26797 28221
+		27023 -26956 28221
+		-26042 27675 28220
+		-25796 27853 28220
+		26457 -27370 28038
+		-26372 27435 28034
+		-706 -2903 28053
+		3972 -3721 28027
+		3945 -801 28068
+		-743 279 27919
+		-679 -937 28369
+		3917 -2456 28371
+	}
+	Polygons 26
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 14 2 0 18
+			Siblings 1 4 3 18
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 14 19 4 2
+			Siblings 5 2 4 0
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 19 16 6 4
+			Siblings 6 3 4 1
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 16 18 0 6
+			Siblings 19 0 4 2
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 0 2 4 6
+			Siblings 0 1 2 3
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 19 14 8 0
+			Siblings 1 9 24 -1
+		}
+		Polygon 6
+		{
+			Material 0
+			Vertices 16 19 9 0
+			Siblings 2 24 8 -1
+		}
+		Polygon 7
+		{
+			Material 0
+			Vertices 15 16 12 0
+			Siblings 16 8 10 -1
+		}
+		Polygon 8
+		{
+			Material 0
+			Vertices 9 12 16 0
+			Siblings 11 7 6 -1
+		}
+		Polygon 9
+		{
+			Material 0
+			Vertices 14 15 8 0
+			Siblings 15 10 5 -1
+		}
+		Polygon 10
+		{
+			Material 0
+			Vertices 12 8 15 0
+			Siblings 11 9 7 -1
+		}
+		Polygon 11
+		{
+			Material 0
+			Vertices 8 12 9 0
+			Siblings 10 8 24 -1
+		}
+		Polygon 12
+		{
+			Material 0
+			Vertices 13 10 11 0
+			Siblings 22 25 20 -1
+		}
+		Polygon 13
+		{
+			Material 0
+			Vertices 3 1 7 5
+			Siblings 15 14 17 16
+		}
+		Polygon 14
+		{
+			Material 0
+			Vertices 7 1 14 17
+			Siblings 13 15 23 17
+		}
+		Polygon 15
+		{
+			Material 0
+			Vertices 14 1 3 15
+			Siblings 14 13 16 9
+		}
+		Polygon 16
+		{
+			Material 0
+			Vertices 5 16 15 3
+			Siblings 17 7 15 13
+		}
+		Polygon 17
+		{
+			Material 0
+			Vertices 7 17 16 5
+			Siblings 14 21 16 13
+		}
+		Polygon 18
+		{
+			Material 0
+			Vertices 10 14 18 0
+			Siblings 23 0 25 -1
+		}
+		Polygon 19
+		{
+			Material 0
+			Vertices 11 18 16 0
+			Siblings 25 3 20 -1
+		}
+		Polygon 20
+		{
+			Material 0
+			Vertices 11 16 13 0
+			Siblings 19 21 12 -1
+		}
+		Polygon 21
+		{
+			Material 0
+			Vertices 17 13 16 0
+			Siblings 22 20 17 -1
+		}
+		Polygon 22
+		{
+			Material 0
+			Vertices 13 17 10 0
+			Siblings 21 23 12 -1
+		}
+		Polygon 23
+		{
+			Material 0
+			Vertices 14 10 17 0
+			Siblings 18 22 14 -1
+		}
+		Polygon 24
+		{
+			Material 0
+			Vertices 9 19 8 0
+			Siblings 6 5 11 -1
+		}
+		Polygon 25
+		{
+			Material 0
+			Vertices 11 10 18 0
+			Siblings 12 18 19 -1
+		}
+	}
+	VertexScale 0.00001367 0.00001569 0.00009803
+	VertexOffset -0.02651167 0.02516152 3.07873100
+	Vertices 20
+	{
+		-1901 1283 32349
+		-6365 -8677 -32348
+		-1874 -4742 32349
+		9626 -8654 -32348
+		5141 -4732 32349
+		9563 5227 -32348
+		5113 1293 32349
+		-6428 5205 -32348
+		24928 -30153 28419
+		29769 -26613 28419
+		-29768 26624 28419
+		-24918 30154 28419
+		27348 -28383 27636
+		-27343 28389 27636
+		-2157 -4990 28081
+		5474 -5024 27561
+		5394 1541 28081
+		-2238 1574 27561
+		-2138 1488 28562
+		5375 -4937 28562
+	}
+	Materials 1
+	{
+		0 0 16896
+	}
+}

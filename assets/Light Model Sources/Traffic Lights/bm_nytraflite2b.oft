@@ -1,0 +1,728 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 6712
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass -2.85345300 -2.29644200 4.58902700
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group BM_NYtraflite2b
+	{
+		strength -1.00000000
+		forceTransmissionScaleUp 0.00100000
+		forceTransmissionScaleDown 0.00100000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child bm_nytraflite2b\BM_NYtraflite2b_0.child null
+		{
+			pristineMass 18.68169000
+			damagedMass 18.68169000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-0.06100330 -0.09011188 0.42167140
+			}
+		}
+		group NYtraflite2b_base
+		{
+			strength 300.00000000
+			forceTransmissionScaleUp 0.50000000
+			forceTransmissionScaleDown 0.10000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child bm_nytraflite2b\NYtraflite2b_base_1.child null
+			{
+				pristineMass 200.00000000
+				damagedMass 200.00000000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-0.06100330 -0.09011188 0.42167140
+				}
+			}
+			group NYtraflite2b_pole
+			{
+				strength 40.00000000
+				forceTransmissionScaleUp 0.20000000
+				forceTransmissionScaleDown 0.20000000
+				jointStiffness 0.00000000
+				minSoftAngle1 -1.00000000
+				maxSoftAngle1 1.00000000
+				maxSoftAngle2 1.00000000
+				maxSoftAngle3 1.00000000
+				rotationSpeed 0.00000000
+				rotationStrength 0.00000000
+				restoringStrength 0.00000000
+				restoringMaxTorque 0.00000000
+				latchStrength 0.00000000
+				disappearsWhenDead 0
+				minDamageForce 100.00000000
+				damageHealth 1000.00000000
+				child bm_nytraflite2b\NYtraflite2b_pole_2.child null
+				{
+					pristineMass 160.00000000
+					damagedMass 160.00000000
+					f50 [Temporarily|Unknown]
+					{
+						1.00000000 0.00000000 0.00000000
+						0.00000000 1.00000000 0.00000000
+						0.00000000 0.00000000 1.00000000
+						-0.06100330 -0.09011188 0.42167140
+					}
+				}
+				group NYtraflite2b_brkt2
+				{
+					strength 30.00000000
+					forceTransmissionScaleUp 0.25000000
+					forceTransmissionScaleDown 0.25000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nytraflite2b\NYtraflite2b_brkt2_3.child null
+					{
+						pristineMass 7.99999900
+						damagedMass 7.99999900
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.06100330 -0.09011188 0.42167140
+						}
+					}
+					group NYtraflite2b_pedbx2
+					{
+						strength 30.00000000
+						forceTransmissionScaleUp 0.00100000
+						forceTransmissionScaleDown 0.00100000
+						jointStiffness 0.00000000
+						minSoftAngle1 -1.00000000
+						maxSoftAngle1 1.00000000
+						maxSoftAngle2 1.00000000
+						maxSoftAngle3 1.00000000
+						rotationSpeed 0.00000000
+						rotationStrength 0.00000000
+						restoringStrength 0.00000000
+						restoringMaxTorque 0.00000000
+						latchStrength 0.00000000
+						disappearsWhenDead 0
+						minDamageForce 100.00000000
+						damageHealth 1000.00000000
+						child bm_nytraflite2b\NYtraflite2b_pedbx2_4.child null
+						{
+							pristineMass 30.00000000
+							damagedMass 30.00000000
+							f50 [Temporarily|Unknown]
+							{
+								1.00000000 0.00000000 0.00000000
+								0.00000000 1.00000000 0.00000000
+								0.00000000 0.00000000 1.00000000
+								-0.06100330 -0.09011188 0.42167140
+							}
+						}
+					}
+					group NYtraflite2b_pedbx
+					{
+						strength 30.00000000
+						forceTransmissionScaleUp 0.00100000
+						forceTransmissionScaleDown 0.00100000
+						jointStiffness 0.00000000
+						minSoftAngle1 -1.00000000
+						maxSoftAngle1 1.00000000
+						maxSoftAngle2 1.00000000
+						maxSoftAngle3 1.00000000
+						rotationSpeed 0.00000000
+						rotationStrength 0.00000000
+						restoringStrength 0.00000000
+						restoringMaxTorque 0.00000000
+						latchStrength 0.00000000
+						disappearsWhenDead 0
+						minDamageForce 100.00000000
+						damageHealth 1000.00000000
+						child bm_nytraflite2b\NYtraflite2b_pedbx_5.child null
+						{
+							pristineMass 30.00000000
+							damagedMass 30.00000000
+							f50 [Temporarily|Unknown]
+							{
+								1.00000000 0.00000000 0.00000000
+								0.00000000 1.00000000 0.00000000
+								0.00000000 0.00000000 1.00000000
+								-0.06100330 -0.09011188 0.42167140
+							}
+						}
+					}
+				}
+				group NYtraflite2b_brkt
+				{
+					strength 30.00000000
+					forceTransmissionScaleUp 0.00100000
+					forceTransmissionScaleDown 0.00100000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nytraflite2b\NYtraflite2b_brkt_6.child null
+					{
+						pristineMass 7.99999900
+						damagedMass 7.99999900
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.06100330 -0.09011188 0.42167140
+						}
+					}
+				}
+				group NYtraflite2b_light
+				{
+					strength 40.00000000
+					forceTransmissionScaleUp 0.00100000
+					forceTransmissionScaleDown 0.00100000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nytraflite2b\NYtraflite2b_light_7.child null
+					{
+						pristineMass 40.00000000
+						damagedMass 40.00000000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.06100330 -0.09011188 0.42167140
+						}
+					}
+					group NYtraflite2b_bulb
+					{
+						strength 100.00000000
+						forceTransmissionScaleUp 0.00000000
+						forceTransmissionScaleDown 0.00000000
+						jointStiffness 0.00000000
+						minSoftAngle1 -1.00000000
+						maxSoftAngle1 1.00000000
+						maxSoftAngle2 1.00000000
+						maxSoftAngle3 1.00000000
+						rotationSpeed 0.00000000
+						rotationStrength 0.00000000
+						restoringStrength 0.00000000
+						restoringMaxTorque 0.00000000
+						latchStrength 0.00000000
+						disappearsWhenDead 1
+						minDamageForce 0.00100000
+						damageHealth 0.00100000
+						child bm_nytraflite2b\NYtraflite2b_bulb_8.child null
+						{
+							pristineMass 5.00000000
+							damagedMass 5.00000000
+							f50 [Temporarily|Unknown]
+							{
+								1.00000000 0.00000000 0.00000000
+								0.00000000 1.00000000 0.00000000
+								0.00000000 0.00000000 1.00000000
+								-0.06100330 -0.09011188 0.42167140
+							}
+						}
+					}
+				}
+				group NYtraflite2b_arm
+				{
+					strength 50.00000000
+					forceTransmissionScaleUp 0.00100000
+					forceTransmissionScaleDown 0.00100000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nytraflite2b\NYtraflite2b_arm_9.child null
+					{
+						pristineMass 64.99999000
+						damagedMass 64.99999000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.06100330 -0.09011188 0.42167140
+						}
+					}
+					group NYtraflite2b_brkt3
+					{
+						strength 30.00000000
+						forceTransmissionScaleUp 0.00100000
+						forceTransmissionScaleDown 0.00100000
+						jointStiffness 0.00000000
+						minSoftAngle1 -1.00000000
+						maxSoftAngle1 1.00000000
+						maxSoftAngle2 1.00000000
+						maxSoftAngle3 1.00000000
+						rotationSpeed 0.00000000
+						rotationStrength 0.00000000
+						restoringStrength 0.00000000
+						restoringMaxTorque 0.00000000
+						latchStrength 0.00000000
+						disappearsWhenDead 0
+						minDamageForce 100.00000000
+						damageHealth 1000.00000000
+						child bm_nytraflite2b\NYtraflite2b_brkt3_10.child null
+						{
+							pristineMass 7.99999900
+							damagedMass 7.99999900
+							f50 [Temporarily|Unknown]
+							{
+								1.00000000 0.00000000 0.00000000
+								0.00000000 1.00000000 0.00000000
+								0.00000000 0.00000000 1.00000000
+								-0.06100330 -0.09011188 0.42167140
+							}
+						}
+						group NYtraflite2b_lgtbox
+						{
+							strength 40.00000000
+							forceTransmissionScaleUp 0.00100000
+							forceTransmissionScaleDown 0.00100000
+							jointStiffness 0.00000000
+							minSoftAngle1 -1.00000000
+							maxSoftAngle1 1.00000000
+							maxSoftAngle2 1.00000000
+							maxSoftAngle3 1.00000000
+							rotationSpeed 0.00000000
+							rotationStrength 0.00000000
+							restoringStrength 0.00000000
+							restoringMaxTorque 0.00000000
+							latchStrength 0.00000000
+							disappearsWhenDead 0
+							minDamageForce 100.00000000
+							damageHealth 1000.00000000
+							child bm_nytraflite2b\NYtraflite2b_lgtbox_11.child null
+							{
+								pristineMass 30.00000000
+								damagedMass 30.00000000
+								f50 [Temporarily|Unknown]
+								{
+									1.00000000 0.00000000 0.00000000
+									0.00000000 1.00000000 0.00000000
+									0.00000000 0.00000000 1.00000000
+									-0.06100330 -0.09011188 0.42167140
+								}
+							}
+						}
+						group NYtraflite2b_lgtbox2
+						{
+							strength 40.00000000
+							forceTransmissionScaleUp 0.00100000
+							forceTransmissionScaleDown 0.00100000
+							jointStiffness 0.00000000
+							minSoftAngle1 -1.00000000
+							maxSoftAngle1 1.00000000
+							maxSoftAngle2 1.00000000
+							maxSoftAngle3 1.00000000
+							rotationSpeed 0.00000000
+							rotationStrength 0.00000000
+							restoringStrength 0.00000000
+							restoringMaxTorque 0.00000000
+							latchStrength 0.00000000
+							disappearsWhenDead 0
+							minDamageForce 100.00000000
+							damageHealth 1000.00000000
+							child bm_nytraflite2b\NYtraflite2b_lgtbox2_12.child null
+							{
+								pristineMass 30.00000000
+								damagedMass 30.00000000
+								f50 [Temporarily|Unknown]
+								{
+									1.00000000 0.00000000 0.00000000
+									0.00000000 1.00000000 0.00000000
+									0.00000000 0.00000000 1.00000000
+									-0.06100330 -0.09011188 0.42167140
+								}
+							}
+						}
+						group NYtraflite2b_lgtbox3
+						{
+							strength 40.00000000
+							forceTransmissionScaleUp 0.00100000
+							forceTransmissionScaleDown 0.00100000
+							jointStiffness 0.00000000
+							minSoftAngle1 -1.00000000
+							maxSoftAngle1 1.00000000
+							maxSoftAngle2 1.00000000
+							maxSoftAngle3 1.00000000
+							rotationSpeed 0.00000000
+							rotationStrength 0.00000000
+							restoringStrength 0.00000000
+							restoringMaxTorque 0.00000000
+							latchStrength 0.00000000
+							disappearsWhenDead 0
+							minDamageForce 100.00000000
+							damageHealth 1000.00000000
+							child bm_nytraflite2b\NYtraflite2b_lgtbox3_13.child null
+							{
+								pristineMass 30.00000000
+								damagedMass 30.00000000
+								f50 [Temporarily|Unknown]
+								{
+									1.00000000 0.00000000 0.00000000
+									0.00000000 1.00000000 0.00000000
+									0.00000000 0.00000000 1.00000000
+									-0.06100330 -0.09011188 0.42167140
+								}
+							}
+						}
+					}
+				}
+				group NYtraflite2b_sign
+				{
+					strength 30.00000000
+					forceTransmissionScaleUp 0.00100000
+					forceTransmissionScaleDown 0.00100000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nytraflite2b\NYtraflite2b_sign_14.child null
+					{
+						pristineMass 9.99999900
+						damagedMass 9.99999900
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.06100330 -0.09011188 0.42167140
+						}
+					}
+				}
+				group NYtraflite2b_sign2
+				{
+					strength 30.00000000
+					forceTransmissionScaleUp 0.00100000
+					forceTransmissionScaleDown 0.00100000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 0
+					minDamageForce 100.00000000
+					damageHealth 1000.00000000
+					child bm_nytraflite2b\NYtraflite2b_sign2_15.child null
+					{
+						pristineMass 9.99999900
+						damagedMass 9.99999900
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.06100330 -0.09011188 0.42167140
+						}
+					}
+				}
+				group traff_wires
+				{
+					strength 20.00000000
+					forceTransmissionScaleUp 0.00000000
+					forceTransmissionScaleDown 0.00000000
+					jointStiffness 0.00000000
+					minSoftAngle1 -1.00000000
+					maxSoftAngle1 1.00000000
+					maxSoftAngle2 1.00000000
+					maxSoftAngle3 1.00000000
+					rotationSpeed 0.00000000
+					rotationStrength 0.00000000
+					restoringStrength 0.00000000
+					restoringMaxTorque 0.00000000
+					latchStrength 0.00000000
+					disappearsWhenDead 1
+					minDamageForce 1.00000000
+					damageHealth 1.00000000
+					child bm_nytraflite2b\traff_wires_16.child null
+					{
+						pristineMass 62.11940000
+						damagedMass 62.11940000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.06100330 -0.09011188 0.42167140
+						}
+					}
+					child bm_nytraflite2b\traff_wires_17.child null
+					{
+						pristineMass 62.11940000
+						damagedMass 62.11940000
+						f50 [Temporarily|Unknown]
+						{
+							1.00000000 0.00000000 0.00000000
+							0.00000000 1.00000000 0.00000000
+							0.00000000 0.00000000 1.00000000
+							-0.06100330 -0.09011188 0.42167140
+						}
+					}
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 11
+		{
+			gta_normal_spec_reflect_emissive.sps BM_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_concrete1_n givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamppost_base 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamppost_base givemechecker
+			gta_decal.sps cj_stickers1cj_stickers1_a
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_3 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamp_3_s givemechecker
+			gta_normal_spec_reflect_emissive.sps EC_NYlamp_strap 0.00000000 0.00000000 50.00000000 1.00000000 1.00000000;0.00000000;0.00000000 0.00000000 0.45000000 givemechecker EC_NYlamp_strap BM_air_enviro
+			gta_decal.sps bm_poster4bm_poster4_a
+			gta_normal_spec_reflect_emissive.sps BM_traff_lights 0.00000000 0.00000000 60.00000000 0.60000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker bm_traff_lights_s givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_traff_walk 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_emissivenight.sps BM_NYlamp_bulb 0.00040000 10.00000000
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_emissivestrong.sps BM_traff_colors 0.00040000 10.00000000
+		}
+	}
+	skel
+	{
+		skel bm_nytraflite2b\bm_nytraflite2b.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.04587629 0.05427387 -0.49708740
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.06100330 0.08988187 -0.42167140
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.05231229 0.05747487 0.24149360
+	}
+	3
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.27258530 0.35792790 2.59984700
+	}
+	4
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.51901630 0.35377390 2.37096700
+	}
+	5
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.03138829 0.61591990 2.37096700
+	}
+	6
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.27258530 0.35792790 2.15583100
+	}
+	7
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-2.32129900 0.03878587 8.54547300
+	}
+	8
+	{
+		0.98480770 0.00000000 -0.17364860
+		0.00000000 1.00000000 0.00000000
+		0.17364860 0.00000000 0.98480770
+		-2.34733800 0.03041087 8.54320100
+	}
+	9
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.05231229 0.05747487 3.82035900
+	}
+	10
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-7.18453300 -6.15146500 6.42572500
+	}
+	11
+	{
+		0.00000031 1.00000000 0.00000000
+		-1.00000000 0.00000031 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-7.08933000 -6.16071200 6.37402500
+	}
+	12
+	{
+		-1.00000000 -0.00000033 0.00000000
+		0.00000033 -1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-7.29128800 -5.95650900 6.35813400
+	}
+	13
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-7.29302800 -6.40712600 6.36158900
+	}
+	14
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.46471830 0.05514588 3.60908600
+	}
+	15
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.04317229 0.47501890 3.86445800
+	}
+	16
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-7.23765000 -6.09705400 6.65414700
+	}
+	17
+	{
+		0.64278800 -0.76604400 0.00000000
+		0.76604400 0.64278800 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.02039203 0.04915777 6.13571500
+	}
+}
+light
+{
+	light bm_nytraflite2b\bm_nytraflite2b.light
+}

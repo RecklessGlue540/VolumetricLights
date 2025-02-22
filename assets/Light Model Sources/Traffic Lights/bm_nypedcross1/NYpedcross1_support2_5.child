@@ -1,0 +1,140 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 NYpedcross1_support2_5\NYpedcross1_support2_5_high.mesh 5 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center 0.15499500 0.23388000 -0.00020900
+		AABBMin -0.04087800 -0.03065300 -0.02289300
+		AABBMax 0.45542900 0.48790000 0.02247600
+		radius 0.30288200
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 0.21188770
+	WorldRadius 0.40846180
+	AABBMax 0.35864210 0.37483390 0.05644949
+	AABBMin -0.07311769 -0.05935808 -0.05656668
+	Centroid 0.10787250 0.16416510 0.00739899
+	CenterOfMass 0.09977041 0.15681330 0.00122368
+	Margin 0.01000000 0.01000000 0.01000000
+	Shrunk 9
+	{
+		25016 -642 3145
+		25010 -1672 3193
+		-23072 24480 -313
+		25013 -1189 -555
+		-23947 24195 3169
+		-22664 24613 3175
+		-21441 -24678 3180
+		-21625 -24573 3183
+		-21799 -24472 965
+	}
+	Polygons 12
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 6 1 0 5
+			Siblings 11 2 10 5
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 8 2 3 0
+			Siblings 7 10 9 -1
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 1 3 0 0
+			Siblings 9 10 0 -1
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 4 5 2 0
+			Siblings 5 10 6 -1
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 6 8 7 0
+			Siblings 7 8 11 -1
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 4 6 5 0
+			Siblings 6 0 3 -1
+		}
+		Polygon 6
+		{
+			Material 0
+			Vertices 4 2 6 0
+			Siblings 3 7 5 -1
+		}
+		Polygon 7
+		{
+			Material 0
+			Vertices 8 6 2 0
+			Siblings 4 6 1 -1
+		}
+		Polygon 8
+		{
+			Material 0
+			Vertices 7 8 1 0
+			Siblings 4 9 11 -1
+		}
+		Polygon 9
+		{
+			Material 0
+			Vertices 3 1 8 0
+			Siblings 2 8 1 -1
+		}
+		Polygon 10
+		{
+			Material 0
+			Vertices 0 3 2 5
+			Siblings 2 1 3 0
+		}
+		Polygon 11
+		{
+			Material 0
+			Vertices 7 1 6 0
+			Siblings 8 0 4 -1
+		}
+	}
+	VertexScale 0.00000659 0.00000663 0.00000172
+	VertexOffset 0.14276220 0.15773790 -0.00005859
+	Vertices 9
+	{
+		26544 1128 8941
+		26518 -3512 8993
+		-24023 25759 -8992
+		26531 -1192 -8992
+		-26543 24939 8957
+		-21504 26579 8977
+		-23988 -24960 8993
+		-21170 -26578 8941
+		-22579 -25769 -8992
+	}
+	Materials 1
+	{
+		70 0 16896
+	}
+}

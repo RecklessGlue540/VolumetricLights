@@ -1,0 +1,123 @@
+Version 107 11
+NumBones 6
+Flags UnknownFlag0 HaveBoneMappings HaveBoneWorldOrient AuthoredOrientation
+bone BM_NYtraflite6d2
+{
+	Flags LockRotX LockRotY LockRotZ LockTransX LockTransY LockTransZ Invisible
+	Index 0
+	Id 0
+	Mirror 0
+	LocalOffset 0.00000000 0.00000000 0.00000000
+	RotationEuler 0.00000000 0.00000000 0.00000000
+	RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+	Scale 0.00000000 0.00000000 0.00000000
+	WorldOffset 0.00000000 0.00000000 0.00000000
+	Orient 0.00000000 0.00000000 0.00000000
+	Sorient 0.00000000 0.00000000 0.00000000
+	TransMin 0.00000000 0.00000000 0.00000000
+	TransMax 0.00000000 0.00000000 0.00000000
+	RotMin -3.14159300 -3.14159300 -3.14159300
+	RotMax 3.14159300 3.14159300 3.14159300
+	Children 1
+	{
+		bone NYtraflite6d2_Base
+		{
+			Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+			Index 1
+			Id 6307
+			Mirror 1
+			LocalOffset 0.00000000 0.00000000 0.00000000
+			RotationEuler 0.00000000 0.00000000 0.00000000
+			RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+			Scale 0.00000000 0.00000000 0.00000000
+			WorldOffset 0.00000000 0.00000000 0.00000000
+			Orient 0.00000000 0.00000000 0.00000000
+			Sorient 0.00000000 0.00000000 0.00000000
+			TransMin 0.00000000 0.00000000 0.00000000
+			TransMax 0.00000000 0.00000000 0.00000000
+			RotMin -3.14159300 -3.14159300 -3.14159300
+			RotMax 3.14159300 3.14159300 3.14159300
+			Children 1
+			{
+				bone NYtraflite6d2_pole
+				{
+					Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+					Index 2
+					Id 4132
+					Mirror 2
+					LocalOffset -0.00869800 -0.03240800 0.66177500
+					RotationEuler 0.00000000 0.00000000 0.00000000
+					RotationQuaternion 0.00000000 0.00000000 0.00000000 1.00000000
+					Scale 0.00000000 0.00000000 0.00000000
+					WorldOffset -0.00869800 -0.03240800 0.66177500
+					Orient 0.00000000 0.00000000 0.00000000
+					Sorient 0.00000000 0.00000000 0.00000000
+					TransMin 0.00000000 0.00000000 0.00000000
+					TransMax 0.00000000 0.00000000 0.00000000
+					RotMin -3.14159300 -3.14159300 -3.14159300
+					RotMax 3.14159300 3.14159300 3.14159300
+					Children 2
+					{
+						bone NYtraflite6d2_pedbox
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 3
+							Id 36245
+							Mirror 3
+							LocalOffset -0.02087400 0.38191900 1.89960500
+							RotationEuler 0.00000000 0.00000000 3.14159300
+							RotationQuaternion 0.00000000 0.00000000 1.00000000 -0.00000016
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset -0.02957200 0.34951100 2.56138000
+							Orient 0.00000000 0.00000000 3.14159300
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+						}
+						bone NYtraflite6d2_armpole
+						{
+							Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+							Index 4
+							Id 21310
+							Mirror 4
+							LocalOffset 0.13311800 0.01335300 4.33901200
+							RotationEuler 0.00000000 0.00000000 3.14159300
+							RotationQuaternion 0.00000000 0.00000000 1.00000000 -0.00000016
+							Scale 0.00000000 0.00000000 0.00000000
+							WorldOffset 0.12442000 -0.01905500 5.00078700
+							Orient 0.00000000 0.00000000 3.14159300
+							Sorient 0.00000000 0.00000000 0.00000000
+							TransMin 0.00000000 0.00000000 0.00000000
+							TransMax 0.00000000 0.00000000 0.00000000
+							RotMin -3.14159300 -3.14159300 -3.14159300
+							RotMax 3.14159300 3.14159300 3.14159300
+							Children 1
+							{
+								bone NYtraflite6d2_traflite
+								{
+									Flags LockRotXYZ LockRotX LockRotY LockRotZ Invisible
+									Index 5
+									Id 55423
+									Mirror 5
+									LocalOffset -4.10046400 0.02180600 0.74021290
+									RotationEuler 0.00000000 0.00000000 -3.14159300
+									RotationQuaternion 0.00000000 0.00000000 1.00000000 0.00000016
+									Scale 0.00000000 0.00000000 0.00000000
+									WorldOffset 4.22488400 -0.04085966 5.74100000
+									Orient 0.00000000 0.00000000 -3.14159300
+									Sorient 0.00000000 0.00000000 0.00000000
+									TransMin 0.00000000 0.00000000 0.00000000
+									TransMax 0.00000000 0.00000000 0.00000000
+									RotMin -3.14159300 -3.14159300 -3.14159300
+									RotMax 3.14159300 3.14159300 3.14159300
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

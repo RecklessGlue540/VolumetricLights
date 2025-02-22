@@ -1,0 +1,178 @@
+Version 1 10
+{
+	Attribute 0
+	{
+		Position -4.41185000 -0.22490300 5.35808000
+		Direction 0.00000000 -0.96592500 -0.25881900
+		Origin 0.00000000 0.25881900 -0.96592500
+		Color 0 255 0 0
+		_f28 100.00000000
+		_f2C 1.00000000
+		_f30 1.00000000
+		Distance 10.00000000
+		Range 8.00000000
+		CoronaSize 0.00000000
+		HotSpot 60.00000000
+		Falloff 65.00000000
+		Flags 64
+		CoronaHash 3191162493
+		LuminescenceHash 0
+		TypeFlags f0 f1 f2
+		Type Spot
+		_f58 1.00000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 0
+		_f66 0
+	}
+	Attribute 1
+	{
+		Position -4.41185000 -0.22490400 6.13251000
+		Direction 0.00000000 -0.96592500 -0.25881900
+		Origin 0.00000000 0.25881900 -0.96592500
+		Color 255 0 0 0
+		_f28 100.00000000
+		_f2C 1.00000000
+		_f30 1.00000000
+		Distance 10.00000000
+		Range 8.00000000
+		CoronaSize 0.00000000
+		HotSpot 60.00000000
+		Falloff 65.00000000
+		Flags 64
+		CoronaHash 3191162493
+		LuminescenceHash 0
+		TypeFlags f0 f1 f2
+		Type Spot
+		_f58 1.00000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 0
+		_f66 0
+	}
+	Attribute 2
+	{
+		Position -4.41185000 -0.22496800 5.74211000
+		Direction 0.00000000 -0.96592500 -0.25881900
+		Origin 0.00000000 0.25881900 -0.96592500
+		Color 255 128 0 0
+		_f28 100.00000000
+		_f2C 1.00000000
+		_f30 1.00000000
+		Distance 10.00000000
+		Range 8.00000000
+		CoronaSize 0.00000000
+		HotSpot 60.00000000
+		Falloff 65.00000000
+		Flags 64
+		CoronaHash 3191162493
+		LuminescenceHash 0
+		TypeFlags f0 f1 f2
+		Type Spot
+		_f58 1.00000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 0
+		_f66 0
+	}
+	Attribute 3
+	{
+		Position -9.99232000 -0.22117500 5.74211000
+		Direction 0.00000000 -0.96592500 -0.25881900
+		Origin 0.00000000 0.25881900 -0.96592500
+		Color 255 128 0 0
+		_f28 100.00000000
+		_f2C 1.00000000
+		_f30 1.00000000
+		Distance 10.00000000
+		Range 8.00000000
+		CoronaSize 0.00000000
+		HotSpot 60.00000000
+		Falloff 65.00000000
+		Flags 64
+		CoronaHash 3191162493
+		LuminescenceHash 0
+		TypeFlags f0 f1 f2
+		Type Spot
+		_f58 1.00000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 0
+		_f66 0
+	}
+	Attribute 4
+	{
+		Position -9.99232000 -0.22111000 5.35808000
+		Direction 0.00000000 -0.96592500 -0.25881900
+		Origin 0.00000000 0.25881900 -0.96592500
+		Color 0 255 0 0
+		_f28 100.00000000
+		_f2C 1.00000000
+		_f30 1.00000000
+		Distance 10.00000000
+		Range 8.00000000
+		CoronaSize 0.00000000
+		HotSpot 60.00000000
+		Falloff 65.00000000
+		Flags 64
+		CoronaHash 3191162493
+		LuminescenceHash 0
+		TypeFlags f0 f1 f2
+		Type Spot
+		_f58 1.00000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 0
+		_f66 0
+	}
+	Attribute 5
+	{
+		Position -9.99232000 -0.22111100 6.13251000
+		Direction 0.00000000 -0.96592500 -0.25881900
+		Origin 0.00000000 0.25881900 -0.96592500
+		Color 255 0 0 0
+		_f28 100.00000000
+		_f2C 1.00000000
+		_f30 1.00000000
+		Distance 10.00000000
+		Range 8.00000000
+		CoronaSize 0.00000000
+		HotSpot 60.00000000
+		Falloff 65.00000000
+		Flags 64
+		CoronaHash 3191162493
+		LuminescenceHash 0
+		TypeFlags f0 f1 f2
+		Type Spot
+		_f58 1.00000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 0
+		_f66 0
+	}
+	Attribute 6
+	{
+		Position 0.00213623 0.00086188 -0.03588290
+		Direction 1.00000000 0.00000001 0.00000004
+		Origin -0.00000004 0.00000000 1.00000000
+		Color 255 241 210 0
+		_f28 100.00000000
+		_f2C 1.00000000
+		_f30 1.00000000
+		Distance 15.00000000
+		Range 8.00000000
+		CoronaSize 1.00000000
+		HotSpot 0.00000000
+		Falloff 0.00000000
+		Flags 180288
+		CoronaHash 3191162493
+		LuminescenceHash 0
+		TypeFlags
+		Type Omni
+		_f58 1.00000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 33078
+		_f66 0
+	}
+}

@@ -1,0 +1,114 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 diversion_handle_22\diversion_handle_22_high.mesh 14 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center 0.00197600 -0.00839900 -0.00013200
+		AABBMin -0.01059000 -0.10155900 -0.20703700
+		AABBMax 0.01059000 0.10155900 0.20703700
+		radius 0.22060400
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 0.22370260
+	WorldRadius 0.22995740
+	AABBMax 0.06600915 0.14255930 0.24803700
+	AABBMin -0.06555139 -0.16335610 -0.24801400
+	Centroid -0.00025092 -0.00496479 0.00379621
+	CenterOfMass 0.00112584 -0.01125846 0.00146689
+	Margin 0.01000000 0.01000000 0.01000000
+	Shrunk 8
+	{
+		-2856 14518 -27354
+		-7011 -19258 25213
+		7094 22966 -27059
+		2860 -16903 25660
+		-2468 21118 -24617
+		-6496 -16885 25643
+		7154 15119 -24601
+		2958 -20399 24755
+	}
+	Polygons 8
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 7 6 2 3
+			Siblings 7 -1 5 4
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 1 5 0 0
+			Siblings 3 2 6 -1
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 4 0 5 0
+			Siblings -1 1 5 -1
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 1 7 5 0
+			Siblings 6 4 1 -1
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 3 5 7 0
+			Siblings 5 3 0 -1
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 2 4 5 3
+			Siblings -1 2 4 0
+		}
+		Polygon 6
+		{
+			Material 0
+			Vertices 1 0 7 0
+			Siblings 1 7 3 -1
+		}
+		Polygon 7
+		{
+			Material 0
+			Vertices 6 7 0 0
+			Siblings 0 6 -1 -1
+		}
+	}
+	VertexScale 0.00000201 0.00000467 0.00000757
+	VertexOffset 0.00022888 -0.01039839 0.00001153
+	Vertices 8
+	{
+		-7828 14655 -27349
+		-12343 -21656 26282
+		11865 23984 -25282
+		7639 -15816 27346
+		-7235 23982 -25279
+		-11453 -15813 27350
+		12344 14073 -26316
+		7981 -23983 25349
+	}
+	Materials 1
+	{
+		70 0 512
+	}
+}

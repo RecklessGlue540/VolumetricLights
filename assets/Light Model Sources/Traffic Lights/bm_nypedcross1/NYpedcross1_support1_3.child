@@ -1,0 +1,128 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 NYpedcross1_support1_3\NYpedcross1_support1_3_high.mesh 3 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center 0.15616700 0.24844900 0.00000000
+		AABBMin -0.03971900 -0.01609000 -0.02268500
+		AABBMax 0.45658900 0.50246300 0.02268500
+		radius 0.30288600
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 0.21935300
+	WorldRadius 0.42108510
+	AABBMax 0.36925710 0.39125760 0.05708736
+	AABBMin -0.06936259 -0.06234329 -0.05837802
+	Centroid 0.10971600 0.16858090 0.01545035
+	CenterOfMass 0.10139170 0.16312440 0.00099305
+	Margin 0.01000000 0.01000000 0.01000000
+	Shrunk 9
+	{
+		24680 -579 2873
+		24697 -841 3179
+		-24113 24365 1895
+		24610 -711 1897
+		-24366 24362 3757
+		-24075 24527 3790
+		-22736 -24376 3776
+		-22408 -24559 3739
+		-22504 -24335 1371
+	}
+	Polygons 10
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 6 1 0 5
+			Siblings 9 2 8 5
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 8 2 3 0
+			Siblings 6 8 7 -1
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 1 3 0 0
+			Siblings 7 8 0 -1
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 4 5 2 0
+			Siblings 5 8 6 -1
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 6 8 7 0
+			Siblings 6 7 9 -1
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 4 6 5 0
+			Siblings 6 0 3 -1
+		}
+		Polygon 6
+		{
+			Material 0
+			Vertices 4 2 8 6
+			Siblings 3 1 4 5
+		}
+		Polygon 7
+		{
+			Material 0
+			Vertices 7 8 3 1
+			Siblings 4 1 2 9
+		}
+		Polygon 8
+		{
+			Material 0
+			Vertices 0 3 2 5
+			Siblings 2 1 3 0
+		}
+		Polygon 9
+		{
+			Material 0
+			Vertices 7 1 6 0
+			Siblings 7 0 4 -1
+		}
+	}
+	VertexScale 0.00000669 0.00000692 0.00000176
+	VertexOffset 0.14994720 0.16445710 -0.00064533
+	Vertices 9
+	{
+		26641 877 8509
+		26615 -2339 8832
+		-24542 25049 -8855
+		25361 -712 -9496
+		-26640 25213 9174
+		-23771 26844 9497
+		-24988 -25234 9497
+		-22108 -26843 9174
+		-22946 -25077 -8855
+	}
+	Materials 1
+	{
+		70 0 16896
+	}
+}
