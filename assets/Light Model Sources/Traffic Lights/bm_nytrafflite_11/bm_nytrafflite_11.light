@@ -6,20 +6,20 @@ Version 1 10
 		Direction 0.00000000 -0.96592500 -0.25881900
 		Origin 0.00000000 0.25881900 -0.96592500
 		Color 0 255 0 0
-		_f28 100.00000000
-		_f2C 1.00000000
-		_f30 1.00000000
-		Distance 10.00000000
-		Range 8.00000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 0.00000000
+		Range 0.00000000
 		CoronaSize 0.00000000
-		HotSpot 60.00000000
-		Falloff 65.00000000
+		HotSpot 0.00000000
+		Falloff 0.00000000
 		Flags 64
-		CoronaHash 3191162493
+		CoronaHash 0
 		LuminescenceHash 0
-		TypeFlags f0 f1 f2
+		TypeFlags
 		Type Spot
-		_f58 1.00000000
+		_f58 0.00000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 0
@@ -31,20 +31,20 @@ Version 1 10
 		Direction 0.00000000 -0.96592500 -0.25881900
 		Origin 0.00000000 0.25881900 -0.96592500
 		Color 255 0 0 0
-		_f28 100.00000000
-		_f2C 1.00000000
-		_f30 1.00000000
-		Distance 10.00000000
-		Range 8.00000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 0.00000000
+		Range 0.00000000
 		CoronaSize 0.00000000
-		HotSpot 60.00000000
-		Falloff 65.00000000
+		HotSpot 0.00000000
+		Falloff 0.00000000
 		Flags 64
-		CoronaHash 3191162493
+		CoronaHash 0
 		LuminescenceHash 0
-		TypeFlags f0 f1 f2
+		TypeFlags
 		Type Spot
-		_f58 1.00000000
+		_f58 0.00000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 0
@@ -56,20 +56,20 @@ Version 1 10
 		Direction 0.00000000 -0.96592500 -0.25881900
 		Origin 0.00000000 0.25881900 -0.96592500
 		Color 255 128 0 0
-		_f28 100.00000000
-		_f2C 1.00000000
-		_f30 1.00000000
-		Distance 10.00000000
-		Range 8.00000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 0.00000000
+		Range 0.00000000
 		CoronaSize 0.00000000
-		HotSpot 60.00000000
-		Falloff 65.00000000
+		HotSpot 0.00000000
+		Falloff 0.00000000
 		Flags 64
-		CoronaHash 3191162493
+		CoronaHash 0
 		LuminescenceHash 0
-		TypeFlags f0 f1 f2
+		TypeFlags
 		Type Spot
-		_f58 1.00000000
+		_f58 0.00000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 0
@@ -81,20 +81,20 @@ Version 1 10
 		Direction 0.00000000 -0.96592500 -0.25881900
 		Origin 0.00000000 0.25881900 -0.96592500
 		Color 255 128 0 0
-		_f28 100.00000000
-		_f2C 1.00000000
-		_f30 1.00000000
-		Distance 10.00000000
-		Range 8.00000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 0.00000000
+		Range 0.00000000
 		CoronaSize 0.00000000
-		HotSpot 60.00000000
-		Falloff 65.00000000
+		HotSpot 0.00000000
+		Falloff 0.00000000
 		Flags 64
-		CoronaHash 3191162493
+		CoronaHash 0
 		LuminescenceHash 0
-		TypeFlags f0 f1 f2
+		TypeFlags
 		Type Spot
-		_f58 1.00000000
+		_f58 0.00000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 0
@@ -106,20 +106,20 @@ Version 1 10
 		Direction 0.00000000 -0.96592500 -0.25881900
 		Origin 0.00000000 0.25881900 -0.96592500
 		Color 0 255 0 0
-		_f28 100.00000000
-		_f2C 1.00000000
-		_f30 1.00000000
-		Distance 10.00000000
-		Range 8.00000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 0.00000000
+		Range 0.00000000
 		CoronaSize 0.00000000
-		HotSpot 60.00000000
-		Falloff 65.00000000
+		HotSpot 0.00000000
+		Falloff 0.00000000
 		Flags 64
-		CoronaHash 3191162493
+		CoronaHash 0
 		LuminescenceHash 0
-		TypeFlags f0 f1 f2
+		TypeFlags
 		Type Spot
-		_f58 1.00000000
+		_f58 0.00000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 0
@@ -131,20 +131,20 @@ Version 1 10
 		Direction 0.00000000 -0.96592500 -0.25881900
 		Origin 0.00000000 0.25881900 -0.96592500
 		Color 255 0 0 0
-		_f28 100.00000000
-		_f2C 1.00000000
-		_f30 1.00000000
-		Distance 10.00000000
-		Range 8.00000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 0.00000000
+		Range 0.00000000
 		CoronaSize 0.00000000
-		HotSpot 60.00000000
-		Falloff 65.00000000
+		HotSpot 0.00000000
+		Falloff 0.00000000
 		Flags 64
-		CoronaHash 3191162493
+		CoronaHash 0
 		LuminescenceHash 0
-		TypeFlags f0 f1 f2
+		TypeFlags
 		Type Spot
-		_f58 1.00000000
+		_f58 0.00000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 0
@@ -152,24 +152,24 @@ Version 1 10
 	}
 	Attribute 6
 	{
-		Position 0.00213623 0.00086188 -0.03588290
-		Direction 1.00000000 0.00000001 0.00000004
-		Origin -0.00000004 0.00000000 1.00000000
+		Position 0.00000000 0.00000000 0.03500000
+		Direction 0.00000000 0.00000000 -1.00000000
+		Origin 0.00000000 1.00000000 0.00000000
 		Color 255 241 210 0
-		_f28 100.00000000
-		_f2C 1.00000000
-		_f30 1.00000000
-		Distance 15.00000000
-		Range 8.00000000
-		CoronaSize 1.00000000
-		HotSpot 0.00000000
-		Falloff 0.00000000
-		Flags 180288
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 20.00000000
+		Range 12.00000000
+		CoronaSize 0.50000000
+		HotSpot 40.00000000
+		Falloff 60.00000000
+		Flags 49216
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags
-		Type Omni
-		_f58 1.00000000
+		Type Spot
+		_f58 1.25000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 33078
