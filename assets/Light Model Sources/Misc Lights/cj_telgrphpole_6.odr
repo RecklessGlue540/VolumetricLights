@@ -3,12 +3,12 @@ shadinggroup
 {
 	Shaders 6
 	{
-		gta_normal_spec_reflect_emissive.sps CJ_TELEGRAPH_WOOD 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-		gta_normal_spec_reflect_emissive.sps BM_telegraphpolebits 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps cj_telegraph_wood 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps bm_telegraphpolebits 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 		gta_normal_spec_reflect_emissive.sps cj_telgrphpole_6\bm_sign_19.dds 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-		gta_normal_spec_reflect_emissive.sps BM_chrome_small 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-		gta_glass_emissivenight.sps BM_NYlamp_bulb 0.00040000 15.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
-		gta_normal_spec_reflect_emissive.sps BM_sign_32 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps bm_chrome_small 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_glass_emissivenight.sps bm_nylamp_bulb 0.00040000 15.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps bm_sign_32 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 	}
 }
 lodgroup

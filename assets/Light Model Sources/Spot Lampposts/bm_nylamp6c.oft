@@ -562,15 +562,15 @@ drawable
 	{
 		Shaders 9
 		{
-			gta_normal_spec_reflect_emissive.sps BM_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_concrete1_n givemechecker givemechecker
-			gta_normal_spec_reflect_emissive.sps BM_NYlamp_green 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamp_green_s givemechecker
-			gta_normal_spec_reflect_emissive.sps BM_NYlampgreen_1 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamp_1_s givemechecker
-			gta_normal_spec_reflect_emissive.sps BM_traff_lights 0.00000000 0.00000000 60.00000000 0.40000000 1.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_traff_lights_n BM_traff_lights_s givemechecker
-			gta_emissivestrong.sps BM_traff_walkbm_traff_walk_e 0.00040000 10.00000000
+			gta_normal_spec_reflect_emissive.sps bm_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 bm_concrete1_n givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps bm_nylamp_green 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker bm_nylamp_green_s givemechecker
+			gta_normal_spec_reflect_emissive.sps bm_nylampgreen_1 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker bm_nylamp_1_s givemechecker
+			gta_normal_spec_reflect_emissive.sps bm_traff_lights 0.00000000 0.00000000 60.00000000 0.40000000 1.00000000;0.00000000;0.00000000 1.00000000 0.00000000 bm_traff_lights_n bm_traff_lights_s givemechecker
+			gta_emissivestrong.sps bm_traff_walkbm_traff_walk_e 0.00040000 10.00000000
 			gta_alpha.sps cj_stickers1cj_stickers1_a
-			gta_normal_spec_reflect_emissive.sps BM_NYstreetsign_03 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00040000 35.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps bm_nystreetsign_03 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps bm_nylamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_glass_emissivenight.sps bm_nylamp_bulb_abm_nylamp_bulb_s 0.00040000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 		}
 	}
 	skel

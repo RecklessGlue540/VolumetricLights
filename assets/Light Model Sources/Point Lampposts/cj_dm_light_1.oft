@@ -87,10 +87,10 @@ drawable
 	{
 		Shaders 4
 		{
-			gta_normal_spec_reflect_emissive.sps BM_chrome_black2 0.00000000 0.00000000 100.00000000 1.00000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_chrome_black2 givemechecker
-			gta_emissivenight.sps BM_neon_white_a 0.00020000 25.00000000
-			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a 0.00000000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
-			gta_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a
+			gta_normal_spec_reflect_emissive.sps bm_chrome_black2 0.00000000 0.00000000 100.00000000 1.00000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker bm_chrome_black2 givemechecker
+			gta_emissivenight.sps bm_neon_white_a 0.00020000 25.00000000
+			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2bm_nylamp_bulb2_a 0.00000000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_alpha.sps bm_nylamp_bulb2bm_nylamp_bulb2_a
 		}
 	}
 	skel

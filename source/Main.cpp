@@ -141,7 +141,7 @@ void OnAfterCopyLight(rage::CLightSource *light)
 
     if (bVolumetricVehicleLights)
     {
-        if (light->mFlags & 0x100 && light->mType == rage::LT_SPOT)
+        if (light->mFlags & 0x100 && !(light->mFlags & 8) && light->mType == rage::LT_SPOT)
         {
             if (HasVolumes(CurrWeather))
             {
@@ -242,7 +242,7 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
         }
         else
         {
-            // Pretty sure these are the right things for CE, can't test if it's proper since I couldn't figure out the first pattern :welp:
+            // Pretty sure these are the right things for CE, can't test if it's actually proper since I couldn't figure out the first pattern :welp:
             pattern = hook::pattern("FF 74 24 08 C1 E0 07 03 05 ? ? ? ? 8B C8 E8 ? ? ? ? 5E");
             if (!pattern.empty())
             {
@@ -259,7 +259,9 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
         {
             auto pattern = hook::pattern("76 ? 0F 2F ? 76 ? 0F 28 ? 0F 28 ? F3 0F 59 ?");
             if (!pattern.empty())
+            {
                 injector::WriteMemory<uint8_t>(pattern.get_first(0), 0xEB, true);
+            }
         }
     }
 

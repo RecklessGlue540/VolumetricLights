@@ -21,7 +21,7 @@ shadinggroup
 		gta_glass.sps shitkitch\bm_bottle_vodka.dds 30.00000000 1.00000000 1.00000000 0.45000000 shitkitch\ah_singoldn.dds shitkitch\bm_enviro256_02.dds
 		gta_glass.sps shitkitch\bm_beerglass.dds 100.00000000 1.00000000 2.00000000 1.00000000 shitkitch\ah_singoldn.dds shitkitch\bm_beerglass_env.dds
 		gta_normal_spec.sps shitkitch\ah_wanmetpans.dds 30.00000000 1.00000000 1.00000000;0.00000000;0.00000000 1.00000000 shitkitch\ah_wanmetpansn.dds shitkitch\ah_italducts.dds
-		gta_normal_spec.sps ah_romanswall1 30.00000000 0.90000000 1.00000000;0.00000000;0.00000000 0.50000000 ah_strceilingN ah_strceilingS
+		gta_normal_spec.sps ah_romanswall1 30.00000000 0.90000000 1.00000000;0.00000000;0.00000000 0.50000000 ah_strceilingn ah_strceilings
 		gta_default.sps ah_wpaperdirt4
 		gta_default.sps shitkitch\gb_cardboard01.dds
 		gta_default.sps shitkitch\gb_cardboard03.dds
