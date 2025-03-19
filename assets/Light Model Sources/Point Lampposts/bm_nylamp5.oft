@@ -145,7 +145,7 @@ drawable
 			gta_normal_spec_reflect_emissive.sps bm_chrome_black2 0.00000000 0.00000000 100.00000000 1.00000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker bm_chrome_black2 givemechecker
 			gta_normal_spec_reflect_emissive.sps bm_concrete1 0.00000000 0.00000000 50.00000000 0.30000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 bm_concrete1_n givemechecker givemechecker
 			gta_emissivenight.sps bm_neon_white_a 0.00020000 25.00000000
-			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2bm_nylamp_bulb2_a 0.00000000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2bm_nylamp_bulb2_a 0.00000000 25.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 			gta_alpha.sps bm_nylamp_bulb2bm_nylamp_bulb2_a
 		}
 	}

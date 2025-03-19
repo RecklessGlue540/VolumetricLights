@@ -141,7 +141,7 @@ void OnAfterCopyLight(rage::CLightSource *light)
 
     if (bVolumetricVehicleLights)
     {
-        if (light->mFlags & 0x100 && !(light->mFlags & 8) && light->mType == rage::LT_SPOT)
+        if (light->mFlags & 0x100 /* Vehicle Lights */ && !(light->mFlags & 8) /* Heli Searchlights */ && light->mType == rage::LT_SPOT)
         {
             if (HasVolumes(CurrWeather))
             {
@@ -207,7 +207,7 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
             return false;
         }
 
-        auto pattern = hook::pattern("D9 1C 24 F3 0F 10 05 ? ? ? ? 8D 4C 24 7C F3 0F 11 54 24 ?"); // "F3 0F 11 24 24 51 F3 0F 11 84 24 ? ? ? ? F3 0F 11 8C 24 ?" for CE?
+        auto pattern = hook::pattern("D9 1C 24 F3 0F 10 05 ? ? ? ? 8D 4C 24 7C F3 0F 11 54 24 ?"); // "F3 0F 11 24 24 51 F3 0F 11 84 24 ? ? ? ? F3 0F 11 8C 24 ?" for CE
         if (pattern.empty())
         {
             DisplayUnsupportedError();
