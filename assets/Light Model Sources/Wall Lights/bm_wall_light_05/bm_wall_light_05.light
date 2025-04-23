@@ -34,11 +34,11 @@ Version 1 10
 		_f28 0.00000000
 		_f2C 0.00000000
 		_f30 0.00000000
-		Distance 2.00000000
-		Range 12.00000000
+		Distance 2.30000000
+		Range 16.00000000
 		CoronaSize 0.00000000
-		HotSpot 40.00000000
-		Falloff 60.00000000
+		HotSpot 46.00000000
+		Falloff 72.00000000
 		Flags 64
 		CoronaHash 0
 		LuminescenceHash 0

@@ -25,4 +25,29 @@ Version 1 10
 		BoneID 0
 		_f66 0
 	}
+	Attribute 1
+	{
+		Position 0.00000000 -0.05000000 0.00000000
+		Direction 0.00000000 0.00000000 -1.00000000
+		Origin 0.00000000 1.00000000 0.00000000
+		Color 255 155 35 0
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 1.00000000
+		Range 16.00000000
+		CoronaSize 0.00000000
+		HotSpot 0.00000000
+		Falloff 0.00000000
+		Flags 96
+		CoronaHash 0
+		LuminescenceHash 0
+		TypeFlags
+		Type Omni
+		_f58 0.00000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 0
+		_f66 0
+	}
 }

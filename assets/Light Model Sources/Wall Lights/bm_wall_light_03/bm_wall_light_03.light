@@ -16,7 +16,7 @@ Version 1 10
 		Falloff 144.00000000
 		Flags 49216
 		CoronaHash 3191162493
-		LuminescenceHash 61453
+		LuminescenceHash 57005
 		TypeFlags
 		Type Spot
 		_f58 1.25000000
@@ -41,7 +41,7 @@ Version 1 10
 		Falloff 0.00000000
 		Flags 64
 		CoronaHash 0
-		LuminescenceHash 57005
+		LuminescenceHash 0
 		TypeFlags
 		Type Omni
 		_f58 0.00000000
