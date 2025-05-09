@@ -1,0 +1,102 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 BARRIER_1b_F1_2\BARRIER_1b_F1_2_high.mesh 2 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center -0.00000200 0.00000000 -0.10944700
+		AABBMin -0.02729800 -0.50324200 -0.57313000
+		AABBMax 0.02729600 0.50324200 0.57313000
+		radius 0.68483600
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 0.68495830
+	WorldRadius 0.79439900
+	AABBMax 0.06829607 0.54424250 0.61413020
+	AABBMin -0.06829797 -0.54424250 -0.61413020
+	Centroid -0.00000059 0.00000829 -0.10944070
+	CenterOfMass -0.00000066 -0.00000013 -0.15597820
+	Margin 0.04000000 0.04000000 0.04000000
+	Shrunk 8
+	{
+		-6094 26752 -28443
+		-6094 1280 28445
+		-6094 -1278 28445
+		6097 26752 -28443
+		6097 1280 28445
+		6096 -26750 -28443
+		6096 -1278 28445
+		-6095 -26750 -28443
+	}
+	Polygons 6
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 2 1 4 6
+			Siblings 3 5 2 4
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 3 0 7 5
+			Siblings 5 3 4 2
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 3 5 6 4
+			Siblings 1 4 0 5
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 7 0 1 2
+			Siblings 1 5 0 4
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 7 2 6 5
+			Siblings 3 0 2 1
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 4 1 0 3
+			Siblings 0 3 1 2
+		}
+	}
+	VertexScale 0.00000208 0.00001661 0.00001874
+	VertexOffset -0.00000095 0.00000000 0.00000000
+	Vertices 8
+	{
+		13096 30299 -30578
+		13096 2915 30579
+		13096 -2914 30579
+		-13094 30299 -30578
+		-13094 2915 30579
+		-13095 -30298 -30578
+		-13095 -2914 30579
+		13095 -30298 -30578
+	}
+	Materials 1
+	{
+		84 0 16896
+	}
+}

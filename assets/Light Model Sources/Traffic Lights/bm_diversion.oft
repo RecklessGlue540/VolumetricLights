@@ -587,7 +587,7 @@ drawable
 		Shaders 3
 		{
 			gta_normal_spec_reflect_emissive.sps bm_traff_bogey 0.00000000 0.00000000 50.00000000 0.30000000 1.00000000;0.00000000;0.00000000 1.00000000 0.00000000 bm_traff_bogey_n bm_traff_bogey_s givemechecker
-			gta_emissive_alpha.sps bm_traff_bogey_litebm_traff_bogey_lite_em 0.00000000 15.00000000
+			gta_emissive_alpha.sps bm_traff_bogey_litebm_traff_bogey_lite_em 0.00000000 6.00000000
 			gta_normal_spec_reflect_emissive.sps bm_traff_bogey_top 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 		}
 	}

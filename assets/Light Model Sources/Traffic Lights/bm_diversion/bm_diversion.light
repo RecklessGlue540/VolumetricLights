@@ -11,7 +11,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -36,7 +36,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -61,7 +61,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -86,7 +86,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -111,7 +111,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -136,7 +136,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -161,7 +161,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -186,7 +186,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -211,7 +211,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96
@@ -236,7 +236,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.25000000
+		CoronaSize 0.10000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 96

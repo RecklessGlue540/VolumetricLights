@@ -1,0 +1,287 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 2504
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce 0.00000000
+	CenterOfMass 0.06717636 -0.00142152 0.66094460
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group CJ_BARRIER_1b
+	{
+		strength 0.00000000
+		forceTransmissionScaleUp 0.50000000
+		forceTransmissionScaleDown 0.50000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child cj_barrier_1b\CJ_BARRIER_1b_0.child null
+		{
+			pristineMass 10.00000000
+			damagedMass 6.09281400
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				-0.00000025 0.00119280 0.12386410
+			}
+		}
+		group BARRIER_1b_F3
+		{
+			strength 20.00000000
+			forceTransmissionScaleUp 0.50000000
+			forceTransmissionScaleDown 0.50000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child cj_barrier_1b\BARRIER_1b_F3_1.child null
+			{
+				pristineMass 10.00000000
+				damagedMass 6.09281400
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-0.00000025 0.00119280 0.12386410
+				}
+			}
+		}
+		group BARRIER_1b_F1
+		{
+			strength 15.00000000
+			forceTransmissionScaleUp 0.50000000
+			forceTransmissionScaleDown 0.50000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child cj_barrier_1b\BARRIER_1b_F1_2.child null
+			{
+				pristineMass 10.00000000
+				damagedMass 6.09281400
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-0.00000025 0.00119280 0.12386410
+				}
+			}
+		}
+		group BARRIER_1b_F2
+		{
+			strength 20.00000000
+			forceTransmissionScaleUp 0.50000000
+			forceTransmissionScaleDown 0.50000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child cj_barrier_1b\BARRIER_1b_F2_3.child null
+			{
+				pristineMass 10.00000000
+				damagedMass 6.09281400
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-0.00000025 0.00119280 0.12386410
+				}
+			}
+		}
+		group BARRIER_1b_F4
+		{
+			strength 100.00000000
+			forceTransmissionScaleUp 0.25000000
+			forceTransmissionScaleDown 0.25000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 0
+			minDamageForce 100.00000000
+			damageHealth 1000.00000000
+			child cj_barrier_1b\BARRIER_1b_F4_4.child null
+			{
+				pristineMass 0.92836490
+				damagedMass 0.92836490
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					-0.00000025 0.00119280 0.12386410
+				}
+			}
+			group BARRIER_1b_F5
+			{
+				strength 100.00000000
+				forceTransmissionScaleUp 0.25000000
+				forceTransmissionScaleDown 0.25000000
+				jointStiffness 0.00000000
+				minSoftAngle1 -1.00000000
+				maxSoftAngle1 1.00000000
+				maxSoftAngle2 1.00000000
+				maxSoftAngle3 1.00000000
+				rotationSpeed 0.00000000
+				rotationStrength 0.00000000
+				restoringStrength 0.00000000
+				restoringMaxTorque 0.00000000
+				latchStrength 0.00000000
+				disappearsWhenDead 0
+				minDamageForce 100.00000000
+				damageHealth 1000.00000000
+				child cj_barrier_1b\BARRIER_1b_F5_5.child null
+				{
+					pristineMass 3.50293400
+					damagedMass 3.50293400
+					f50 [Temporarily|Unknown]
+					{
+						1.00000000 0.00000000 0.00000000
+						0.00000000 1.00000000 0.00000000
+						0.00000000 0.00000000 1.00000000
+						-0.00000025 0.00119280 0.12386410
+					}
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 7
+		{
+			gta_default.sps CJ_ROADBAR_2
+			gta_default.sps CJ_ROADBAR_1
+			gta_default.sps CJ_US_SIGN
+			gta_default.sps CJ_FISH_NET2
+			gta_default.sps CJ_CHROME_128_s
+			gta_emissivenight.sps cj_white 0.00040000 6.00000000
+			gta_glass_emissive_alpha.sps CJ_ORANGECJ_AMBER_ALPHA_2 0.00000000 6.00000000 30.00000000 1.00000000 0.10000000 0.45000000 CJ_GLASS_N CJ_128_ENV
+		}
+	}
+	skel
+	{
+		skel cj_barrier_1b\cj_barrier_1b.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.00000025 0.00390320 0.81391890
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.81228080 -0.00285580 0.44990290
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.80604020 -0.00285580 0.44990290
+	}
+	3
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.28192080 -0.04447980 0.80227090
+	}
+	4
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.60603920 -0.00266480 1.04118900
+	}
+	5
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.60604420 -0.00266480 1.12155300
+	}
+}
+light
+{
+	light cj_barrier_1b\cj_barrier_1b.light
+}
