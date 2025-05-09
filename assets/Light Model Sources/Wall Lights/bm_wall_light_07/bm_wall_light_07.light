@@ -12,14 +12,39 @@ Version 1 10
 		Distance 12.00000000
 		Range 12.00000000
 		CoronaSize 0.35000000
-		HotSpot 82.00000000
+		HotSpot 72.00000000
 		Falloff 144.00000000
-		Flags 49248
+		Flags 180320
 		CoronaHash 3191162493
 		LuminescenceHash 57005
 		TypeFlags
 		Type Spot
 		_f58 1.25000000
+		_f5C -1.00000000
+		_f60 -1.00000000
+		BoneID 0
+		_f66 0
+	}
+	Attribute 1
+	{
+		Position 0.00000000 0.00000000 -0.50000000
+		Direction 0.00000000 -0.00000009 1.00000000
+		Origin -0.00000198 1.00000000 0.00000009
+		Color 255 239 197 0
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 2.50000000
+		Range 6.00000000
+		CoronaSize 0.00000000
+		HotSpot 0.00000000
+		Falloff 144.00000000
+		Flags 1048672
+		CoronaHash 0
+		LuminescenceHash 0
+		TypeFlags
+		Type Spot
+		_f58 0.00000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 0

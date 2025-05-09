@@ -14,7 +14,7 @@ Version 1 10
 		CoronaSize 0.50000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 49216
+		Flags 180288
 		CoronaHash 3191162493
 		LuminescenceHash 57005
 		TypeFlags
@@ -39,7 +39,7 @@ Version 1 10
 		CoronaSize 0.50000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 49216
+		Flags 180288
 		CoronaHash 3191162493
 		LuminescenceHash 57005
 		TypeFlags

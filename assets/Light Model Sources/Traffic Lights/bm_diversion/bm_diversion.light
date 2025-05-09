@@ -2,21 +2,21 @@ Version 1 10
 {
 	Attribute 0
 	{
-		Position -0.84530600 -0.09888550 -0.00340176
+		Position -0.86650000 -0.05000000 -0.01000000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -27,21 +27,21 @@ Version 1 10
 	}
 	Attribute 1
 	{
-		Position -0.51614400 -0.09888550 -0.00340176
+		Position -0.525500000 -0.05000000 -0.01000000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -52,21 +52,21 @@ Version 1 10
 	}
 	Attribute 2
 	{
-		Position -0.18277000 -0.09888550 -0.00340176
+		Position -0.20150000 -0.05000000 -0.01000000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -77,21 +77,21 @@ Version 1 10
 	}
 	Attribute 3
 	{
-		Position 0.16833500 -0.09888550 -0.00340176
+		Position 0.14800000 -0.05000000 -0.01000000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -102,21 +102,21 @@ Version 1 10
 	}
 	Attribute 4
 	{
-		Position 0.53717000 -0.09888550 -0.00340176
+		Position 0.50950000 -0.05000000 -0.01000000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
-		Distance 4.00000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -127,21 +127,21 @@ Version 1 10
 	}
 	Attribute 5
 	{
-		Position -0.70947300 -0.09888550 0.25444100
+		Position 0.86950000 -0.05000000 -0.01000000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -152,21 +152,21 @@ Version 1 10
 	}
 	Attribute 6
 	{
-		Position 0.87780800 -0.09888550 0.00975132
+		Position -0.55600000 -0.05000000 0.45600000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -177,21 +177,21 @@ Version 1 10
 	}
 	Attribute 7
 	{
-		Position -0.71124290 -0.09888550 -0.21073800
+		Position -0.71200000 -0.05000000 0.23500000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -202,21 +202,21 @@ Version 1 10
 	}
 	Attribute 8
 	{
-		Position -0.55285600 -0.09888550 -0.43998600
+		Position -0.71200000 -0.05000000 -0.23000000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
-		Distance 4.00000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
+		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000
@@ -227,21 +227,21 @@ Version 1 10
 	}
 	Attribute 9
 	{
-		Position -0.55285600 -0.09888550 0.46562300
+		Position -0.55600000 -0.05000000 -0.44600000
 		Direction 0.00000000 0.00000000 -1.00000000
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 245 223 163 0
-		_f28 100.00000000
-		_f2C 0.20000000
-		_f30 0.10000000
+		_f28 0.00000000
+		_f2C 0.00000000
+		_f30 0.00000000
 		Distance 2.00000000
 		Range 6.00000000
-		CoronaSize 0.10000000
+		CoronaSize 0.25000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 524384
+		Flags 96
 		CoronaHash 3191162493
-		LuminescenceHash 0
+		LuminescenceHash 57005
 		TypeFlags f0 f1
 		Type Omni
 		_f58 1.00000000

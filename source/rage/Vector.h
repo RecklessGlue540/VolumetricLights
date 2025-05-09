@@ -2,12 +2,6 @@
 
 namespace rage
 {
-    struct Vector2
-    {
-    public:
-        float x, y;
-    };
-
     struct Vector3
     {
     public:
