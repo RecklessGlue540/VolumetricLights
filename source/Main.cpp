@@ -7,6 +7,62 @@
 #include "rage/LightSource.h"
 #include "rage/Weather.h"
 
+void DisplayUnsupportedError()
+{
+    MessageBox(0, L"Only patch 1.0.8.0 is fully supported for now.", L"VolumetricLights.asi", MB_ICONERROR | MB_OK);
+}
+
+bool  bVolumetricSpotLights      = false;
+float fSpotLightsVolumeIntensity = false;
+float fSpotLightsVolumeScale     = false;
+
+bool  bVolumetricPointLights      = false;
+float fPointLightsVolumeIntensity = false;
+float fPointLightsVolumeScale     = false;
+
+bool  bVolumetricVehicleLights      = false;
+float fVehicleLightsVolumeIntensity = false;
+float fVehicleLightsVolumeScale     = false;
+
+bool bExtraSunny = false;
+bool bSunny      = false;
+bool bSunnyWindy = false;
+bool bCloudy     = false;
+bool bRain       = false;
+bool bDrizzle    = false;
+bool bFoggy      = false;
+bool bLightning  = false;
+
+void ReadIni()
+{
+    CIniReader iniReader("");
+
+    // [SPOTLIGHTS]
+    bVolumetricSpotLights      = iniReader.ReadInteger("SPOTLIGHTS", "VolumetricSpotLights",    1) != 0;
+    fSpotLightsVolumeIntensity = iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensity", 1.0f);
+    fSpotLightsVolumeScale     = iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScale",     0.5f);
+
+    // [POINTLIGHTS]
+    bVolumetricPointLights      = iniReader.ReadInteger("POINTLIGHTS", "VolumetricPointLights",    1) != 0;
+    fPointLightsVolumeIntensity = iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensity", 0.75f);
+    fPointLightsVolumeScale     = iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScale",     0.25f);
+
+    // [VEHICLELIGHTS]
+    bVolumetricVehicleLights      = iniReader.ReadInteger("VEHICLELIGHTS", "VolumetricVehicleLights",    0) != 0;
+    fVehicleLightsVolumeIntensity = iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensity", 1.0f);
+    fVehicleLightsVolumeScale     = iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScale",     0.5f);
+
+    // [WEATHERS]
+    bExtraSunny = iniReader.ReadBoolean("WEATHERS", "ExtraSunny", 0) != 0;
+    bSunny      = iniReader.ReadBoolean("WEATHERS", "Sunny",      0) != 0;
+    bSunnyWindy = iniReader.ReadBoolean("WEATHERS", "SunnyWindy", 0) != 0;
+    bCloudy     = iniReader.ReadBoolean("WEATHERS", "Cloudy",     0) != 0;
+    bRain       = iniReader.ReadBoolean("WEATHERS", "Rain",       1) != 0;
+    bDrizzle    = iniReader.ReadBoolean("WEATHERS", "Drizzle",    1) != 0;
+    bFoggy      = iniReader.ReadBoolean("WEATHERS", "Foggy",      1) != 0;
+    bLightning  = iniReader.ReadBoolean("WEATHERS", "Lightning",  1) != 0;
+}
+
 void (__cdecl *CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListO)() = nullptr;
 void (__cdecl *CopyLightO)() = nullptr;
 void OnAfterCopyLight(rage::CLightSource*);
@@ -15,9 +71,6 @@ void __declspec(naked) CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderL
 {
     _asm
     {
-        push ecx
-
-        pop ecx
         call CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListO
 
         ret
@@ -41,18 +94,6 @@ void __declspec(naked) CopyLightH()
 
 bool HasVolumes(CWeather::eWeatherType type)
 {
-    CIniReader iniReader("");
-
-    // [WEATHERS]
-    bool bExtraSunny = iniReader.ReadBoolean("WEATHERS", "ExtraSunny", 0) != 0;
-    bool bSunny      = iniReader.ReadBoolean("WEATHERS", "Sunny",      0) != 0;
-    bool bSunnyWindy = iniReader.ReadBoolean("WEATHERS", "SunnyWindy", 0) != 0;
-    bool bCloudy     = iniReader.ReadBoolean("WEATHERS", "Cloudy",     0) != 0;
-    bool bRain       = iniReader.ReadBoolean("WEATHERS", "Rain",       1) != 0;
-    bool bDrizzle    = iniReader.ReadBoolean("WEATHERS", "Drizzle",    1) != 0;
-    bool bFoggy      = iniReader.ReadBoolean("WEATHERS", "Foggy",      1) != 0;
-    bool bLightning  = iniReader.ReadBoolean("WEATHERS", "Lightning",  1) != 0;
-
     switch (type)
     {
         case CWeather::EXTRASUNNY:
@@ -86,23 +127,6 @@ bool HasVolumes(CWeather::eWeatherType type)
 
 void OnAfterCopyLight(rage::CLightSource *light)
 {
-    CIniReader iniReader("");
-
-    // [SPOTLIGHTS]
-    bool bVolumetricSpotLights       = iniReader.ReadInteger("SPOTLIGHTS", "VolumetricSpotLights", 1) != 0;
-    float fSpotLightsVolumeIntensity = iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensity", 1.0f);
-    float fSpotLightsVolumeScale     = iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScale", 0.5f);
-
-    // [POINTLIGHTS]
-    bool bVolumetricPointLights       = iniReader.ReadInteger("POINTLIGHTS", "VolumetricPointLights", 1) != 0;
-    float fPointLightsVolumeIntensity = iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensity", 0.85f);
-    float fPointLightsVolumeScale     = iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScale", 0.25f);
-
-    // [VEHICLELIGHTS]
-    bool bVolumetricVehicleLights       = iniReader.ReadInteger("VEHICLELIGHTS", "VolumetricVehicleLights", 0) != 0;
-    float fVehicleLightsVolumeIntensity = iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensity", 1.0f);
-    float fVehicleLightsVolumeScale     = iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScale", 0.5f);
-
     static CWeather::eWeatherType CurrentWeather;
 
     CurrentWeather = *CWeather::CurrentWeather;
@@ -147,35 +171,19 @@ void OnAfterCopyLight(rage::CLightSource *light)
     }
 }
 
-void DisplayUnsupportedError()
-{
-    MessageBox(0, L"Only patch 1.0.8.0 is fully supported for now.", L"VolumetricLights.asi", MB_ICONERROR | MB_OK);
-}
-
 BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
 {
     if (fdwReason == DLL_PROCESS_ATTACH)
     {
+        ReadIni();
+
         if (!CWeather::Init())
         {
             DisplayUnsupportedError();
             return false;
         }
 
-        // "F3 0F 11 24 24 51 F3 0F 11 84 24 ? ? ? ? F3 0F 11 8C 24 ?" is the closest location for CE, but since the assembly is pretty different this part is beyond me :(
-        auto pattern = hook::pattern("D9 1C 24 F3 0F 10 05 ? ? ? ? 8D 4C 24 7C F3 0F 11 54 24 ?");
-        if (!pattern.empty())
-        {
-            uint8_t buffer[] = { 0x44, 0x06, 0xC, 0x90, 0x90 };
-            injector::WriteMemoryRaw(pattern.get_first(6), buffer, 5, true);
-        }
-        else
-        {
-            DisplayUnsupportedError();
-            return false;
-        }
-
-        pattern = hook::pattern("C7 06 ? ? ? ? C7 86 ? ? ? ? ? ? ? ? C6 46 1C 01 8B C6");
+        auto pattern = hook::pattern("C7 06 ? ? ? ? C7 86 ? ? ? ? ? ? ? ? C6 46 1C 01 8B C6");
         if (!pattern.empty())
         {
             uintptr_t* vft = *(uintptr_t**)pattern.get_first(2);
@@ -207,11 +215,10 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
         }
         else
         {
-            // Needs testing if it's right or not on CE
             pattern = hook::pattern("FF 74 24 08 C1 E0 07 03 05 ? ? ? ? 8B C8 E8 ? ? ? ? 5E");
             if (!pattern.empty())
             {
-                injector::MakeCALL(pattern.get_first(12), CopyLightH);
+                injector::MakeCALL(pattern.get_first(15), CopyLightH);
             }
             else
             {

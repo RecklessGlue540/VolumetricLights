@@ -20,7 +20,6 @@ namespace CWeather
 
     bool Init()
     {
-        // Not for CE but FusionFix code could be used for this part. No point for now though.
         auto pattern = hook::pattern("8B 0D ? ? ? ? 89 08 C3 8B 54 24 04 A1 ? ? ? ?");
         if (!pattern.empty())
         {

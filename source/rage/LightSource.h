@@ -28,7 +28,7 @@ namespace rage
         float mIntensity;       // Range
         eLightType mType;       // Type
         uint32_t mFlags;        // Flags
-        int32_t mTxdId;         // CoronaHash
+        int32_t mCoronaTexHash; // CoronaHash
         int32_t mProjTexHash;   // LuminescenceHash
         float mRadius;          // Distance
         float mInnerConeAngle;  // HotSpot
