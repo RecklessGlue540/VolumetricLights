@@ -138,8 +138,12 @@ void OnAfterCopyLight(rage::CLightSource *light)
             if (HasVolumes(CurrentWeather))
             {
                 light->mFlags |= 8;
-                light->mVolumeIntensity = 4.0f * fSpotLightsVolumeIntensity;
-                light->mVolumeScale     = fSpotLightsVolumeScale;
+
+                if (light->mVolumeIntensity == 0.0f && light->mVolumeScale == 0.0f)
+                {
+                    light->mVolumeIntensity = 4.0f * fSpotLightsVolumeIntensity;
+                    light->mVolumeScale = fSpotLightsVolumeScale;
+                }
             }
         }
     }
@@ -151,8 +155,12 @@ void OnAfterCopyLight(rage::CLightSource *light)
             if (HasVolumes(CurrentWeather))
             {
                 light->mFlags |= 8;
-                light->mVolumeIntensity = 4.0f * fPointLightsVolumeIntensity;
-                light->mVolumeScale     = fPointLightsVolumeScale;
+
+                if (light->mVolumeIntensity == 0.0f && light->mVolumeScale == 0.0f)
+                {
+                    light->mVolumeIntensity = 4.0f * fPointLightsVolumeIntensity;
+                    light->mVolumeScale = fPointLightsVolumeScale;
+                }
             }
         }
     }
@@ -183,6 +191,7 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
             return false;
         }
 
+        // If there's anything here not working on CE, it's probably this part... :|
         auto pattern = hook::pattern("C7 06 ? ? ? ? C7 86 ? ? ? ? ? ? ? ? C6 46 1C 01 8B C6");
         if (!pattern.empty())
         {
