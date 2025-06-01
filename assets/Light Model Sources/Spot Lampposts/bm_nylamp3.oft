@@ -257,10 +257,10 @@ drawable
 	{
 		Shaders 4
 		{
-			gta_normal_spec_reflect_emissive.sps bm_nylamp_bishops 0.00000000 0.00000000 80.00000000 0.10000000 1.00000000;0.00000000;0.00000000 1.50000000 0.00000000 bm_nylamp_bishops_n bm_nylamp_bishops_s givemechecker
-			gta_cutout.sps bm_nylampdesign1bm_nylampdesign_a
-			gta_normal_spec_reflect_emissive.sps bm_nylamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-			gta_glass_emissivenight.sps bm_nylamp_bulb_abm_nylamp_bulb_s 0.00040000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bishops 0.00000000 0.00000000 80.00000000 0.10000000 1.00000000;0.00000000;0.00000000 1.50000000 0.00000000 bm_nylamp_bishops_n bm_nylamp_bishops_s givemechecker
+			gta_cutout.sps bm_nylampdesign1BM_NYlampdesign_a
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00040000 35.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 		}
 	}
 	skel

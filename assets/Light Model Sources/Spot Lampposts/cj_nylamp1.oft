@@ -149,8 +149,8 @@ drawable
 	{
 		Shaders 2
 		{
-			gta_normal_spec_reflect_emissive.sps cj_pole1 0.00000000 0.00000000 12.00000000 0.50000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 cj_pole1_n givemechecker givemechecker
-			gta_glass_emissivenight.sps bm_nylamp_bulb_abm_nylamp_bulb_s 0.00040000 30.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps CJ_POLE1 0.00000000 0.00000000 12.00000000 0.50000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 CJ_POLE1_n givemechecker givemechecker
+			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00040000 35.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 		}
 	}
 	skel

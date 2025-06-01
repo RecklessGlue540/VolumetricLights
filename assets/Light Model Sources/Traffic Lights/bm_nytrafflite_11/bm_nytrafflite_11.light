@@ -161,7 +161,7 @@ Version 1 10
 		_f30 0.00000000
 		Distance 20.00000000
 		Range 12.00000000
-		CoronaSize 0.50000000
+		CoronaSize 0.35000000
 		HotSpot 40.00000000
 		Falloff 60.00000000
 		Flags 180288
@@ -169,7 +169,7 @@ Version 1 10
 		LuminescenceHash 57005
 		TypeFlags
 		Type Spot
-		_f58 1.25000000
+		_f58 1.00000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 33078

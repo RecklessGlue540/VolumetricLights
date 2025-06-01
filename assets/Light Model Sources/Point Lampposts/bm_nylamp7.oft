@@ -130,12 +130,12 @@ drawable
 	{
 		Shaders 6
 		{
-			gta_normal_spec_reflect_emissive.sps bm_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 bm_concrete1_n givemechecker givemechecker
-			gta_normal_spec_reflect_emissive.sps bm_chrome_black2 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-			gta_normal_spec_reflect_emissive.sps bm_nylamp_foresthills2 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 bm_nylamp_foresthills2_n givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_concrete1 0.00000000 0.00000000 10.00000000 0.10000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_concrete1_n givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_chrome_black2 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_foresthills2 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_foresthills2_n givemechecker givemechecker
 			gta_cutout.sps bm_nylampdesign2bm_nylampdesign2_a
-			gta_normal_spec_reflect_emissive.sps bm_nylamp_foresthills 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 bm_nylamp_foresthills_n givemechecker givemechecker
-			gta_emissivenight.sps bm_nylamp_foresthills2bbm_nylamp_foresthills2_e 0.00040000 10.00000000
+			gta_normal_spec_reflect_emissive.sps BM_NYlamp_foresthills 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_foresthills_n givemechecker givemechecker
+			gta_emissivenight.sps BM_NYlamp_foresthills2bBM_NYlamp_foresthills2_e 0.00040000 8.00000000
 		}
 	}
 	skel
