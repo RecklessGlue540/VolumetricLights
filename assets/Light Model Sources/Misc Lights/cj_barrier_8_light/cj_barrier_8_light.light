@@ -7,16 +7,16 @@ Version 1 10
 		Origin 0.00000000 1.00000000 0.00000000
 		Color 255 118 35 0
 		_f28 0.00000000
-		_f2C 0.00000000
-		_f30 0.00000000
+		_f2C 1.40000000
+		_f30 0.10000000
 		Distance 4.00000000
 		Range 6.00000000
 		CoronaSize 0.20000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 64
+		Flags 524352
 		CoronaHash 3191162493
-		LuminescenceHash 57005
+		LuminescenceHash 0
 		TypeFlags f0 f1
 		Type Omni
 		_f58 4.00000000
