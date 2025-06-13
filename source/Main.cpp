@@ -138,12 +138,8 @@ void OnAfterCopyLight(rage::CLightSource *light)
             if (HasVolumes(CurrentWeather))
             {
                 light->mFlags |= 8;
-
-                if (light->mVolumeIntensity == 0.0f && light->mVolumeScale == 0.0f)
-                {
-                    light->mVolumeIntensity = 4.0f * fSpotLightsVolumeIntensity;
-                    light->mVolumeScale = fSpotLightsVolumeScale;
-                }
+                light->mVolumeIntensity = 4.0f * fSpotLightsVolumeIntensity;
+                light->mVolumeScale = fSpotLightsVolumeScale;
             }
         }
     }
@@ -155,12 +151,8 @@ void OnAfterCopyLight(rage::CLightSource *light)
             if (HasVolumes(CurrentWeather))
             {
                 light->mFlags |= 8;
-
-                if (light->mVolumeIntensity == 0.0f && light->mVolumeScale == 0.0f)
-                {
-                    light->mVolumeIntensity = 4.0f * fPointLightsVolumeIntensity;
-                    light->mVolumeScale = fPointLightsVolumeScale;
-                }
+                light->mVolumeIntensity = 4.0f * fPointLightsVolumeIntensity;
+                light->mVolumeScale = fPointLightsVolumeScale;
             }
         }
     }

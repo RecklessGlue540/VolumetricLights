@@ -10,8 +10,8 @@ Version 1 10
 		_f2C 0.00000000
 		_f30 0.00000000
 		Distance 5.00000000
-		Range 3.00000000
-		CoronaSize 0.50000000
+		Range 1.50000000
+		CoronaSize 0.35000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 131136
@@ -19,7 +19,7 @@ Version 1 10
 		LuminescenceHash 0
 		TypeFlags
 		Type Omni
-		_f58 1.00000000
+		_f58 1.25000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 60357
@@ -35,8 +35,8 @@ Version 1 10
 		_f2C 0.00000000
 		_f30 0.00000000
 		Distance 5.00000000
-		Range 3.00000000
-		CoronaSize 0.50000000
+		Range 1.50000000
+		CoronaSize 0.35000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 131136
@@ -44,7 +44,7 @@ Version 1 10
 		LuminescenceHash 0
 		TypeFlags
 		Type Omni
-		_f58 1.00000000
+		_f58 1.25000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 60358
@@ -60,8 +60,8 @@ Version 1 10
 		_f2C 0.00000000
 		_f30 0.00000000
 		Distance 5.00000000
-		Range 3.00000000
-		CoronaSize 0.50000000
+		Range 1.50000000
+		CoronaSize 0.35000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 131136
@@ -69,7 +69,7 @@ Version 1 10
 		LuminescenceHash 0
 		TypeFlags
 		Type Omni
-		_f58 1.00000000
+		_f58 1.25000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 60359
@@ -85,8 +85,8 @@ Version 1 10
 		_f2C 0.00000000
 		_f30 0.00000000
 		Distance 5.00000000
-		Range 3.00000000
-		CoronaSize 0.50000000
+		Range 1.50000000
+		CoronaSize 0.35000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
 		Flags 131136
@@ -94,7 +94,7 @@ Version 1 10
 		LuminescenceHash 0
 		TypeFlags
 		Type Omni
-		_f58 1.00000000
+		_f58 1.25000000
 		_f5C -1.00000000
 		_f60 -1.00000000
 		BoneID 60360
