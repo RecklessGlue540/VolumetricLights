@@ -570,7 +570,7 @@ drawable
 			gta_alpha.sps cj_stickers1cj_stickers1_a
 			gta_normal_spec_reflect_emissive.sps BM_NYstreetsign_03 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00040000 35.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00020000 24.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 		}
 	}
 	skel

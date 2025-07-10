@@ -213,7 +213,7 @@ drawable
 		{
 			gta_normal_spec_reflect_emissive.sps CJ_POLE1 0.00000000 0.00000000 12.00000000 0.50000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 CJ_POLE1_n givemechecker givemechecker
 			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00040000 35.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00020000 34.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 		}
 	}
 	skel
