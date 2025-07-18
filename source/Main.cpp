@@ -3,13 +3,14 @@
 #include "Hooking.Patterns.h"
 #include "IniReader.h"
 #include "injector/injector.hpp"
+#include "safetyhook.hpp"
 
 #include "rage/LightSource.h"
 #include "rage/Weather.h"
 
 void DisplayUnsupportedError()
 {
-    MessageBox(0, L"Only patch 1.0.8.0 is fully supported for now.", L"VolumetricLights.asi", MB_ICONERROR | MB_OK);
+    MessageBox(0, L"Only game versions 1.0.7.0 up to 1.2.0.59 are supported.", L"VolumetricLights.asi", MB_ICONERROR | MB_OK);
 }
 
 bool  bVolumetricSpotLights      = false;
@@ -63,35 +64,6 @@ void ReadIni()
     bLightning  = iniReader.ReadBoolean("WEATHERS", "Lightning",  1) != 0;
 }
 
-void (__cdecl *CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListO)() = nullptr;
-void (__cdecl *CopyLightO)() = nullptr;
-void OnAfterCopyLight(rage::CLightSource*);
-
-void __declspec(naked) CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListH()
-{
-    _asm
-    {
-        call CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListO
-
-        ret
-    }
-}
-
-void __declspec(naked) CopyLightH()
-{
-    _asm
-    {
-        push [esp+0x4]
-        call CopyLightO
-
-        push eax
-        call OnAfterCopyLight
-        pop eax
-
-        ret 0x4
-    }
-}
-
 bool HasVolumes(CWeather::eWeatherType type)
 {
     switch (type)
@@ -123,6 +95,18 @@ bool HasVolumes(CWeather::eWeatherType type)
         default:
             return false;
     }
+}
+
+void OnAfterCopyLight(rage::CLightSource*);
+
+// FusionFix code, slightly modified to get rid of the events' stuff
+static inline SafetyHookInline shCopyLight{};
+
+static rage::CLightSource* __fastcall CopyLight(void* _this, void* edx, void* a2)
+{
+    auto ret = shCopyLight.fastcall<rage::CLightSource*>(_this, edx, a2);
+    OnAfterCopyLight(ret);
+    return ret;
 }
 
 void OnAfterCopyLight(rage::CLightSource *light)
@@ -183,49 +167,16 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
             return false;
         }
 
-        // If there's anything here not working on CE, it's probably this part... :|
-        auto pattern = hook::pattern("C7 06 ? ? ? ? C7 86 ? ? ? ? ? ? ? ? C6 46 1C 01 8B C6");
+        // FusionFix code, slightly modified to add version detection
+        auto pattern = find_pattern("E8 ? ? ? ? F3 0F 10 44 24 ? 51 F3 0F 11 04 24 56 E8 ? ? ? ? 83 C4 08 FF 05", "E8 ? ? ? ? D9 44 24 0C 51 D9 1C 24 56 E8 ? ? ? ? 83 C4 08");
         if (!pattern.empty())
         {
-            uintptr_t* vft = *(uintptr_t**)pattern.get_first(2);
-            CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListO = (void(__cdecl*)())vft[8];
-            injector::WriteMemory(&vft[8], CRenderPhaseDeferredLighting_LightsToScreen__BuildRenderListH);
+            shCopyLight = safetyhook::create_inline(injector::GetBranchDestination(pattern.get_first()).get<void*>(), CopyLight);
         }
         else
         {
             DisplayUnsupportedError();
             return false;
-        }
-
-        pattern = hook::pattern("8B CE C1 E1 07 03 0D ? ? ? ? E8 ? ? ? ?");
-        if (!pattern.empty())
-        {
-            CopyLightO = (void(__cdecl*)())injector::GetBranchDestination(pattern.get_first(11)).get();
-            injector::MakeCALL(pattern.get_first(11), CopyLightH);
-        }
-        else
-        {
-            DisplayUnsupportedError();
-            return false;
-        }
-
-        pattern = hook::pattern("8B 54 24 08 8B C8 C1 E1 07 03 0D ? ? ? ? 52 E8 ? ? ? ?");
-        if (!pattern.empty())
-        {
-            injector::MakeCALL(pattern.get_first(16), CopyLightH);
-        }
-        else
-        {
-            pattern = hook::pattern("FF 74 24 08 C1 E0 07 03 05 ? ? ? ? 8B C8 E8 ? ? ? ? 5E");
-            if (!pattern.empty())
-            {
-                injector::MakeCALL(pattern.get_first(15), CopyLightH);
-            }
-            else
-            {
-                DisplayUnsupportedError();
-                return false;
-            }
         }
     }
 

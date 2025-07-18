@@ -16,6 +16,9 @@
     <Filter Include="resources">
       <UniqueIdentifier>{688f2943-14af-4e2f-9594-eb6a1c61b1b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="dependencies\safetyhook">
+      <UniqueIdentifier>{fbef45b4-718e-4f08-be2d-a7178cbc0694}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Main.cpp">
@@ -23,6 +26,12 @@
     </ClCompile>
     <ClCompile Include="dependencies\Hooking.Patterns\Hooking.Patterns.cpp">
       <Filter>dependencies\Hooking.Patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\safetyhook\safetyhook.cpp">
+      <Filter>dependencies\safetyhook</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\safetyhook\Zydis.c">
+      <Filter>dependencies\safetyhook</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +46,12 @@
     </ClInclude>
     <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h">
       <Filter>dependencies\Hooking.Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\safetyhook\safetyhook.hpp">
+      <Filter>dependencies\safetyhook</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\safetyhook\Zydis.h">
+      <Filter>dependencies\safetyhook</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

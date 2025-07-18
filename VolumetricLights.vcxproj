@@ -12,10 +12,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dependencies\Hooking.Patterns\Hooking.Patterns.cpp" />
+    <ClCompile Include="dependencies\safetyhook\safetyhook.cpp" />
+    <ClCompile Include="dependencies\safetyhook\Zydis.c" />
     <ClCompile Include="source\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h" />
+    <ClInclude Include="dependencies\safetyhook\safetyhook.hpp" />
+    <ClInclude Include="dependencies\safetyhook\Zydis.h" />
     <ClInclude Include="source\rage\LightSource.h" />
     <ClInclude Include="source\rage\Vector.h" />
     <ClInclude Include="source\rage\Weather.h" />
@@ -60,7 +64,7 @@
     <TargetExt>.asi</TargetExt>
     <CopyLocalDeploymentContent>true</CopyLocalDeploymentContent>
     <OutDir>$(SolutionDir)build\$(Configuration)\bin\</OutDir>
-    <IncludePath>dependencies\Hooking.Patterns;dependencies\IniReader;dependencies\injector\include;$(IncludePath)</IncludePath>
+    <IncludePath>dependencies\Hooking.Patterns;dependencies\IniReader;dependencies\injector\include;dependencies\safetyhook;$(IncludePath)</IncludePath>
     <LibraryPath>dependencies\;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)build\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -68,7 +72,7 @@
     <TargetExt>.asi</TargetExt>
     <CopyLocalDeploymentContent>true</CopyLocalDeploymentContent>
     <OutDir>$(SolutionDir)build\$(Configuration)\bin\</OutDir>
-    <IncludePath>dependencies\Hooking.Patterns;dependencies\IniReader;dependencies\injector\include;$(IncludePath)</IncludePath>
+    <IncludePath>dependencies\Hooking.Patterns;dependencies\IniReader;dependencies\injector\include;dependencies\safetyhook;$(IncludePath)</IncludePath>
     <LibraryPath>dependencies\;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)build\$(Configuration)\</IntDir>
   </PropertyGroup>
