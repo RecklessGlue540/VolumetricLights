@@ -35,6 +35,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Utils.h">
+      <Filter>source</Filter>
+    </ClInclude>
     <ClInclude Include="source\rage\LightSource.h">
       <Filter>source\rage</Filter>
     </ClInclude>

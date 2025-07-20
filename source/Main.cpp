@@ -1,9 +1,6 @@
 #include <Windows.h>
 
-#include "Hooking.Patterns.h"
-#include "IniReader.h"
-#include "injector/injector.hpp"
-#include "safetyhook.hpp"
+#include "Utils.h"
 
 #include "rage/LightSource.h"
 #include "rage/Weather.h"
@@ -14,16 +11,16 @@ void DisplayUnsupportedError()
 }
 
 bool  bVolumetricSpotLights      = false;
-float fSpotLightsVolumeIntensity = false;
-float fSpotLightsVolumeScale     = false;
+float fSpotLightsVolumeIntensity = 0.0f;
+float fSpotLightsVolumeScale     = 0.0f;
 
 bool  bVolumetricPointLights      = false;
-float fPointLightsVolumeIntensity = false;
-float fPointLightsVolumeScale     = false;
+float fPointLightsVolumeIntensity = 0.0f;
+float fPointLightsVolumeScale     = 0.0f;
 
 bool  bVolumetricVehicleLights      = false;
-float fVehicleLightsVolumeIntensity = false;
-float fVehicleLightsVolumeScale     = false;
+float fVehicleLightsVolumeIntensity = 0.0f;
+float fVehicleLightsVolumeScale     = 0.0f;
 
 bool bExtraSunny = false;
 bool bSunny      = false;
@@ -53,15 +50,15 @@ void ReadIni()
     fVehicleLightsVolumeIntensity = iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensity", 1.0f);
     fVehicleLightsVolumeScale     = iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScale",     0.5f);
 
-    // [WEATHERS]
-    bExtraSunny = iniReader.ReadBoolean("WEATHERS", "ExtraSunny", 0) != 0;
-    bSunny      = iniReader.ReadBoolean("WEATHERS", "Sunny",      0) != 0;
-    bSunnyWindy = iniReader.ReadBoolean("WEATHERS", "SunnyWindy", 0) != 0;
-    bCloudy     = iniReader.ReadBoolean("WEATHERS", "Cloudy",     0) != 0;
-    bRain       = iniReader.ReadBoolean("WEATHERS", "Rain",       1) != 0;
-    bDrizzle    = iniReader.ReadBoolean("WEATHERS", "Drizzle",    1) != 0;
-    bFoggy      = iniReader.ReadBoolean("WEATHERS", "Foggy",      1) != 0;
-    bLightning  = iniReader.ReadBoolean("WEATHERS", "Lightning",  1) != 0;
+    // [VOLUMETRICWEATHERS]
+    bExtraSunny = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "ExtraSunny", 0) != 0;
+    bSunny      = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Sunny",      0) != 0;
+    bSunnyWindy = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "SunnyWindy", 0) != 0;
+    bCloudy     = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Cloudy",     0) != 0;
+    bRain       = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Rain",       1) != 0;
+    bDrizzle    = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Drizzle",    1) != 0;
+    bFoggy      = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Foggy",      1) != 0;
+    bLightning  = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Lightning",  1) != 0;
 }
 
 bool HasVolumes(CWeather::eWeatherType type)
@@ -143,7 +140,7 @@ void OnAfterCopyLight(rage::CLightSource *light)
 
     if (bVolumetricVehicleLights)
     {
-        if (light->mFlags & 0x100 /* Vehicle Lights */ && !(light->mFlags & 8) /* Heli Searchlights */ && light->mType == rage::LT_SPOT)
+        if (light->mFlags & 0x100 /* Include vehicle lights */ && !(light->mFlags & 8) /* Exclude helicopter searchlights */ && light->mType == rage::LT_SPOT)
         {
             if (HasVolumes(CurrentWeather))
             {

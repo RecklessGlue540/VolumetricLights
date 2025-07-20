@@ -20,6 +20,7 @@
     <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h" />
     <ClInclude Include="dependencies\safetyhook\safetyhook.hpp" />
     <ClInclude Include="dependencies\safetyhook\Zydis.h" />
+    <ClInclude Include="source\Utils.h" />
     <ClInclude Include="source\rage\LightSource.h" />
     <ClInclude Include="source\rage\Vector.h" />
     <ClInclude Include="source\rage\Weather.h" />

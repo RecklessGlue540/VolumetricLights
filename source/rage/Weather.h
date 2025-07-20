@@ -1,15 +1,6 @@
 #pragma once
 
-#include "Hooking.Patterns.h"
-
-// FusionFix code
-template <size_t count = 1, typename... Args>
-hook::pattern find_pattern(Args... args)
-{
-    hook::pattern pattern;
-    ((pattern = hook::pattern(args), !pattern.count_hint(count).empty()) || ...);
-    return pattern;
-}
+#include "../Utils.h"
 
 namespace CWeather
 {
