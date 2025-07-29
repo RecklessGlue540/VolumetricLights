@@ -1,6 +1,6 @@
 #include <Windows.h>
 
-#include "Utils.h"
+#include "Utility.h"
 
 #include "rage/LightSource.h"
 #include "rage/Weather.h"
