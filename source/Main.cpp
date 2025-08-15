@@ -1,5 +1,3 @@
-#include <Windows.h>
-
 #include "Utility.h"
 
 #include "rage/LightSource.h"
