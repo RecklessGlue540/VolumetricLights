@@ -112,7 +112,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
     <PostBuildEvent Condition="'$(GTAIV_DIR)' != ''">
       <Command>copy /y "$(TargetPath)" "$(GTAIV_DIR)\plugins\$(TargetName).asi"</Command>
