@@ -3,8 +3,8 @@ shadinggroup
 {
 	Shaders 3
 	{
-		gta_emissive.sps bm_wall_light_07\bm_neon_white_a.dds 0.00020000 22.00000000
-		gta_glass_emissive_alpha.sps bm_wall_light_07\bm_carpark_light.dds 0.00000000 15.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		gta_emissive.sps bm_wall_light_07\bm_neon_whitebm_neon_white_a.dds 0.00020000 12.00000000
+		gta_glass_emissive_alpha.sps bm_wall_light_07\bm_carpark_light.dds 0.00000000 24.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 		gta_normal_spec_reflect_emissive.sps bm_wall_light_07\bm_chrome_small.dds 0.00000000 0.00000000 100.00000000 1.00000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker bm_wall_light_07\bm_chrome_small.dds givemechecker
 	}
 }

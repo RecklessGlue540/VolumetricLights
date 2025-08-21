@@ -12,8 +12,8 @@ Version 1 10
 		Distance 11.00000000
 		Range 12.00000000
 		CoronaSize 0.35000000
-		HotSpot 40.00000000
-		Falloff 60.00000000
+		HotSpot 42.66666667
+		Falloff 64.00000000
 		Flags 180320
 		CoronaHash 3191162493
 		LuminescenceHash 57005

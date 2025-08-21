@@ -25,6 +25,7 @@ namespace CWeather
         if (!pattern.empty())
         {
             CWeather::CurrentWeather = *pattern.get_first<CWeather::eWeatherType*>(1);
+
             return true;
         }
         else

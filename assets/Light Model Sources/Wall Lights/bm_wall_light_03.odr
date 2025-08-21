@@ -4,7 +4,7 @@ shadinggroup
 	Shaders 2
 	{
 		gta_normal_spec_reflect_emissive.sps BM_metal_black 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
-		gta_glass_emissivenight.sps bm_nylamp_bulb 0.00040000 15.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		gta_glass_emissivenight.sps bm_nylamp_bulb 0.00040000 16.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 	}
 }
 skel

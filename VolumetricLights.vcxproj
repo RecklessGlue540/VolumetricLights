@@ -20,7 +20,7 @@
     <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h" />
     <ClInclude Include="dependencies\safetyhook\safetyhook.hpp" />
     <ClInclude Include="dependencies\safetyhook\Zydis.h" />
-    <ClInclude Include="source\Utils.h" />
+    <ClInclude Include="source\Utility.h" />
     <ClInclude Include="source\rage\LightSource.h" />
     <ClInclude Include="source\rage\Vector.h" />
     <ClInclude Include="source\rage\Weather.h" />
@@ -114,8 +114,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent Condition="'$(GTAIV_DIR)' != ''">
-      <Command>copy /y "$(TargetPath)" "$(GTAIV_DIR)\plugins\$(TargetName).asi"</Command>
+    <PostBuildEvent Condition="'$(GTA_IV_DIR)' != ''">
+      <Command>copy /y "$(TargetPath)" "$(GTA_IV_DIR)\plugins\$(TargetName).asi"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
