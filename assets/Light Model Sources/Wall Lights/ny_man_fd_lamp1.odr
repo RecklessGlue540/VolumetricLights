@@ -4,7 +4,7 @@ shadinggroup
 	Shaders 2
 	{
 		gta_normal_spec_reflect_emissive.sps ny_man_fd_lamp1\mc_fd_lamp.dds 0.00000000 0.00000000 20.00000000 0.30000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker ny_man_fd_lamp1\mc_fd_lamp_s.dds givemechecker
-		gta_glass_emissivenight.sps ny_man_fd_lamp1\mc_fd_lamp.dds 0.00050000 10.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		gta_glass_emissivenight.sps ny_man_fd_lamp1\mc_fd_lamp.dds 0.00050000 24.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 	}
 }
 skel
