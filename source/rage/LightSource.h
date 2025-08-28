@@ -37,8 +37,8 @@ namespace rage
         int32_t field_64;
         int32_t field_68;
         int32_t field_6C;
-        float mVolumeIntensity; // This one is a bit weird, it affects volume intensity exactly the same way as the _f2C from light models, yet it's different
-        float mVolumeScale;     // _f30
+        float mVolumeIntensity;
+        float mVolumeScale;
         int8_t field_78[7];
         char field_7F;
     };

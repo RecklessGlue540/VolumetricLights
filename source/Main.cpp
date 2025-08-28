@@ -18,32 +18,42 @@ void ReadIni()
     bLightning  = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Lightning",  1) != 0;
 
     // [SPOTLIGHTS]
-    bVolumetricSpotLights      = iniReader.ReadInteger("SPOTLIGHTS", "VolumetricSpotLights", 1) != 0;
-    fSpotLightsVolumeIntensity = iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensity", 1.0f);
-    fSpotLightsVolumeScale     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScale", 0.35f), 0.0f, 0.5f);
+    fSpotLightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
+    fSpotLightsVolumeIntensitySunny      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensitySunny",      0.0f), 0.0f, 1.5f);
+    fSpotLightsVolumeIntensitySunnyWindy = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.5f);
+    fSpotLightsVolumeIntensityCloudy     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityCloudy",     0.0f), 0.0f, 1.5f);
+    fSpotLightsVolumeIntensityRain       = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityRain",       0.0f), 0.0f, 1.5f);
+    fSpotLightsVolumeIntensityDrizzle    = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityDrizzle",    0.0f), 0.0f, 1.5f);
+    fSpotLightsVolumeIntensityFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityFoggy",      0.0f), 0.0f, 1.5f);
+    fSpotLightsVolumeIntensityLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityLightning",  0.0f), 0.0f, 1.5f);
 
-    fSpotLightsVolumeScaleSubtractionExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "ExtraSunny", 0.0f), 0.0f, 0.5f);
-    fSpotLightsVolumeScaleSubtractionSunny      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Sunny",      0.0f), 0.0f, 0.5f);
-    fSpotLightsVolumeScaleSubtractionSunnyWindy = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SunnyWindy", 0.0f), 0.0f, 0.5f);
-    fSpotLightsVolumeScaleSubtractionCloudy     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Cloudy",     0.0f), 0.0f, 0.5f);
-    fSpotLightsVolumeScaleSubtractionRain       = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Rain",       0.0f), 0.0f, 0.5f);
-    fSpotLightsVolumeScaleSubtractionDrizzle    = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Drizzle",    0.0f), 0.0f, 0.5f);
-    fSpotLightsVolumeScaleSubtractionFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Foggy",      0.0f), 0.0f, 0.5f);
-    fSpotLightsVolumeScaleSubtractionLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Lightning",  0.0f), 0.0f, 0.5f);
+    fSpotLightsVolumeScaleExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleExtraSunny", 0.0f), 0.0f, 0.5f);
+    fSpotLightsVolumeScaleSunny      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleSunny",      0.0f), 0.0f, 0.5f);
+    fSpotLightsVolumeScaleSunnyWindy = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleSunnyWindy", 0.0f), 0.0f, 0.5f);
+    fSpotLightsVolumeScaleCloudy     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleCloudy",     0.0f), 0.0f, 0.5f);
+    fSpotLightsVolumeScaleRain       = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleRain",       0.0f), 0.0f, 0.5f);
+    fSpotLightsVolumeScaleDrizzle    = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleDrizzle",    0.0f), 0.0f, 0.5f);
+    fSpotLightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
+    fSpotLightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
 
     // [POINTLIGHTS]
-    bVolumetricPointLights      = iniReader.ReadInteger("POINTLIGHTS", "VolumetricPointLights", 1) != 0;
-    fPointLightsVolumeIntensity = iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensity", 0.75f);
-    fPointLightsVolumeScale     = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScale", 0.2f), 0.0f, 0.35f);
+    fPointLightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
+    fPointLightsVolumeIntensitySunny      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensitySunny",      0.0f), 0.0f, 1.5f);
+    fPointLightsVolumeIntensitySunnyWindy = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.5f);
+    fPointLightsVolumeIntensityCloudy     = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityCloudy",     0.0f), 0.0f, 1.5f);
+    fPointLightsVolumeIntensityRain       = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityRain",       0.0f), 0.0f, 1.5f);
+    fPointLightsVolumeIntensityDrizzle    = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityDrizzle",    0.0f), 0.0f, 1.5f);
+    fPointLightsVolumeIntensityFoggy      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityFoggy",      0.0f), 0.0f, 1.5f);
+    fPointLightsVolumeIntensityLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityLightning",  0.0f), 0.0f, 1.5f);
 
-    fPointLightsVolumeScaleSubtractionExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "ExtraSunny", 0.0f), 0.0f, 0.35f);
-    fPointLightsVolumeScaleSubtractionSunny      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Sunny",      0.0f), 0.0f, 0.35f);
-    fPointLightsVolumeScaleSubtractionSunnyWindy = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SunnyWindy", 0.0f), 0.0f, 0.35f);
-    fPointLightsVolumeScaleSubtractionCloudy     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Cloudy",     0.0f), 0.0f, 0.35f);
-    fPointLightsVolumeScaleSubtractionRain       = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Rain",       0.0f), 0.0f, 0.35f);
-    fPointLightsVolumeScaleSubtractionDrizzle    = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Drizzle",    0.0f), 0.0f, 0.35f);
-    fPointLightsVolumeScaleSubtractionFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Foggy",      0.0f), 0.0f, 0.35f);
-    fPointLightsVolumeScaleSubtractionLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "Lightning",  0.0f), 0.0f, 0.35f);
+    fPointLightsVolumeScaleExtraSunny = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleExtraSunny", 0.0f), 0.0f, 0.5f);
+    fPointLightsVolumeScaleSunny      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleSunny",      0.0f), 0.0f, 0.5f);
+    fPointLightsVolumeScaleSunnyWindy = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleSunnyWindy", 0.0f), 0.0f, 0.5f);
+    fPointLightsVolumeScaleCloudy     = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleCloudy",     0.0f), 0.0f, 0.5f);
+    fPointLightsVolumeScaleRain       = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleRain",       0.0f), 0.0f, 0.5f);
+    fPointLightsVolumeScaleDrizzle    = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleDrizzle",    0.0f), 0.0f, 0.5f);
+    fPointLightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
+    fPointLightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
 
     // [HEADLIGHTS]
     fHeadlightsCoronaSize       = std::clamp(iniReader.ReadFloat("HEADLIGHTS", "HeadlightsCoronaSize", 0.25f), 0.0f, 1.0f);
@@ -97,33 +107,93 @@ bool HasVolumes(CWeather::eWeatherType type)
     }
 }
 
+float SpotLightVolumeIntensities(CWeather::eWeatherType type)
+{
+    switch (type)
+    {
+        case CWeather::EXTRASUNNY:
+            return fSpotLightsVolumeIntensityExtraSunny;
+
+        case CWeather::SUNNY:
+            return fSpotLightsVolumeIntensitySunny;
+
+        case CWeather::SUNNY_WINDY:
+            return fSpotLightsVolumeIntensitySunnyWindy;
+
+        case CWeather::CLOUDY:
+            return fSpotLightsVolumeIntensityCloudy;
+
+        case CWeather::RAIN:
+            return fSpotLightsVolumeIntensityRain;
+
+        case CWeather::DRIZZLE:
+            return fSpotLightsVolumeIntensityDrizzle;
+
+        case CWeather::FOGGY:
+            return fSpotLightsVolumeIntensityFoggy;
+
+        case CWeather::LIGHTNING:
+            return fSpotLightsVolumeIntensityLightning;
+    }
+}
+
+float PointLightVolumeIntensities(CWeather::eWeatherType type)
+{
+    switch (type)
+    {
+        case CWeather::EXTRASUNNY:
+            return fPointLightsVolumeIntensityExtraSunny;
+
+        case CWeather::SUNNY:
+            return fPointLightsVolumeIntensitySunny;
+
+        case CWeather::SUNNY_WINDY:
+            return fPointLightsVolumeIntensitySunnyWindy;
+
+        case CWeather::CLOUDY:
+            return fPointLightsVolumeIntensityCloudy;
+
+        case CWeather::RAIN:
+            return fPointLightsVolumeIntensityRain;
+
+        case CWeather::DRIZZLE:
+            return fPointLightsVolumeIntensityDrizzle;
+
+        case CWeather::FOGGY:
+            return fPointLightsVolumeIntensityFoggy;
+
+        case CWeather::LIGHTNING:
+            return fPointLightsVolumeIntensityLightning;
+    }
+}
+
 float SpotLightVolumeScales(CWeather::eWeatherType type)
 {
     switch (type)
     {
         case CWeather::EXTRASUNNY:
-            return fSpotLightsVolumeScale - fSpotLightsVolumeScaleSubtractionExtraSunny;
+            return fSpotLightsVolumeScaleExtraSunny;
 
         case CWeather::SUNNY:
-            return fSpotLightsVolumeScale - fSpotLightsVolumeScaleSubtractionSunny;
+            return fSpotLightsVolumeScaleSunny;
 
         case CWeather::SUNNY_WINDY:
-            return fSpotLightsVolumeScale - fSpotLightsVolumeScaleSubtractionSunnyWindy;
+            return fSpotLightsVolumeScaleSunnyWindy;
 
         case CWeather::CLOUDY:
-            return fSpotLightsVolumeScale - fSpotLightsVolumeScaleSubtractionCloudy;
+            return fSpotLightsVolumeScaleCloudy;
 
         case CWeather::RAIN:
-            return fSpotLightsVolumeScale - fSpotLightsVolumeScaleSubtractionRain;
+            return fSpotLightsVolumeScaleRain;
 
         case CWeather::DRIZZLE:
-            return fSpotLightsVolumeScale - fSpotLightsVolumeScaleSubtractionDrizzle;
+            return fSpotLightsVolumeScaleDrizzle;
 
         case CWeather::FOGGY:
-            return fSpotLightsVolumeScale - fSpotLightsVolumeScaleSubtractionFoggy;
+            return fSpotLightsVolumeScaleFoggy;
 
         case CWeather::LIGHTNING:
-            return fSpotLightsVolumeScale - fSpotLightsVolumeScaleSubtractionLightning;
+            return fSpotLightsVolumeScaleLightning;
     }
 }
 
@@ -132,60 +202,47 @@ float PointLightVolumeScales(CWeather::eWeatherType type)
     switch (type)
     {
         case CWeather::EXTRASUNNY:
-            return fPointLightsVolumeScale - fPointLightsVolumeScaleSubtractionExtraSunny;
+            return fPointLightsVolumeScaleExtraSunny;
 
         case CWeather::SUNNY:
-            return fPointLightsVolumeScale - fPointLightsVolumeScaleSubtractionSunny;
+            return fPointLightsVolumeScaleSunny;
 
         case CWeather::SUNNY_WINDY:
-            return fPointLightsVolumeScale - fPointLightsVolumeScaleSubtractionSunnyWindy;
+            return fPointLightsVolumeScaleSunnyWindy;
 
         case CWeather::CLOUDY:
-            return fPointLightsVolumeScale - fPointLightsVolumeScaleSubtractionCloudy;
+            return fPointLightsVolumeScaleCloudy;
 
         case CWeather::RAIN:
-            return fPointLightsVolumeScale - fPointLightsVolumeScaleSubtractionRain;
+            return fPointLightsVolumeScaleRain;
 
         case CWeather::DRIZZLE:
-            return fPointLightsVolumeScale - fPointLightsVolumeScaleSubtractionDrizzle;
+            return fPointLightsVolumeScaleDrizzle;
 
         case CWeather::FOGGY:
-            return fPointLightsVolumeScale - fPointLightsVolumeScaleSubtractionFoggy;
+            return fPointLightsVolumeScaleFoggy;
 
         case CWeather::LIGHTNING:
-            return fPointLightsVolumeScale - fPointLightsVolumeScaleSubtractionLightning;
+            return fPointLightsVolumeScaleLightning;
     }
 }
 
 void OnAfterCopyLight(rage::CLightSource *light)
 {
-    static CWeather::eWeatherType CurrentWeather;
-
-    CurrentWeather = *CWeather::CurrentWeather;
-
-    if (bVolumetricSpotLights)
+    if (HasVolumes(*CWeather::CurrentWeather))
     {
         if (light->mType == rage::LT_SPOT /* Include spotlights */ && light->mProjTexHash == 0xDEAD /* Only include lights "flagged" with LuminescenceHash 57005 */)
         {
-            if (HasVolumes(CurrentWeather))
-            {
-                light->mFlags |= 8;
-                light->mVolumeIntensity = 4.0f * fSpotLightsVolumeIntensity;
-                light->mVolumeScale = SpotLightVolumeScales(CurrentWeather);
-            }
+            light->mFlags |= 8;
+            light->mVolumeIntensity = 4.0f * SpotLightVolumeIntensities(*CWeather::CurrentWeather);
+            light->mVolumeScale = SpotLightVolumeScales(*CWeather::CurrentWeather);
         }
-    }
 
-    if (bVolumetricPointLights)
-    {
         if (light->mType == rage::LT_POINT /* Include pointlights */ && light->mProjTexHash == 0xDEAD /* Only include lights "flagged" with LuminescenceHash 57005 */)
         {
-            if (HasVolumes(CurrentWeather))
-            {
-                light->mFlags |= 8;
-                light->mVolumeIntensity = 4.0f * fPointLightsVolumeIntensity;
-                light->mVolumeScale = PointLightVolumeScales(CurrentWeather);
-            }
+            light->mFlags |= 8;
+            light->mVolumeIntensity = 4.0f * PointLightVolumeIntensities(*CWeather::CurrentWeather);
+            light->mVolumeScale = PointLightVolumeScales(*CWeather::CurrentWeather);
         }
     }
 }
