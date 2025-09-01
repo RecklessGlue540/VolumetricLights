@@ -64,9 +64,88 @@ void ReadIni()
     fTaillightsCoronaIntensity  = iniReader.ReadFloat("TAILLIGHTS", "TaillightsCoronaIntensity", 0.1f);
 }
 
-void OnAfterCopyLight(rage::CLightSource*);
+bool HasVolumes(CWeather::eWeatherType type)
+{
+    switch (type)
+    {
+        case CWeather::EXTRASUNNY:  return bExtraSunny;
+        case CWeather::SUNNY:       return bSunny;
+        case CWeather::SUNNY_WINDY: return bSunnyWindy;
+        case CWeather::CLOUDY:      return bCloudy;
+        case CWeather::RAIN:        return bRain;
+        case CWeather::DRIZZLE:     return bDrizzle;
+        case CWeather::FOGGY:       return bFoggy;
+        case CWeather::LIGHTNING:   return bLightning;
+        default: return false;
+    }
+}
+
+float SpotLightVolumeIntensities(CWeather::eWeatherType type)
+{
+    switch (type)
+    {
+        case CWeather::EXTRASUNNY:  return fSpotLightsVolumeIntensityExtraSunny;
+        case CWeather::SUNNY:       return fSpotLightsVolumeIntensitySunny;
+        case CWeather::SUNNY_WINDY: return fSpotLightsVolumeIntensitySunnyWindy;
+        case CWeather::CLOUDY:      return fSpotLightsVolumeIntensityCloudy;
+        case CWeather::RAIN:        return fSpotLightsVolumeIntensityRain;
+        case CWeather::DRIZZLE:     return fSpotLightsVolumeIntensityDrizzle;
+        case CWeather::FOGGY:       return fSpotLightsVolumeIntensityFoggy;
+        case CWeather::LIGHTNING:   return fSpotLightsVolumeIntensityLightning;
+        default: return 0.0f;
+    }
+}
+
+float PointLightVolumeIntensities(CWeather::eWeatherType type)
+{
+    switch (type)
+    {
+        case CWeather::EXTRASUNNY:  return fPointLightsVolumeIntensityExtraSunny;
+        case CWeather::SUNNY:       return fPointLightsVolumeIntensitySunny;
+        case CWeather::SUNNY_WINDY: return fPointLightsVolumeIntensitySunnyWindy;
+        case CWeather::CLOUDY:      return fPointLightsVolumeIntensityCloudy;
+        case CWeather::RAIN:        return fPointLightsVolumeIntensityRain;
+        case CWeather::DRIZZLE:     return fPointLightsVolumeIntensityDrizzle;
+        case CWeather::FOGGY:       return fPointLightsVolumeIntensityFoggy;
+        case CWeather::LIGHTNING:   return fPointLightsVolumeIntensityLightning;
+        default: return 0.0f;
+    }
+}
+
+float SpotLightVolumeScales(CWeather::eWeatherType type)
+{
+    switch (type)
+    {
+        case CWeather::EXTRASUNNY:  return fSpotLightsVolumeScaleExtraSunny;
+        case CWeather::SUNNY:       return fSpotLightsVolumeScaleSunny;
+        case CWeather::SUNNY_WINDY: return fSpotLightsVolumeScaleSunnyWindy;
+        case CWeather::CLOUDY:      return fSpotLightsVolumeScaleCloudy;
+        case CWeather::RAIN:        return fSpotLightsVolumeScaleRain;
+        case CWeather::DRIZZLE:     return fSpotLightsVolumeScaleDrizzle;
+        case CWeather::FOGGY:       return fSpotLightsVolumeScaleFoggy;
+        case CWeather::LIGHTNING:   return fSpotLightsVolumeScaleLightning;
+        default: return 0.0f;
+    }
+}
+
+float PointLightVolumeScales(CWeather::eWeatherType type)
+{
+    switch (type)
+    {
+        case CWeather::EXTRASUNNY:  return fPointLightsVolumeScaleExtraSunny;
+        case CWeather::SUNNY:       return fPointLightsVolumeScaleSunny;
+        case CWeather::SUNNY_WINDY: return fPointLightsVolumeScaleSunnyWindy;
+        case CWeather::CLOUDY:      return fPointLightsVolumeScaleCloudy;
+        case CWeather::RAIN:        return fPointLightsVolumeScaleRain;
+        case CWeather::DRIZZLE:     return fPointLightsVolumeScaleDrizzle;
+        case CWeather::FOGGY:       return fPointLightsVolumeScaleFoggy;
+        case CWeather::LIGHTNING:   return fPointLightsVolumeScaleLightning;
+        default: return 0.0f;
+    }
+}
 
 // FusionFix code, slightly modified to get rid of the events' stuff
+void OnAfterCopyLight(rage::CLightSource*);
 static inline SafetyHookInline shCopyLight{};
 
 static rage::CLightSource* __fastcall CopyLight(void* _this, void* edx, void* a2)
@@ -77,172 +156,74 @@ static rage::CLightSource* __fastcall CopyLight(void* _this, void* edx, void* a2
     return ret;
 }
 
-bool HasVolumes(CWeather::eWeatherType type)
-{
-    switch (type)
-    {
-        case CWeather::EXTRASUNNY:
-            return bExtraSunny;
-
-        case CWeather::SUNNY:
-            return bSunny;
-
-        case CWeather::SUNNY_WINDY:
-            return bSunnyWindy;
-
-        case CWeather::CLOUDY:
-            return bCloudy;
-
-        case CWeather::RAIN:
-            return bRain;
-
-        case CWeather::DRIZZLE:
-            return bDrizzle;
-
-        case CWeather::FOGGY:
-            return bFoggy;
-
-        case CWeather::LIGHTNING:
-            return bLightning;
-    }
-}
-
-float SpotLightVolumeIntensities(CWeather::eWeatherType type)
-{
-    switch (type)
-    {
-        case CWeather::EXTRASUNNY:
-            return fSpotLightsVolumeIntensityExtraSunny;
-
-        case CWeather::SUNNY:
-            return fSpotLightsVolumeIntensitySunny;
-
-        case CWeather::SUNNY_WINDY:
-            return fSpotLightsVolumeIntensitySunnyWindy;
-
-        case CWeather::CLOUDY:
-            return fSpotLightsVolumeIntensityCloudy;
-
-        case CWeather::RAIN:
-            return fSpotLightsVolumeIntensityRain;
-
-        case CWeather::DRIZZLE:
-            return fSpotLightsVolumeIntensityDrizzle;
-
-        case CWeather::FOGGY:
-            return fSpotLightsVolumeIntensityFoggy;
-
-        case CWeather::LIGHTNING:
-            return fSpotLightsVolumeIntensityLightning;
-    }
-}
-
-float PointLightVolumeIntensities(CWeather::eWeatherType type)
-{
-    switch (type)
-    {
-        case CWeather::EXTRASUNNY:
-            return fPointLightsVolumeIntensityExtraSunny;
-
-        case CWeather::SUNNY:
-            return fPointLightsVolumeIntensitySunny;
-
-        case CWeather::SUNNY_WINDY:
-            return fPointLightsVolumeIntensitySunnyWindy;
-
-        case CWeather::CLOUDY:
-            return fPointLightsVolumeIntensityCloudy;
-
-        case CWeather::RAIN:
-            return fPointLightsVolumeIntensityRain;
-
-        case CWeather::DRIZZLE:
-            return fPointLightsVolumeIntensityDrizzle;
-
-        case CWeather::FOGGY:
-            return fPointLightsVolumeIntensityFoggy;
-
-        case CWeather::LIGHTNING:
-            return fPointLightsVolumeIntensityLightning;
-    }
-}
-
-float SpotLightVolumeScales(CWeather::eWeatherType type)
-{
-    switch (type)
-    {
-        case CWeather::EXTRASUNNY:
-            return fSpotLightsVolumeScaleExtraSunny;
-
-        case CWeather::SUNNY:
-            return fSpotLightsVolumeScaleSunny;
-
-        case CWeather::SUNNY_WINDY:
-            return fSpotLightsVolumeScaleSunnyWindy;
-
-        case CWeather::CLOUDY:
-            return fSpotLightsVolumeScaleCloudy;
-
-        case CWeather::RAIN:
-            return fSpotLightsVolumeScaleRain;
-
-        case CWeather::DRIZZLE:
-            return fSpotLightsVolumeScaleDrizzle;
-
-        case CWeather::FOGGY:
-            return fSpotLightsVolumeScaleFoggy;
-
-        case CWeather::LIGHTNING:
-            return fSpotLightsVolumeScaleLightning;
-    }
-}
-
-float PointLightVolumeScales(CWeather::eWeatherType type)
-{
-    switch (type)
-    {
-        case CWeather::EXTRASUNNY:
-            return fPointLightsVolumeScaleExtraSunny;
-
-        case CWeather::SUNNY:
-            return fPointLightsVolumeScaleSunny;
-
-        case CWeather::SUNNY_WINDY:
-            return fPointLightsVolumeScaleSunnyWindy;
-
-        case CWeather::CLOUDY:
-            return fPointLightsVolumeScaleCloudy;
-
-        case CWeather::RAIN:
-            return fPointLightsVolumeScaleRain;
-
-        case CWeather::DRIZZLE:
-            return fPointLightsVolumeScaleDrizzle;
-
-        case CWeather::FOGGY:
-            return fPointLightsVolumeScaleFoggy;
-
-        case CWeather::LIGHTNING:
-            return fPointLightsVolumeScaleLightning;
-    }
-}
-
 void OnAfterCopyLight(rage::CLightSource *light)
 {
-    if (HasVolumes(*CWeather::CurrentWeather))
+    CWeather::eWeatherType CurrentWeather = CWeather::GetOldWeatherType();
+    CWeather::eWeatherType NextWeather  = CWeather::GetNewWeatherType();
+    float InterpolationValue = CWeather::GetWeatherInterpolationValue();
+
+    if (HasVolumes(CurrentWeather) || HasVolumes(NextWeather))
     {
         if (light->mType == rage::LT_SPOT /* Include spotlights */ && light->mProjTexHash == 0xDEAD /* Only include lights "flagged" with LuminescenceHash 57005 */)
         {
+            // Append the volume light flag
             light->mFlags |= 8;
-            light->mVolumeIntensity = 4.0f * SpotLightVolumeIntensities(*CWeather::CurrentWeather);
-            light->mVolumeScale = SpotLightVolumeScales(*CWeather::CurrentWeather);
+
+            // Transition from no volumes to volumes
+            if (!HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
+            {
+                light->mVolumeIntensity = 4.0f * SpotLightVolumeIntensities(NextWeather) * InterpolationValue;
+                light->mVolumeScale = SpotLightVolumeScales(NextWeather) * InterpolationValue;
+            }
+            // Transition between volumes
+            else if (HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
+            {
+                float CurrentVolumeIntensity = SpotLightVolumeIntensities(CurrentWeather);
+                float NextVolumeIntensity = SpotLightVolumeIntensities(NextWeather);
+
+                float CurrentVolumeScale = SpotLightVolumeScales(CurrentWeather);
+                float NextVolumeScale = SpotLightVolumeScales(NextWeather);
+
+                light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue);
+                light->mVolumeScale = CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue;
+            }
+            // Transition from volumes to no volumes
+            else if (HasVolumes(CurrentWeather) && !HasVolumes(NextWeather))
+            {
+                light->mVolumeIntensity = 4.0f * SpotLightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue);
+                light->mVolumeScale = SpotLightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+            }
         }
 
         if (light->mType == rage::LT_POINT /* Include pointlights */ && light->mProjTexHash == 0xDEAD /* Only include lights "flagged" with LuminescenceHash 57005 */)
         {
+            // Append the volume light flag
             light->mFlags |= 8;
-            light->mVolumeIntensity = 4.0f * PointLightVolumeIntensities(*CWeather::CurrentWeather);
-            light->mVolumeScale = PointLightVolumeScales(*CWeather::CurrentWeather);
+
+            // Transition from no volumes to volumes
+            if (!HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
+            {
+                light->mVolumeIntensity = 4.0f * PointLightVolumeIntensities(NextWeather) * InterpolationValue;
+                light->mVolumeScale = PointLightVolumeScales(NextWeather) * InterpolationValue;
+            }
+            // Transition between volumes
+            else if (HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
+            {
+                float CurrentVolumeIntensity = PointLightVolumeIntensities(CurrentWeather);
+                float NextVolumeIntensity = PointLightVolumeIntensities(NextWeather);
+
+                float CurrentVolumeScale = PointLightVolumeScales(CurrentWeather);
+                float NextVolumeScale = PointLightVolumeScales(NextWeather);
+
+                light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue);
+                light->mVolumeScale = CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue;
+            }
+            // Transition from volumes to no volumes
+            else if (HasVolumes(CurrentWeather) && !HasVolumes(NextWeather))
+            {
+                light->mVolumeIntensity = 4.0f * PointLightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue);
+                light->mVolumeScale = PointLightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+            }
         }
     }
 }
