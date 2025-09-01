@@ -10,7 +10,7 @@ Version 1 10
 		_f2C 0.00000000
 		_f30 0.00000000
 		Distance 10.00000000
-		Range 2.00000000
+		Range 4.00000000
 		CoronaSize 0.35000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
@@ -35,7 +35,7 @@ Version 1 10
 		_f2C 0.00000000
 		_f30 0.00000000
 		Distance 10.00000000
-		Range 2.00000000
+		Range 4.00000000
 		CoronaSize 0.35000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
@@ -60,7 +60,7 @@ Version 1 10
 		_f2C 0.00000000
 		_f30 0.00000000
 		Distance 10.00000000
-		Range 2.00000000
+		Range 4.00000000
 		CoronaSize 0.35000000
 		HotSpot 0.00000000
 		Falloff 0.00000000

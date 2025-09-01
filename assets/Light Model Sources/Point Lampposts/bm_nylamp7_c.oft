@@ -166,7 +166,7 @@ drawable
 			gta_normal_spec_reflect_emissive.sps BM_NYlamp_foresthills 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_foresthills_n givemechecker givemechecker
 			gta_cutout.sps bm_nylampdesign2bm_nylampdesign2_a
 			gta_normal_spec_reflect_emissive.sps BM_NYlamp_foresthills2 0.00000000 0.00000000 30.00000000 0.20000000 0.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_NYlamp_foresthills2_n givemechecker givemechecker
-			gta_emissivenight.sps BM_NYlamp_foresthills2bBM_NYlamp_foresthills2_e 0.00040000 8.00000000
+			gta_emissivenight.sps BM_NYlamp_foresthills2bBM_NYlamp_foresthills2_e 0.00040000 16.00000000
 			gta_normal_alpha.sps CJ_L_PLANT2 20.00000000 0.50000000 1.00000000 CJ_L_PLANT2_n
 			gta_alpha.sps CJ_FLOWER_256
 			gta_normal_spec_reflect_emissive.sps cj_basket1 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
