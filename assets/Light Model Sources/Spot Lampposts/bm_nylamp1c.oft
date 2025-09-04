@@ -341,7 +341,7 @@ drawable
 			gta_decal.sps BM_poster01CJ_POSTER_6_a
 			gta_decal.sps bm_poster02CJ_POSTER_6_a
 			gta_normal_spec_reflect_emissive.sps BM_traff_lights 0.00000000 0.00000000 60.00000000 0.40000000 1.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_traff_lights_n BM_traff_lights_s givemechecker
-			gta_emissivestrong.sps BM_traff_walkbm_traff_walk_e 0.00040000 10.00000000
+			gta_normal_spec_reflect_emissive.sps BM_traff_walkbm_traff_walk_e 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 			gta_alpha.sps CJ_POSTER_4CJ_POSTER_4_a
 			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 			gta_glass_emissivenight.sps BM_NYlamp_bulb_aBM_NYlamp_bulb_s 0.00040000 35.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker

@@ -57,11 +57,11 @@ void ReadIni()
 
     // [HEADLIGHTS]
     fHeadlightsCoronaSize       = std::clamp(iniReader.ReadFloat("HEADLIGHTS", "HeadlightsCoronaSize", 0.25f), 0.0f, 1.0f);
-    fHeadlightsCoronaIntensity  = iniReader.ReadFloat("HEADLIGHTS", "HeadlightsCoronaIntensity", 0.1f);
+    fHeadlightsCoronaIntensity  = std::clamp(iniReader.ReadFloat("HEADLIGHTS", "HeadlightsCoronaIntensity", 0.1f), 0.0f, 1.0f);
 
     // [TAILLIGHTS]
     fTaillightsCoronaSize       = std::clamp(iniReader.ReadFloat("TAILLIGHTS", "TaillightsCoronaSize", 0.25f), 0.0f, 1.0f);
-    fTaillightsCoronaIntensity  = iniReader.ReadFloat("TAILLIGHTS", "TaillightsCoronaIntensity", 0.1f);
+    fTaillightsCoronaIntensity  = std::clamp(iniReader.ReadFloat("TAILLIGHTS", "TaillightsCoronaIntensity", 0.1f), 0.0f, 1.0f);
 }
 
 bool HasVolumes(CWeather::eWeatherType type)

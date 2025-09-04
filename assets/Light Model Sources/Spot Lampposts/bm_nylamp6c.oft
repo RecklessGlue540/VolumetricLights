@@ -566,7 +566,7 @@ drawable
 			gta_normal_spec_reflect_emissive.sps BM_NYlamp_green 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamp_green_s givemechecker
 			gta_normal_spec_reflect_emissive.sps BM_NYlampgreen_1 0.00000000 0.00000000 50.00000000 0.40000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_NYlamp_1_s givemechecker
 			gta_normal_spec_reflect_emissive.sps BM_traff_lights 0.00000000 0.00000000 60.00000000 0.40000000 1.00000000;0.00000000;0.00000000 1.00000000 0.00000000 BM_traff_lights_n BM_traff_lights_s givemechecker
-			gta_emissivestrong.sps BM_traff_walkbm_traff_walk_e 0.00040000 10.00000000
+			gta_normal_spec_reflect_emissive.sps BM_traff_walkbm_traff_walk_e 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 			gta_alpha.sps cj_stickers1cj_stickers1_a
 			gta_normal_spec_reflect_emissive.sps BM_NYstreetsign_03 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 			gta_normal_spec_reflect_emissive.sps BM_NYlamp_bulb_a 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker

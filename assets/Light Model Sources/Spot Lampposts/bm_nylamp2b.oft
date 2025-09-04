@@ -216,7 +216,7 @@ fragments
 						latchStrength 0.00000000
 						disappearsWhenDead 1
 						minDamageForce 0.00100000
-						damageHealth 0.00000000
+						damageHealth 0.00100000
 						child bm_nylamp2b\NYlamp2b_cover_6.child null
 						{
 							pristineMass 5.00000000

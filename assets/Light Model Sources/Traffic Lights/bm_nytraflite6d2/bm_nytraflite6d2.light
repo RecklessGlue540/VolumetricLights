@@ -14,7 +14,7 @@ Version 1 10
 		CoronaSize 0.00000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 64
+		Flags 0
 		CoronaHash 0
 		LuminescenceHash 0
 		TypeFlags
@@ -39,7 +39,7 @@ Version 1 10
 		CoronaSize 0.00000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 64
+		Flags 0
 		CoronaHash 0
 		LuminescenceHash 0
 		TypeFlags
@@ -64,7 +64,7 @@ Version 1 10
 		CoronaSize 0.00000000
 		HotSpot 0.00000000
 		Falloff 0.00000000
-		Flags 64
+		Flags 0
 		CoronaHash 0
 		LuminescenceHash 0
 		TypeFlags
