@@ -109,9 +109,9 @@ fragments
 				}
 				group NYtraflite6c2_armpole
 				{
-					strength 3.00000000
-					forceTransmissionScaleUp 0.25000000
-					forceTransmissionScaleDown 0.25000000
+					strength 60.00000000
+					forceTransmissionScaleUp 0.00100000
+					forceTransmissionScaleDown 0.00100000
 					jointStiffness 0.00000000
 					minSoftAngle1 -1.00000000
 					maxSoftAngle1 1.00000000
@@ -127,8 +127,8 @@ fragments
 					damageHealth 1000.00000000
 					child bm_nytraflite6c2\NYtraflite6c2_armpole_3.child null
 					{
-						pristineMass 15.00000000
-						damagedMass 15.00000000
+						pristineMass 65.00000000
+						damagedMass 23.32200000
 						f50 [Temporarily|Unknown]
 						{
 							1.00000000 0.00000000 0.00000000
@@ -139,9 +139,9 @@ fragments
 					}
 					group NYtraflite6c2_traflite2
 					{
-						strength 3.00000000
-						forceTransmissionScaleUp 0.25000000
-						forceTransmissionScaleDown 0.25000000
+						strength 30.00000000
+						forceTransmissionScaleUp 0.00100000
+						forceTransmissionScaleDown 0.00100000
 						jointStiffness 0.00000000
 						minSoftAngle1 -1.00000000
 						maxSoftAngle1 1.00000000
@@ -157,8 +157,8 @@ fragments
 						damageHealth 1000.00000000
 						child bm_nytraflite6c2\NYtraflite6c2_traflite2_4.child null
 						{
-							pristineMass 15.00000000
-							damagedMass 15.00000000
+							pristineMass 40.00000000
+							damagedMass 40.00000000
 							f50 [Temporarily|Unknown]
 							{
 								1.00000000 0.00000000 0.00000000
@@ -170,9 +170,9 @@ fragments
 					}
 					group NYtraflite6c2_traflite1
 					{
-						strength 3.00000000
-						forceTransmissionScaleUp 0.25000000
-						forceTransmissionScaleDown 0.25000000
+						strength 30.00000000
+						forceTransmissionScaleUp 0.00100000
+						forceTransmissionScaleDown 0.00100000
 						jointStiffness 0.00000000
 						minSoftAngle1 -1.00000000
 						maxSoftAngle1 1.00000000
@@ -188,8 +188,8 @@ fragments
 						damageHealth 1000.00000000
 						child bm_nytraflite6c2\NYtraflite6c2_traflite1_5.child null
 						{
-							pristineMass 17.00000000
-							damagedMass 17.00000000
+							pristineMass 40.00000000
+							damagedMass 40.00000000
 							f50 [Temporarily|Unknown]
 							{
 								1.00000000 0.00000000 0.00000000
@@ -202,9 +202,9 @@ fragments
 				}
 				group NYtraflite6c2_pedbox
 				{
-					strength 3.00000000
-					forceTransmissionScaleUp 0.25000000
-					forceTransmissionScaleDown 0.25000000
+					strength 40.00000000
+					forceTransmissionScaleUp 0.00100000
+					forceTransmissionScaleDown 0.00100000
 					jointStiffness 0.00000000
 					minSoftAngle1 -1.00000000
 					maxSoftAngle1 1.00000000
@@ -220,8 +220,8 @@ fragments
 					damageHealth 1000.00000000
 					child bm_nytraflite6c2\NYtraflite6c2_pedbox_6.child null
 					{
-						pristineMass 11.58693000
-						damagedMass 11.58693000
+						pristineMass 30.00000000
+						damagedMass 35.88000000
 						f50 [Temporarily|Unknown]
 						{
 							1.00000000 0.00000000 0.00000000

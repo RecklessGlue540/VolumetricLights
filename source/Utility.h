@@ -23,7 +23,7 @@ hook::pattern find_pattern(Args... args)
 
 void DisplayUnsupportedError()
 {
-    MessageBox(0, L"Only game versions 1.0.8.0 up to 1.2.0.59 are supported.", L"VolumetricLights.asi", MB_ICONINFORMATION | MB_OK);
+    MessageBox(0, L"Only game versions 1.0.7.0 up to 1.2.0.59 are supported.", L"VolumetricLights.asi", MB_ICONINFORMATION | MB_OK);
 }
 
 // Variables

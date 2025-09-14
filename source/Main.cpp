@@ -55,13 +55,11 @@ void ReadIni()
     fPointLightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
     fPointLightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
 
-    // [HEADLIGHTS]
-    fHeadlightsCoronaSize       = std::clamp(iniReader.ReadFloat("HEADLIGHTS", "HeadlightsCoronaSize", 0.25f), 0.0f, 1.0f);
-    fHeadlightsCoronaIntensity  = std::clamp(iniReader.ReadFloat("HEADLIGHTS", "HeadlightsCoronaIntensity", 0.1f), 0.0f, 1.0f);
-
-    // [TAILLIGHTS]
-    fTaillightsCoronaSize       = std::clamp(iniReader.ReadFloat("TAILLIGHTS", "TaillightsCoronaSize", 0.25f), 0.0f, 1.0f);
-    fTaillightsCoronaIntensity  = std::clamp(iniReader.ReadFloat("TAILLIGHTS", "TaillightsCoronaIntensity", 0.1f), 0.0f, 1.0f);
+    // [VEHICLELIGHTS]
+    fHeadlightsCoronaSize       = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaSize",      0.25f), 0.0f, 1.0f);
+    fHeadlightsCoronaIntensity  = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaIntensity", 0.1f),  0.0f, 1.0f);
+    fTaillightsCoronaSize       = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaSize",      0.25f), 0.0f, 1.0f);
+    fTaillightsCoronaIntensity  = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaIntensity", 0.1f),  0.0f, 1.0f);
 }
 
 bool HasVolumes(CWeather::eWeatherType type)
