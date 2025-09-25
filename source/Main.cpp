@@ -62,6 +62,25 @@ void ReadIni()
     fTaillightsCoronaIntensity  = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaIntensity", 0.1f),  0.0f, 1.0f);
 }
 
+typedef bool(__cdecl* IsFusionFixSnowEnabledFun)();
+
+bool IsFusionFixSnowEnabled()
+{
+    HMODULE FusionFix = GetModuleHandleA("GTAIV.EFLC.FusionFix.asi");
+    if (!FusionFix)
+    {
+        return false;
+    }
+
+    auto Function = reinterpret_cast<IsFusionFixSnowEnabledFun>(GetProcAddress(FusionFix, "IsSnowEnabled"));
+    if (!Function) 
+    {
+        return false;
+    }
+
+    return Function();
+}
+
 bool HasVolumes(CWeather::eWeatherType type)
 {
     switch (type)
@@ -160,7 +179,7 @@ void OnAfterCopyLight(rage::CLightSource *light)
     CWeather::eWeatherType NextWeather  = CWeather::GetNewWeatherType();
     float InterpolationValue = CWeather::GetWeatherInterpolationValue();
 
-    if (HasVolumes(CurrentWeather) || HasVolumes(NextWeather))
+    if ((HasVolumes(CurrentWeather) || HasVolumes(NextWeather)) && !IsFusionFixSnowEnabled())
     {
         if (light->mType == rage::LT_SPOT /* Include spotlights */ && light->mProjTexHash == 0xDEAD /* Only include lights "flagged" with LuminescenceHash 57005 */)
         {
