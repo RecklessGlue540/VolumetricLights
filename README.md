@@ -14,7 +14,11 @@ It also features numerous fixes and improvements to the affected streetlight mod
 
 ### Weather toggles
 
-The options in the [VOLUMETRICWEATHERS] section allow choosing which weathers to enable the volumetric shafts for:
+The options in the [VOLUMETRICWEATHERS] section allow choosing which weathers to enable the volumetric shafts for.
+
+<details>
+<summary>Click here to see the .ini section</summary>
+<br>
 
 ```ini
 [VOLUMETRICWEATHERS]
@@ -28,9 +32,15 @@ Foggy      = 1
 Lightning  = 1
 ```
 
+</details>
+
 ### Spotlight volumes
 
-The options in the [SPOTLIGHTS] section allow customizing volume intensity and scale per-weather, for the affected spotlights:
+The options in the [SPOTLIGHTS] section allow customizing volume intensity and scale per-weather, for the affected spotlights.
+
+<details>
+<summary>Click here to see the .ini section</summary>
+<br>
 
 ```ini
 [SPOTLIGHTS]
@@ -55,9 +65,15 @@ SpotLightsVolumeScaleFoggy      = 0.3
 SpotLightsVolumeScaleLightning  = 0.2
 ```
 
+</details>
+
 ### Pointlight volumes
 
-The options in the [POINTLIGHTS] section allow customizing volume intensity and scale per-weather, for the affected pointlights:
+The options in the [POINTLIGHTS] section allow customizing volume intensity and scale per-weather, for the affected pointlights.
+
+<details>
+<summary>Click here to see the .ini section</summary>
+<br>
 
 ```ini
 [POINTLIGHTS]
@@ -82,9 +98,15 @@ PointLightsVolumeScaleFoggy      = 0.15
 PointLightsVolumeScaleLightning  = 0.125
 ```
 
+</details>
+
 ### Vehicle coronas
 
-The options in the [VEHICLELIGHTS] section allow customizing corona size and intensity, for vehicle headlights and taillights:
+The options in the [VEHICLELIGHTS] section allow customizing corona size and intensity, for vehicle headlights and taillights.
+
+<details>
+<summary>Click here to see the .ini section</summary>
+<br>
 
 ```ini
 [VEHICLELIGHTS]
@@ -94,6 +116,8 @@ HeadlightsCoronaIntensity  = 0.1
 TaillightsCoronaSize       = 0.25
 TaillightsCoronaIntensity  = 0.1
 ```
+
+</details>
 
 Normally, casual players do not need to edit these options unless they're not enough as is.\
 They are provided more for timecycle modders who will definitely need them.
@@ -128,9 +152,28 @@ Download the latest release, open the .7z archive and copy the "plugins" and "up
 
 - Distant fading for the volumes of the affected lights does not work correctly, likely due to the way the volumes are applied, which may not be fixable.
 
+## Screenshots
+
+### Comparison between weathers
+<img width="2560" height="1440" alt="GTAIV 9_25_2025 8_42_22 PM" src="https://github.com/user-attachments/assets/cca2cde3-117f-4811-9312-871c37f01713" />
+<img width="2560" height="1440" alt="GTAIV 9_25_2025 8_42_13 PM" src="https://github.com/user-attachments/assets/5f5b8cfb-c010-4e87-a59a-6e9bbd6bf588" />
+<img width="2560" height="1440" alt="GTAIV 9_25_2025 8_42_39 PM" src="https://github.com/user-attachments/assets/bb68ab01-f490-4bea-8da2-6ed5a5861555" />
+<img width="2560" height="1440" alt="GTAIV 9_25_2025 8_42_31 PM" src="https://github.com/user-attachments/assets/19dabb6e-151b-4d3c-885f-ddcd720c53c0" />
+
+### Transitions between weathers
+https://github.com/user-attachments/assets/995b60b9-ff7a-4396-a81e-0c8f02285c57
+
+### Fixed materials
+<img width="2560" height="1440" alt="GTAIV 9_25_2025 10_07_04 PM" src="https://github.com/user-attachments/assets/77798022-a2a5-4c62-99e6-dcd65f54c224" />
+<img width="2560" height="1440" alt="GTAIV 9_25_2025 10_07_31 PM" src="https://github.com/user-attachments/assets/446b09a6-d8e5-4cea-ae92-1d6f3dcca0fb" />
+<img width="2560" height="1440" alt="GTAIV 9_25_2025 8_38_17 PM" src="https://github.com/user-attachments/assets/d7a12ccd-e5f1-4241-a4f6-378ea8842aa6" />
+
 ## Asset Changelog
 
 TODO: Complete this
+<details>
+<summary>Click here to expand</summary>
+<br>
 
 ### brownstones.img
 - **shitkitch/dodgyraylight.wdr**
@@ -162,6 +205,7 @@ TODO: Complete this
 - Adjusted traffic light circle positions, fixing clipping;
 - Nulled hidden leftover/test(?) light sources from traffic lights, that might have had a significant influence on the game's 640 light maps limit;
 - All traffic light models can no longer be occluded in night shadows, resolving visual weirdness when shadows from other lights occlude them.
+</details>
 
 ### To-do:
 
@@ -169,10 +213,10 @@ High priority:
 - Add a Project2DFX config with adjusted light positions;
 - Improve destructibility of certain lamppost parts if viable (Such as traffic light boxes, bm_nylamp7 lamps, etc);
 - Fix bm_wall_light_02 emissive glass z-shifting;
-- Fix collisions of some wall light models to allow the cracks texture to show on their glass materials when shot;
 
 Mid priority:
 - Fix/Improve more models;
+- Add cubemaps to as many bulbs as possible;
 
 Lower priority:
 - Adjust WalkDontWalk signal texture offsets;
