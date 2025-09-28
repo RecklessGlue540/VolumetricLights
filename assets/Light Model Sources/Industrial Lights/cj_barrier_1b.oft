@@ -211,12 +211,12 @@ drawable
 	{
 		Shaders 7
 		{
-			gta_default.sps CJ_ROADBAR_2
-			gta_default.sps CJ_ROADBAR_1
-			gta_default.sps CJ_US_SIGN
-			gta_default.sps CJ_FISH_NET2
-			gta_default.sps CJ_CHROME_128_s
-			gta_emissivenight.sps cj_white 0.00040000 6.00000000
+			gta_normal_spec_reflect_emissive.sps CJ_ROADBAR_2 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps CJ_ROADBAR_1 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps CJ_US_SIGN 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps CJ_FISH_NET2 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps CJ_CHROME_128_s 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_emissivenight.sps cj_white 0.00020000 6.00000000
 			gta_glass_emissive_alpha.sps CJ_ORANGECJ_AMBER_ALPHA_2 0.00000000 6.00000000 30.00000000 1.00000000 0.10000000 0.45000000 CJ_GLASS_N CJ_128_ENV
 		}
 	}

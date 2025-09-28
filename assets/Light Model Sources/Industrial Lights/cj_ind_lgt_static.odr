@@ -1,0 +1,26 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 4
+	{
+		gta_normal_spec_reflect_emissive.sps CJ_BLACK_RUBBER 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_emissivenight.sps BM_neon_white_aBM_neon_white_a 0.00020000 5.00000000
+		gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a 0.00000000 5.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps bm_wheel 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+	}
+}
+lodgroup
+{
+	high 1 cj_ind_lgt_static\cj_ind_lgt_static_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center -0.00126800 0.01480300 1.46117800
+	AABBMin -0.59756100 -0.65494300 -0.00021000
+	AABBMax 0.59755300 0.64703700 2.95407500
+	radius 1.60766700
+}
+light
+{
+	light cj_ind_lgt_static\cj_ind_lgt_static.light
+}

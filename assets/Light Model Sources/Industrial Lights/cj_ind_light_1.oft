@@ -1,0 +1,361 @@
+Version 112 2
+fragments
+{
+	unbrokenCGOffset 0.00000000 0.00000000 0.00000000
+	dampingLinearC 0.02000000 0.02000000 0.02000000
+	dampingLinearV 0.02000000 0.02000000 0.02000000
+	dampingLinearV2 0.01000000 0.01000000 0.01000000
+	dampingAngularC 0.02000000 0.02000000 0.02000000
+	dampingAngularV 0.02000000 0.02000000 0.02000000
+	dampingAngularV2 0.01000000 0.01000000 0.01000000
+	estimatedCacheSize 3164
+	estimatedArticulatedCacheSize 0
+	becomeRope 0
+	artAssetID -1
+	attachBottomEnd 0
+	minMoveForce -1.00000000
+	CenterOfMass 0.01105660 -0.00364355 6.23790100
+	gravityFactor 1.00000000
+	buoyancyFactor 80.00000000
+	group CJ_IND_LIGHT_1
+	{
+		strength 100000.00000000
+		forceTransmissionScaleUp 0.10000000
+		forceTransmissionScaleDown 0.10000000
+		jointStiffness 0.00000000
+		minSoftAngle1 -1.00000000
+		maxSoftAngle1 1.00000000
+		maxSoftAngle2 1.00000000
+		maxSoftAngle3 1.00000000
+		rotationSpeed 0.00000000
+		rotationStrength 0.00000000
+		restoringStrength 0.00000000
+		restoringMaxTorque 0.00000000
+		latchStrength 0.00000000
+		disappearsWhenDead 0
+		minDamageForce 100.00000000
+		damageHealth 1000.00000000
+		child cj_ind_light_1\CJ_IND_LIGHT_1_0.child null
+		{
+			pristineMass 192.89300000
+			damagedMass 192.89300000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.01700511 -0.00408367 7.64125500
+			}
+		}
+		child cj_ind_light_1\CJ_IND_LIGHT_1_1.child null
+		{
+			pristineMass 192.89300000
+			damagedMass 192.89300000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.01700511 -0.00408367 7.64125500
+			}
+		}
+		child cj_ind_light_1\CJ_IND_LIGHT_1_2.child null
+		{
+			pristineMass 192.89300000
+			damagedMass 192.89300000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.01700511 -0.00408367 7.64125500
+			}
+		}
+		child cj_ind_light_1\CJ_IND_LIGHT_1_3.child null
+		{
+			pristineMass 192.89300000
+			damagedMass 192.89300000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.01700511 -0.00408367 7.64125500
+			}
+		}
+		child cj_ind_light_1\CJ_IND_LIGHT_1_4.child null
+		{
+			pristineMass 192.89300000
+			damagedMass 192.89300000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.01700511 -0.00408367 7.64125500
+			}
+		}
+		child cj_ind_light_1\CJ_IND_LIGHT_1_5.child null
+		{
+			pristineMass 192.89300000
+			damagedMass 192.89300000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.01700511 -0.00408367 7.64125500
+			}
+		}
+		child cj_ind_light_1\CJ_IND_LIGHT_1_6.child null
+		{
+			pristineMass 192.89300000
+			damagedMass 192.89300000
+			f50 [Temporarily|Unknown]
+			{
+				1.00000000 0.00000000 0.00000000
+				0.00000000 1.00000000 0.00000000
+				0.00000000 0.00000000 1.00000000
+				0.01700511 -0.00408367 7.64125500
+			}
+		}
+		group IND_LIGHT_2_gls4
+		{
+			strength 100000.00000000
+			forceTransmissionScaleUp 0.10000000
+			forceTransmissionScaleDown 0.10000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 1
+			minDamageForce 100.00000000
+			damageHealth 2.00000000
+			child cj_ind_light_1\IND_LIGHT_2_gls4_7.child null
+			{
+				pristineMass 3.00000000
+				damagedMass 3.00000000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.01700511 -0.00408367 7.64125500
+				}
+			}
+		}
+		group IND_LIGHT_2_gls3
+		{
+			strength 100000.00000000
+			forceTransmissionScaleUp 0.10000000
+			forceTransmissionScaleDown 0.10000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 1
+			minDamageForce 100.00000000
+			damageHealth 2.00000000
+			child cj_ind_light_1\IND_LIGHT_2_gls3_8.child null
+			{
+				pristineMass 3.00000000
+				damagedMass 3.00000000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.01700511 -0.00408367 7.64125500
+				}
+			}
+		}
+		group IND_LIGHT_2_gls2
+		{
+			strength 100000.00000000
+			forceTransmissionScaleUp 0.10000000
+			forceTransmissionScaleDown 0.10000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 1
+			minDamageForce 100.00000000
+			damageHealth 2.00000000
+			child cj_ind_light_1\IND_LIGHT_2_gls2_9.child null
+			{
+				pristineMass 3.00000000
+				damagedMass 3.00000000
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.01700511 -0.00408367 7.64125500
+				}
+			}
+		}
+		group IND_LIGHT_2_gls1
+		{
+			strength 100000.00000000
+			forceTransmissionScaleUp 0.10000000
+			forceTransmissionScaleDown 0.10000000
+			jointStiffness 0.00000000
+			minSoftAngle1 -1.00000000
+			maxSoftAngle1 1.00000000
+			maxSoftAngle2 1.00000000
+			maxSoftAngle3 1.00000000
+			rotationSpeed 0.00000000
+			rotationStrength 0.00000000
+			restoringStrength 0.00000000
+			restoringMaxTorque 0.00000000
+			latchStrength 0.00000000
+			disappearsWhenDead 1
+			minDamageForce 100.00000000
+			damageHealth 2.00000000
+			child cj_ind_light_1\IND_LIGHT_2_gls1_10.child null
+			{
+				pristineMass 1.41087200
+				damagedMass 1.41087200
+				f50 [Temporarily|Unknown]
+				{
+					1.00000000 0.00000000 0.00000000
+					0.00000000 1.00000000 0.00000000
+					0.00000000 0.00000000 1.00000000
+					0.01700511 -0.00408367 7.64125500
+				}
+			}
+		}
+	}
+	flags DISAPPEARS_WHEN_DEAD
+}
+drawable
+{
+	shadinggroup
+	{
+		Shaders 5
+		{
+			gta_normal_spec_reflect_emissive.sps CJ_CHROME_128_A 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_air_carparklamp 0.00000000 0.00000000 80.00000000 0.80000000 1.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker BM_air_carparklamp_s givemechecker
+			gta_normal_spec_reflect_emissive.sps BM_air_carparklampb 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_emissivenight.sps CJ_CHROME_128 0.00020000 18.00000000
+			gta_glass_emissivenight_alpha.sps bm_nylamp_bulb2BM_nylamp_bulb2_a 0.00000000 18.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		}
+	}
+	skel
+	{
+		skel cj_ind_light_1\cj_ind_light_1.skel
+	}
+	lodgroup
+	{
+		high none 0.00000000
+		med none 0.00000000
+		low none 0.00000000
+		vlow none 0.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin 0.00000000 0.00000000 0.00000000
+		AABBMax 0.00000000 0.00000000 0.00000000
+		radius 0.00000000
+	}
+}
+f8 [Temporarily|Unknown]
+{
+	0
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		0.01929589 0.00408367 3.75593000
+	}
+	1
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.00948211 0.00413367 -1.89492300
+	}
+	2
+	{
+		1.00000000 0.00000000 0.00000000
+		0.00000000 1.00000000 0.00000000
+		0.00000000 0.00000000 1.00000000
+		-0.01700511 0.00408367 -7.64125500
+	}
+	3
+	{
+		0.85489410 -0.51880260 -0.00000023
+		0.42497830 0.70028800 0.57357660
+		-0.29757290 -0.49034730 0.81915200
+		-1.13873600 -0.00072993 3.48759200
+	}
+	4
+	{
+		0.93543110 0.35350930 0.00000100
+		-0.28957850 0.76626030 0.57357620
+		0.20276370 -0.53654130 0.81915240
+		-0.50290210 0.01062153 3.48759500
+	}
+	5
+	{
+		0.86937480 -0.49415310 -0.00000068
+		0.40478690 0.71215000 0.57357630
+		-0.28343410 -0.49865310 0.81915200
+		0.46854800 -0.00134018 3.48759200
+	}
+	6
+	{
+		0.94393860 0.33012140 0.00000056
+		-0.27042000 0.77322950 0.57357600
+		0.18934930 -0.54142060 0.81915240
+		1.19381400 -0.01855130 3.48759600
+	}
+	7
+	{
+		0.93969280 0.34201970 -0.00000026
+		-0.28016620 0.76975180 0.57357570
+		0.19617440 -0.53898490 0.81915260
+		1.23135100 -0.12789340 3.40988600
+	}
+	8
+	{
+		0.40957630 0.70940580 0.57357690
+		-0.86602500 0.50000040 0.00000017
+		-0.28678850 -0.49673210 0.81915160
+		0.41566210 -0.11099300 3.40988400
+	}
+	9
+	{
+		0.93969280 0.34201970 -0.00000026
+		-0.28016620 0.76975180 0.57357570
+		0.19617440 -0.53898490 0.81915260
+		-0.46706320 -0.10298140 3.40988600
+	}
+	10
+	{
+		0.86602570 -0.49999950 -0.00000084
+		0.40957580 0.70940610 0.57357690
+		-0.28678750 -0.49673270 0.81915170
+		-1.19223700 -0.10073830 3.40988400
+	}
+}
+light
+{
+	light cj_ind_light_1\cj_ind_light_1.light
+}

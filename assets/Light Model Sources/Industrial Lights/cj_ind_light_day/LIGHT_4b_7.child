@@ -1,0 +1,268 @@
+Version 112 2
+drawable
+{
+	lodgroup
+	{
+		high 1 LIGHT_4b_7\LIGHT_4b_7_high.mesh 1 9999.00000000
+		med none 9999.00000000
+		low none 9999.00000000
+		vlow none 9999.00000000
+		center 0.00000000 0.00000000 0.00000000
+		AABBMin -0.21210500 -0.02984500 -0.16925800
+		AABBMax 0.21210500 0.12053200 0.16925800
+		radius 0.27299700
+	}
+}
+boundTransform
+{
+	1.00000000 0.00000000 0.00000000
+	0.00000000 1.00000000 0.00000000
+	0.00000000 0.00000000 1.00000000
+	0.00000000 0.00000000 0.00000000
+}
+bound
+{
+	Type BoundGeometry
+	CentroidPresent 1
+	CGPresent 1
+	Radius 0.27304400
+	WorldRadius 0.27305020
+	AABBMax 0.25310480 0.16153200 0.21025810
+	AABBMin -0.25310480 -0.07084524 -0.21025810
+	Centroid 0.00000386 0.00000370 0.00000321
+	CenterOfMass -0.00013428 0.01720761 0.00211586
+	Margin 0.04000000 0.04000000 0.04000000
+	Shrunk 28
+	{
+		-27457 -10093 27459
+		-27457 6739 -25293
+		27459 -10093 27459
+		27459 6739 -25293
+		-6962 17329 2451
+		-6962 17483 2008
+		6780 17483 2008
+		6780 17329 2451
+		-6962 14456 102
+		-5296 13766 2070
+		-5296 13922 1627
+		-6962 13233 3595
+		6780 13233 3595
+		5114 13922 1627
+		5114 13766 2070
+		6780 14456 102
+		-6962 12476 -109
+		-5297 11787 1858
+		-5296 11943 1415
+		-6962 11254 3384
+		6780 11254 3384
+		5114 11943 1415
+		5115 11787 1858
+		6780 12476 -109
+		-6962 8225 1477
+		-6962 8381 1034
+		6780 8381 1034
+		6780 8225 1477
+	}
+	Polygons 27
+	{
+		Polygon 0
+		{
+			Material 0
+			Vertices 3 2 0 1
+			Siblings -1 -1 -1 -1
+		}
+		Polygon 1
+		{
+			Material 0
+			Vertices 5 6 7 4
+			Siblings 5 7 9 3
+		}
+		Polygon 2
+		{
+			Material 0
+			Vertices 8 9 4 0
+			Siblings 10 3 9 -1
+		}
+		Polygon 3
+		{
+			Material 0
+			Vertices 9 10 5 4
+			Siblings 11 4 1 2
+		}
+		Polygon 4
+		{
+			Material 0
+			Vertices 10 11 5 0
+			Siblings 12 5 3 -1
+		}
+		Polygon 5
+		{
+			Material 0
+			Vertices 11 12 6 5
+			Siblings 13 6 1 4
+		}
+		Polygon 6
+		{
+			Material 0
+			Vertices 12 13 6 0
+			Siblings 14 7 5 -1
+		}
+		Polygon 7
+		{
+			Material 0
+			Vertices 13 14 7 6
+			Siblings 15 8 1 6
+		}
+		Polygon 8
+		{
+			Material 0
+			Vertices 14 15 7 0
+			Siblings 16 9 7 -1
+		}
+		Polygon 9
+		{
+			Material 0
+			Vertices 15 8 4 7
+			Siblings 17 2 1 8
+		}
+		Polygon 10
+		{
+			Material 0
+			Vertices 16 17 9 8
+			Siblings 18 11 2 17
+		}
+		Polygon 11
+		{
+			Material 0
+			Vertices 17 18 10 9
+			Siblings 19 12 3 10
+		}
+		Polygon 12
+		{
+			Material 0
+			Vertices 18 19 11 10
+			Siblings 20 13 4 11
+		}
+		Polygon 13
+		{
+			Material 0
+			Vertices 19 20 12 11
+			Siblings 21 14 5 12
+		}
+		Polygon 14
+		{
+			Material 0
+			Vertices 20 21 13 12
+			Siblings 22 15 6 13
+		}
+		Polygon 15
+		{
+			Material 0
+			Vertices 21 22 14 13
+			Siblings 23 16 7 14
+		}
+		Polygon 16
+		{
+			Material 0
+			Vertices 22 23 15 14
+			Siblings 24 17 8 15
+		}
+		Polygon 17
+		{
+			Material 0
+			Vertices 23 16 8 15
+			Siblings 25 10 9 16
+		}
+		Polygon 18
+		{
+			Material 0
+			Vertices 24 17 16 0
+			Siblings 19 10 25 -1
+		}
+		Polygon 19
+		{
+			Material 0
+			Vertices 24 25 18 17
+			Siblings 26 20 11 18
+		}
+		Polygon 20
+		{
+			Material 0
+			Vertices 25 19 18 0
+			Siblings 21 12 19 -1
+		}
+		Polygon 21
+		{
+			Material 0
+			Vertices 25 26 20 19
+			Siblings 26 22 13 20
+		}
+		Polygon 22
+		{
+			Material 0
+			Vertices 26 21 20 0
+			Siblings 23 14 21 -1
+		}
+		Polygon 23
+		{
+			Material 0
+			Vertices 26 27 22 21
+			Siblings 26 24 15 22
+		}
+		Polygon 24
+		{
+			Material 0
+			Vertices 27 23 22 0
+			Siblings 25 16 23 -1
+		}
+		Polygon 25
+		{
+			Material 0
+			Vertices 27 24 16 23
+			Siblings 26 18 17 24
+		}
+		Polygon 26
+		{
+			Material 0
+			Vertices 26 25 24 27
+			Siblings 21 19 25 23
+		}
+	}
+	VertexScale 0.00000772 0.00000355 0.00000642
+	VertexOffset 0.00000000 0.04534340 0.00000000
+	Vertices 28
+	{
+		-27458 -21203 26377
+		-27458 -4370 -26376
+		27459 -21203 26377
+		27459 -4370 -26376
+		-8609 4505 3098
+		-8609 6023 -1236
+		8426 6023 -1236
+		8426 4505 3098
+		-8609 8586 6435
+		-10975 9566 3639
+		-10975 11084 -694
+		-8609 12063 -3491
+		8426 12063 -3491
+		10792 11084 -694
+		10792 9566 3639
+		8426 8586 6435
+		-8609 13647 6976
+		-10975 14626 4180
+		-10975 16144 -153
+		-8609 17123 -2950
+		8426 17123 -2950
+		10792 16144 -153
+		10792 14626 4180
+		8426 13647 6976
+		-8609 19686 4721
+		-8609 21204 387
+		8426 21204 387
+		8426 19686 4721
+	}
+	Materials 1
+	{
+		0 0 0
+	}
+}

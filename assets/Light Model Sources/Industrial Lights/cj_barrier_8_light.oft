@@ -87,10 +87,10 @@ drawable
 	{
 		Shaders 5
 		{
-			gta_default.sps cj_red_plastic_top
-			gta_default.sps CJ_Black_metal
+			gta_normal_spec_reflect_emissive.sps cj_red_plastic_top 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+			gta_normal_spec_reflect_emissive.sps CJ_Black_metal 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 			gta_cutout_fence.sps CJ_O_NETTINGCJ_O_NETTING_a
-			gta_emissivenight.sps cj_white 0.00040000 6.00000000
+			gta_emissivenight.sps cj_white 0.00020000 6.00000000
 			gta_glass_emissive_alpha.sps CJ_ORANGECJ_AMBER_ALPHA_2 0.00000000 6.00000000 30.00000000 1.00000000 0.10000000 0.45000000 CJ_GLASS_N CJ_128_ENV
 		}
 	}
