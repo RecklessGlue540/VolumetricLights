@@ -115,7 +115,10 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
     <PostBuildEvent Condition="'$(GTA_IV_DIR)' != ''">
-      <Command>copy /y "$(TargetPath)" "$(GTA_IV_DIR)\plugins\$(TargetName).asi"</Command>
+      <Command>
+        copy /y "$(TargetPath)" "$(GTA_IV_DIR)\plugins\$(TargetName).asi"
+        copy /y "$(ProjectDir)\resources\VolumetricLights.ini" "$(GTA_IV_DIR)\plugins\VolumetricLights.ini"
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

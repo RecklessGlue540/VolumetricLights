@@ -122,6 +122,11 @@ TaillightsCoronaIntensity  = 0.1
 Normally, casual players do not need to edit these options unless they're not enough as is.\
 They are provided more for timecycle modders who will definitely need them.
 
+> [!NOTE]
+>
+> Enabling FusionFix's snowy weather will disable the volumetric shafts from this mod, to avoid conflict.
+>
+
 ## Compatibility
 
 Supported game versions: 1.0.7.0 up to 1.2.0.59. Any other versions are not and are not going to be supported.
@@ -140,11 +145,11 @@ Supported game versions: 1.0.7.0 up to 1.2.0.59. Any other versions are not and 
 
 ## Installation
 
-Download the latest release, open the .7z archive and copy the "plugins" and "update" folders from it over to your game's directory.
+Download the [latest release's .7z archive](https://github.com/RecklessGlue540/VolumetricLights/releases/latest), open it once downloaded and copy everything from it over to your game's directory.
 
 > [!NOTE]
 >
-> The mod comes with a high update folder priority already, so to avoid conflicts with other light mods.\
+> The mod comes with a high update folder priority already, so to try avoid conflicts with other light mods.\
 > Note that it should always come before FusionFix's folder, otherwise none of the mod will work.
 >
 
@@ -210,13 +215,12 @@ TODO: Complete this
 ### To-do:
 
 High priority:
-- Add a Project2DFX config with adjusted light positions;
 - Improve destructibility of certain lamppost parts if viable (Such as traffic light boxes, bm_nylamp7 lamps, etc);
-- Fix bm_wall_light_02 emissive glass z-shifting;
 
 Mid priority:
 - Fix/Improve more models;
 - Add cubemaps to as many bulbs as possible;
+- Add a Project2DFX config with adjusted light positions for the coronas;
 
 Lower priority:
 - Adjust WalkDontWalk signal texture offsets;
