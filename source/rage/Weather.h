@@ -20,6 +20,21 @@ namespace CWeather
     eWeatherType* NewWeatherType = nullptr;
     float* InterpolationValue    = nullptr;
 
+    eWeatherType GetOldWeatherType()
+    {
+        return *OldWeatherType;
+    }
+
+    eWeatherType GetNewWeatherType()
+    {
+        return *NewWeatherType;
+    }
+
+    float GetWeatherInterpolationValue()
+    {
+        return *InterpolationValue;
+    }
+
     bool Init()
     {
         // FusionFix code, slightly modified to add version detection
@@ -54,20 +69,5 @@ namespace CWeather
         }
 
         return true;
-    }
-
-    static eWeatherType GetOldWeatherType()
-    {
-        return *OldWeatherType;
-    }
-
-    static eWeatherType GetNewWeatherType()
-    {
-        return *NewWeatherType;
-    }
-
-    static float GetWeatherInterpolationValue()
-    {
-        return *InterpolationValue;
     }
 }

@@ -3,9 +3,9 @@ shadinggroup
 {
 	Shaders 4
 	{
-		gta_normal_spec.sps ah_romanswall1 30.00000000 0.90000000 1.00000000;0.00000000;0.00000000 0.50000000 ah_strceilingN ah_strceilingS
-		gta_default.sps dodgyraylight\ah_oldwdstps.dds
-		gta_default.sps ah_wpaperdirt4
+		gta_normal_spec_reflect_emissive.sps ah_romanswall1 0.00000000 0.00000000 30.00000000 0.90000000 1.00000000;0.00000000;0.00000000 0.50000000 0.00000000 ah_strceilingN ah_strceilingS givemechecker
+		gta_normal_spec_reflect_emissive.sps dodgyraylight\ah_oldwdstps.dds 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
+		gta_normal_spec_reflect_emissive.sps ah_wpaperdirt4 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000;0.00000000;0.00000000 0.00000000 0.00000000 givemechecker givemechecker givemechecker
 		gta_glass_emissive.sps dodgyraylight\ah_semdirt.dds 0.00040000 16.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
 	}
 }
