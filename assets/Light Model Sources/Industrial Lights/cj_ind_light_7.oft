@@ -324,9 +324,9 @@ fragments
 		}
 		group IND_LIGHT_7_gls07
 		{
-			strength 100.00000000
-			forceTransmissionScaleUp 0.25000000
-			forceTransmissionScaleDown 0.25000000
+			strength 10000.00000000
+			forceTransmissionScaleUp 0.10000000
+			forceTransmissionScaleDown 0.10000000
 			jointStiffness 0.00000000
 			minSoftAngle1 -1.00000000
 			maxSoftAngle1 1.00000000
@@ -337,9 +337,9 @@ fragments
 			restoringStrength 0.00000000
 			restoringMaxTorque 0.00000000
 			latchStrength 0.00000000
-			disappearsWhenDead 0
+			disappearsWhenDead 1
 			minDamageForce 100.00000000
-			damageHealth 1000.00000000
+			damageHealth 1.00000000
 			child cj_ind_light_7\IND_LIGHT_7_gls07_16.child null
 			{
 				pristineMass 2.60964900

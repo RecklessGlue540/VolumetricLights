@@ -49,9 +49,9 @@ fragments
 		}
 		group Pole
 		{
-			strength 100.00000000
-			forceTransmissionScaleUp 0.00000000
-			forceTransmissionScaleDown 0.00000000
+			strength 10000.00000000
+			forceTransmissionScaleUp 0.10000000
+			forceTransmissionScaleDown 0.10000000
 			jointStiffness 0.00000000
 			minSoftAngle1 -1.00000000
 			maxSoftAngle1 1.00000000
@@ -91,9 +91,9 @@ fragments
 			}
 			group light1
 			{
-				strength 50.00000000
-				forceTransmissionScaleUp 0.00000000
-				forceTransmissionScaleDown 0.00000000
+				strength 10000.00000000
+				forceTransmissionScaleUp 0.10000000
+				forceTransmissionScaleDown 0.10000000
 				jointStiffness 0.00000000
 				minSoftAngle1 -1.00000000
 				maxSoftAngle1 1.00000000
@@ -121,9 +121,9 @@ fragments
 				}
 				group ind_light_3_glass
 				{
-					strength -1.00000000
-					forceTransmissionScaleUp 0.00000000
-					forceTransmissionScaleDown 0.00000000
+					strength 100000.00000000
+					forceTransmissionScaleUp 0.10000000
+					forceTransmissionScaleDown 0.10000000
 					jointStiffness 0.00000000
 					minSoftAngle1 -1.00000000
 					maxSoftAngle1 1.00000000
@@ -153,9 +153,9 @@ fragments
 			}
 			group light2
 			{
-				strength 50.00000000
-				forceTransmissionScaleUp 0.00000000
-				forceTransmissionScaleDown 0.00000000
+				strength 10000.00000000
+				forceTransmissionScaleUp 0.10000000
+				forceTransmissionScaleDown 0.10000000
 				jointStiffness 0.00000000
 				minSoftAngle1 -1.00000000
 				maxSoftAngle1 1.00000000
@@ -183,9 +183,9 @@ fragments
 				}
 				group ind_light_3_glass2
 				{
-					strength -1.00000000
-					forceTransmissionScaleUp 0.00000000
-					forceTransmissionScaleDown 0.00000000
+					strength 100000.00000000
+					forceTransmissionScaleUp 0.10000000
+					forceTransmissionScaleDown 0.10000000
 					jointStiffness 0.00000000
 					minSoftAngle1 -1.00000000
 					maxSoftAngle1 1.00000000
