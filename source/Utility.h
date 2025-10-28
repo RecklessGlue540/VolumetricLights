@@ -21,6 +21,25 @@ hook::pattern find_pattern(Args... args)
     return pattern;
 }
 
+typedef bool(__cdecl* FusionFixModeFun)();
+
+bool IsFusionFixModeEnabled(const char* FunctionName)
+{
+    static HMODULE FusionFix = GetModuleHandleA("GTAIV.EFLC.FusionFix.asi");
+    if (!FusionFix)
+    {
+        return false;
+    }
+
+    auto Function = reinterpret_cast<FusionFixModeFun>(GetProcAddress(FusionFix, FunctionName));
+    if (!Function)
+    {
+        return false;
+    }
+
+    return Function();
+}
+
 void DisplayUnsupportedError()
 {
     MessageBox(0, L"Only game versions 1.0.7.0 up to 1.2.0.59 are supported.", L"VolumetricLights.asi", MB_ICONINFORMATION | MB_OK);
@@ -36,44 +55,54 @@ bool bDrizzle    = false;
 bool bFoggy      = false;
 bool bLightning  = false;
 
-float fSpotLightsVolumeIntensityExtraSunny = 0.0f;
-float fSpotLightsVolumeIntensitySunny      = 0.0f;
-float fSpotLightsVolumeIntensitySunnyWindy = 0.0f;
-float fSpotLightsVolumeIntensityCloudy     = 0.0f;
-float fSpotLightsVolumeIntensityRain       = 0.0f;
-float fSpotLightsVolumeIntensityDrizzle    = 0.0f;
-float fSpotLightsVolumeIntensityFoggy      = 0.0f;
-float fSpotLightsVolumeIntensityLightning  = 0.0f;
+float fSpotlightsVolumeIntensityExtraSunny = 0.0f;
+float fSpotlightsVolumeIntensitySunny      = 0.0f;
+float fSpotlightsVolumeIntensitySunnyWindy = 0.0f;
+float fSpotlightsVolumeIntensityCloudy     = 0.0f;
+float fSpotlightsVolumeIntensityRain       = 0.0f;
+float fSpotlightsVolumeIntensityDrizzle    = 0.0f;
+float fSpotlightsVolumeIntensityFoggy      = 0.0f;
+float fSpotlightsVolumeIntensityLightning  = 0.0f;
 
-float fSpotLightsVolumeScaleExtraSunny = 0.0f;
-float fSpotLightsVolumeScaleSunny      = 0.0f;
-float fSpotLightsVolumeScaleSunnyWindy = 0.0f;
-float fSpotLightsVolumeScaleCloudy     = 0.0f;
-float fSpotLightsVolumeScaleRain       = 0.0f;
-float fSpotLightsVolumeScaleDrizzle    = 0.0f;
-float fSpotLightsVolumeScaleFoggy      = 0.0f;
-float fSpotLightsVolumeScaleLightning  = 0.0f;
+float fSpotlightsVolumeScaleExtraSunny = 0.0f;
+float fSpotlightsVolumeScaleSunny      = 0.0f;
+float fSpotlightsVolumeScaleSunnyWindy = 0.0f;
+float fSpotlightsVolumeScaleCloudy     = 0.0f;
+float fSpotlightsVolumeScaleRain       = 0.0f;
+float fSpotlightsVolumeScaleDrizzle    = 0.0f;
+float fSpotlightsVolumeScaleFoggy      = 0.0f;
+float fSpotlightsVolumeScaleLightning  = 0.0f;
 
-float fPointLightsVolumeIntensityExtraSunny = 0.0f;
-float fPointLightsVolumeIntensitySunny      = 0.0f;
-float fPointLightsVolumeIntensitySunnyWindy = 0.0f;
-float fPointLightsVolumeIntensityCloudy     = 0.0f;
-float fPointLightsVolumeIntensityRain       = 0.0f;
-float fPointLightsVolumeIntensityDrizzle    = 0.0f;
-float fPointLightsVolumeIntensityFoggy      = 0.0f;
-float fPointLightsVolumeIntensityLightning  = 0.0f;
+float fPointlightsVolumeIntensityExtraSunny = 0.0f;
+float fPointlightsVolumeIntensitySunny      = 0.0f;
+float fPointlightsVolumeIntensitySunnyWindy = 0.0f;
+float fPointlightsVolumeIntensityCloudy     = 0.0f;
+float fPointlightsVolumeIntensityRain       = 0.0f;
+float fPointlightsVolumeIntensityDrizzle    = 0.0f;
+float fPointlightsVolumeIntensityFoggy      = 0.0f;
+float fPointlightsVolumeIntensityLightning  = 0.0f;
 
-float fPointLightsVolumeScaleExtraSunny = 0.0f;
-float fPointLightsVolumeScaleSunny      = 0.0f;
-float fPointLightsVolumeScaleSunnyWindy = 0.0f;
-float fPointLightsVolumeScaleCloudy     = 0.0f;
-float fPointLightsVolumeScaleRain       = 0.0f;
-float fPointLightsVolumeScaleDrizzle    = 0.0f;
-float fPointLightsVolumeScaleFoggy      = 0.0f;
-float fPointLightsVolumeScaleLightning  = 0.0f;
+float fPointlightsVolumeScaleExtraSunny = 0.0f;
+float fPointlightsVolumeScaleSunny      = 0.0f;
+float fPointlightsVolumeScaleSunnyWindy = 0.0f;
+float fPointlightsVolumeScaleCloudy     = 0.0f;
+float fPointlightsVolumeScaleRain       = 0.0f;
+float fPointlightsVolumeScaleDrizzle    = 0.0f;
+float fPointlightsVolumeScaleFoggy      = 0.0f;
+float fPointlightsVolumeScaleLightning  = 0.0f;
 
 float fHeadlightsCoronaSize      = 0.0f;
 float fHeadlightsCoronaIntensity = 0.0f;
 
 float fTaillightsCoronaSize      = 0.0f;
 float fTaillightsCoronaIntensity = 0.0f;
+
+bool IsFusionFixSnowEnabled()
+{
+    return IsFusionFixModeEnabled("IsSnowEnabled");
+}
+
+bool IsFusionFixHalloweenEnabled()
+{
+    return IsFusionFixModeEnabled("IsHallEnabled");
+}

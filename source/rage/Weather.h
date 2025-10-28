@@ -34,40 +34,4 @@ namespace CWeather
     {
         return *InterpolationValue;
     }
-
-    bool Init()
-    {
-        // FusionFix code, slightly modified to add version detection
-        auto pattern = find_pattern("A1 ? ? ? ? 83 C4 08 8B CF", "A1 ? ? ? ? 80 3F 04");
-        if (!pattern.empty())
-        {
-            CWeather::OldWeatherType = *pattern.get_first<CWeather::eWeatherType*>(1);
-        }
-        else
-        {
-            return false;
-        }
-
-        pattern = find_pattern("A1 ? ? ? ? 89 46 4C A1", "A1 ? ? ? ? 77 05 A1 ? ? ? ? 80 3F 04");
-        if (!pattern.empty())
-        {
-            CWeather::NewWeatherType = *pattern.get_first<CWeather::eWeatherType*>(1);
-        }
-        else
-        {
-            return false;
-        }
-
-        pattern = hook::pattern("F3 0F 10 05 ? ? ? ? 8B 44 24 0C 8B 4C 24 04");
-        if (!pattern.empty())
-        {
-            CWeather::InterpolationValue = *pattern.get_first<float*>(4);
-        }
-        else
-        {
-            return false;
-        }
-
-        return true;
-    }
 }
