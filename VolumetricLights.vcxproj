@@ -20,6 +20,7 @@
     <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h" />
     <ClInclude Include="dependencies\safetyhook\safetyhook.hpp" />
     <ClInclude Include="dependencies\safetyhook\Zydis.h" />
+    <ClInclude Include="source\rage\Matrix.h" />
     <ClInclude Include="source\Utility.h" />
     <ClInclude Include="source\rage\LightSource.h" />
     <ClInclude Include="source\rage\Vector.h" />
@@ -32,6 +33,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{cec3fa6a-f689-4f8c-b24a-a4e44587d63d}</ProjectGuid>
+    <TargetName>VolumetricLights</TargetName>
     <RootNamespace>VolumetricLights</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -46,8 +48,8 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -62,18 +64,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <TargetExt>.asi</TargetExt>
-    <TargetName>VolumetricLights</TargetName>
     <CopyLocalDeploymentContent>true</CopyLocalDeploymentContent>
+    <TargetExt>.asi</TargetExt>
     <OutDir>$(SolutionDir)build\$(Configuration)\bin\</OutDir>
     <IncludePath>dependencies\Hooking.Patterns;dependencies\IniReader;dependencies\injector\include;dependencies\safetyhook;$(IncludePath)</IncludePath>
     <LibraryPath>dependencies\;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)build\$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <TargetExt>.asi</TargetExt>
-    <TargetName>VolumetricLights</TargetName>
     <CopyLocalDeploymentContent>true</CopyLocalDeploymentContent>
+    <TargetExt>.asi</TargetExt>
     <OutDir>$(SolutionDir)build\$(Configuration)\bin\</OutDir>
     <IncludePath>dependencies\Hooking.Patterns;dependencies\IniReader;dependencies\injector\include;dependencies\safetyhook;$(IncludePath)</IncludePath>
     <LibraryPath>dependencies\;$(LibraryPath)</LibraryPath>
@@ -84,7 +84,9 @@
       <WarningLevel>Level3</WarningLevel>
       <LinkIncremental>true</LinkIncremental>
       <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;NOMINMAX;WIN32;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <DisableSpecificWarnings>4005</DisableSpecificWarnings>
@@ -102,7 +104,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;NOMINMAX;WIN32;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ConformanceMode>true</ConformanceMode>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -110,14 +114,15 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
-    <PostBuildEvent Condition="'$(GTA_IV_DIR)' != ''">
+    <PostBuildEvent Condition="'$(GTA_IV_DIR)' != '' AND Exists('$(GTA_IV_DIR)\plugins')">
       <Command>
         copy /y "$(TargetPath)" "$(GTA_IV_DIR)\plugins\$(TargetName).asi"
-        copy /y "$(ProjectDir)\resources\VolumetricLights.ini" "$(GTA_IV_DIR)\plugins\VolumetricLights.ini"
+        copy /y "$(ProjectDir)\resources\*.ini" "$(GTA_IV_DIR)\plugins\$(TargetName).ini"
       </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

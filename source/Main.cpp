@@ -2,6 +2,7 @@
 
 #include "rage/LightSource.h"
 #include "rage/Weather.h"
+//#include "rage/Matrix.h"
 
 void ReadIni()
 {
@@ -156,6 +157,7 @@ static rage::CLightSource* __fastcall CopyLight(void* _this, void* edx, void* a2
 
 void OnAfterCopyLight(rage::CLightSource *light)
 {
+    //#define RGB(R, G, B) { R / 255.0f, G / 255.0f, B / 255.0f };
     CWeather::eWeatherType CurrentWeather = CWeather::GetOldWeatherType();
     CWeather::eWeatherType NextWeather  = CWeather::GetNewWeatherType();
     float InterpolationValue = CWeather::GetWeatherInterpolationValue();
@@ -226,7 +228,118 @@ void OnAfterCopyLight(rage::CLightSource *light)
             }
         }
     }
+
+    // TODO: Rotterdam Tower custom light colors
+    // This idea sadly might end up being scrapped, due to there being only one real approach of doing this, which kind of pushes the game's limits.
+    // It consists of checking for custom projtex hashes for every light on each row of neons on the tower respectively.
+    // The way the lights are done on the tower is: LOD1 - Lights / LOD2 - Emissive / LOD3 - Emissive.
+    // To make this work we have to null out the emissive intensity from the low LODs and patch the high LODs' lights with the check, then copy the lights to the low LOD models as is as well.
+    // While it just works, lights are really limited in this game and by doing this it means we're drawing over 50 lights at ALL times instead of just when near the tower.
+    // That means from the start, out of 640 possible lights while away from the tower, we remain with around 590 that could be used by other lights, which is okay but if one were to increase the lamppost lights' distance
+    // (!!!Including by raising the distance sliders especially!!!), the tower would have higher and higher chances of getting visible seizures within its lights.
+
+    /*auto now = std::chrono::system_clock::now();
+    auto now_c = std::chrono::system_clock::to_time_t(now);
+    auto date = std::localtime(&now_c);
+
+    // Bottom Rotterdam Tower lights
+    if (light->mProjTexHash == 0x0BBE)
+    {
+        if (IsFusionFixSnowEnabled())
+        {
+            light->mColor = RGB(255, 0, 0);
+        }
+
+        if (IsFusionFixHalloweenEnabled())
+        {
+            light->mColor = RGB(210, 128, 60);
+        }
+
+        // 29th April
+        if ((date->tm_mon == 3 && date->tm_mday <= 29))
+        {
+            light->mColor = RGB(160, 32, 240);
+        }
+    }
+
+    // Middle Rotterdam lights
+    if (light->mProjTexHash == 0xB16)
+    {
+        if (IsFusionFixSnowEnabled())
+        {
+            light->mColor = RGB(0, 255, 0);
+        }
+
+        if (IsFusionFixHalloweenEnabled())
+        {
+            light->mColor = RGB(255, 165, 100);
+        }
+
+        // 29th April
+        if ((date->tm_mon == 3 && date->tm_mday <= 29))
+        {
+            light->mColor = RGB(173, 216, 230);
+        }
+    }
+
+    // Top Rotterdam lights
+    if (light->mProjTexHash == 0xDADD8)
+    {
+        if (IsFusionFixSnowEnabled())
+        {
+            light->mColor = RGB(0, 255, 0);
+        }
+
+        if (IsFusionFixHalloweenEnabled())
+        {
+            light->mColor = RGB(100, 255, 175);
+        }
+
+        // 29th April
+        if ((date->tm_mon == 3 && date->tm_mday <= 29))
+        {
+            light->mColor = RGB(0, 255, 255);
+        }
+    }*/
 }
+
+// TODO: Add a DualVehicleLights option, this is all thanks to @xoxor4d (https://github.com/xoxor4d)
+// Still needs a lot of work... including the damned preCE support
+/*static uintptr_t Resume = 0;
+
+typedef void* (__cdecl* AddSingleVehicleLight_T)(rage::Matrix44* a1, float* LightPosition, float* LightDirection, float* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char LightFlag, char HighBeamMaybe);
+AddSingleVehicleLight_T AddSingleVehicleLight = nullptr;
+
+void __cdecl RenderHeadlights(rage::Matrix44* a1, rage::Matrix44* LeftLightPosition, rage::Matrix44* RightLightPosition, float* LightDirection, float* Color, float Intensity, float Radius, int64_t a8, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char HighBeamMaybe)
+{
+    // Not goot :(
+    float InnerConeAngle = 20.0f;
+    float OuterConeAngle = 50.0f;
+
+    AddSingleVehicleLight(a1, &LeftLightPosition->d.x,  LightDirection, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowCacheIndex, 0, HighBeamMaybe);
+    AddSingleVehicleLight(a1, &RightLightPosition->d.x, LightDirection, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowCacheIndex, 0, HighBeamMaybe);
+}
+
+void __declspec(naked) RenderCenterHeadlight()
+{
+    __asm
+    {
+        mov ecx, [esp + 0x50]
+        mov eax, [esp + 0x54]
+
+        push ecx
+        push eax
+
+        push dword ptr[ebp + 0x24]
+
+        call RenderHeadlights
+        add esp, 0x38
+
+        mov eax, Resume
+        add eax, 11
+        jmp eax
+    }
+}*/
 
 BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
 {
@@ -291,6 +404,27 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
                 return false;
             }
         }
+
+        // TODO: Dual vehicle lights, thanks to @xoxor4d (https://github.com/xoxor4d)
+        /*{
+            // Headlights
+            auto pattern = hook::pattern("FF 75 24 E8 ? ? ? ? 83 C4 30 5F 5E 8B E5 5D C2 24 00");
+            injector::MakeNOP(pattern.get_first(0), 8, true);
+            injector::MakeJMP(pattern.get_first(0), RenderCenterHeadlight, true);
+            uintptr_t BaseAddress = (uintptr_t)pattern.get_first(0);
+            Resume = BaseAddress;
+
+            pattern = hook::pattern("55 8B EC 83 E4 F0 83 EC 20 80 7D 34 00 8B 4D 08 8B 45 10");
+            AddSingleVehicleLight = (AddSingleVehicleLight_T)pattern.get_first(0);
+
+            pattern = hook::pattern("F3 0F 11 44 24 ? E8 ? ? ? ? 8D 44 24 60 50");
+            injector::MakeNOP(pattern.get_first(0), 6, true);
+
+            pattern = hook::pattern("F3 0F 10 74 24 ? F3 0F 59 25 ? ? ? ? F3 0F 11 74 24 ? F3 0F 59 2D ? ? ? ? F3 0F 11 64 24 ? 6A 00");
+            injector::MakeNOP(pattern.get_first(0), 6, true);
+
+            // Taillights (TODO)
+        }*/
 
         // Vehicle corona hooks
         {

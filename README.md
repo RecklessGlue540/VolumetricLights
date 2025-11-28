@@ -124,12 +124,13 @@ They are provided more for timecycle modders who will definitely need them.
 
 > [!NOTE]
 >
-> Enabling FusionFix's snowy weather will disable the volumetric shafts from this mod, to avoid conflict.
+> Starting from the next update, enabling FusionFix's snowy weather will disable the volumetric shafts from this mod, to avoid conflict.
+> FusionFix's snow volumetric shafts now use similar logic as this mod, so you won't lose much of anything, apart from getting the volumetric shafts on some unintended light models as well.
 >
 
 ## Compatibility
 
-Supported game versions: 1.0.7.0 up to 1.2.0.59. Any other versions are not and are not going to be supported.
+Supported game versions: 1.0.7.0 up to 1.2.0.59. Any other versions are not supported.
 
 ## Requirements
 
