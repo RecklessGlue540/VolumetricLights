@@ -5,6 +5,7 @@
 #include "Hooking.Patterns.h"
 #include "IniReader.h"
 #include "injector/injector.hpp"
+#include "injector/assembly.hpp"
 #include "safetyhook.hpp"
 
 #include <cstdint>
@@ -93,9 +94,10 @@ float fPointlightsVolumeScaleLightning  = 0.0f;
 
 float fHeadlightsCoronaSize      = 0.0f;
 float fHeadlightsCoronaIntensity = 0.0f;
-
 float fTaillightsCoronaSize      = 0.0f;
 float fTaillightsCoronaIntensity = 0.0f;
+
+int iPickupLightsMode = 0;
 
 bool IsFusionFixSnowEnabled()
 {

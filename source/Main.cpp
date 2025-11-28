@@ -19,48 +19,51 @@ void ReadIni()
     bLightning  = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Lightning",  1) != 0;
 
     // [SPOTLIGHTS]
-    fSpotlightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
-    fSpotlightsVolumeIntensitySunny      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensitySunny",      0.0f), 0.0f, 1.5f);
-    fSpotlightsVolumeIntensitySunnyWindy = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.5f);
-    fSpotlightsVolumeIntensityCloudy     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityCloudy",     0.0f), 0.0f, 1.5f);
-    fSpotlightsVolumeIntensityRain       = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityRain",       0.0f), 0.0f, 1.5f);
-    fSpotlightsVolumeIntensityDrizzle    = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityDrizzle",    0.0f), 0.0f, 1.5f);
-    fSpotlightsVolumeIntensityFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityFoggy",      0.0f), 0.0f, 1.5f);
-    fSpotlightsVolumeIntensityLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeIntensityLightning",  0.0f), 0.0f, 1.5f);
+    fSpotlightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
+    fSpotlightsVolumeIntensitySunny      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensitySunny",      0.0f), 0.0f, 1.5f);
+    fSpotlightsVolumeIntensitySunnyWindy = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.5f);
+    fSpotlightsVolumeIntensityCloudy     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensityCloudy",     0.0f), 0.0f, 1.5f);
+    fSpotlightsVolumeIntensityRain       = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensityRain",       0.0f), 0.0f, 1.5f);
+    fSpotlightsVolumeIntensityDrizzle    = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensityDrizzle",    0.0f), 0.0f, 1.5f);
+    fSpotlightsVolumeIntensityFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensityFoggy",      0.0f), 0.0f, 1.5f);
+    fSpotlightsVolumeIntensityLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensityLightning",  0.0f), 0.0f, 1.5f);
 
-    fSpotlightsVolumeScaleExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleExtraSunny", 0.0f), 0.0f, 0.5f);
-    fSpotlightsVolumeScaleSunny      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleSunny",      0.0f), 0.0f, 0.5f);
-    fSpotlightsVolumeScaleSunnyWindy = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleSunnyWindy", 0.0f), 0.0f, 0.5f);
-    fSpotlightsVolumeScaleCloudy     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleCloudy",     0.0f), 0.0f, 0.5f);
-    fSpotlightsVolumeScaleRain       = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleRain",       0.0f), 0.0f, 0.5f);
-    fSpotlightsVolumeScaleDrizzle    = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleDrizzle",    0.0f), 0.0f, 0.5f);
-    fSpotlightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
-    fSpotlightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotLightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
+    fSpotlightsVolumeScaleExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleExtraSunny", 0.0f), 0.0f, 0.5f);
+    fSpotlightsVolumeScaleSunny      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleSunny",      0.0f), 0.0f, 0.5f);
+    fSpotlightsVolumeScaleSunnyWindy = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleSunnyWindy", 0.0f), 0.0f, 0.5f);
+    fSpotlightsVolumeScaleCloudy     = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleCloudy",     0.0f), 0.0f, 0.5f);
+    fSpotlightsVolumeScaleRain       = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleRain",       0.0f), 0.0f, 0.5f);
+    fSpotlightsVolumeScaleDrizzle    = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleDrizzle",    0.0f), 0.0f, 0.5f);
+    fSpotlightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
+    fSpotlightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
 
     // [POINTLIGHTS]
-    fPointlightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
-    fPointlightsVolumeIntensitySunny      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensitySunny",      0.0f), 0.0f, 1.5f);
-    fPointlightsVolumeIntensitySunnyWindy = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.5f);
-    fPointlightsVolumeIntensityCloudy     = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityCloudy",     0.0f), 0.0f, 1.5f);
-    fPointlightsVolumeIntensityRain       = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityRain",       0.0f), 0.0f, 1.5f);
-    fPointlightsVolumeIntensityDrizzle    = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityDrizzle",    0.0f), 0.0f, 1.5f);
-    fPointlightsVolumeIntensityFoggy      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityFoggy",      0.0f), 0.0f, 1.5f);
-    fPointlightsVolumeIntensityLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeIntensityLightning",  0.0f), 0.0f, 1.5f);
+    fPointlightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
+    fPointlightsVolumeIntensitySunny      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensitySunny",      0.0f), 0.0f, 1.5f);
+    fPointlightsVolumeIntensitySunnyWindy = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.5f);
+    fPointlightsVolumeIntensityCloudy     = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensityCloudy",     0.0f), 0.0f, 1.5f);
+    fPointlightsVolumeIntensityRain       = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensityRain",       0.0f), 0.0f, 1.5f);
+    fPointlightsVolumeIntensityDrizzle    = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensityDrizzle",    0.0f), 0.0f, 1.5f);
+    fPointlightsVolumeIntensityFoggy      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensityFoggy",      0.0f), 0.0f, 1.5f);
+    fPointlightsVolumeIntensityLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensityLightning",  0.0f), 0.0f, 1.5f);
 
-    fPointlightsVolumeScaleExtraSunny = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleExtraSunny", 0.0f), 0.0f, 0.5f);
-    fPointlightsVolumeScaleSunny      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleSunny",      0.0f), 0.0f, 0.5f);
-    fPointlightsVolumeScaleSunnyWindy = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleSunnyWindy", 0.0f), 0.0f, 0.5f);
-    fPointlightsVolumeScaleCloudy     = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleCloudy",     0.0f), 0.0f, 0.5f);
-    fPointlightsVolumeScaleRain       = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleRain",       0.0f), 0.0f, 0.5f);
-    fPointlightsVolumeScaleDrizzle    = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleDrizzle",    0.0f), 0.0f, 0.5f);
-    fPointlightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
-    fPointlightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointLightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
+    fPointlightsVolumeScaleExtraSunny = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleExtraSunny", 0.0f), 0.0f, 0.5f);
+    fPointlightsVolumeScaleSunny      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleSunny",      0.0f), 0.0f, 0.5f);
+    fPointlightsVolumeScaleSunnyWindy = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleSunnyWindy", 0.0f), 0.0f, 0.5f);
+    fPointlightsVolumeScaleCloudy     = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleCloudy",     0.0f), 0.0f, 0.5f);
+    fPointlightsVolumeScaleRain       = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleRain",       0.0f), 0.0f, 0.5f);
+    fPointlightsVolumeScaleDrizzle    = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleDrizzle",    0.0f), 0.0f, 0.5f);
+    fPointlightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
+    fPointlightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
 
     // [VEHICLELIGHTS]
     fHeadlightsCoronaSize      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaSize",      0.25f), 0.0f, 1.0f);
     fHeadlightsCoronaIntensity = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaIntensity", 0.1f),  0.0f, 1.0f);
     fTaillightsCoronaSize      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaSize",      0.25f), 0.0f, 1.0f);
     fTaillightsCoronaIntensity = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaIntensity", 0.1f),  0.0f, 1.0f);
+
+    // [PICKUPLIGHTS]
+    iPickupLightsMode = iniReader.ReadInteger("PICKUPLIGHTS", "PickupLightsMode", 1);
 }
 
 bool HasVolumes(CWeather::eWeatherType type)
@@ -167,7 +170,7 @@ void OnAfterCopyLight(rage::CLightSource *light)
         // Include spotlights and only those "flagged" with "LuminescenceHash" 57005
         if (light->mType == rage::LT_SPOT && light->mProjTexHash == 0xDEAD)
         {
-            // Append the "volumetric" light flag
+            // Append the light shaft flag
             light->mFlags |= 8;
 
             // Transition from no volumes to volumes
@@ -199,7 +202,7 @@ void OnAfterCopyLight(rage::CLightSource *light)
         // Include pointlights and only those "flagged" with "LuminescenceHash" 57005
         if (light->mType == rage::LT_POINT && light->mProjTexHash == 0xDEAD)
         {
-            // Append the "volumetric" light flag
+            // Append the light shaft flag
             light->mFlags |= 8;
 
             // Transition from no volumes to volumes
@@ -474,6 +477,37 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
             {
                 pattern = hook::pattern("F3 0F 59 0D ? ? ? ? F3 0F 59 80 ? ? ? ? F3 0F 11 4C 24 ?");
                 injector::WriteMemory(pattern.get_first(4), &fTaillightsCoronaIntensity, true);
+            }
+        }
+
+        // Pickup light hooks
+        {
+            if (iPickupLightsMode == 0)
+            {
+                auto pattern = find_pattern("F3 0F 11 04 24 50 57 8D 44 24 4C 50", "F3 0F 11 04 24 8D 4C 24 34 51 57 8D 54 24 4C 52 8D 44 24 60 50");
+                if (!pattern.empty())
+                {
+                    struct PickupLightsHook
+                    {
+                        void operator()(injector::reg_pack& regs)
+                        {
+                            regs.xmm0.f32[0] = 0.0f; // Null intensity
+                        }
+                    }; injector::MakeInline<PickupLightsHook>(pattern.get_first(0));
+                }
+            }
+            else if (iPickupLightsMode == 2)
+            {
+                auto pattern = hook::pattern("68 ? ? ? ? 6A 00 6A 00 C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? E8 ? ? ? ? F3 0F 10 54 24 ? 46");
+                if (!pattern.empty())
+                {
+                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // Flags 0x201 + 0x10 (+Fill lighting)
+                }
+                else
+                {
+                    pattern = hook::pattern("68 ? ? ? ? 6A 00 6A 00 F3 0F 11 54 24 ? E8 ? ? ? ? 83 C6 01 83 C4 40 83 C7 10");
+                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // Flags 0x201 + 0x10 (+Fill lighting)
+                }
             }
         }
     }
