@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Utility.h"
+#include "Utility.h"
 
 #include "Vector.h"
 

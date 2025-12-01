@@ -1,10 +1,10 @@
 #include "Utility.h"
 
+#include "game/ModelInfoStore.h"
+#include "game/Weather.h"
 #include "rage/LightSource.h"
 #include "rage/Matrix.h"
-#include "rage/ModelInfoStore.h"
 #include "rage/Vector.h"
-#include "rage/Weather.h"
 
 void ReadIni()
 {

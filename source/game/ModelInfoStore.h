@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Utility.h"
+#include "Utility.h"
 
 // From https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/11b4eee7dad99fb21c251dae3b88439b1e073d45/source/limits.ixx#L384
 

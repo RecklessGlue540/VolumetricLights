@@ -4,6 +4,9 @@
     <Filter Include="source">
       <UniqueIdentifier>{851f53f5-ca1f-4091-b634-8e206ac29cfe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\game">
+      <UniqueIdentifier>{f185a665-fefa-4c25-b6a1-cedc7775a073}</UniqueIdentifier>
+    </Filter>
     <Filter Include="source\rage">
       <UniqueIdentifier>{354fa60d-97f3-484c-92aa-92ca0ea9fea5}</UniqueIdentifier>
     </Filter>
@@ -13,11 +16,11 @@
     <Filter Include="dependencies\Hooking.Patterns">
       <UniqueIdentifier>{a7514aa7-7661-4cd8-bc46-2e02b82e52a0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="resources">
-      <UniqueIdentifier>{688f2943-14af-4e2f-9594-eb6a1c61b1b2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="dependencies\safetyhook">
       <UniqueIdentifier>{fbef45b4-718e-4f08-be2d-a7178cbc0694}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{688f2943-14af-4e2f-9594-eb6a1c61b1b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,19 +50,19 @@
     <ClInclude Include="source\Utility.h">
       <Filter>source</Filter>
     </ClInclude>
+    <ClInclude Include="source\game\ModelInfoStore.h">
+      <Filter>source\game</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game\Weather.h">
+      <Filter>source\game</Filter>
+    </ClInclude>
     <ClInclude Include="source\rage\LightSource.h">
       <Filter>source\rage</Filter>
     </ClInclude>
     <ClInclude Include="source\rage\Matrix.h">
       <Filter>source\rage</Filter>
     </ClInclude>
-    <ClInclude Include="source\rage\ModelInfoStore.h">
-      <Filter>source\rage</Filter>
-    </ClInclude>
     <ClInclude Include="source\rage\Vector.h">
-      <Filter>source\rage</Filter>
-    </ClInclude>
-    <ClInclude Include="source\rage\Weather.h">
       <Filter>source\rage</Filter>
     </ClInclude>
   </ItemGroup>
