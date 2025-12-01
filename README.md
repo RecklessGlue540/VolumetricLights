@@ -140,7 +140,7 @@ TaillightsCoronaIntensity  = 0.1
 
 ### Pickup lights (Upcoming in the next update)
 
-The option in the [PICKUPLIGHTS] section allow toggling between 2 custom modes for pickup lights.
+The option in the [PICKUPLIGHTS] section allows toggling between 2 custom modes for pickup lights.
 
 <details>
 <summary>Click here to see the .ini section</summary>

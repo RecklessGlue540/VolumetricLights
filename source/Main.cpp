@@ -1,8 +1,10 @@
 #include "Utility.h"
 
 #include "rage/LightSource.h"
+#include "rage/Matrix.h"
+#include "rage/ModelInfoStore.h"
+#include "rage/Vector.h"
 #include "rage/Weather.h"
-//#include "rage/Matrix.h"
 
 void ReadIni()
 {
@@ -57,6 +59,8 @@ void ReadIni()
     fPointlightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
 
     // [VEHICLELIGHTS]
+    bDualVehicleLights = iniReader.ReadInteger("VEHICLELIGHTS", "DualVehicleLights", 0) != 0;
+
     fHeadlightsCoronaSize      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaSize",      0.25f), 0.0f, 1.0f);
     fHeadlightsCoronaIntensity = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaIntensity", 0.1f),  0.0f, 1.0f);
     fTaillightsCoronaSize      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaSize",      0.25f), 0.0f, 1.0f);
@@ -306,24 +310,31 @@ void OnAfterCopyLight(rage::CLightSource *light)
     }*/
 }
 
-// TODO: Add a DualVehicleLights option, this is all thanks to @xoxor4d (https://github.com/xoxor4d)
-// Still needs a lot of work... including the damned preCE support
-/*static uintptr_t Resume = 0;
+static uintptr_t Resume1 = 0;
+static uintptr_t Resume2 = 0;
+float* dwInnerConeAngle = nullptr;
+float* dwOuterConeAngle = nullptr;
 
-typedef void* (__cdecl* AddSingleVehicleLight_T)(rage::Matrix44* a1, float* LightPosition, float* LightDirection, float* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char LightFlag, char HighBeamMaybe);
+typedef	void* (__cdecl* AddSingleVehicleLight_T)(rage::Matrix44* TransformationMatrix, float* Position, rage::Vector3* Direction, rage::Vector3* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char a12, char a13);
 AddSingleVehicleLight_T AddSingleVehicleLight = nullptr;
 
-void __cdecl RenderHeadlights(rage::Matrix44* a1, rage::Matrix44* LeftLightPosition, rage::Matrix44* RightLightPosition, float* LightDirection, float* Color, float Intensity, float Radius, int64_t a8, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char HighBeamMaybe)
+void __cdecl RenderCenterHeadlight(rage::Matrix44* TransformationMatrix, rage::Matrix44* LeftPosition, rage::Matrix44* RightPosition, float* Position, rage::Vector3* Direction, rage::Vector3* Color, float Intensity, float Radius, int64_t a9, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char a13)
 {
-    // Not goot :(
-    float InnerConeAngle = 20.0f;
-    float OuterConeAngle = 50.0f;
+    // We multiply by the game dwords at the end there which also get updated upon changing the cone angles in visualsettings.dat :) (To be clear, not at runtime)
+    float InnerConeAngle = 0.8f * (1.0f * *dwInnerConeAngle);
+    float OuterConeAngle = 0.8f * (1.0f * *dwOuterConeAngle);
 
-    AddSingleVehicleLight(a1, &LeftLightPosition->d.x,  LightDirection, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowCacheIndex, 0, HighBeamMaybe);
-    AddSingleVehicleLight(a1, &RightLightPosition->d.x, LightDirection, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowCacheIndex, 0, HighBeamMaybe);
+    AddSingleVehicleLight(TransformationMatrix, &LeftPosition->d.x,  Direction, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowCacheIndex + 1 /* Without this the left light will not be able to cast a shadow */, 1, a13);
+    AddSingleVehicleLight(TransformationMatrix, &RightPosition->d.x, Direction, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowCacheIndex, 1, a13);
 }
 
-void __declspec(naked) RenderCenterHeadlight()
+void RenderCenterTaillight(rage::Matrix44* TransformationMatrix, rage::Matrix44* LeftPosition, rage::Matrix44* RightPosition, rage::Vector3* Direction, rage::Vector3* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char a13, char a14)
+{
+    AddSingleVehicleLight(TransformationMatrix, &LeftPosition->d.x,  Direction, Color, Intensity, Radius, InnerConeAngle * 0.6f, OuterConeAngle * 0.6f, InteriorIndex, RoomIndex, ShadowCacheIndex, a13, a14);
+    AddSingleVehicleLight(TransformationMatrix, &RightPosition->d.x, Direction, Color, Intensity, Radius, InnerConeAngle * 0.6f, OuterConeAngle * 0.6f, InteriorIndex, RoomIndex, ShadowCacheIndex, a13, a14);
+}
+
+void __declspec(naked) RenderCenterHeadlightStub()
 {
     __asm
     {
@@ -335,14 +346,35 @@ void __declspec(naked) RenderCenterHeadlight()
 
         push dword ptr[ebp + 0x24]
 
-        call RenderHeadlights
+        call RenderCenterHeadlight
         add esp, 0x38
 
-        mov eax, Resume
+        mov eax, Resume1
         add eax, 11
         jmp eax
     }
-}*/
+}
+
+void __declspec(naked) RenderCenterTaillightStub()
+{
+    __asm
+    {
+        mov ecx, [esp + 0x58];
+        mov eax, [esp + 0x50];
+
+        push ecx;
+        push eax;
+
+        push dword ptr[ebp + 0x2C];
+
+        call RenderCenterTaillight;
+        add esp, 0x38;
+
+        mov	eax, Resume2;
+        add	eax, 16;
+        jmp	eax;
+    }
+}
 
 BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
 {
@@ -408,26 +440,57 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
             }
         }
 
-        // TODO: Dual vehicle lights, thanks to @xoxor4d (https://github.com/xoxor4d)
-        /*{
-            // Headlights
-            auto pattern = hook::pattern("FF 75 24 E8 ? ? ? ? 83 C4 30 5F 5E 8B E5 5D C2 24 00");
-            injector::MakeNOP(pattern.get_first(0), 8, true);
-            injector::MakeJMP(pattern.get_first(0), RenderCenterHeadlight, true);
-            uintptr_t BaseAddress = (uintptr_t)pattern.get_first(0);
-            Resume = BaseAddress;
+        // ParticleAttrs limit hook, requires an increase so TBoGT doesn't poof with all the provided .ide files which add a bunch of particles (Uses FusionFix code)
+        {
+            auto pattern = hook::pattern("8B C8 E8 ? ? ? ? B9 ? ? ? ? A3");
+            auto CModelInfoStore__ms_baseModels = *pattern.get_first<CModelInfoStore::CDataStore*>(8);
 
-            pattern = hook::pattern("55 8B EC 83 E4 F0 83 EC 20 80 7D 34 00 8B 4D 08 8B 45 10");
-            AddSingleVehicleLight = (AddSingleVehicleLight_T)pattern.get_first(0);
+            // We check if the array size is vanilla and only then increase it by two, to ensure we don't interfere with other limit adjusters here
+            if (CModelInfoStore__ms_baseModels[CModelInfoStore::ms_particleAttrs].nSize == 0x0A8C)
+            {
+                CModelInfoStore__ms_baseModels[CModelInfoStore::ms_particleAttrs].nSize *= 2;
+            }
+        }
 
-            pattern = hook::pattern("F3 0F 11 44 24 ? E8 ? ? ? ? 8D 44 24 60 50");
-            injector::MakeNOP(pattern.get_first(0), 6, true);
+        // TODO: Dual vehicle light hooks, thanks to @xoxor4d (https://github.com/xoxor4d)
+        {
+            if (bDualVehicleLights)
+            {
+                // Single light function
+                auto pattern = hook::pattern("55 8B EC 83 E4 F0 83 EC 20 80 7D 34 00 8B 4D 08 8B 45 10");
+                AddSingleVehicleLight = (AddSingleVehicleLight_T)pattern.get_first(0);
 
-            pattern = hook::pattern("F3 0F 10 74 24 ? F3 0F 59 25 ? ? ? ? F3 0F 11 74 24 ? F3 0F 59 2D ? ? ? ? F3 0F 11 64 24 ? 6A 00");
-            injector::MakeNOP(pattern.get_first(0), 6, true);
+                // Headlights
+                {
+                    auto pattern = hook::pattern("FF 75 24 E8 ? ? ? ? 83 C4 30 5F 5E 8B E5 5D C2 24 00");
+                    injector::MakeNOP(pattern.get_first(0), 8, true);
+                    injector::MakeJMP(pattern.get_first(0), RenderCenterHeadlightStub, true);
+                    uintptr_t BaseAddress1 = (uintptr_t)pattern.get_first(0);
+                    Resume1 = BaseAddress1;
 
-            // Taillights (TODO)
-        }*/
+                    // Right light position override?
+                    pattern = hook::pattern("F3 0F 11 44 24 ? E8 ? ? ? ? 8D 44 24 60 50");
+                    injector::MakeNOP(pattern.get_first(0), 6, true);
+
+                    // Right light position override read? No idea if needed or what it even does :)
+                    pattern = hook::pattern("F3 0F 10 74 24 ? F3 0F 59 25 ? ? ? ? F3 0F 11 74 24 ? F3 0F 59 2D ? ? ? ? F3 0F 11 64 24 ? 6A 00");
+                    injector::MakeNOP(pattern.get_first(0), 6, true);
+
+                    // Cone angle dwords
+                    pattern = hook::pattern("F3 0F 59 15 ? ? ? ? F3 0F C2 C3 06 F3 0F 10 1D ? ? ? ? F3 0F 59 1D ? ? ? ? F3 0F 11 54 24 ? 0F 54 C6");
+                    dwInnerConeAngle = *pattern.get_first<float*>(4);
+                    dwOuterConeAngle = *pattern.get_first<float*>(25);
+                }
+
+                // Taillights
+                {
+                    auto pattern = hook::pattern("8D 44 24 ? 50 FF 75 ? E8 ? ? ? ? 83 C4 ? 5F 5E 8B E5 5D C2 ? ? 83 FF ? 0F 84 ? ? ? ? 80 7D ? ? 0F 85 ? ? ? ? F3 0F 10 05");
+                    injector::MakeJMP(pattern.get_first(0), RenderCenterTaillightStub, true);
+                    uintptr_t BaseAddress2 = (uintptr_t)pattern.get_first(0);
+                    Resume2 = BaseAddress2;
+                }
+            }
+        }
 
         // Vehicle corona hooks
         {
@@ -501,12 +564,12 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
                 auto pattern = hook::pattern("68 ? ? ? ? 6A 00 6A 00 C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? E8 ? ? ? ? F3 0F 10 54 24 ? 46");
                 if (!pattern.empty())
                 {
-                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // Flags 0x201 + 0x10 (+Fill lighting)
+                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // For flags, push 201 --> push 211 (+Fill lighting)
                 }
                 else
                 {
                     pattern = hook::pattern("68 ? ? ? ? 6A 00 6A 00 F3 0F 11 54 24 ? E8 ? ? ? ? 83 C6 01 83 C4 40 83 C7 10");
-                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // Flags 0x201 + 0x10 (+Fill lighting)
+                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // For flags, push 201 --> push 211 (+Fill lighting)
                 }
             }
         }

@@ -1,0 +1,17 @@
+Version 8 10
+{
+	grcTexture
+	{
+		Type regular
+		Name ny_wall_lights\bm_nylamp_bulb.dds
+		MipMaps 7
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_wall_lights\bm_metal_black.dds
+		MipMaps 6
+		PixelFormat DXT1
+	}
+}

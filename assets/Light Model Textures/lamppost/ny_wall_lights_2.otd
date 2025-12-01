@@ -4,7 +4,7 @@ Version 8 10
 	{
 		Type regular
 		Name ny_wall_lights_2\bm_nylamp_bulb.dds
-		MipMaps 6
+		MipMaps 7
 		PixelFormat DXT1
 	}
 	grcTexture

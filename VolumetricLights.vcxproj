@@ -20,9 +20,10 @@
     <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h" />
     <ClInclude Include="dependencies\safetyhook\safetyhook.hpp" />
     <ClInclude Include="dependencies\safetyhook\Zydis.h" />
-    <ClInclude Include="source\rage\Matrix.h" />
     <ClInclude Include="source\Utility.h" />
     <ClInclude Include="source\rage\LightSource.h" />
+    <ClInclude Include="source\rage\Matrix.h" />
+    <ClInclude Include="source\rage\ModelInfoStore.h" />
     <ClInclude Include="source\rage\Vector.h" />
     <ClInclude Include="source\rage\Weather.h" />
   </ItemGroup>

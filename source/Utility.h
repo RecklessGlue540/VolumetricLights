@@ -92,6 +92,8 @@ float fPointlightsVolumeScaleDrizzle    = 0.0f;
 float fPointlightsVolumeScaleFoggy      = 0.0f;
 float fPointlightsVolumeScaleLightning  = 0.0f;
 
+bool bDualVehicleLights = false;
+
 float fHeadlightsCoronaSize      = 0.0f;
 float fHeadlightsCoronaIntensity = 0.0f;
 float fTaillightsCoronaSize      = 0.0f;

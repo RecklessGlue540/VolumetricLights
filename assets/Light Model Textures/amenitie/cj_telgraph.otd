@@ -11,7 +11,7 @@ Version 8 10
 	{
 		Type regular
 		Name cj_telgraph\bm_nylamp_bulb.dds
-		MipMaps 6
+		MipMaps 7
 		PixelFormat DXT1
 	}
 	grcTexture
@@ -25,14 +25,14 @@ Version 8 10
 	{
 		Type regular
 		Name cj_telgraph\bm_telegraphpolebits.dds
-		MipMaps 7
+		MipMaps 8
 		PixelFormat DXT1
 	}
 	grcTexture
 	{
 		Type regular
 		Name cj_telgraph\cj_telegraph_wood.dds
-		MipMaps 7
+		MipMaps 8
 		PixelFormat DXT1
 	}
 	grcTexture
@@ -46,7 +46,7 @@ Version 8 10
 	{
 		Type regular
 		Name cj_telgraph\weedleavesa_1weedleavesa_1a.dds
-		MipMaps 6
+		MipMaps 7
 		PixelFormat DXT5
 	}
 }

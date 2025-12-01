@@ -1,0 +1,108 @@
+Version 8 10
+{
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_poster01cj_poster_6_a.dds
+		MipMaps 6
+		PixelFormat DXT5
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_sticker2.dds
+		MipMaps 6
+		PixelFormat DXT5
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_traff_lights.dds
+		MipMaps 7
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_traff_walk.dds
+		MipMaps 7
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_nylamp_3_s.dds
+		MipMaps 6
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_nylamp_3.dds
+		MipMaps 6
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_traff_lights_s.dds
+		MipMaps 7
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_traff_colors.dds
+		MipMaps 6
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_stickers.dds
+		MipMaps 5
+		PixelFormat DXT5
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_poster02cj_poster_6_a.dds
+		MipMaps 6
+		PixelFormat DXT5
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\cj_poster_6cj_poster_6_a.dds
+		MipMaps 7
+		PixelFormat DXT5
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\cj_stickers1cj_stickers1_a.dds
+		MipMaps 6
+		PixelFormat DXT5
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_concrete1_n.dds
+		MipMaps 6
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_concrete1.dds
+		MipMaps 6
+		PixelFormat DXT1
+	}
+	grcTexture
+	{
+		Type regular
+		Name ny_traf_highway\bm_nylamppost_base.dds
+		MipMaps 7
+		PixelFormat DXT1
+	}
+}

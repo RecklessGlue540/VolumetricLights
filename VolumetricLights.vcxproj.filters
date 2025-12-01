@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Main.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="dependencies\Hooking.Patterns\Hooking.Patterns.cpp">
       <Filter>dependencies\Hooking.Patterns</Filter>
     </ClCompile>
@@ -33,20 +30,11 @@
     <ClCompile Include="dependencies\safetyhook\Zydis.c">
       <Filter>dependencies\safetyhook</Filter>
     </ClCompile>
+    <ClCompile Include="source\Main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Utility.h">
-      <Filter>source</Filter>
-    </ClInclude>
-    <ClInclude Include="source\rage\LightSource.h">
-      <Filter>source\rage</Filter>
-    </ClInclude>
-    <ClInclude Include="source\rage\Vector.h">
-      <Filter>source\rage</Filter>
-    </ClInclude>
-    <ClInclude Include="source\rage\Weather.h">
-      <Filter>source\rage</Filter>
-    </ClInclude>
     <ClInclude Include="dependencies\Hooking.Patterns\Hooking.Patterns.h">
       <Filter>dependencies\Hooking.Patterns</Filter>
     </ClInclude>
@@ -56,7 +44,22 @@
     <ClInclude Include="dependencies\safetyhook\Zydis.h">
       <Filter>dependencies\safetyhook</Filter>
     </ClInclude>
+    <ClInclude Include="source\Utility.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\rage\LightSource.h">
+      <Filter>source\rage</Filter>
+    </ClInclude>
     <ClInclude Include="source\rage\Matrix.h">
+      <Filter>source\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="source\rage\ModelInfoStore.h">
+      <Filter>source\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="source\rage\Vector.h">
+      <Filter>source\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="source\rage\Weather.h">
       <Filter>source\rage</Filter>
     </ClInclude>
   </ItemGroup>
