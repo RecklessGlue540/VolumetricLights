@@ -24,8 +24,8 @@
     <ClInclude Include="source\game\ModelInfoStore.h" />
     <ClInclude Include="source\game\Weather.h" />
     <ClInclude Include="source\rage\LightSource.h" />
-    <ClInclude Include="source\rage\Matrix.h" />
-    <ClInclude Include="source\rage\Vector.h" />
+    <ClInclude Include="source\rage\math\Matrix.h" />
+    <ClInclude Include="source\rage\math\Vector.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\VolumetricLights.ini" />

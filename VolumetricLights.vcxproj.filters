@@ -10,6 +10,9 @@
     <Filter Include="source\rage">
       <UniqueIdentifier>{354fa60d-97f3-484c-92aa-92ca0ea9fea5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\rage\math">
+      <UniqueIdentifier>{45523426-f0ba-49ef-bcca-d0267b06ec00}</UniqueIdentifier>
+    </Filter>
     <Filter Include="dependencies">
       <UniqueIdentifier>{961cec9b-0399-4724-94ec-02d9b810f47b}</UniqueIdentifier>
     </Filter>
@@ -59,11 +62,11 @@
     <ClInclude Include="source\rage\LightSource.h">
       <Filter>source\rage</Filter>
     </ClInclude>
-    <ClInclude Include="source\rage\Matrix.h">
-      <Filter>source\rage</Filter>
+    <ClInclude Include="source\rage\math\Matrix.h" >
+      <Filter>source\rage\math</Filter>
     </ClInclude>
-    <ClInclude Include="source\rage\Vector.h">
-      <Filter>source\rage</Filter>
+    <ClInclude Include="source\rage\math\Vector.h" >
+      <Filter>source\rage\math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

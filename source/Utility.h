@@ -4,15 +4,12 @@
 
 #include "Hooking.Patterns.h"
 #include "IniReader.h"
-#include "injector/injector.hpp"
 #include "injector/assembly.hpp"
-#include "safetyhook.hpp"
 
-#include <cstdint>
-
-// FusionFix code
+// From https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/e3daeaa774106fcc8a0c4decf4d6710f49c311d8/source/comvars.ixx#L10
 #define VALIDATE_SIZE(struc, size) static_assert(sizeof(struc) == size, "Invalid structure size of " #struc)
 
+// From https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/e3daeaa774106fcc8a0c4decf4d6710f49c311d8/source/common.ixx#L744
 template <size_t count = 1, typename... Args>
 hook::pattern find_pattern(Args... args)
 {
@@ -27,12 +24,14 @@ typedef bool(__cdecl* FusionFixModeFun)();
 bool IsFusionFixModeEnabled(const char* FunctionName)
 {
     static HMODULE FusionFix = GetModuleHandleA("GTAIV.EFLC.FusionFix.asi");
+
     if (!FusionFix)
     {
         return false;
     }
 
     auto Function = reinterpret_cast<FusionFixModeFun>(GetProcAddress(FusionFix, FunctionName));
+
     if (!Function)
     {
         return false;
@@ -74,6 +73,9 @@ float fSpotlightsVolumeScaleDrizzle    = 0.0f;
 float fSpotlightsVolumeScaleFoggy      = 0.0f;
 float fSpotlightsVolumeScaleLightning  = 0.0f;
 
+float fSpotlightsVolumeFadeStart = 0.0f;
+float fSpotlightsVolumeFadeEnd   = 0.0f;
+
 float fPointlightsVolumeIntensityExtraSunny = 0.0f;
 float fPointlightsVolumeIntensitySunny      = 0.0f;
 float fPointlightsVolumeIntensitySunnyWindy = 0.0f;
@@ -92,11 +94,38 @@ float fPointlightsVolumeScaleDrizzle    = 0.0f;
 float fPointlightsVolumeScaleFoggy      = 0.0f;
 float fPointlightsVolumeScaleLightning  = 0.0f;
 
+float fPointlightsVolumeFadeStart = 0.0f;
+float fPointlightsVolumeFadeEnd   = 0.0f;
+
 bool bDualVehicleLights = false;
 
+bool bVolumetricVehicleLights = false;
+
+float fVehicleLightsVolumeIntensityExtraSunny = 0.0f;
+float fVehicleLightsVolumeIntensitySunny      = 0.0f;
+float fVehicleLightsVolumeIntensitySunnyWindy = 0.0f;
+float fVehicleLightsVolumeIntensityCloudy     = 0.0f;
+float fVehicleLightsVolumeIntensityRain       = 0.0f;
+float fVehicleLightsVolumeIntensityDrizzle    = 0.0f;
+float fVehicleLightsVolumeIntensityFoggy      = 0.0f;
+float fVehicleLightsVolumeIntensityLightning  = 0.0f;
+
+float fVehicleLightsVolumeScaleExtraSunny = 0.0f;
+float fVehicleLightsVolumeScaleSunny      = 0.0f;
+float fVehicleLightsVolumeScaleSunnyWindy = 0.0f;
+float fVehicleLightsVolumeScaleCloudy     = 0.0f;
+float fVehicleLightsVolumeScaleRain       = 0.0f;
+float fVehicleLightsVolumeScaleDrizzle    = 0.0f;
+float fVehicleLightsVolumeScaleFoggy      = 0.0f;
+float fVehicleLightsVolumeScaleLightning  = 0.0f;
+
+float fVehicleLightsVolumeFadeStart = 0.0f;
+float fVehicleLightsVolumeFadeEnd   = 0.0f;
+
 float fHeadlightsCoronaSize      = 0.0f;
-float fHeadlightsCoronaIntensity = 0.0f;
 float fTaillightsCoronaSize      = 0.0f;
+
+float fHeadlightsCoronaIntensity = 0.0f;
 float fTaillightsCoronaIntensity = 0.0f;
 
 int iPickupLightsMode = 0;

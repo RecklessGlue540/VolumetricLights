@@ -2,7 +2,7 @@
 
 #include "Utility.h"
 
-#include "Vector.h"
+#include "math/Vector.h"
 
 namespace rage
 {

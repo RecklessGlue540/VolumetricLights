@@ -3,22 +3,49 @@
 #include "game/ModelInfoStore.h"
 #include "game/Weather.h"
 #include "rage/LightSource.h"
-#include "rage/Matrix.h"
-#include "rage/Vector.h"
+#include "rage/math/Matrix.h"
+
+static void OnAfterCopyLight(rage::CLightSource*);
+
+// From https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/e3daeaa774106fcc8a0c4decf4d6710f49c311d8/source/comvars.ixx#L2100
+static inline SafetyHookInline shCopyLight{};
+
+static rage::CLightSource* __fastcall CopyLight(void* _this, void* edx, void* a2)
+{
+    auto ret = shCopyLight.fastcall<rage::CLightSource*>(_this, edx, a2);
+    OnAfterCopyLight(ret);
+
+    return ret;
+}
+
+static void(__stdcall* GET_ROOT_CAM)(int* Camera);
+static void(__cdecl* GET_CAM_POS)(int Camera, float* PositionX, float* PositionY, float* PositionZ);
+
+static float* dwViewDistance = nullptr;
+
+typedef	void* (__cdecl* AddSingleVehicleLight_T)(rage::Matrix44* TransformationMatrix, float* Position, rage::Vector3* Direction, rage::Vector3* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char a12, char a13);
+AddSingleVehicleLight_T AddSingleVehicleLight = nullptr;
+
+static uintptr_t ResumeHeadlights = 0;
+static uintptr_t ResumeTaillights = 0;
+static uintptr_t ResumeReverselights = 0;
+
+static float* dwInnerConeAngle = nullptr;
+static float* dwOuterConeAngle = nullptr;
 
 void ReadIni()
 {
     CIniReader iniReader("");
 
-    // [VOLUMETRICWEATHERS]
-    bExtraSunny = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "ExtraSunny", 0) != 0;
-    bSunny      = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Sunny",      0) != 0;
-    bSunnyWindy = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "SunnyWindy", 0) != 0;
-    bCloudy     = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Cloudy",     0) != 0;
-    bRain       = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Rain",       1) != 0;
-    bDrizzle    = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Drizzle",    1) != 0;
-    bFoggy      = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Foggy",      1) != 0;
-    bLightning  = iniReader.ReadBoolean("VOLUMETRICWEATHERS", "Lightning",  1) != 0;
+    // [WEATHERS]
+    bExtraSunny = iniReader.ReadInteger("WEATHERS", "ExtraSunny", 0) != 0;
+    bSunny      = iniReader.ReadInteger("WEATHERS", "Sunny",      0) != 0;
+    bSunnyWindy = iniReader.ReadInteger("WEATHERS", "SunnyWindy", 0) != 0;
+    bCloudy     = iniReader.ReadInteger("WEATHERS", "Cloudy",     0) != 0;
+    bRain       = iniReader.ReadInteger("WEATHERS", "Rain",       1) != 0;
+    bDrizzle    = iniReader.ReadInteger("WEATHERS", "Drizzle",    1) != 0;
+    bFoggy      = iniReader.ReadInteger("WEATHERS", "Foggy",      1) != 0;
+    bLightning  = iniReader.ReadInteger("WEATHERS", "Lightning",  1) != 0;
 
     // [SPOTLIGHTS]
     fSpotlightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
@@ -39,6 +66,9 @@ void ReadIni()
     fSpotlightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
     fSpotlightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
 
+    fSpotlightsVolumeFadeStart = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeFadeStart", 75.0f),  0.0f, 300.0f);
+    fSpotlightsVolumeFadeEnd   = std::clamp(iniReader.ReadFloat("SPOTLIGHTS", "SpotlightsVolumeFadeEnd",   150.0f), 0.0f, 300.0f);
+
     // [POINTLIGHTS]
     fPointlightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
     fPointlightsVolumeIntensitySunny      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeIntensitySunny",      0.0f), 0.0f, 1.5f);
@@ -58,21 +88,48 @@ void ReadIni()
     fPointlightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
     fPointlightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
 
+    fPointlightsVolumeFadeStart = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeFadeStart", 75.0f),  0.0f, 300.0f);
+    fPointlightsVolumeFadeEnd   = std::clamp(iniReader.ReadFloat("POINTLIGHTS", "PointlightsVolumeFadeEnd",   150.0f), 0.0f, 300.0f);
+
     // [VEHICLELIGHTS]
     bDualVehicleLights = iniReader.ReadInteger("VEHICLELIGHTS", "DualVehicleLights", 0) != 0;
 
-    fHeadlightsCoronaSize      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaSize",      0.25f), 0.0f, 1.0f);
-    fHeadlightsCoronaIntensity = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaIntensity", 0.1f),  0.0f, 1.0f);
-    fTaillightsCoronaSize      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaSize",      0.25f), 0.0f, 1.0f);
-    fTaillightsCoronaIntensity = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaIntensity", 0.1f),  0.0f, 1.0f);
+    bVolumetricVehicleLights = iniReader.ReadInteger("VEHICLELIGHTS", "VolumetricVehicleLights", 0) != 0;
+
+    fVehicleLightsVolumeIntensityExtraSunny = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensityExtraSunny", 0.0f), 0.0f, 1.5f);
+    fVehicleLightsVolumeIntensitySunny      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensitySunny",      0.0f), 0.0f, 1.5f);
+    fVehicleLightsVolumeIntensitySunnyWindy = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.5f);
+    fVehicleLightsVolumeIntensityCloudy     = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensityCloudy",     0.0f), 0.0f, 1.5f);
+    fVehicleLightsVolumeIntensityRain       = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensityRain",       0.0f), 0.0f, 1.5f);
+    fVehicleLightsVolumeIntensityDrizzle    = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensityDrizzle",    0.0f), 0.0f, 1.5f);
+    fVehicleLightsVolumeIntensityFoggy      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensityFoggy",      0.0f), 0.0f, 1.5f);
+    fVehicleLightsVolumeIntensityLightning  = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeIntensityLightning",  0.0f), 0.0f, 1.5f);
+
+    fVehicleLightsVolumeScaleExtraSunny = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScaleExtraSunny", 0.0f), 0.0f, 0.5f);
+    fVehicleLightsVolumeScaleSunny      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScaleSunny",      0.0f), 0.0f, 0.5f);
+    fVehicleLightsVolumeScaleSunnyWindy = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScaleSunnyWindy", 0.0f), 0.0f, 0.5f);
+    fVehicleLightsVolumeScaleCloudy     = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScaleCloudy",     0.0f), 0.0f, 0.5f);
+    fVehicleLightsVolumeScaleRain       = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScaleRain",       0.0f), 0.0f, 0.5f);
+    fVehicleLightsVolumeScaleDrizzle    = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScaleDrizzle",    0.0f), 0.0f, 0.5f);
+    fVehicleLightsVolumeScaleFoggy      = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScaleFoggy",      0.0f), 0.0f, 0.5f);
+    fVehicleLightsVolumeScaleLightning  = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeScaleLightning",  0.0f), 0.0f, 0.5f);
+
+    fVehicleLightsVolumeFadeStart = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeFadeStart", 25.0f), 0.0f, 100.0f);
+    fVehicleLightsVolumeFadeEnd   = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "VehicleLightsVolumeFadeEnd",   50.0f), 0.0f, 100.0f);
+
+    fHeadlightsCoronaSize = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaSize", 0.25f), 0.0f, 1.0f);
+    fTaillightsCoronaSize = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaSize", 0.25f), 0.0f, 1.0f);
+
+    fHeadlightsCoronaIntensity = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "HeadlightsCoronaIntensity", 0.1f), 0.0f, 1.0f);
+    fTaillightsCoronaIntensity = std::clamp(iniReader.ReadFloat("VEHICLELIGHTS", "TaillightsCoronaIntensity", 0.1f), 0.0f, 1.0f);
 
     // [PICKUPLIGHTS]
     iPickupLightsMode = iniReader.ReadInteger("PICKUPLIGHTS", "PickupLightsMode", 1);
 }
 
-bool HasVolumes(CWeather::eWeatherType type)
+bool HasVolumes(CWeather::eWeatherType Type)
 {
-    switch (type)
+    switch (Type)
     {
         case CWeather::EXTRASUNNY:  return bExtraSunny;
         case CWeather::SUNNY:       return bSunny;
@@ -86,9 +143,9 @@ bool HasVolumes(CWeather::eWeatherType type)
     }
 }
 
-float SpotLightVolumeIntensities(CWeather::eWeatherType type)
+float SpotlightVolumeIntensities(CWeather::eWeatherType Type)
 {
-    switch (type)
+    switch (Type)
     {
         case CWeather::EXTRASUNNY:  return fSpotlightsVolumeIntensityExtraSunny;
         case CWeather::SUNNY:       return fSpotlightsVolumeIntensitySunny;
@@ -102,9 +159,9 @@ float SpotLightVolumeIntensities(CWeather::eWeatherType type)
     }
 }
 
-float PointLightVolumeIntensities(CWeather::eWeatherType type)
+float PointlightVolumeIntensities(CWeather::eWeatherType Type)
 {
-    switch (type)
+    switch (Type)
     {
         case CWeather::EXTRASUNNY:  return fPointlightsVolumeIntensityExtraSunny;
         case CWeather::SUNNY:       return fPointlightsVolumeIntensitySunny;
@@ -118,9 +175,9 @@ float PointLightVolumeIntensities(CWeather::eWeatherType type)
     }
 }
 
-float SpotLightVolumeScales(CWeather::eWeatherType type)
+float SpotlightVolumeScales(CWeather::eWeatherType Type)
 {
-    switch (type)
+    switch (Type)
     {
         case CWeather::EXTRASUNNY:  return fSpotlightsVolumeScaleExtraSunny;
         case CWeather::SUNNY:       return fSpotlightsVolumeScaleSunny;
@@ -134,9 +191,9 @@ float SpotLightVolumeScales(CWeather::eWeatherType type)
     }
 }
 
-float PointLightVolumeScales(CWeather::eWeatherType type)
+float PointlightVolumeScales(CWeather::eWeatherType Type)
 {
-    switch (type)
+    switch (Type)
     {
         case CWeather::EXTRASUNNY:  return fPointlightsVolumeScaleExtraSunny;
         case CWeather::SUNNY:       return fPointlightsVolumeScaleSunny;
@@ -150,24 +207,55 @@ float PointLightVolumeScales(CWeather::eWeatherType type)
     }
 }
 
-// FusionFix code, slightly modified to get rid of the events' stuff
-void OnAfterCopyLight(rage::CLightSource*);
-static inline SafetyHookInline shCopyLight{};
-
-static rage::CLightSource* __fastcall CopyLight(void* _this, void* edx, void* a2)
+float VehicleLightVolumeIntensities(CWeather::eWeatherType Type)
 {
-    auto ret = shCopyLight.fastcall<rage::CLightSource*>(_this, edx, a2);
-    OnAfterCopyLight(ret);
-
-    return ret;
+    switch (Type)
+    {
+        case CWeather::EXTRASUNNY:  return fVehicleLightsVolumeIntensityExtraSunny;
+        case CWeather::SUNNY:       return fVehicleLightsVolumeIntensitySunny;
+        case CWeather::SUNNY_WINDY: return fVehicleLightsVolumeIntensitySunnyWindy;
+        case CWeather::CLOUDY:      return fVehicleLightsVolumeIntensityCloudy;
+        case CWeather::RAIN:        return fVehicleLightsVolumeIntensityRain;
+        case CWeather::DRIZZLE:     return fVehicleLightsVolumeIntensityDrizzle;
+        case CWeather::FOGGY:       return fVehicleLightsVolumeIntensityFoggy;
+        case CWeather::LIGHTNING:   return fVehicleLightsVolumeIntensityLightning;
+        default: return 0.0f;
+    }
 }
 
-void OnAfterCopyLight(rage::CLightSource *light)
+float VehicleLightVolumeScales(CWeather::eWeatherType Type)
 {
-    //#define RGB(R, G, B) { R / 255.0f, G / 255.0f, B / 255.0f };
-    CWeather::eWeatherType CurrentWeather = CWeather::GetOldWeatherType();
-    CWeather::eWeatherType NextWeather  = CWeather::GetNewWeatherType();
-    float InterpolationValue = CWeather::GetWeatherInterpolationValue();
+    switch (Type)
+    {
+        case CWeather::EXTRASUNNY:  return fVehicleLightsVolumeScaleExtraSunny;
+        case CWeather::SUNNY:       return fVehicleLightsVolumeScaleSunny;
+        case CWeather::SUNNY_WINDY: return fVehicleLightsVolumeScaleSunnyWindy;
+        case CWeather::CLOUDY:      return fVehicleLightsVolumeScaleCloudy;
+        case CWeather::RAIN:        return fVehicleLightsVolumeScaleRain;
+        case CWeather::DRIZZLE:     return fVehicleLightsVolumeScaleDrizzle;
+        case CWeather::FOGGY:       return fVehicleLightsVolumeScaleFoggy;
+        case CWeather::LIGHTNING:   return fVehicleLightsVolumeScaleLightning;
+        default: return 0.0f;
+    }
+}
+
+void OnAfterCopyLight(rage::CLightSource* light)
+{
+    const CWeather::eWeatherType CurrentWeather = CWeather::GetOldWeatherType();
+    const CWeather::eWeatherType NextWeather = CWeather::GetNewWeatherType();
+    const float InterpolationValue = CWeather::GetWeatherInterpolationValue();
+
+    int CurrentCamera;
+    rage::Vector3 CameraPosition;
+    GET_ROOT_CAM(&CurrentCamera);
+    GET_CAM_POS(CurrentCamera, &CameraPosition.x, &CameraPosition.y, &CameraPosition.z);
+
+    static auto Smoothstep = [](float Edge0, float Edge1, float X)
+    {
+        float NormalizedX = std::clamp((X - Edge0) / (Edge1 - Edge0), 0.0f, 1.0f);
+
+        return NormalizedX * NormalizedX * (3.0f - 2.0f * NormalizedX);
+    };
 
     if ((HasVolumes(CurrentWeather) || HasVolumes(NextWeather)) && !IsFusionFixSnowEnabled())
     {
@@ -177,29 +265,41 @@ void OnAfterCopyLight(rage::CLightSource *light)
             // Append the light shaft flag
             light->mFlags |= 8;
 
+            // Distance fading setup
+            float DeltaX = CameraPosition.x - light->mPosition.x;
+            float DeltaY = CameraPosition.y - light->mPosition.y;
+            float DeltaZ = CameraPosition.z - light->mPosition.z;
+
+            float Distance = std::sqrt(DeltaX * DeltaX + DeltaY * DeltaY + DeltaZ * DeltaZ);
+
+            float FadeStart = fSpotlightsVolumeFadeStart * *dwViewDistance;
+            float FadeEnd = fSpotlightsVolumeFadeEnd * *dwViewDistance;
+
+            float DistanceFade = 1.0f - Smoothstep(FadeStart, FadeEnd, Distance);
+
             // Transition from no volumes to volumes
             if (!HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
             {
-                light->mVolumeIntensity = 4.0f * SpotLightVolumeIntensities(NextWeather) * InterpolationValue;
-                light->mVolumeScale = SpotLightVolumeScales(NextWeather) * InterpolationValue;
+                light->mVolumeIntensity = 4.0f * SpotlightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
+                light->mVolumeScale = SpotlightVolumeScales(NextWeather) * InterpolationValue;
             }
             // Transition between volumes
             else if (HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
             {
-                float CurrentVolumeIntensity = SpotLightVolumeIntensities(CurrentWeather);
-                float NextVolumeIntensity = SpotLightVolumeIntensities(NextWeather);
+                float CurrentVolumeIntensity = SpotlightVolumeIntensities(CurrentWeather);
+                float NextVolumeIntensity = SpotlightVolumeIntensities(NextWeather);
 
-                float CurrentVolumeScale = SpotLightVolumeScales(CurrentWeather);
-                float NextVolumeScale = SpotLightVolumeScales(NextWeather);
+                float CurrentVolumeScale = SpotlightVolumeScales(CurrentWeather);
+                float NextVolumeScale = SpotlightVolumeScales(NextWeather);
 
-                light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue);
-                light->mVolumeScale = CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue;
+                light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
+                light->mVolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
             }
             // Transition from volumes to no volumes
             else if (HasVolumes(CurrentWeather) && !HasVolumes(NextWeather))
             {
-                light->mVolumeIntensity = 4.0f * SpotLightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue);
-                light->mVolumeScale = SpotLightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+                light->mVolumeIntensity = 4.0f * SpotlightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
+                light->mVolumeScale = SpotlightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
             }
         }
 
@@ -209,114 +309,92 @@ void OnAfterCopyLight(rage::CLightSource *light)
             // Append the light shaft flag
             light->mFlags |= 8;
 
+            // Distance fading setup
+            float DeltaX = CameraPosition.x - light->mPosition.x;
+            float DeltaY = CameraPosition.y - light->mPosition.y;
+            float DeltaZ = CameraPosition.z - light->mPosition.z;
+
+            float Distance = std::sqrt(DeltaX * DeltaX + DeltaY * DeltaY + DeltaZ * DeltaZ);
+
+            float FadeStart = fPointlightsVolumeFadeStart * *dwViewDistance;
+            float FadeEnd = fPointlightsVolumeFadeEnd * *dwViewDistance;
+
+            float DistanceFade = 1.0f - Smoothstep(FadeStart, FadeEnd, Distance);
+
             // Transition from no volumes to volumes
             if (!HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
             {
-                light->mVolumeIntensity = 4.0f * PointLightVolumeIntensities(NextWeather) * InterpolationValue;
-                light->mVolumeScale = PointLightVolumeScales(NextWeather) * InterpolationValue;
+                light->mVolumeIntensity = 4.0f * PointlightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
+                light->mVolumeScale = PointlightVolumeScales(NextWeather) * InterpolationValue;
             }
             // Transition between volumes
             else if (HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
             {
-                float CurrentVolumeIntensity = PointLightVolumeIntensities(CurrentWeather);
-                float NextVolumeIntensity = PointLightVolumeIntensities(NextWeather);
+                float CurrentVolumeIntensity = PointlightVolumeIntensities(CurrentWeather);
+                float NextVolumeIntensity = PointlightVolumeIntensities(NextWeather);
 
-                float CurrentVolumeScale = PointLightVolumeScales(CurrentWeather);
-                float NextVolumeScale = PointLightVolumeScales(NextWeather);
+                float CurrentVolumeScale = PointlightVolumeScales(CurrentWeather);
+                float NextVolumeScale = PointlightVolumeScales(NextWeather);
 
-                light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue);
-                light->mVolumeScale = CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue;
+                light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
+                light->mVolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
             }
             // Transition from volumes to no volumes
             else if (HasVolumes(CurrentWeather) && !HasVolumes(NextWeather))
             {
-                light->mVolumeIntensity = 4.0f * PointLightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue);
-                light->mVolumeScale = PointLightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+                light->mVolumeIntensity = 4.0f * PointlightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
+                light->mVolumeScale = PointlightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+            }
+        }
+
+        if (bVolumetricVehicleLights && bDualVehicleLights /* We need dual vehicle lights for proper light shaft positions */ )
+        {
+            // Include spotlights, only vehicle lights, and exclude lights previously volumetric (Mainly helicopter searchlights)
+            if (light->mType == rage::LT_SPOT && light->mFlags & 0x100 && !(light->mFlags & 8))
+            {
+                // Append the light shaft flag
+                light->mFlags |= 8;
+
+                // Distance fading setup
+                float DeltaX = CameraPosition.x - light->mPosition.x;
+                float DeltaY = CameraPosition.y - light->mPosition.y;
+                float DeltaZ = CameraPosition.z - light->mPosition.z;
+
+                float Distance = std::sqrt(DeltaX * DeltaX + DeltaY * DeltaY + DeltaZ * DeltaZ);
+
+                float FadeStart = fVehicleLightsVolumeFadeStart;
+                float FadeEnd = fVehicleLightsVolumeFadeEnd;
+
+                float DistanceFade = 1.0f - Smoothstep(FadeStart, FadeEnd, Distance);
+
+                // Transition from no volumes to volumes
+                if (!HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
+                {
+                    light->mVolumeIntensity = 4.0f * VehicleLightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
+                    light->mVolumeScale = VehicleLightVolumeScales(NextWeather) * InterpolationValue;
+                }
+                // Transition between volumes
+                else if (HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
+                {
+                    float CurrentVolumeIntensity = VehicleLightVolumeIntensities(CurrentWeather);
+                    float NextVolumeIntensity = VehicleLightVolumeIntensities(NextWeather);
+
+                    float CurrentVolumeScale = VehicleLightVolumeScales(CurrentWeather);
+                    float NextVolumeScale = VehicleLightVolumeScales(NextWeather);
+
+                    light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
+                    light->mVolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
+                }
+                // Transition from volumes to no volumes
+                else if (HasVolumes(CurrentWeather) && !HasVolumes(NextWeather))
+                {
+                    light->mVolumeIntensity = 4.0f * VehicleLightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
+                    light->mVolumeScale = VehicleLightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+                }
             }
         }
     }
-
-    // TODO: Rotterdam Tower custom light colors
-    // This idea sadly might end up being scrapped, due to there being only one real approach of doing this, which kind of pushes the game's limits.
-    // It consists of checking for custom projtex hashes for every light on each row of neons on the tower respectively.
-    // The way the lights are done on the tower is: LOD1 - Lights / LOD2 - Emissive / LOD3 - Emissive.
-    // To make this work we have to null out the emissive intensity from the low LODs and patch the high LODs' lights with the check, then copy the lights to the low LOD models as is as well.
-    // While it just works, lights are really limited in this game and by doing this it means we're drawing over 50 lights at ALL times instead of just when near the tower.
-    // That means from the start, out of 640 possible lights while away from the tower, we remain with around 590 that could be used by other lights, which is okay but if one were to increase the lamppost lights' distance
-    // (!!!Including by raising the distance sliders especially!!!), the tower would have higher and higher chances of getting visible seizures within its lights.
-
-    /*auto now = std::chrono::system_clock::now();
-    auto now_c = std::chrono::system_clock::to_time_t(now);
-    auto date = std::localtime(&now_c);
-
-    // Bottom Rotterdam Tower lights
-    if (light->mProjTexHash == 0x0BBE)
-    {
-        if (IsFusionFixSnowEnabled())
-        {
-            light->mColor = RGB(255, 0, 0);
-        }
-
-        if (IsFusionFixHalloweenEnabled())
-        {
-            light->mColor = RGB(210, 128, 60);
-        }
-
-        // 29th April
-        if ((date->tm_mon == 3 && date->tm_mday <= 29))
-        {
-            light->mColor = RGB(160, 32, 240);
-        }
-    }
-
-    // Middle Rotterdam lights
-    if (light->mProjTexHash == 0xB16)
-    {
-        if (IsFusionFixSnowEnabled())
-        {
-            light->mColor = RGB(0, 255, 0);
-        }
-
-        if (IsFusionFixHalloweenEnabled())
-        {
-            light->mColor = RGB(255, 165, 100);
-        }
-
-        // 29th April
-        if ((date->tm_mon == 3 && date->tm_mday <= 29))
-        {
-            light->mColor = RGB(173, 216, 230);
-        }
-    }
-
-    // Top Rotterdam lights
-    if (light->mProjTexHash == 0xDADD8)
-    {
-        if (IsFusionFixSnowEnabled())
-        {
-            light->mColor = RGB(0, 255, 0);
-        }
-
-        if (IsFusionFixHalloweenEnabled())
-        {
-            light->mColor = RGB(100, 255, 175);
-        }
-
-        // 29th April
-        if ((date->tm_mon == 3 && date->tm_mday <= 29))
-        {
-            light->mColor = RGB(0, 255, 255);
-        }
-    }*/
 }
-
-static uintptr_t Resume1 = 0;
-static uintptr_t Resume2 = 0;
-float* dwInnerConeAngle = nullptr;
-float* dwOuterConeAngle = nullptr;
-
-typedef	void* (__cdecl* AddSingleVehicleLight_T)(rage::Matrix44* TransformationMatrix, float* Position, rage::Vector3* Direction, rage::Vector3* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char a12, char a13);
-AddSingleVehicleLight_T AddSingleVehicleLight = nullptr;
 
 void __cdecl RenderCenterHeadlight(rage::Matrix44* TransformationMatrix, rage::Matrix44* LeftPosition, rage::Matrix44* RightPosition, float* Position, rage::Vector3* Direction, rage::Vector3* Color, float Intensity, float Radius, int64_t a9, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char a13)
 {
@@ -349,7 +427,7 @@ void __declspec(naked) RenderCenterHeadlightStub()
         call RenderCenterHeadlight
         add esp, 0x38
 
-        mov eax, Resume1
+        mov eax, ResumeHeadlights
         add eax, 11
         jmp eax
     }
@@ -359,22 +437,51 @@ void __declspec(naked) RenderCenterTaillightStub()
 {
     __asm
     {
-        mov ecx, [esp + 0x58];
-        mov eax, [esp + 0x50];
+        mov ecx, [esp + 0x58]
+        mov eax, [esp + 0x50]
 
-        push ecx;
-        push eax;
+        push ecx
+        push eax
 
-        push dword ptr[ebp + 0x2C];
+        push dword ptr[ebp + 0x2C]
 
-        call RenderCenterTaillight;
-        add esp, 0x38;
+        call RenderCenterTaillight
+        add esp, 0x38
 
-        mov	eax, Resume2;
-        add	eax, 16;
-        jmp	eax;
+        mov eax, ResumeTaillights
+        add eax, 16
+        jmp eax
     }
 }
+
+// TODO: Reverselights
+/*void RenderCenterReverselight(rage::Matrix44* TransformationMatrix, rage::Matrix44* LeftPosition, rage::Matrix44* RightPosition, rage::Vector3* Direction, rage::Vector3* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int ShadowCacheIndex, char a13, char a14)
+{
+    AddSingleVehicleLight(TransformationMatrix, &LeftPosition->d.x,  Direction, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowCacheIndex, a13, a14);
+    AddSingleVehicleLight(TransformationMatrix, &RightPosition->d.x, Direction, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowCacheIndex, a13, a14);
+}
+
+void __declspec(naked) RenderCenterReverselightStub()
+{
+    __asm
+    {
+        // idk anymore
+        mov ecx, [esp + 0x??]
+        mov eax, [esp + 0x??]
+
+        push ecx
+        push eax
+
+        push dword ptr[ebp + 0x20]
+
+        call RenderCenterReverselight
+        add esp, 0x38
+
+        mov eax, ResumeReverselights
+        add eax, 16
+        jmp eax
+    }
+}*/
 
 BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
 {
@@ -382,112 +489,148 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
     {
         ReadIni();
 
-        // CopyLight hook
+        // Main hooks
         {
-            // FusionFix code, slightly modified to add version detection
-            auto pattern = find_pattern("E8 ? ? ? ? F3 0F 10 44 24 ? 51 F3 0F 11 04 24 56 E8 ? ? ? ? 83 C4 08 FF 05", "E8 ? ? ? ? D9 44 24 0C 51 D9 1C 24 56 E8 ? ? ? ? 83 C4 08");
-            if (!pattern.empty())
+            // CopyLight hook
+            // (#1 https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/722e4a056f72e2b6fe39f2b34f14a3d37fa03919/source/comvars.ixx#L2556)
             {
-                shCopyLight = safetyhook::create_inline(injector::GetBranchDestination(pattern.get_first()).get<void*>(), CopyLight);
-            }
-            else
-            {
-                DisplayUnsupportedError();
-
-                return false;
-            }
-        }
-
-        // Weather hooks
-        {
-            // FusionFix code, slightly modified to add version detection
-            auto pattern = find_pattern("A1 ? ? ? ? 83 C4 08 8B CF", "A1 ? ? ? ? 80 3F 04");
-            if (!pattern.empty())
-            {
-                CWeather::OldWeatherType = *pattern.get_first<CWeather::eWeatherType*>(1);
-            }
-            else
-            {
-                DisplayUnsupportedError();
-
-                return false;
-            }
-
-            // FusionFix code, slightly modified to add version detection
-            pattern = find_pattern("A1 ? ? ? ? 89 46 4C A1", "A1 ? ? ? ? 77 05 A1 ? ? ? ? 80 3F 04");
-            if (!pattern.empty())
-            {
-                CWeather::NewWeatherType = *pattern.get_first<CWeather::eWeatherType*>(1);
-            }
-            else
-            {
-                DisplayUnsupportedError();
-
-                return false;
-            }
-
-            // FusionFix code, slightly modified to add version detection
-            pattern = hook::pattern("F3 0F 10 05 ? ? ? ? 8B 44 24 0C 8B 4C 24 04");
-            if (!pattern.empty())
-            {
-                CWeather::InterpolationValue = *pattern.get_first<float*>(4);
-            }
-            else
-            {
-                DisplayUnsupportedError();
-
-                return false;
-            }
-        }
-
-        // ParticleAttrs limit hook, requires an increase so TBoGT doesn't poof with all the provided .ide files which add a bunch of particles (Uses FusionFix code)
-        {
-            auto pattern = hook::pattern("8B C8 E8 ? ? ? ? B9 ? ? ? ? A3");
-            auto CModelInfoStore__ms_baseModels = *pattern.get_first<CModelInfoStore::CDataStore*>(8);
-
-            // We check if the array size is vanilla and only then increase it by two, to ensure we don't interfere with other limit adjusters here
-            if (CModelInfoStore__ms_baseModels[CModelInfoStore::ms_particleAttrs].nSize == 0x0A8C)
-            {
-                CModelInfoStore__ms_baseModels[CModelInfoStore::ms_particleAttrs].nSize *= 2;
-            }
-        }
-
-        // TODO: Dual vehicle light hooks, thanks to @xoxor4d (https://github.com/xoxor4d)
-        {
-            if (bDualVehicleLights)
-            {
-                // Single light function
-                auto pattern = hook::pattern("55 8B EC 83 E4 F0 83 EC 20 80 7D 34 00 8B 4D 08 8B 45 10");
-                AddSingleVehicleLight = (AddSingleVehicleLight_T)pattern.get_first(0);
-
-                // Headlights
+                auto pattern = find_pattern("E8 ? ? ? ? F3 0F 10 44 24 ? 51 F3 0F 11 04 24 56 E8 ? ? ? ? 83 C4 08 FF 05", "E8 ? ? ? ? D9 44 24 0C 51 D9 1C 24 56 E8 ? ? ? ? 83 C4 08");
+                if (!pattern.empty())
                 {
-                    auto pattern = hook::pattern("FF 75 24 E8 ? ? ? ? 83 C4 30 5F 5E 8B E5 5D C2 24 00");
-                    injector::MakeNOP(pattern.get_first(0), 8, true);
-                    injector::MakeJMP(pattern.get_first(0), RenderCenterHeadlightStub, true);
-                    uintptr_t BaseAddress1 = (uintptr_t)pattern.get_first(0);
-                    Resume1 = BaseAddress1;
+                    shCopyLight = safetyhook::create_inline(injector::GetBranchDestination(pattern.get_first()).get<void*>(), CopyLight);
+                }
+            }
 
-                    // Right light position override?
-                    pattern = hook::pattern("F3 0F 11 44 24 ? E8 ? ? ? ? 8D 44 24 60 50");
-                    injector::MakeNOP(pattern.get_first(0), 6, true);
-
-                    // Right light position override read? No idea if needed or what it even does :)
-                    pattern = hook::pattern("F3 0F 10 74 24 ? F3 0F 59 25 ? ? ? ? F3 0F 11 74 24 ? F3 0F 59 2D ? ? ? ? F3 0F 11 64 24 ? 6A 00");
-                    injector::MakeNOP(pattern.get_first(0), 6, true);
-
-                    // Cone angle dwords
-                    pattern = hook::pattern("F3 0F 59 15 ? ? ? ? F3 0F C2 C3 06 F3 0F 10 1D ? ? ? ? F3 0F 59 1D ? ? ? ? F3 0F 11 54 24 ? 0F 54 C6");
-                    dwInnerConeAngle = *pattern.get_first<float*>(4);
-                    dwOuterConeAngle = *pattern.get_first<float*>(25);
+            // Weather hooks
+            // (#1 https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/722e4a056f72e2b6fe39f2b34f14a3d37fa03919/source/comvars.ixx#L2567)
+            // (#2 https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/722e4a056f72e2b6fe39f2b34f14a3d37fa03919/source/comvars.ixx#L2570)
+            // (#3 https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/722e4a056f72e2b6fe39f2b34f14a3d37fa03919/source/comvars.ixx#L2573)
+            {
+                auto pattern = find_pattern("A1 ? ? ? ? 83 C4 08 8B CF", "A1 ? ? ? ? 80 3F 04");
+                if (!pattern.empty())
+                {
+                    CWeather::OldWeatherType = *pattern.get_first<CWeather::eWeatherType*>(1);
                 }
 
-                // Taillights
+                pattern = find_pattern("A1 ? ? ? ? 89 46 4C A1", "A1 ? ? ? ? 77 05 A1 ? ? ? ? 80 3F 04");
+                if (!pattern.empty())
                 {
-                    auto pattern = hook::pattern("8D 44 24 ? 50 FF 75 ? E8 ? ? ? ? 83 C4 ? 5F 5E 8B E5 5D C2 ? ? 83 FF ? 0F 84 ? ? ? ? 80 7D ? ? 0F 85 ? ? ? ? F3 0F 10 05");
-                    injector::MakeJMP(pattern.get_first(0), RenderCenterTaillightStub, true);
-                    uintptr_t BaseAddress2 = (uintptr_t)pattern.get_first(0);
-                    Resume2 = BaseAddress2;
+                    CWeather::NewWeatherType = *pattern.get_first<CWeather::eWeatherType*>(1);
+                }
+
+                pattern = hook::pattern("F3 0F 10 05 ? ? ? ? 8B 44 24 0C 8B 4C 24 04");
+                if (!pattern.empty())
+                {
+                    CWeather::InterpolationValue = *pattern.get_first<float*>(4);
+                }
+            }
+
+            // Camera native hooks
+            // (#1: https://github.com/ThirteenAG/III.VC.SA.IV.Project2DFX/blob/068178563aed28ee51dc2d2e2f2afec61f804f8f/source/IVLodLights/dllmain.cpp#L278)
+            // (#2: https://github.com/ThirteenAG/III.VC.SA.IV.Project2DFX/blob/068178563aed28ee51dc2d2e2f2afec61f804f8f/source/IVLodLights/dllmain.cpp#L284)
+            {
+                auto pattern = find_pattern("FF 35 ? ? ? ? 8B 0D ? ? ? ? E8 ? ? ? ? 8B 4C 24 04 89 01 C2 04 00 CC", "A1 ? ? ? ? 8B 0D ? ? ? ? 50 E8 ? ? ? ? 8B 4C 24 04 89 01 C2 04 00 CC");
+                if (!pattern.empty())
+                {
+                    GET_ROOT_CAM = (void(__stdcall*)(int* Camera))(pattern.get_first(0));
+                }
+
+                pattern = find_pattern("55 8B EC 83 E4 F0 83 EC 10 8D 04 24 50 FF 75 08", "55 8B EC 83 E4 F0 8B 4D 08 83 EC 10 8D 04 24 50 51");
+                if (!pattern.empty())
+                {
+                    GET_CAM_POS = (void(__cdecl*)(int Camera, float* PositionX, float* PositionY, float* PositionZ))(pattern.get(0).get<uintptr_t>(0));
+                }
+            }
+
+            // View distance slider hook
+            {
+                auto pattern = find_pattern("F3 0F 11 05 ? ? ? ? 66 0F 6E 05 ? ? ? ? 0F 5B C0 F3 0F 59 05 ? ? ? ? F3 0F 59 05 ? ? ? ? F3 0F 58 05 ? ? ? ? F3 0F 11 04 24", "F3 0F 11 05 ? ? ? ? F3 0F 2A 05 ? ? ? ? F3 0F 59 05 ? ? ? ? F3 0F 58 05 ? ? ? ? D3 E6");
+                if (!pattern.empty())
+                {
+                    dwViewDistance = *pattern.get_first<float*>(4);
+                }
+            }
+
+            // Limit hooks
+            // (#1 https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/722e4a056f72e2b6fe39f2b34f14a3d37fa03919/source/limits.ixx#L421)
+            // (#2 https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/c3ce288433bb8be081b0cf80b0af8d5f9f14e733/source/limits.ixx#L159)
+            {
+                // The ParticleAttr limit requires an increase so TBoGT doesn't poof with all the provided .ide files which add a bunch of particles
+                auto pattern = hook::pattern("8B C8 E8 ? ? ? ? B9 ? ? ? ? A3");
+                if (!pattern.empty())
+                {
+                    auto CModelInfoStore__ms_baseModels = *pattern.get_first<CModelInfoStore::CDataStore*>(8);
+
+                    // We check if the array size is vanilla and only then increase it by two, to ensure we don't interfere with other limit adjusters here
+                    if (CModelInfoStore__ms_baseModels[CModelInfoStore::ms_particleAttrs].nSize == 0x0A8C)
+                    {
+                        CModelInfoStore__ms_baseModels[CModelInfoStore::ms_particleAttrs].nSize *= 2;
+                    }
+                }
+            }
+
+            // TODO: Dual vehicle light hooks (Thanks to @xoxor4d (https://github.com/xoxor4d))
+            {
+                if (bDualVehicleLights)
+                {
+                    // Single light function
+                    auto pattern = find_pattern("55 8B EC 83 E4 F0 83 EC 20 80 7D 34 00 8B 4D 08 8B 45 10", "55 8B EC 83 E4 F0 83 EC 2C 80 7D 24 00 D9 45 1C 8B 45 08 F3 0F 10 31");
+                    if (!pattern.empty())
+                    {
+                        AddSingleVehicleLight = (AddSingleVehicleLight_T)pattern.get_first(0);
+                    }
+
+                    // Headlights
+                    {
+                        auto pattern = hook::pattern("FF 75 24 E8 ? ? ? ? 83 C4 30 5F 5E 8B E5 5D C2 24 00");
+                        if (!pattern.empty())
+                        {
+                            injector::MakeNOP(pattern.get_first(0), 8, true);
+                            injector::MakeJMP(pattern.get_first(0), RenderCenterHeadlightStub, true);
+                            uintptr_t BaseAddressHeadlights = (uintptr_t)pattern.get_first(0);
+                            ResumeHeadlights = BaseAddressHeadlights;
+                        }
+                        // TODO: preCE
+
+                        // Right light position override?
+                        pattern = hook::pattern("F3 0F 11 44 24 ? E8 ? ? ? ? 8D 44 24 60 50 8B 44 24 24 50 8B CE");
+                        if (!pattern.empty())
+                        {
+                            injector::MakeNOP(pattern.get_first(0), 6, true);
+                        }
+
+                        // Right light position override read? No idea if needed or what it even does :)
+                        pattern = hook::pattern("F3 0F 10 74 24 ? F3 0F 59 25 ? ? ? ? F3 0F 11 74 24 ? F3 0F 59 2D ? ? ? ? F3 0F 11 64 24 ? 6A 00");
+                        injector::MakeNOP(pattern.get_first(0), 6, true);
+
+                        // Cone angle dwords
+                        pattern = hook::pattern("F3 0F 59 15 ? ? ? ? F3 0F C2 C3 06 F3 0F 10 1D ? ? ? ? F3 0F 59 1D ? ? ? ? F3 0F 11 54 24 ? 0F 54 C6");
+                        if (!pattern.empty())
+                        {
+                            dwInnerConeAngle = *pattern.get_first<float*>(4);
+                            dwOuterConeAngle = *pattern.get_first<float*>(25);
+                        }
+                    }
+
+                    // Taillights
+                    {
+                        auto pattern = hook::pattern("8D 44 24 6C 50 FF 75 2C E8 ? ? ? ? 83 C4 34 5F 5E 8B E5 5D C2 2C 00");
+                        if (!pattern.empty())
+                        {
+                            injector::MakeJMP(pattern.get_first(0), RenderCenterTaillightStub, true);
+                            uintptr_t BaseAddressTaillights = (uintptr_t)pattern.get_first(0);
+                            ResumeTaillights = BaseAddressTaillights;
+                        }
+                        // TODO: preCE
+                    }
+
+                    // TODO: Reverselights
+                    /*{
+                        auto pattern = hook::pattern("8D 44 24 ? 50 FF 75 ? E8 ? ? ? ? 83 C4 ? 5F 5E 8B E5 5D C2");
+                        injector::MakeJMP(pattern.get_first(0), RenderCenterReverselightStub, true);
+                        uintptr_t BaseAddressReverselights = (uintptr_t)pattern.get_first(0);
+                        ResumeReverselights = BaseAddressReverselights;
+                    }*/
                 }
             }
         }
@@ -564,12 +707,12 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
                 auto pattern = hook::pattern("68 ? ? ? ? 6A 00 6A 00 C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? E8 ? ? ? ? F3 0F 10 54 24 ? 46");
                 if (!pattern.empty())
                 {
-                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // For flags, push 201 --> push 211 (+Fill lighting)
+                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // push 201 --> push 211 (+Fill lighting)
                 }
                 else
                 {
                     pattern = hook::pattern("68 ? ? ? ? 6A 00 6A 00 F3 0F 11 54 24 ? E8 ? ? ? ? 83 C6 01 83 C4 40 83 C7 10");
-                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // For flags, push 201 --> push 211 (+Fill lighting)
+                    injector::WriteMemory(pattern.get_first(1), 0xD3, true); // push 201 --> push 211 (+Fill lighting)
                 }
             }
         }
