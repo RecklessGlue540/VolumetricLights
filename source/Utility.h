@@ -47,59 +47,7 @@ void DisplayUnsupportedError()
 }
 
 // Variables
-bool bExtraSunny = false;
-bool bSunny      = false;
-bool bSunnyWindy = false;
-bool bCloudy     = false;
-bool bRain       = false;
-bool bDrizzle    = false;
-bool bFoggy      = false;
-bool bLightning  = false;
-
-float fSpotlightsVolumeIntensityExtraSunny = 0.0f;
-float fSpotlightsVolumeIntensitySunny      = 0.0f;
-float fSpotlightsVolumeIntensitySunnyWindy = 0.0f;
-float fSpotlightsVolumeIntensityCloudy     = 0.0f;
-float fSpotlightsVolumeIntensityRain       = 0.0f;
-float fSpotlightsVolumeIntensityDrizzle    = 0.0f;
-float fSpotlightsVolumeIntensityFoggy      = 0.0f;
-float fSpotlightsVolumeIntensityLightning  = 0.0f;
-
-float fSpotlightsVolumeScaleExtraSunny = 0.0f;
-float fSpotlightsVolumeScaleSunny      = 0.0f;
-float fSpotlightsVolumeScaleSunnyWindy = 0.0f;
-float fSpotlightsVolumeScaleCloudy     = 0.0f;
-float fSpotlightsVolumeScaleRain       = 0.0f;
-float fSpotlightsVolumeScaleDrizzle    = 0.0f;
-float fSpotlightsVolumeScaleFoggy      = 0.0f;
-float fSpotlightsVolumeScaleLightning  = 0.0f;
-
-float fPointlightsVolumeIntensityExtraSunny = 0.0f;
-float fPointlightsVolumeIntensitySunny      = 0.0f;
-float fPointlightsVolumeIntensitySunnyWindy = 0.0f;
-float fPointlightsVolumeIntensityCloudy     = 0.0f;
-float fPointlightsVolumeIntensityRain       = 0.0f;
-float fPointlightsVolumeIntensityDrizzle    = 0.0f;
-float fPointlightsVolumeIntensityFoggy      = 0.0f;
-float fPointlightsVolumeIntensityLightning  = 0.0f;
-
-float fPointlightsVolumeScaleExtraSunny = 0.0f;
-float fPointlightsVolumeScaleSunny      = 0.0f;
-float fPointlightsVolumeScaleSunnyWindy = 0.0f;
-float fPointlightsVolumeScaleCloudy     = 0.0f;
-float fPointlightsVolumeScaleRain       = 0.0f;
-float fPointlightsVolumeScaleDrizzle    = 0.0f;
-float fPointlightsVolumeScaleFoggy      = 0.0f;
-float fPointlightsVolumeScaleLightning  = 0.0f;
-
-bool bDualVehicleLights = false;
-
-float fHeadlightsCoronaSize      = 0.0f;
-float fHeadlightsCoronaIntensity = 0.0f;
-float fTaillightsCoronaSize      = 0.0f;
-float fTaillightsCoronaIntensity = 0.0f;
-
-int iPickupLightsMode = 0;
+// TODO
 
 bool IsFusionFixSnowEnabled()
 {
