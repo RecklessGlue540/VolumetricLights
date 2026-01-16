@@ -4,15 +4,12 @@
 
 #include "Hooking.Patterns.h"
 #include "IniReader.h"
-#include "injector/injector.hpp"
 #include "injector/assembly.hpp"
-#include "safetyhook.hpp"
 
-#include <cstdint>
-
-// FusionFix code
+// From https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/e3daeaa774106fcc8a0c4decf4d6710f49c311d8/source/comvars.ixx#L10
 #define VALIDATE_SIZE(struc, size) static_assert(sizeof(struc) == size, "Invalid structure size of " #struc)
 
+// From https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/e3daeaa774106fcc8a0c4decf4d6710f49c311d8/source/common.ixx#L744
 template <size_t count = 1, typename... Args>
 hook::pattern find_pattern(Args... args)
 {
@@ -27,12 +24,14 @@ typedef bool(__cdecl* FusionFixModeFun)();
 bool IsFusionFixModeEnabled(const char* FunctionName)
 {
     static HMODULE FusionFix = GetModuleHandleA("GTAIV.EFLC.FusionFix.asi");
+
     if (!FusionFix)
     {
         return false;
     }
 
     auto Function = reinterpret_cast<FusionFixModeFun>(GetProcAddress(FusionFix, FunctionName));
+
     if (!Function)
     {
         return false;

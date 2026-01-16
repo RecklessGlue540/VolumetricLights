@@ -1,8 +1,7 @@
 #include "Utility.h"
 
 #include "rage/LightSource.h"
-#include "rage/Matrix.h"
-#include "rage/Vector.h"
+#include "rage/math/Matrix.h"
 
 void ReadIni()
 {
