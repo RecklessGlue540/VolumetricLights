@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Vector.h"
-
 // From https://github.com/akifle47/fxdc/blob/main/src/rage/math/Matrix.h
 
 namespace rage

@@ -3,6 +3,7 @@
 #include "game/ModelInfoStore.h"
 #include "game/Weather.h"
 #include "rage/LightSource.h"
+#include "rage/StringHash.h"
 #include "rage/math/Matrix.h"
 
 static void OnAfterCopyLight(rage::CLightSource*);
@@ -33,7 +34,7 @@ static uintptr_t ResumeReverselights = 0;
 static float* dwInnerConeAngle = nullptr;
 static float* dwOuterConeAngle = nullptr;
 
-void ReadIni()
+void ReadSettings()
 {
     CIniReader iniReader("");
 
@@ -487,7 +488,7 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD fdwReason, LPVOID)
 {
     if (fdwReason == DLL_PROCESS_ATTACH)
     {
-        ReadIni();
+        ReadSettings();
 
         // Main hooks
         {

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Utility.h"
-
 #include "math/Vector.h"
 
 namespace rage
@@ -12,12 +10,26 @@ namespace rage
         LT_DIR     = 0x1,
         LT_SPOT    = 0x2,
         LT_AMBOCC  = 0x3,
-        LT_CLAMPED = 0x4,
+        LT_CLAMPED = 0x4
+    };
+
+    enum eLightFlags
+    {
+        LIGHTFLAG_STATIC_SHADOWS  = 0x2,
+        LIGHTFLAG_DYNAMIC_SHADOWS = 0x4,
+        LIGHTFLAG_LIGHT_SHAFT     = 0x8,
+        LIGHTFLAG_FILLER_LIGHT    = 0x10,
+        LIGHTFLAG_INTERIOR_LIGHT  = 0x20,  // Maybe
+        LIGHTFLAG_EXTERIOR_LIGHT  = 0x40,  // Maybe
+        LIGHTFLAG_CUTSCENE_LIGHT  = 0x80,
+        LIGHTFLAG_VEHICLE_LIGHT   = 0x100,
+        LIGHTFLAG_TRAFFIC_LIGHT   = 0x200,
+        LIGHTFLAG_PLAYER_DRIVING  = 0x400
     };
 
     class CLightSource
     {
-    public:
+    public:                        /* CLightAttr Mapping: */
         Vector3 mDirection;        // Direction
         float field_C;
         Vector3 mTangent;          // Origin

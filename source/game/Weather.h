@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Utility.h"
-
 namespace CWeather
 {
     enum eWeatherType : uint32_t
@@ -13,7 +11,7 @@ namespace CWeather
         RAIN,
         DRIZZLE,
         FOGGY,
-        LIGHTNING,
+        LIGHTNING
     };
 
     eWeatherType* OldWeatherType = nullptr;

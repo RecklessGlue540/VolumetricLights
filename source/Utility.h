@@ -15,7 +15,6 @@ hook::pattern find_pattern(Args... args)
 {
     hook::pattern pattern;
     ((pattern = hook::pattern(args), !pattern.count_hint(count).empty()) || ...);
-
     return pattern;
 }
 
