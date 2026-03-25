@@ -1,0 +1,25 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 3
+	{
+		gta_default.sps SWNJrustmtlrail
+		gta_glass_emissive_alpha.sps ws_lamp_glass 0.00000000 24.00000000 0.00000000 0.00000000 0.00000000 0.00000000 givemechecker givemechecker
+		gta_alpha.sps ws_lamp_glass
+	}
+}
+lodgroup
+{
+	high 1 ws_sublight\ws_sublight_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center -0.00345400 -0.07413500 -0.01398200
+	AABBMin -0.07971599 -0.16870100 -0.10184800
+	AABBMax 0.07999400 0.16918900 0.04341100
+	radius 0.24385900
+}
+light
+{
+	light ws_sublight\ws_sublight.light
+}
