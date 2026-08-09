@@ -29,4 +29,12 @@ workspace "VolumetricLights"
    files { "dependencies/injector/zydis/**.h", "dependencies/injector/zydis/**.c" }
    files { "resources/*.ini" }
 
+   filter "configurations:Debug"
+      defines { "DEBUG" }
+      symbols "On"
+
+   filter "configurations:Release"
+      defines { "NDEBUG" }
+      optimize "On"
+
 project "VolumetricLights"
