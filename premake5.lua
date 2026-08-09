@@ -16,7 +16,8 @@ workspace "VolumetricLights"
    defines { "_CRT_SECURE_NO_WARNINGS" }
 
    includedirs { "source" }
-   includedirs { "source/dependencies" }
+   includedirs { "dependencies" }
+   includedirs { "includes" }
    files { "source/**.h", "source/*.hpp", "source/*.cpp", "source/*.hxx", "source/**.ixx" }
 
    includedirs { "dependencies/injector/safetyhook/include" }
