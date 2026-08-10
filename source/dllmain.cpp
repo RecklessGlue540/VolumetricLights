@@ -1,8 +1,10 @@
 #include "common.h"
 
-#include "game/ModelInfoStore.h"
+#include "game/2dEffect.h"
+#include "game/LightSource.h"
+#include "game/ModelInfo.h"
 #include "game/Weather.h"
-#include "rage/LightSource.h"
+
 #include "rage/StringHash.h"
 #include "rage/math/Matrix.h"
 
@@ -91,14 +93,14 @@ float fTaillightsCoronaIntensity = 0.0f;
 
 int iPickupLightsMode = 0;
 
-static void OnAfterCopyLight(rage::CLightSource*);
+static void OnAfterCopyLight(CLightSource*);
 
 // From https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/e3daeaa774106fcc8a0c4decf4d6710f49c311d8/source/comvars.ixx#L2100
 static inline SafetyHookInline shCopyLight{};
 
-static rage::CLightSource* __fastcall CopyLight(void* _this, void* edx, void* a2)
+static CLightSource* __fastcall CopyLight(void* _this, void* edx, void* a2)
 {
-    auto ret = shCopyLight.fastcall<rage::CLightSource*>(_this, edx, a2);
+    auto ret = shCopyLight.fastcall<CLightSource*>(_this, edx, a2);
     OnAfterCopyLight(ret);
 
     return ret;
@@ -231,11 +233,11 @@ float VehicleLightVolumeScales(CWeather::eWeatherType Type)
     }
 }
 
-void OnAfterCopyLight(rage::CLightSource* light)
+void OnAfterCopyLight(CLightSource* light)
 {
-    const CWeather::eWeatherType CurrentWeather = CWeather::GetOldWeatherType();
-    const CWeather::eWeatherType NextWeather = CWeather::GetNewWeatherType();
-    const float InterpolationValue = CWeather::GetWeatherInterpolationValue();
+    const CWeather::eWeatherType CurrentWeather = *CWeather::OldWeatherType;
+    const CWeather::eWeatherType NextWeather = *CWeather::NewWeatherType;
+    const float InterpolationValue = *CWeather::InterpolationValue;
 
     int CurrentCamera;
     rage::Vector3 CameraPosition;
@@ -252,15 +254,15 @@ void OnAfterCopyLight(rage::CLightSource* light)
     if ((HasVolumes(CurrentWeather) || HasVolumes(NextWeather)) && !IsFusionFixSnowEventEnabled())
     {
         // Include spotlights and only those "flagged" with "LuminescenceHash" 57005
-        if (light->mType == rage::LT_SPOT && light->mProjTexHash == 0xDEAD)
+        if (light->m_LightType == LT_SPOT && light->m_ProjectedTextureNameHash == 0xDEAD)
         {
             // Append the light shaft flag
-            light->mFlags |= 8;
+            light->m_Flags |= 8;
 
             // Distance fading setup
-            float DeltaX = CameraPosition.x - light->mPosition.x;
-            float DeltaY = CameraPosition.y - light->mPosition.y;
-            float DeltaZ = CameraPosition.z - light->mPosition.z;
+            float DeltaX = CameraPosition.x - light->m_Position.x;
+            float DeltaY = CameraPosition.y - light->m_Position.y;
+            float DeltaZ = CameraPosition.z - light->m_Position.z;
 
             float Distance = std::sqrt(DeltaX * DeltaX + DeltaY * DeltaY + DeltaZ * DeltaZ);
 
@@ -272,8 +274,8 @@ void OnAfterCopyLight(rage::CLightSource* light)
             // Transition from no volumes to volumes
             if (!HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
             {
-                light->mVolumeIntensity = 4.0f * SpotlightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
-                light->mVolumeScale = SpotlightVolumeScales(NextWeather) * InterpolationValue;
+                light->m_VolumeIntensity = 4.0f * SpotlightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
+                light->m_VolumeScale = SpotlightVolumeScales(NextWeather) * InterpolationValue;
             }
             // Transition between volumes
             else if (HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
@@ -284,27 +286,27 @@ void OnAfterCopyLight(rage::CLightSource* light)
                 float CurrentVolumeScale = SpotlightVolumeScales(CurrentWeather);
                 float NextVolumeScale = SpotlightVolumeScales(NextWeather);
 
-                light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
-                light->mVolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
+                light->m_VolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
+                light->m_VolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
             }
             // Transition from volumes to no volumes
             else if (HasVolumes(CurrentWeather) && !HasVolumes(NextWeather))
             {
-                light->mVolumeIntensity = 4.0f * SpotlightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
-                light->mVolumeScale = SpotlightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+                light->m_VolumeIntensity = 4.0f * SpotlightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
+                light->m_VolumeScale = SpotlightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
             }
         }
 
         // Include pointlights and only those "flagged" with "LuminescenceHash" 57005
-        if (light->mType == rage::LT_POINT && light->mProjTexHash == 0xDEAD)
+        if (light->m_LightType == LT_POINT && light->m_ProjectedTextureNameHash == 0xDEAD)
         {
             // Append the light shaft flag
-            light->mFlags |= 8;
+            light->m_Flags |= 8;
 
             // Distance fading setup
-            float DeltaX = CameraPosition.x - light->mPosition.x;
-            float DeltaY = CameraPosition.y - light->mPosition.y;
-            float DeltaZ = CameraPosition.z - light->mPosition.z;
+            float DeltaX = CameraPosition.x - light->m_Position.x;
+            float DeltaY = CameraPosition.y - light->m_Position.y;
+            float DeltaZ = CameraPosition.z - light->m_Position.z;
 
             float Distance = std::sqrt(DeltaX * DeltaX + DeltaY * DeltaY + DeltaZ * DeltaZ);
 
@@ -316,8 +318,8 @@ void OnAfterCopyLight(rage::CLightSource* light)
             // Transition from no volumes to volumes
             if (!HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
             {
-                light->mVolumeIntensity = 4.0f * PointlightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
-                light->mVolumeScale = PointlightVolumeScales(NextWeather) * InterpolationValue;
+                light->m_VolumeIntensity = 4.0f * PointlightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
+                light->m_VolumeScale = PointlightVolumeScales(NextWeather) * InterpolationValue;
             }
             // Transition between volumes
             else if (HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
@@ -328,29 +330,29 @@ void OnAfterCopyLight(rage::CLightSource* light)
                 float CurrentVolumeScale = PointlightVolumeScales(CurrentWeather);
                 float NextVolumeScale = PointlightVolumeScales(NextWeather);
 
-                light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
-                light->mVolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
+                light->m_VolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
+                light->m_VolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
             }
             // Transition from volumes to no volumes
             else if (HasVolumes(CurrentWeather) && !HasVolumes(NextWeather))
             {
-                light->mVolumeIntensity = 4.0f * PointlightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
-                light->mVolumeScale = PointlightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+                light->m_VolumeIntensity = 4.0f * PointlightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
+                light->m_VolumeScale = PointlightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
             }
         }
 
         if (bVolumetricVehicleLights && bDualVehicleLights /* We need dual vehicle lights for proper light shaft positions */ )
         {
             // Include spotlights, only vehicle lights, and exclude lights previously volumetric (Mainly helicopter searchlights)
-            if (light->mType == rage::LT_SPOT && light->mFlags & 0x100 && !(light->mFlags & 8))
+            if (light->m_LightType == LT_SPOT && light->m_Flags & 0x100 && !(light->m_Flags & 8))
             {
                 // Append the light shaft flag
-                light->mFlags |= 8;
+                light->m_Flags |= 8;
 
                 // Distance fading setup
-                float DeltaX = CameraPosition.x - light->mPosition.x;
-                float DeltaY = CameraPosition.y - light->mPosition.y;
-                float DeltaZ = CameraPosition.z - light->mPosition.z;
+                float DeltaX = CameraPosition.x - light->m_Position.x;
+                float DeltaY = CameraPosition.y - light->m_Position.y;
+                float DeltaZ = CameraPosition.z - light->m_Position.z;
 
                 float Distance = std::sqrt(DeltaX * DeltaX + DeltaY * DeltaY + DeltaZ * DeltaZ);
 
@@ -362,8 +364,8 @@ void OnAfterCopyLight(rage::CLightSource* light)
                 // Transition from no volumes to volumes
                 if (!HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
                 {
-                    light->mVolumeIntensity = 4.0f * VehicleLightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
-                    light->mVolumeScale = VehicleLightVolumeScales(NextWeather) * InterpolationValue;
+                    light->m_VolumeIntensity = 4.0f * VehicleLightVolumeIntensities(NextWeather) * InterpolationValue * DistanceFade;
+                    light->m_VolumeScale = VehicleLightVolumeScales(NextWeather) * InterpolationValue;
                 }
                 // Transition between volumes
                 else if (HasVolumes(CurrentWeather) && HasVolumes(NextWeather))
@@ -374,14 +376,14 @@ void OnAfterCopyLight(rage::CLightSource* light)
                     float CurrentVolumeScale = VehicleLightVolumeScales(CurrentWeather);
                     float NextVolumeScale = VehicleLightVolumeScales(NextWeather);
 
-                    light->mVolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
-                    light->mVolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
+                    light->m_VolumeIntensity = 4.0f * (CurrentVolumeIntensity + (NextVolumeIntensity - CurrentVolumeIntensity) * InterpolationValue) * DistanceFade;
+                    light->m_VolumeScale = (CurrentVolumeScale + (NextVolumeScale - CurrentVolumeScale) * InterpolationValue);
                 }
                 // Transition from volumes to no volumes
                 else if (HasVolumes(CurrentWeather) && !HasVolumes(NextWeather))
                 {
-                    light->mVolumeIntensity = 4.0f * VehicleLightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
-                    light->mVolumeScale = VehicleLightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
+                    light->m_VolumeIntensity = 4.0f * VehicleLightVolumeIntensities(CurrentWeather) * (1.0f - InterpolationValue) * DistanceFade;
+                    light->m_VolumeScale = VehicleLightVolumeScales(CurrentWeather) * (1.0f - InterpolationValue);
                 }
             }
         }
@@ -636,16 +638,16 @@ void Init()
         // (#1 https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/722e4a056f72e2b6fe39f2b34f14a3d37fa03919/source/limits.ixx#L421)
         // (#2 https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/c3ce288433bb8be081b0cf80b0af8d5f9f14e733/source/limits.ixx#L159)
         {
-            // The ParticleAttr limit requires an increase so TBoGT doesn't poof with all the provided .ide files which add a bunch of particles
-            pattern = hook::pattern("8B C8 E8 ? ? ? ? B9 ? ? ? ? A3");
+            // The ParticleAttrs limit requires an increase so TBoGT doesn't poof with all the provided .ide files which add a bunch of particles
+            pattern = hook::pattern("83 C4 ? B9 ? ? ? ? A3 ? ? ? ? E8 ? ? ? ? B9");
             if (!pattern.empty())
             {
-                auto CModelInfoStore__ms_baseModels = *pattern.get_first<CModelInfoStore::CDataStore*>(8);
+                auto gParticleStore2 = *pattern.get_first<CModelInfo::CStaticStore*>(19);
 
-                // We check if the array size is vanilla and only then increase it by two, to ensure we don't interfere with other limit adjusters here
-                if (CModelInfoStore__ms_baseModels[CModelInfoStore::ms_particleAttrs].nSize == 0x0A8C)
+                // We check if the array size is vanilla and only then increase it by two, to ensure we don't interfere with other limit adjusters.
+                if (gParticleStore2->nSize == 0x0A8C) // 2700
                 {
-                    CModelInfoStore__ms_baseModels[CModelInfoStore::ms_particleAttrs].nSize *= 2;
+                    gParticleStore2->nSize *= 2;
                 }
             }
         }

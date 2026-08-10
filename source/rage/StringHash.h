@@ -1,6 +1,6 @@
-#pragma once
+// From: https://github.com/akifle47/ptfxwiz/blob/main/src/rage/StringHash.h
 
-// From https://github.com/akifle47/fxdc/blob/main/src/rage/StringHash.h
+#pragma once
 
 namespace rage
 {

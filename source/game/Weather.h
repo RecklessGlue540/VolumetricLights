@@ -1,7 +1,8 @@
 #pragma once
 
-namespace CWeather
+class CWeather
 {
+public:
     enum eWeatherType : uint32_t
     {
         EXTRASUNNY,
@@ -14,22 +15,7 @@ namespace CWeather
         LIGHTNING
     };
 
-    eWeatherType* OldWeatherType = nullptr;
-    eWeatherType* NewWeatherType = nullptr;
-    float* InterpolationValue    = nullptr;
-
-    eWeatherType GetOldWeatherType()
-    {
-        return *OldWeatherType;
-    }
-
-    eWeatherType GetNewWeatherType()
-    {
-        return *NewWeatherType;
-    }
-
-    float GetWeatherInterpolationValue()
-    {
-        return *InterpolationValue;
-    }
-}
+    static inline eWeatherType* OldWeatherType = nullptr;
+    static inline eWeatherType* NewWeatherType = nullptr;
+    static inline float* InterpolationValue = nullptr;
+};
