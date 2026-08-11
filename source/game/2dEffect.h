@@ -4,6 +4,8 @@
 
 enum eLightAttrFlags
 {
+    LIGHTATTRFLAG_DAY_ONLY                  = (1 << 5),
+    LIGHTATTRFLAG_NIGHT_ONLY                = (1 << 6),
     LIGHTATTRFLAG_CAST_STATIC_GEOM_SHADOWS  = (1 << 14),
     LIGHTATTRFLAG_CAST_DYNAMIC_GEOM_SHADOWS = (1 << 15),
     LIGHTATTRFLAG_CALC_FROM_SUN             = (1 << 16),
@@ -22,7 +24,6 @@ public:
 };
 
 VALIDATE_SIZE(C2dEffect, 0x10);
-
 
 class CLightAttr : public C2dEffect
 {
@@ -43,7 +44,7 @@ public:
     uint32_t m_CoronaTextureNameHash;
     uint32_t m_ProjectedTextureNameHash;
     uint32_t m_TimeFlags : 24;
-    uint8_t m_LightType;
+    uint32_t m_LightType : 8;
     float m_CoronaIntensity;
     float m_LightFadeDistance;
     float m_VolumeFadeDistance;
@@ -51,4 +52,4 @@ public:
     int16_t m_Padding; // Probably
 };
 
-VALIDATE_SIZE(CLightAttr, 0x70);
+VALIDATE_SIZE(CLightAttr, 0x6C);

@@ -15,7 +15,7 @@ public:
         LIGHTNING
     };
 
-    static inline eWeatherType* OldWeatherType = nullptr;
-    static inline eWeatherType* NewWeatherType = nullptr;
-    static inline float* InterpolationValue = nullptr;
+    static inline eWeatherType* OldWeatherType;
+    static inline eWeatherType* NewWeatherType;
+    static inline float* InterpolationValue;
 };

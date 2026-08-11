@@ -4,11 +4,11 @@
 
 enum eLightType
 {
-    LT_POINT   = 0,
-    LT_DIR     = 1,
-    LT_SPOT    = 2,
-    LT_AMBOCC  = 3,
-    LT_CLAMPED = 4
+    LT_POINT,
+    LT_DIR,
+    LT_SPOT,
+    LT_AMBOCC,
+    LT_CLAMPED
 };
 
 enum eLightFlags
@@ -19,10 +19,10 @@ enum eLightFlags
     LIGHTFLAG_NO_SPECULAR               = (1 << 4),
     LIGHTFLAG_INTERIOR_ONLY             = (1 << 5), // Probably
     LIGHTFLAG_EXTERIOR_ONLY             = (1 << 6), // Probably
-    LIGHTFLAG_CUTSCENE                  = (1 << 7),
+    LIGHTFLAG_CUTSCENE                  = (1 << 7), // CutsceneObject lights
     LIGHTFLAG_VEHICLE                   = (1 << 8),
     LIGHTFLAG_TRAFFIC_LIGHT             = (1 << 9),
-    LIGHTFLAG_USE_VEHICLE_TWIN          = (1 << 10)
+    LIGHTFLAG_USE_VEHICLE_TWIN          = (1 << 10) // PC exclusive, used for that headlight shadow madness
 };
 
 class CLightSource
@@ -34,7 +34,7 @@ public:
     float m_Padding2;
     rage::Vector3 m_Position;
     float m_Padding3;
-    rage::Vector3 m_Color;
+    rage::Vector4 m_Color;
     float m_Intensity;
     eLightType m_LightType;
     uint32_t m_Flags;
@@ -53,4 +53,4 @@ public:
     char field_7F;
 };
 
-VALIDATE_SIZE(CLightSource, 0x7C);
+VALIDATE_SIZE(CLightSource, 0x80);
