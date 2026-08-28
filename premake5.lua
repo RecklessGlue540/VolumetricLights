@@ -30,6 +30,22 @@ workspace "VolumetricLights"
    files { "dependencies/injector/zydis/**.h", "dependencies/injector/zydis/**.c" }
    files { "resources/*.ini" }
 
+   function setpaths (gamepath, exepath, scriptspath)
+      scriptspath = scriptspath or "scripts/"
+      if (gamepath) then
+         cmdcopy = { "set \"path=" .. gamepath .. scriptspath .. "\"" }
+         table.insert(cmdcopy, pbcommands)
+         postbuildcommands (cmdcopy)
+         debugdir (gamepath)
+         if (exepath) then
+            debugcommand (gamepath .. exepath)
+            dir, file = exepath:match'(.*/)(.*)'
+            debugdir (gamepath .. (dir or ""))
+         end
+      end
+      targetdir ("bin")
+   end
+
    filter "configurations:Debug"
       defines { "DEBUG" }
       symbols "On"
@@ -39,3 +55,4 @@ workspace "VolumetricLights"
       optimize "On"
 
 project "VolumetricLights"
+   setpaths("C:/Games/Grand Theft Auto IV/", "GTAIV.exe", "plugins/")
