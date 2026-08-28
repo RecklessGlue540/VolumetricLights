@@ -11,7 +11,6 @@
 #include "Hooking.Patterns.h"
 #include "IniReader.h"
 #include "injector/assembly.hpp"
-#include "injector/utility.hpp"
 
 #include "callbacks.h"
 

@@ -38,8 +38,8 @@ public:
     float m_Intensity;
     eLightType m_LightType;
     uint32_t m_Flags;
-    uint32_t m_CoronaTextureNameHash;
-    uint32_t m_ProjectedTextureNameHash;
+    uint32_t m_LightOccluderTxdSlot; // Likely
+    uint32_t m_ProjectedTextureNameKey;
     float m_Radius;
     float m_InnerConeAngle;
     float m_OuterConeAngle;

@@ -41,8 +41,8 @@ public:
     float m_InnerConeAngle;
     float m_OuterConeAngle;
     uint32_t m_Flags;
-    uint32_t m_CoronaTextureNameHash;
-    uint32_t m_ProjectedTextureNameHash;
+    uint32_t m_CoronaTextureNameKey;
+    uint32_t m_ProjectedTextureNameKey;
     uint32_t m_TimeFlags : 24;
     uint32_t m_LightType : 8;
     float m_CoronaIntensity;
