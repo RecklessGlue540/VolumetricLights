@@ -315,6 +315,11 @@ void Init()
 {
     CFogVolumes::LoadConfigFile();
 
+    CIniReader iniReader("");
+
+    // [Misc]
+    int nPickupLightsMode = iniReader.ReadInteger("Misc", "PickupLightsMode", 1);
+
     hook::pattern pattern;
 
     // Extend ProcessOne2dEffectLight to pass the LightAttr object pointer in order to modify its properties at will
@@ -349,6 +354,25 @@ void Init()
     if (gParticleStore2->nSize == 0x0A8C) // 2700
     {
         gParticleStore2->nSize *= 2;
+    }
+
+    // Pickup lights
+    if (nPickupLightsMode == 0)
+    {
+        pattern = find_pattern("F3 0F 11 04 24 50 57 8D 44 24", "F3 0F 11 04 24 8D 4C 24 ? 51 57 8D 54 24");
+        injector::MakeNOP(pattern.get_first(0), 5, true);
+        static auto CPickups__AddAllPickupSceneLights_Hook = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+        {
+            *(float*)(regs.esp + 0x64 - 0x64) = 0.0f; // Null intensity
+        });
+    }
+    else if (nPickupLightsMode == 2)
+    {
+        static uint32_t Flags = 0x201 + LIGHTFLAG_NO_SPECULAR;
+
+        pattern = find_pattern("68 ? ? ? ? 6A ? 6A ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? E8 ? ? ? ? F3 0F 10 54 24",
+                               "68 ? ? ? ? 6A ? 6A ? F3 0F 11 54 24 ? E8");
+        injector::WriteMemory(pattern.get_first(1), Flags, true);
     }
 }
 
