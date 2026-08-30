@@ -194,8 +194,13 @@ void CFogVolumes::AddFogVolume(CLightAttr* pLightAttr, float (*VolumeIntensity)(
 
     pLightAttr->m_Flags |= LIGHTATTRFLAG_DRAW_VOLUME;
 
+    // Handle compatibility with FusionFix's snow volumes, just let it do its thing
+    if (IsFusionFixSnowEventEnabled())
+    {
+        pLightAttr->m_Flags &= ~LIGHTATTRFLAG_DRAW_VOLUME;
+    }
     // Transition between no volumes to volumes
-    if (!GetVolumesEnabledForWeather(OldWeather) && GetVolumesEnabledForWeather(NewWeather))
+    else if (!GetVolumesEnabledForWeather(OldWeather) && GetVolumesEnabledForWeather(NewWeather))
     {
         ExtraVolumeIntensity = VolumeIntensity(NewWeather) * InterpolationValue;
         ExtraVolumeScale = VolumeScale(NewWeather) * InterpolationValue;
@@ -215,8 +220,6 @@ void CFogVolumes::AddFogVolume(CLightAttr* pLightAttr, float (*VolumeIntensity)(
     else
     {
         pLightAttr->m_Flags &= ~LIGHTATTRFLAG_DRAW_VOLUME;
-        ExtraVolumeIntensity = 0.0f;
-        ExtraVolumeScale = 0.0f;
     }
 
     // Add custom values on top of the volume properties set in models, this allows having some more control over the volume properties where needed
@@ -295,9 +298,9 @@ void CFogVolumes::Update(CLightAttr* pLightAttr)
 SafetyHookInline shProcessOne2dEffectLight = {};
 void __cdecl ProcessOne2dEffectLight(CLightAttr* pLightAttr, rage::Matrix34* a2, float a3, float a4, float a5, uint16_t a6, float a7, int a8, int a9, int a10, char a11, char a12, char a13)
 {
-    shProcessOne2dEffectLight.unsafe_ccall(pLightAttr, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
-
     CFogVolumes::Update(pLightAttr);
+
+    shProcessOne2dEffectLight.unsafe_ccall(pLightAttr, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
 }
 
 SafetyHookInline shCLightAttr__dtor = {};
@@ -340,15 +343,12 @@ void Init()
 
     // The ParticleAttr limit requires an increase so TBoGT doesn't poof with all the added particle effects to lights
     pattern = hook::pattern("83 C4 ? B9 ? ? ? ? A3 ? ? ? ? E8 ? ? ? ? B9");
-    if (!pattern.empty())
-    {
-        auto gParticleStore2 = *pattern.get_first<CModelInfo::CStaticStore*>(19);
+    auto gParticleStore2 = *pattern.get_first<CModelInfo::CStaticStore*>(19);
 
-        // We check if the array size is vanilla and only then increase it by two, to ensure we don't interfere with other limit adjusters here.
-        if (gParticleStore2->nSize == 0x0A8C) // 2700
-        {
-            gParticleStore2->nSize *= 2;
-        }
+    // We check if the array size is vanilla and only then increase it by two, to ensure we don't interfere with other limit adjusters here.
+    if (gParticleStore2->nSize == 0x0A8C) // 2700
+    {
+        gParticleStore2->nSize *= 2;
     }
 }
 
