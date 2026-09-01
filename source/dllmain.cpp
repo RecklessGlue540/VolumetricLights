@@ -103,55 +103,55 @@ void CFogVolumes::LoadConfigFile()
     ms_fSpotlightVolumeIntensity[CWeather::SUNNY]       = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensitySunny",      0.0f), 0.0f, 1.0f);
     ms_fSpotlightVolumeIntensity[CWeather::SUNNY_WINDY] = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.0f);
     ms_fSpotlightVolumeIntensity[CWeather::CLOUDY]      = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityCloudy",     0.0f), 0.0f, 1.0f);
-    ms_fSpotlightVolumeIntensity[CWeather::RAIN]        = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityRain",       0.0f), 0.0f, 1.0f);
-    ms_fSpotlightVolumeIntensity[CWeather::DRIZZLE]     = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityDrizzle",    0.0f), 0.0f, 1.0f);
-    ms_fSpotlightVolumeIntensity[CWeather::FOGGY]       = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityFoggy",      0.0f), 0.0f, 1.0f);
-    ms_fSpotlightVolumeIntensity[CWeather::LIGHTNING]   = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityLightning",  0.0f), 0.0f, 1.0f);
+    ms_fSpotlightVolumeIntensity[CWeather::RAIN]        = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityRain",       0.15f), 0.0f, 1.0f);
+    ms_fSpotlightVolumeIntensity[CWeather::DRIZZLE]     = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityDrizzle",    0.1f), 0.0f, 1.0f);
+    ms_fSpotlightVolumeIntensity[CWeather::FOGGY]       = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityFoggy",      0.3f), 0.0f, 1.0f);
+    ms_fSpotlightVolumeIntensity[CWeather::LIGHTNING]   = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeIntensityLightning",  0.2f), 0.0f, 1.0f);
 
     ms_fSpotlightVolumeScale[CWeather::EXTRASUNNY]  = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleExtraSunny", 0.0f), 0.0f, 1.0f);
     ms_fSpotlightVolumeScale[CWeather::SUNNY]       = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleSunny",      0.0f), 0.0f, 1.0f);
     ms_fSpotlightVolumeScale[CWeather::SUNNY_WINDY] = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleSunnyWindy", 0.0f), 0.0f, 1.0f);
     ms_fSpotlightVolumeScale[CWeather::CLOUDY]      = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleCloudy",     0.0f), 0.0f, 1.0f);
-    ms_fSpotlightVolumeScale[CWeather::RAIN]        = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleRain",       0.0f), 0.0f, 1.0f);
-    ms_fSpotlightVolumeScale[CWeather::DRIZZLE]     = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleDrizzle",    0.0f), 0.0f, 1.0f);
-    ms_fSpotlightVolumeScale[CWeather::FOGGY]       = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleFoggy",      0.0f), 0.0f, 1.0f);
-    ms_fSpotlightVolumeScale[CWeather::LIGHTNING]   = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleLightning",  0.0f), 0.0f, 1.0f);
+    ms_fSpotlightVolumeScale[CWeather::RAIN]        = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleRain",       0.15f), 0.0f, 1.0f);
+    ms_fSpotlightVolumeScale[CWeather::DRIZZLE]     = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleDrizzle",    0.1f), 0.0f, 1.0f);
+    ms_fSpotlightVolumeScale[CWeather::FOGGY]       = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleFoggy",      0.3f), 0.0f, 1.0f);
+    ms_fSpotlightVolumeScale[CWeather::LIGHTNING]   = std::clamp(iniReader.ReadFloat("Spotlights", "VolumeScaleLightning",  0.2f), 0.0f, 1.0f);
 
-    ms_fSpotlightInnerConeAngle = iniReader.ReadFloat("Spotlights", "InnerConeAngle", -1.0f);
-    ms_fSpotlightOuterConeAngle = iniReader.ReadFloat("Spotlights", "OuterConeAngle", -1.0f);
+    ms_fSpotlightInnerConeAngle = std::clamp(iniReader.ReadFloat("Spotlights", "InnerConeAngle", -1.0f), -1.0f, 179.0f);
+    ms_fSpotlightOuterConeAngle = std::clamp(iniReader.ReadFloat("Spotlights", "OuterConeAngle", -1.0f), -1.0f, 179.0f);
 
-    ms_fSpotlightCoronaSize      = iniReader.ReadFloat("Spotlights", "CoronaSize",      -1.0f);
-    ms_fSpotlightCoronaIntensity = iniReader.ReadFloat("Spotlights", "CoronaIntensity", -1.0f);
+    ms_fSpotlightCoronaSize      = std::clamp(iniReader.ReadFloat("Spotlights", "CoronaSize",      -1.0f), -1.0f, 100.0f);
+    ms_fSpotlightCoronaIntensity = std::clamp(iniReader.ReadFloat("Spotlights", "CoronaIntensity", -1.0f), -1.0f,  16.0f);
 
     // [Pointlights]
     ms_fPointlightVolumeIntensity[CWeather::EXTRASUNNY]  = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityExtraSunny", 0.0f), 0.0f, 1.0f);
     ms_fPointlightVolumeIntensity[CWeather::SUNNY]       = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensitySunny",      0.0f), 0.0f, 1.0f);
     ms_fPointlightVolumeIntensity[CWeather::SUNNY_WINDY] = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensitySunnyWindy", 0.0f), 0.0f, 1.0f);
     ms_fPointlightVolumeIntensity[CWeather::CLOUDY]      = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityCloudy",     0.0f), 0.0f, 1.0f);
-    ms_fPointlightVolumeIntensity[CWeather::RAIN]        = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityRain",       0.0f), 0.0f, 1.0f);
-    ms_fPointlightVolumeIntensity[CWeather::DRIZZLE]     = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityDrizzle",    0.0f), 0.0f, 1.0f);
-    ms_fPointlightVolumeIntensity[CWeather::FOGGY]       = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityFoggy",      0.0f), 0.0f, 1.0f);
-    ms_fPointlightVolumeIntensity[CWeather::LIGHTNING]   = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityLightning",  0.0f), 0.0f, 1.0f);
+    ms_fPointlightVolumeIntensity[CWeather::RAIN]        = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityRain",       0.3f), 0.0f, 1.0f);
+    ms_fPointlightVolumeIntensity[CWeather::DRIZZLE]     = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityDrizzle",    0.25f), 0.0f, 1.0f);
+    ms_fPointlightVolumeIntensity[CWeather::FOGGY]       = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityFoggy",      0.45f), 0.0f, 1.0f);
+    ms_fPointlightVolumeIntensity[CWeather::LIGHTNING]   = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeIntensityLightning",  0.35f), 0.0f, 1.0f);
 
     ms_fPointlightVolumeScale[CWeather::EXTRASUNNY]  = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleExtraSunny", 0.0f), 0.0f, 1.0f);
     ms_fPointlightVolumeScale[CWeather::SUNNY]       = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleSunny",      0.0f), 0.0f, 1.0f);
     ms_fPointlightVolumeScale[CWeather::SUNNY_WINDY] = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleSunnyWindy", 0.0f), 0.0f, 1.0f);
     ms_fPointlightVolumeScale[CWeather::CLOUDY]      = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleCloudy",     0.0f), 0.0f, 1.0f);
-    ms_fPointlightVolumeScale[CWeather::RAIN]        = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleRain",       0.0f), 0.0f, 1.0f);
-    ms_fPointlightVolumeScale[CWeather::DRIZZLE]     = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleDrizzle",    0.0f), 0.0f, 1.0f);
-    ms_fPointlightVolumeScale[CWeather::FOGGY]       = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleFoggy",      0.0f), 0.0f, 1.0f);
-    ms_fPointlightVolumeScale[CWeather::LIGHTNING]   = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleLightning",  0.0f), 0.0f, 1.0f);
+    ms_fPointlightVolumeScale[CWeather::RAIN]        = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleRain",       0.15f), 0.0f, 1.0f);
+    ms_fPointlightVolumeScale[CWeather::DRIZZLE]     = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleDrizzle",    0.1f), 0.0f, 1.0f);
+    ms_fPointlightVolumeScale[CWeather::FOGGY]       = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleFoggy",      0.3f), 0.0f, 1.0f);
+    ms_fPointlightVolumeScale[CWeather::LIGHTNING]   = std::clamp(iniReader.ReadFloat("Pointlights", "VolumeScaleLightning",  0.2f), 0.0f, 1.0f);
 
-    ms_fPointlightCoronaSize      = iniReader.ReadFloat("Pointlights", "CoronaSize",      -1.0f);
-    ms_fPointlightCoronaIntensity = iniReader.ReadFloat("Pointlights", "CoronaIntensity", -1.0f);
+    ms_fPointlightCoronaSize      = std::clamp(iniReader.ReadFloat("Pointlights", "CoronaSize",      -1.0f), -1.0f, 100.0f);
+    ms_fPointlightCoronaIntensity = std::clamp(iniReader.ReadFloat("Pointlights", "CoronaIntensity", -1.0f), -1.0f,  16.0f);
 
     // [Shared]
-    ms_fLightFadeDistance  = iniReader.ReadFloat("Shared", "LightFadeDistance",  -1.0f);
-    ms_fVolumeFadeDistance = iniReader.ReadFloat("Shared", "VolumeFadeDistance", -1.0f);
+    ms_fLightFadeDistance  = std::clamp(iniReader.ReadFloat("Shared", "LightFadeDistance",  -1.0f), -1.0f, 1000.0f);
+    ms_fVolumeFadeDistance = std::clamp(iniReader.ReadFloat("Shared", "VolumeFadeDistance", -1.0f), -1.0f, 1000.0f);
 
     // [VehicleLights]
     ms_bUnfakeVehicleLights       = iniReader.ReadInteger("VehicleLights", "UnfakeLights",      0) != 0;
-    ms_bUnfakeVehicleSirenLights  = iniReader.ReadInteger("VehicleLights", "UnfakeSirenLights", 0) != 0;
+    ms_bUnfakeVehicleSirenLights  = iniReader.ReadInteger("VehicleLights", "UnfakeVehicleSirenLights", 1) != 0;
     ms_bEnableVehicleLightVolumes = iniReader.ReadInteger("VehicleLights", "EnableVolumes",     0) != 0;
 
     ms_fVehicleLightVolumeIntensity[CWeather::EXTRASUNNY]  = std::clamp(iniReader.ReadFloat("VehicleLights", "VolumeIntensityExtraSunny", 0.0f), 0.0f, 1.0f);
@@ -311,6 +311,26 @@ CLightAttr* __fastcall CLightAttr__dtor(CLightAttr* _this, void* edx, int a2)
     return shCLightAttr__dtor.unsafe_fastcall<CLightAttr*>(_this, edx, a2);
 }
 
+namespace CLights
+{
+    injector::hook_back<void(__cdecl*)(CLightAttr*, eLightType, uint32_t, rage::Vector3, rage::Vector3, rage::Vector3, rage::Vector4, float, uint32_t, uint32_t, float, float, float, int, int, int)> hbAddSceneLight_1;
+
+    void __cdecl AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6(CLightAttr* LightAttr, eLightType Type, uint32_t Flags, rage::Vector3 Direction, rage::Vector3 Tangent, rage::Vector3 Position, rage::Vector4 Color, float Intensity, uint32_t TextureHash, uint32_t TxdSlot, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int CastShadows)
+    {
+        // T1 is used by the Ambulance, NPolice, NPolice2, Police, Police2, Police3 and stru_1A385CC(?)
+        // T2 is used exclusively by the Firetruk
+        // T3 is used by the Noose, Polpatriot, PStockade, NStockade, NPolPatriot and stru_1A38AE8(?)
+        // T4 is used exclusively by the FBI
+        // T5 is used exclusively by the PoliceB (TBoGT)
+        // T6 is used exclusively by the Police4 (TBoGT)
+
+        // Withdraw the NO_SPECULAR flag from siren lights, they were probably made non-specular in order to hide the fake positions for some siren types
+        Flags &= ~LIGHTFLAG_NO_SPECULAR;
+
+        return hbAddSceneLight_1.fun(LightAttr, Type, Flags, Direction, Tangent, Position, Color, Intensity, TextureHash, TxdSlot, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, CastShadows);
+    }
+}
+
 void Init()
 {
     CFogVolumes::LoadConfigFile();
@@ -322,11 +342,11 @@ void Init()
 
     hook::pattern pattern;
 
-    // Extend ProcessOne2dEffectLight to pass the LightAttr object pointer in order to modify its properties at will
+    // Extend ProcessOne2dEffectLight to pass the LightAttr pointer to CFogVolumes::Update so that LightAttrs can be modified at will
     pattern = find_pattern("55 8B EC 83 E4 ? 81 EC ? ? ? ? 56 8B 75 ? 32 C0", "55 8B EC 83 E4 ? 83 EC ? 8B 4D ? F3 0F 10 05 ? ? ? ? 53 56");
     shProcessOne2dEffectLight = safetyhook::create_inline(pattern.get_first(0), ProcessOne2dEffectLight);
-    
-    // Erase original volume parameter map objects when LightAttr objects get destroyed
+
+    // Erase original volume parameter map objects when LightAttrs get destroyed
     pattern = hook::pattern("56 8B F1 8B 4C 24 ? F6 C1 ? 74 ? 8B 56 ? 57 8D 7E ? 8B C2 6B C0");
     if (!pattern.count(4).empty())
     {
@@ -373,6 +393,112 @@ void Init()
         pattern = find_pattern("68 ? ? ? ? 6A ? 6A ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? E8 ? ? ? ? F3 0F 10 54 24",
                                "68 ? ? ? ? 6A ? 6A ? F3 0F 11 54 24 ? E8");
         injector::WriteMemory(pattern.get_first(1), Flags, true);
+    }
+
+    // Cop sirens
+    if (CFogVolumes::ms_bUnfakeVehicleSirenLights)
+    {
+        // Remove the NO_SPECULAR flag from cop siren lights
+        {
+            pattern = hook::pattern("C7 84 24 ? ? ? ? ? ? ? ? E8 ? ? ? ? 83 C4 ? 5F 5E 8B E5");
+            if (!pattern.count(8).empty())
+            {
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(8).get(0).get<void*>(11), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T1
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(8).get(1).get<void*>(11), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T2
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(8).get(2).get<void*>(11), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T3
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(8).get(3).get<void*>(11), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T5
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(8).get(4).get<void*>(11), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T6
+
+                pattern = hook::pattern("C7 84 24 ? ? ? ? ? ? ? ? E8 ? ? ? ? 83 C4 ? EB ? 51");
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.get_first(11), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T4
+            }
+            else
+            {
+                pattern = hook::pattern("F3 0F 11 8C 24 ? ? ? ? E8 ? ? ? ? 83 C4 ? 5F");
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(4).get(0).get<void*>(9), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T1
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(4).get(1).get<void*>(9), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T2
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(4).get(2).get<void*>(9), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T3
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.count(4).get(3).get<void*>(9), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T6
+
+                pattern = hook::pattern("F3 0F 11 8C 24 ? ? ? ? E8 ? ? ? ? 83 C4 ? 8B 74 24");
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.get_first(9), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T4
+
+                pattern = hook::pattern("F3 0F 11 9C 24 ? ? ? ? F3 0F 11 94 24 ? ? ? ? F3 0F 11 84 24 ? ? ? ? E8 ? ? ? ? 83 C4");
+                CLights::hbAddSceneLight_1.fun = injector::MakeCALL(pattern.get_first(27), CLights::AddSceneLight_CVehicle__DoSirenLightsEffect_T1_T6).get(); // T5
+            }
+        }
+
+        // Adjust positions for T1, T2, T5 and T6 lights so that they are not placed so high up above the sirens of some vehicles
+        {
+            pattern = hook::pattern("F3 0F 10 05 ? ? ? ? F3 0F 11 7C 24 ? F3 0F 11 74 24 ? F3 0F 11 6C 24 ? F3 0F 10 58");
+            if (!pattern.count(2).empty())
+            {
+                injector::MakeNOP(pattern.count(2).get(0).get<void*>(0), 8, true);
+                static auto CVehicle__DoSirenLightsEffect_T1_Hook = safetyhook::create_mid(pattern.count(2).get(0).get<void*>(0), [](SafetyHookContext& regs)
+                {
+                    regs.xmm0.f32[0] = 0.0f;
+                });
+
+                injector::MakeNOP(pattern.count(2).get(1).get<void*>(0), 8, true);
+                static auto CVehicle__DoSirenLightsEffect_T2_Hook = safetyhook::create_mid(pattern.count(2).get(1).get<void*>(0), [](SafetyHookContext& regs)
+                {
+                    regs.xmm0.f32[0] = 0.0f;
+                });
+            }
+            else
+            {
+                pattern = hook::pattern("F3 0F 10 3D ? ? ? ? F3 0F 59 D9 F3 0F 59 E1");
+                injector::MakeNOP(pattern.count(2).get(0).get<void*>(0), 8, true);
+                static auto CVehicle__DoSirenLightsEffect_T1_Hook = safetyhook::create_mid(pattern.count(2).get(0).get<void*>(0), [](SafetyHookContext& regs)
+                {
+                    regs.xmm7.f32[0] = 0.0f;
+                });
+
+                injector::MakeNOP(pattern.count(2).get(1).get<void*>(0), 8, true);
+                static auto CVehicle__DoSirenLightsEffect_T2_Hook = safetyhook::create_mid(pattern.count(2).get(1).get<void*>(0), [](SafetyHookContext& regs)
+                {
+                    regs.xmm7.f32[0] = 0.0f;
+                });
+            }
+
+            pattern = hook::pattern("F3 0F 10 05 ? ? ? ? F3 0F 11 BC 24 ? ? ? ? F3 0F 11 B4 24");
+            if (!pattern.empty())
+            {
+                injector::MakeNOP(pattern.get_first(0), 8, true);
+                static auto CVehicle__DoSirenLightsEffect_T5_Hook = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+                {
+                    regs.xmm0.f32[0] = 0.0f;
+                });
+            }
+            else
+            {
+                pattern = hook::pattern("F3 0F 10 3D ? ? ? ? F3 0F 59 D8 F3 0F 59 E0");
+                injector::MakeNOP(pattern.get_first(0), 8, true);
+                static auto CVehicle__DoSirenLightsEffect_T5_Hook = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+                {
+                    regs.xmm7.f32[0] = 0.0f;
+                });
+            }
+
+            pattern = hook::pattern("F3 0F 10 05 ? ? ? ? F3 0F 10 58 ? F3 0F 10 48 ? F3 0F 10 50 ? F3 0F 59 D8 F3 0F 59 C8 F3 0F 59 D0 0F B6 C1");
+            if (!pattern.empty())
+            {
+                injector::MakeNOP(pattern.get_first(0), 8, true);
+                static auto CVehicle__DoSirenLightsEffect_T6_Hook = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+                {
+                    regs.xmm0.f32[0] = 0.0f;
+                });
+            }
+            else
+            {
+                pattern = hook::pattern("F3 0F 10 2D ? ? ? ? 83 C0 ? F3 0F 59 45");
+                injector::MakeNOP(pattern.get_first(0), 8, true);
+                static auto CVehicle__DoSirenLightsEffect_T6_Hook = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+                {
+                    regs.xmm5.f32[0] = 0.0f;
+                });
+            }
+        }
     }
 }
 
