@@ -311,6 +311,55 @@ CLightAttr* __fastcall CLightAttr__dtor(CLightAttr* _this, void* edx, int a2)
     return shCLightAttr__dtor.unsafe_fastcall<CLightAttr*>(_this, edx, a2);
 }
 
+static inline float fTrafficLightCoronaSizeMultiplier;
+static inline float fTrafficLightCoronaIntensityMultiplier;
+
+static inline float fHelicopterSearchlightCoronaSizeMultiplier;
+static inline float fHelicopterSearchlightCoronaIntensityMultiplier;
+
+static inline float fHeadlightCoronaSizeMultiplier;
+static inline float fHeadlightCoronaIntensityMultiplier;
+
+static inline float fTaillightCoronaSizeMultiplier;
+static inline float fTaillightCoronaIntensityMultiplier;
+
+namespace Coronas
+{
+    injector::hook_back<void(__cdecl*)(int, uint8_t, uint8_t, uint8_t, float, rage::Vector3*, float, float, float, int, float, int, int, rage::Vector3*)> hbRegisterCorona;
+
+    void __cdecl RegisterCorona_CBrightLights__RegisterOne(int InteriorIndex, uint8_t ColorR, uint8_t ColorG, uint8_t ColorB, float Intensity, rage::Vector3* Position, float Size, float a8, float a9, int a10, float a11, int a12, int DontReflect, rage::Vector3* Direction)
+    {
+        Size *= fTrafficLightCoronaSizeMultiplier;
+        Intensity *= fTrafficLightCoronaIntensityMultiplier;
+
+        return hbRegisterCorona.fun(InteriorIndex, ColorR, ColorG, ColorB, Intensity, Position, Size, a8, a9, a10, a11, a12, DontReflect, Direction);
+    }
+
+    void __cdecl RegisterCorona_CHeli__PreRender2(int InteriorIndex, uint8_t ColorR, uint8_t ColorG, uint8_t ColorB, float Intensity, rage::Vector3* Position, float Size, float a8, float a9, int a10, float a11, int a12, int DontReflect, rage::Vector3* Direction)
+    {
+        Size *= fHelicopterSearchlightCoronaSizeMultiplier;
+        Intensity *= fHelicopterSearchlightCoronaIntensityMultiplier;
+
+        return hbRegisterCorona.fun(InteriorIndex, ColorR, ColorG, ColorB, Intensity, Position, Size, a8, a9, a10, a11, a12, DontReflect, Direction);
+    }
+
+    void __cdecl RegisterCorona_CVehicle__DoHeadLightsEffect(int InteriorIndex, uint8_t ColorR, uint8_t ColorG, uint8_t ColorB, float Intensity, rage::Vector3* Position, float Size, float a8, float a9, int a10, float a11, int a12, int DontReflect, rage::Vector3* Direction)
+    {
+        Size *= fHeadlightCoronaSizeMultiplier;
+        Intensity *= fHeadlightCoronaIntensityMultiplier;
+
+        return hbRegisterCorona.fun(InteriorIndex, ColorR, ColorG, ColorB, Intensity, Position, Size, a8, a9, a10, a11, a12, DontReflect, Direction);
+    }
+
+    void __cdecl RegisterCorona_CVehicle__DoTailLightsEffect(int InteriorIndex, uint8_t ColorR, uint8_t ColorG, uint8_t ColorB, float Intensity, rage::Vector3* Position, float Size, float a8, float a9, int a10, float a11, int a12, int DontReflect, rage::Vector3* Direction)
+    {
+        Size *= fTaillightCoronaSizeMultiplier;
+        Intensity *= fTaillightCoronaIntensityMultiplier;
+
+        return hbRegisterCorona.fun(InteriorIndex, ColorR, ColorG, ColorB, Intensity, Position, Size, a8, a9, a10, a11, a12, DontReflect, Direction);
+    }
+}
+
 namespace CLights
 {
     injector::hook_back<void(__cdecl*)(CLightAttr*, eLightType, uint32_t, rage::Vector3, rage::Vector3, rage::Vector3, rage::Vector4, float, uint32_t, uint32_t, float, float, float, int, int, int)> hbAddSceneLight_1;
@@ -339,6 +388,18 @@ void Init()
 
     // [Misc]
     int nPickupLightsMode = iniReader.ReadInteger("Misc", "PickupLightsMode", 1);
+
+    fTrafficLightCoronaSizeMultiplier      = std::clamp(iniReader.ReadFloat("Misc", "TrafficLightCoronaSizeMultiplier",      1.0f), 0.0f, 2.0f);
+    fTrafficLightCoronaIntensityMultiplier = std::clamp(iniReader.ReadFloat("Misc", "TrafficLightCoronaIntensityMultiplier", 1.0f), 0.0f, 2.0f);
+
+    fHelicopterSearchlightCoronaSizeMultiplier      = std::clamp(iniReader.ReadFloat("Misc", "HelicopterSearchlightCoronaSizeMultiplier",      1.0f), 0.0f, 2.0f);
+    fHelicopterSearchlightCoronaIntensityMultiplier = std::clamp(iniReader.ReadFloat("Misc", "HelicopterSearchlightCoronaIntensityMultiplier", 1.0f), 0.0f, 2.0f);
+
+    fHeadlightCoronaSizeMultiplier      = std::clamp(iniReader.ReadFloat("Misc", "HeadlightCoronaSizeMultiplier",      1.0f), 0.0f, 2.0f);
+    fHeadlightCoronaIntensityMultiplier = std::clamp(iniReader.ReadFloat("Misc", "HeadlightCoronaIntensityMultiplier", 1.0f), 0.0f, 2.0f);
+
+    fTaillightCoronaSizeMultiplier      = std::clamp(iniReader.ReadFloat("Misc", "TaillightCoronaSizeMultiplier",      1.0f), 0.0f, 2.0f);
+    fTaillightCoronaIntensityMultiplier = std::clamp(iniReader.ReadFloat("Misc", "TaillightCoronaIntensityMultiplier", 1.0f), 0.0f, 2.0f);
 
     hook::pattern pattern;
 
@@ -393,6 +454,55 @@ void Init()
         pattern = find_pattern("68 ? ? ? ? 6A ? 6A ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? C7 44 24 ? ? ? ? ? E8 ? ? ? ? F3 0F 10 54 24",
                                "68 ? ? ? ? 6A ? 6A ? F3 0F 11 54 24 ? E8");
         injector::WriteMemory(pattern.get_first(1), Flags, true);
+    }
+
+    // Coronas
+    {
+        // Traffic lights
+        pattern = find_pattern("FF 74 24 ? FF 75 ? E8 ? ? ? ? 83 C4 ? 5F", "51 F3 0F 11 4C 24 ? E8 ? ? ? ? 83 C4 ? 5F");
+        Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.get_first(7), Coronas::RegisterCorona_CBrightLights__RegisterOne).get();
+
+        // Helicopter searchlights
+        pattern = find_pattern("E8 ? ? ? ? 83 C4 ? 8D 47 ? 50 C7 84 24", "E8 ? ? ? ? F3 0F 10 05 ? ? ? ? 83 C4 ? F3 0F 11 84 24");
+        Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.get_first(0), Coronas::RegisterCorona_CHeli__PreRender2).get();
+
+        // Headlights
+        pattern = hook::pattern("E8 ? ? ? ? 8B 04 BD ? ? ? ? 83 C4 ? EB ? 51 C7 04 24");
+        if (!pattern.count(2).empty())
+        {
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.count(2).get(0).get<void*>(0), Coronas::RegisterCorona_CVehicle__DoHeadLightsEffect).get();
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.count(2).get(1).get<void*>(0), Coronas::RegisterCorona_CVehicle__DoHeadLightsEffect).get();
+        }
+        else
+        {
+            pattern = hook::pattern("E8 ? ? ? ? D9 04 9D ? ? ? ? 8B 4C 24");
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.get_first(0), Coronas::RegisterCorona_CVehicle__DoHeadLightsEffect).get();
+
+            pattern = hook::pattern("E8 ? ? ? ? D9 04 B5 ? ? ? ? 8B 44 24");
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.get_first(0), Coronas::RegisterCorona_CVehicle__DoHeadLightsEffect).get();
+        }
+
+        // Taillights
+        pattern = hook::pattern("E8 ? ? ? ? 8B 4D ? 83 C4 ? 8B 04 8D ? ? ? ? EB");
+        if (!pattern.empty())
+        {
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.get_first(0), Coronas::RegisterCorona_CVehicle__DoTailLightsEffect).get();
+
+            pattern = hook::pattern("E8 ? ? ? ? 8B 04 BD ? ? ? ? 83 C4 ? EB ? 51 83 C0");
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.get_first(0), Coronas::RegisterCorona_CVehicle__DoTailLightsEffect).get();
+
+            pattern = hook::pattern("E8 ? ? ? ? 8B 04 BD ? ? ? ? 83 C4 ? EB ? 8B 7D");
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.get_first(0), Coronas::RegisterCorona_CVehicle__DoTailLightsEffect).get();
+        }
+        else
+        {
+            pattern = hook::pattern("E8 ? ? ? ? 8B 44 24 ? 83 C4 ? D9 04 BD");
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.count(2).get(0).get<void*>(0), Coronas::RegisterCorona_CVehicle__DoTailLightsEffect).get();
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.count(2).get(1).get<void*>(0), Coronas::RegisterCorona_CVehicle__DoTailLightsEffect).get();
+
+            pattern = hook::pattern("E8 ? ? ? ? 8B 44 24 ? 83 C4 ? D9 04 9D");
+            Coronas::hbRegisterCorona.fun = injector::MakeCALL(pattern.get_first(0), Coronas::RegisterCorona_CVehicle__DoTailLightsEffect).get();
+        }
     }
 
     // Cop sirens
