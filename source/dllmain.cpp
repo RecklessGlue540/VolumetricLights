@@ -150,9 +150,9 @@ void CFogVolumes::LoadConfigFile()
     ms_fVolumeFadeDistance = std::clamp(iniReader.ReadFloat("Shared", "VolumeFadeDistance", -1.0f), -1.0f, 1000.0f);
 
     // [VehicleLights]
-    ms_bUnfakeVehicleLights       = iniReader.ReadInteger("VehicleLights", "UnfakeLights",      0) != 0;
+    ms_bUnfakeVehicleLights       = iniReader.ReadInteger("VehicleLights", "UnfakeVehicleLights",      1) != 0;
     ms_bUnfakeVehicleSirenLights  = iniReader.ReadInteger("VehicleLights", "UnfakeVehicleSirenLights", 1) != 0;
-    ms_bEnableVehicleLightVolumes = iniReader.ReadInteger("VehicleLights", "EnableVolumes",     0) != 0;
+    ms_bEnableVehicleLightVolumes = iniReader.ReadInteger("VehicleLights", "EnableVolumes",            0) != 0;
 
     ms_fVehicleLightVolumeIntensity[CWeather::EXTRASUNNY]  = std::clamp(iniReader.ReadFloat("VehicleLights", "VolumeIntensityExtraSunny", 0.0f), 0.0f, 1.0f);
     ms_fVehicleLightVolumeIntensity[CWeather::SUNNY]       = std::clamp(iniReader.ReadFloat("VehicleLights", "VolumeIntensitySunny",      0.0f), 0.0f, 1.0f);
@@ -378,6 +378,39 @@ namespace CLights
 
         return hbAddSceneLight_1.fun(LightAttr, Type, Flags, Direction, Tangent, Position, Color, Intensity, TextureHash, TxdSlot, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, CastShadows);
     }
+}
+
+void (__cdecl* AddVehicleLight)(rage::Matrix34*, rage::Vector3*, rage::Vector3*, rage::Vector3*, float, float, float, float, int, int, int, char, char) = nullptr;
+
+void (__cdecl* AddVehicleLight_Legacy)(int, rage::Vector3*, rage::Vector3*, int, rage::Matrix34*, rage::Vector3*, float, float, float, float, int, char, char) = nullptr;
+
+rage::Vector3* LeftHeadlightPosition = nullptr;
+rage::Vector3* RightHeadlightPosition = nullptr;
+
+void __cdecl AddVehicleTwinLight(rage::Matrix34* SomeMatrix, rage::Vector3* Position, rage::Vector3* SomeVector, rage::Vector3* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int InteriorIndex, int RoomIndex, int ShadowSlot, char IsPlayerDriving)
+{
+    // This whole function gets replaced to just call two singular lights, we don't really need any of what it originally did anymore
+
+    // AddVehicleLight has this parameter added on PC, because it needs to know whether the light is a headlight, which it is here. It was all added because of headlight shadows.
+    char IsHeadlight = 1;
+
+    int ShadowSlot_1 = 1;
+    int ShadowSlot_2 = 2;
+
+    AddVehicleLight(SomeMatrix, LeftHeadlightPosition, SomeVector, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowSlot_1, IsHeadlight, IsPlayerDriving);
+    AddVehicleLight(SomeMatrix, RightHeadlightPosition, SomeVector, Color, Intensity, Radius, InnerConeAngle, OuterConeAngle, InteriorIndex, RoomIndex, ShadowSlot_2, IsHeadlight, IsPlayerDriving);
+}
+
+// :sob:
+void __cdecl AddVehicleTwinLight_Legacy(rage::Matrix34* SomeMatrix, rage::Vector3* SomeVector, int InteriorIndex, int RoomIndex, rage::Vector3* Position, rage::Vector3* Color, float Intensity, float Radius, float InnerConeAngle, float OuterConeAngle, int ShadowSlot, char IsPlayerDriving)
+{
+    char IsHeadlight = 1;
+
+    int ShadowSlot_1 = 1;
+    int ShadowSlot_2 = 2;
+
+    AddVehicleLight_Legacy(RoomIndex, SomeVector, Color, InteriorIndex, SomeMatrix, LeftHeadlightPosition, Intensity, Radius, InnerConeAngle, OuterConeAngle, ShadowSlot_1, IsHeadlight, IsPlayerDriving);
+    AddVehicleLight_Legacy(RoomIndex, SomeVector, Color, InteriorIndex, SomeMatrix, RightHeadlightPosition, Intensity, Radius, InnerConeAngle, OuterConeAngle, ShadowSlot_2, IsHeadlight, IsPlayerDriving);
 }
 
 void Init()
@@ -606,6 +639,86 @@ void Init()
                 static auto CVehicle__DoSirenLightsEffect_T6_Hook = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
                 {
                     regs.xmm5.f32[0] = 0.0f;
+                });
+            }
+        }
+    }
+
+    if (CFogVolumes::ms_bUnfakeVehicleLights)
+    {
+        pattern = hook::pattern("55 8B EC 83 E4 ? 83 EC ? 80 7D ? ? 8B 4D");
+        if (!pattern.empty())
+        {
+            AddVehicleLight = (decltype(AddVehicleLight)(pattern.get_first(0)));
+        }
+        else
+        {
+            pattern = hook::pattern("55 8B EC 83 E4 ? 83 EC ? 80 7D ? ? D9 45");
+            AddVehicleLight_Legacy = (decltype(AddVehicleLight_Legacy)(pattern.get_first(0)));
+        }
+
+        pattern = hook::pattern("E8 ? ? ? ? 83 C4 ? 5F 5E 8B E5 5D C2 ? ? 84 C0 0F 85 ? ? ? ? 80 7D ? ? 0F 85");
+        if (!pattern.empty())
+        {
+            injector::MakeCALL(pattern.get_first(0), AddVehicleTwinLight);
+        }
+        else
+        {
+            pattern = hook::pattern("E8 ? ? ? ? 83 C4 ? 5F 5E 5B 8B E5 5D C2 ? ? 83 F8 ? 74");
+            injector::MakeCALL(pattern.get_first(0), AddVehicleTwinLight_Legacy);
+        }
+
+        // Headlight bone positions
+        {
+            // Left headlight bone position
+            pattern = hook::pattern("89 44 24 ? 83 C0 ? 80 7D ? ? 74");
+            if (!pattern.empty())
+            {
+                injector::MakeNOP(pattern.get_first(0), 7, true);
+                static auto CVehicle__DoHeadLightsEffect_Hook1 = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+                {
+                    *(uint32_t*)(regs.esp + 0x0D0 - 0xA8) = regs.eax;
+                    regs.eax += 0x30;
+
+                    LeftHeadlightPosition = reinterpret_cast<rage::Vector3*>(regs.eax);
+                });
+            }
+            else
+            {
+                pattern = hook::pattern("89 44 24 ? 83 C0 ? 80 7D ? ? 0F 84");
+                injector::MakeNOP(pattern.get_first(0), 7, true);
+                static auto CVehicle__DoHeadLightsEffect_Hook1 = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+                {
+                    *(uint32_t*)(regs.esp + 0x0E0 - 0xB8) = regs.eax;
+                    regs.eax += 0x30;
+
+                    LeftHeadlightPosition = reinterpret_cast<rage::Vector3*>(regs.eax);
+                });
+            }
+            
+            // Right headlight bone position
+            pattern = hook::pattern("89 54 24 ? 8D 42 ? 74");
+            if (!pattern.empty())
+            {
+                injector::MakeNOP(pattern.get_first(0), 7, true);
+                static auto CVehicle__DoHeadLightsEffect_Hook2 = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+                {
+                    *(uint32_t*)(regs.esp + 0x0D0 - 0xAC) = regs.edx;
+                    regs.eax = regs.edx + 0x30;
+
+                    RightHeadlightPosition = reinterpret_cast<rage::Vector3*>(regs.eax);
+                });
+            }
+            else
+            {
+                pattern = hook::pattern("89 44 24 ? 83 C0 ? 84 DB");
+                injector::MakeNOP(pattern.get_first(0), 7, true);
+                static auto CVehicle__DoHeadLightsEffect_Hook2 = safetyhook::create_mid(pattern.get_first(0), [](SafetyHookContext& regs)
+                {
+                    *(uint32_t*)(regs.esp + 0x0E0 - 0xB4) = regs.eax;
+                    regs.eax += 0x30;
+
+                    RightHeadlightPosition = reinterpret_cast<rage::Vector3*>(regs.eax);
                 });
             }
         }
