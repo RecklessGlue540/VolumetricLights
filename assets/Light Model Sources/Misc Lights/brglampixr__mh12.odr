@@ -1,0 +1,25 @@
+Version 110 12
+shadinggroup
+{
+	Shaders 3
+	{
+		gta_emissivenight_alpha.sps DC_MaginotSgn02 0.00040000 35.00000000
+		gta_emissive_alpha.sps brglampixr__mh12\tf_percybulb.dds 0.00040000 20.00000000
+		gta_normal_spec_reflect_emissive.sps DC_Bridge_Railings_01 0.00000000 0.00000000 10.00000000 0.50000000 0.00000000;0.00000000;1.00000000 0.00000000 0.00000000 givemechecker DC_roadworks04_SDC_RoadDrain01_SDC_Gen_ShpWin_01_S givemechecker
+	}
+}
+lodgroup
+{
+	high 1 brglampixr__mh12\brglampixr__mh12_high.mesh 0 9999.00000000
+	med none 9999.00000000
+	low none 9999.00000000
+	vlow none 9999.00000000
+	center -0.00012200 0.39639600 2.43617400
+	AABBMin -0.15483300 -0.18322800 0.00000000
+	AABBMax 0.15484000 1.02844200 4.87259100
+	radius 2.48352200
+}
+light
+{
+	light brglampixr__mh12\brglampixr__mh12.light
+}
